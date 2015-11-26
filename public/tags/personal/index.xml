@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/tags/personal/</link>
+    <description>Recent content in Personal on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2015 14:06:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ninjaducks.in</title>
+      <link>http://localhost:1313/showcase/ninjaducks.in/</link>
+      <pubDate>Sat, 24 Oct 2015 14:06:00 +0530</pubDate>
+      
+      <guid>http://localhost:1313/showcase/ninjaducks.in/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Richard Sumilang - Top Secret Labs</title>
+      <link>http://localhost:1313/showcase/richardsumilang/</link>
+      <pubDate>Mon, 07 Sep 2015 00:12:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/showcase/richardsumilang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>humboldtux.net</title>
+      <link>http://localhost:1313/showcase/humboldtux/</link>
+      <pubDate>Sun, 06 Sep 2015 18:32:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/humboldtux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scottcwilson.com</title>
+      <link>http://localhost:1313/showcase/scottcwilson/</link>
+      <pubDate>Tue, 21 Jul 2015 10:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/scottcwilson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>szymonkatra.github.io</title>
+      <link>http://localhost:1313/showcase/szymonkatra/</link>
+      <pubDate>Fri, 10 Jul 2015 16:15:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/showcase/szymonkatra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sa.muel.be</title>
+      <link>http://localhost:1313/showcase/samuelbe/</link>
+      <pubDate>Wed, 08 Jul 2015 14:02:16 +0200</pubDate>
+      
+      <guid>http://localhost:1313/showcase/samuelbe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mariosanchez.org</title>
+      <link>http://localhost:1313/showcase/mariosanchez/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/mariosanchez/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grey Times</title>
+      <link>http://localhost:1313/showcase/kangkona/</link>
+      <pubDate>Thu, 04 Jun 2015 12:51:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/kangkona/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rick.cogley.info</title>
+      <link>http://localhost:1313/showcase/rick-cogley-info/</link>
+      <pubDate>Wed, 20 May 2015 04:32:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/rick-cogley-info/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arian&#39;s Portfolio</title>
+      <link>http://localhost:1313/showcase/arianv/</link>
+      <pubDate>Fri, 06 Feb 2015 12:51:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/arianv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thehome.dk</title>
+      <link>http://localhost:1313/showcase/thehome/</link>
+      <pubDate>Sat, 27 Dec 2014 20:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/showcase/thehome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stou.dk</title>
+      <link>http://localhost:1313/showcase/stou/</link>
+      <pubDate>Sun, 23 Nov 2014 01:28:16 +0700</pubDate>
+      
+      <guid>http://localhost:1313/showcase/stou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authenticgeek</title>
+      <link>http://localhost:1313/showcase/nickoneill/</link>
+      <pubDate>Tue, 26 Aug 2014 12:15:48 -0400</pubDate>
+      
+      <guid>http://localhost:1313/showcase/nickoneill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vurt.co.uk</title>
+      <link>http://localhost:1313/showcase/vurt.co/</link>
+      <pubDate>Tue, 26 Aug 2014 12:09:39 -0400</pubDate>
+      
+      <guid>http://localhost:1313/showcase/vurt.co/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>michaelwhatcott</title>
+      <link>http://localhost:1313/showcase/michaelwhatcott/</link>
+      <pubDate>Tue, 26 Aug 2014 11:47:11 -0400</pubDate>
+      
+      <guid>http://localhost:1313/showcase/michaelwhatcott/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

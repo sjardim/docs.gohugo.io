@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troubleshooting on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/troubleshooting/</link>
+    <description>Recent content in Troubleshooting on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Jan 2015 02:41:52 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Troubleshooting Overview</title>
+      <link>http://localhost:1313/troubleshooting/overview/</link>
+      <pubDate>Sun, 18 Jan 2015 02:41:52 -0700</pubDate>
+      
+      <guid>http://localhost:1313/troubleshooting/overview/</guid>
+      <description>&lt;p&gt;Got stuck?  Worry not!  Chances are other users have encountered
+the exact same problem as you have, brought it up for
+&lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;discussion&lt;/a&gt;, and have likely found a solution
+through the collective wisdom of our vibrant Hugo community!&lt;/p&gt;
+
+&lt;p&gt;Here are some examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/troubleshooting/strange-eof-error/&#34;&gt;&lt;code&gt;hugo new&lt;/code&gt; aborts with cryptic EOF error&lt;/a&gt; (affects v0.12 and lower)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/troubleshooting/categories-with-accented-characters/&#34;&gt;Categories with accented characters inaccessible&lt;/a&gt; (affects Mac OS&amp;nbsp;X users)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/t/deployment-workflow/90/15&#34;&gt;My CSS files aren&amp;rsquo;t loaded!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/t/image-gallery/594&#34;&gt;How do I include an image gallery on my website?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip; And a lot more!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;
+&lt;iframe class=&#34;youtube-player&#34; type=&#34;text/html&#34; width=&#34;100%&#34; height=&#34;auto&#34; src=&#34;https://www.youtube.com/embed/c8fJIRNChmU&#34; allowfullscreen frameborder=&#34;0&#34;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Indeed, you may find many questions and solutions
+to problems in our &lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;discussion forum&lt;/a&gt;,
+and you may find the &lt;a href=&#34;http://discuss.gohugo.io/category/support&#34;&gt;support&lt;/a&gt;
+and &lt;a href=&#34;http://discuss.gohugo.io/category/tips-tricks&#34;&gt;tips &amp;amp; tricks&lt;/a&gt;
+categories particularly helpful.&lt;/p&gt;
+
+&lt;p&gt;Can&amp;rsquo;t find anything?  Please write on the forum and post your questions
+and comments!  Sometimes, your feedback may lead to the discovery of
+existing bugs in the code or in the documentation, and may even spur
+the interest of adding new features to the next Hugo version, improving
+Hugo for everybody!  (Thank you!)  See you on the forum!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Strange EOF error</title>
+      <link>http://localhost:1313/troubleshooting/strange-eof-error/</link>
+      <pubDate>Thu, 08 Jan 2015 16:11:23 -0700</pubDate>
+      
+      <guid>http://localhost:1313/troubleshooting/strange-eof-error/</guid>
+      <description>
+
+&lt;h2 id=&#34;trouble-hugo-new-aborts-with-cryptic-eof-error:45da4fa15a14f08362c502ea0b4283a1&#34;&gt;Trouble: &lt;code&gt;hugo new&lt;/code&gt; aborts with cryptic EOF error&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I&amp;rsquo;m running into an issue where I cannot get archetypes working, when running &lt;code&gt;hugo new showcase/test.md&lt;/code&gt;, for example, I see an &lt;code&gt;EOF&lt;/code&gt; error thrown by Hugo.&lt;/p&gt;
+
+&lt;p&gt;I have set up this test repository to show exactly what I&amp;rsquo;ve done, but it is essentially a vanilla installation of Hugo. &lt;a href=&#34;https://github.com/polds/hugo-archetypes-test&#34;&gt;https://github.com/polds/hugo-archetypes-test&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When in that repository, using Hugo v0.12 to run &lt;code&gt;hugo new -v showcase/test.md&lt;/code&gt;, I see the following output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INFO: 2015/01/04 Using config file: /private/tmp/test/config.toml
+INFO: 2015/01/04 attempting to create  showcase/test.md of showcase
+INFO: 2015/01/04 curpath: /private/tmp/test/archetypes/showcase.md
+ERROR: 2015/01/04 EOF
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is there something that I am blatantly missing?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;solution:45da4fa15a14f08362c502ea0b4283a1&#34;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Thank you for reporting this issue.  The solution is to add a final newline (i.e. EOL) to the end of your default.md archetype file of your theme.  More discussions happened on the forum here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/t/archetypes-not-properly-working-in-0-12/544&#34;&gt;http://discuss.gohugo.io/t/archetypes-not-properly-working-in-0-12/544&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/t/eol-f-in-archetype-files/554&#34;&gt;http://discuss.gohugo.io/t/eol-f-in-archetype-files/554&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Due to popular demand, Hugo&amp;rsquo;s parser has been enhanced to
+accommodate archetype files without final EOL,
+thanks to the great work by &lt;a href=&#34;https://github.com/tatsushid&#34;&gt;@tatsushid&lt;/a&gt;,
+in the upcoming v0.13 release,&lt;/p&gt;
+
+&lt;p&gt;Until then, for us running the stable v0.12 release, please remember to add the final EOL diligently.  &lt;i class=&#34;fa fa-smile-o&#34;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;references:45da4fa15a14f08362c502ea0b4283a1&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/hugo/issues/776&#34;&gt;https://github.com/spf13/hugo/issues/776&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accented Categories</title>
+      <link>http://localhost:1313/troubleshooting/categories-with-accented-characters/</link>
+      <pubDate>Thu, 08 Jan 2015 16:32:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/troubleshooting/categories-with-accented-characters/</guid>
+      <description>
+
+&lt;h2 id=&#34;trouble-categories-with-accented-characters:4991e3b1a73c18d62800431513a9f742&#34;&gt;Trouble: Categories with accented characters&lt;/h2&gt;
+
+&lt;p&gt;One of my categories is named &amp;ldquo;Le-carré,&amp;rdquo; but the link ends up being generated like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;categories/le-carr%C3%A9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And not working. Is there an easy fix for this that I&amp;rsquo;m overlooking?&lt;/p&gt;
+
+&lt;h2 id=&#34;solution:4991e3b1a73c18d62800431513a9f742&#34;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Mac OS X user?  If so, you are likely a victim of HFS Plus file system&amp;rsquo;s insistence to store the &amp;ldquo;é&amp;rdquo; (U+00E9) character in Normal Form Decomposed (NFD) mode, i.e. as &amp;ldquo;e&amp;rdquo; + &amp;ldquo;  ́&amp;rdquo; (U+0065 U+0301).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;le-carr%C3%A9&lt;/code&gt; is actually correct, &lt;code&gt;%C3%A9&lt;/code&gt; being the UTF-8 version of U+00E9 as expected by the web server.  Problem is, OS X turns [U+00E9] into [U+0065 U+0301], and thus &lt;code&gt;le-carr%C3%A9&lt;/code&gt; no longer works.  Instead, only &lt;code&gt;le-carre%CC%81&lt;/code&gt; ending with &lt;code&gt;e%CC%81&lt;/code&gt; would match that [U+0065 U+0301] at the end.&lt;/p&gt;
+
+&lt;p&gt;This is unique to OS X.  The rest of the world does not do this, and most certainly not your web server which is most likely running Linux.  This is not a Hugo-specific problem either.  Other people have been bitten by this when they have accented characters in their HTML files.&lt;/p&gt;
+
+&lt;p&gt;Nor is this problem specific to Latin scripts.  Japanese Mac users often run into the same issue, e.g. with &lt;code&gt;だ&lt;/code&gt; decomposing into &lt;code&gt;た&lt;/code&gt; and &lt;code&gt;&amp;#x3099;&lt;/code&gt;.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4991e3b1a73c18d62800431513a9f742:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4991e3b1a73c18d62800431513a9f742:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Rsync 3.x to the rescue!  From &lt;a href=&#34;http://serverfault.com/questions/397420/converting-utf-8-nfd-filenames-to-utf-8-nfc-in-either-rsync-or-afpd&#34;&gt;an answer posted on Server Fault&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You can use rsync&amp;rsquo;s &lt;code&gt;--iconv&lt;/code&gt; option to convert between UTF-8 NFC &amp;amp; NFD, at least if you&amp;rsquo;re on a Mac. There is a special &lt;code&gt;utf-8-mac&lt;/code&gt; character set that stands for UTF-8 NFD. So to copy files from your Mac to your web server, you&amp;rsquo;d need to run something like:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rsync -a --iconv=utf-8-mac,utf-8 localdir/ mywebserver:remotedir/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will convert all the local filenames from UTF-8 NFD to UTF-8 NFC on the remote server. The files&amp;rsquo; contents won&amp;rsquo;t be affected.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Please make sure you have the latest version rsync 3.x installed.  The rsync that ships with OS X (even the latest 10.10 Yosemite) is the horribly old at version 2.6.9 protocol version 29.  The &lt;code&gt;--iconv&lt;/code&gt; flag is new in rsync 3.x.&lt;/p&gt;
+
+&lt;h3 id=&#34;references:4991e3b1a73c18d62800431513a9f742&#34;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/t/categories-with-accented-characters/505&#34;&gt;http://discuss.gohugo.io/t/categories-with-accented-characters/505&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://serverfault.com/questions/397420/converting-utf-8-nfd-filenames-to-utf-8-nfc-in-either-rsync-or-afpd&#34;&gt;Converting UTF-8 NFD filenames to UTF-8 NFC, in either rsync or afpd&lt;/a&gt; (Server Fault)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.apache.org/subversion/NonNormalizingUnicodeCompositionAwareness&#34;&gt;http://wiki.apache.org/subversion/NonNormalizingUnicodeCompositionAwareness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Unicode_equivalence#Example&#34;&gt;https://en.wikipedia.org/wiki/Unicode_equivalence#Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://zaiste.net/2012/07/brand_new_rsync_for_osx/&#34;&gt;http://zaiste.net/2012/07/brand_new_rsync_for_osx/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gogo244.wordpress.com/2014/09/17/drived-me-crazy-convert-utf-8-mac-to-utf-8/&#34;&gt;https://gogo244.wordpress.com/2014/09/17/drived-me-crazy-convert-utf-8-mac-to-utf-8/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:4991e3b1a73c18d62800431513a9f742:1&#34;&gt;As explained in the Japanese Perl Users article &lt;a href=&#34;http://perl-users.jp/articles/advent-calendar/2010/english/24&#34;&gt;Encode::UTF8Mac makes you happy while handling file names on MacOSX&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4991e3b1a73c18d62800431513a9f742:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

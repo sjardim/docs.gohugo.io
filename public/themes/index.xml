@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Themes on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/themes/</link>
+    <description>Recent content in Themes on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 12 May 2014 10:03:52 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/themes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Themes Overview</title>
+      <link>http://localhost:1313/themes/overview/</link>
+      <pubDate>Mon, 12 May 2014 10:03:52 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes/overview/</guid>
+      <description>&lt;p&gt;Hugo provides a robust theming system which is simple, yet capable of producing
+even the most complicated websites.&lt;/p&gt;
+
+&lt;p&gt;The Hugo community has created &lt;a href=&#34;//themes.gohugo.io/&#34;&gt;a wide variety of beautiful themes&lt;/a&gt;, as demoed at &lt;a href=&#34;//themes.gohugo.io/&#34;&gt;themes.gohugo.io&lt;/a&gt;,
+ready for using in your own site.&lt;/p&gt;
+
+&lt;p&gt;Hugo themes have been designed to be the perfect balance between
+simplicity and functionality. Hugo themes are powered by the excellent
+Go template library. If you are new to Go templates, see our &lt;a href=&#34;http://localhost:1313/templates/go-templates/&#34;&gt;primer on
+Go templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hugo themes support all modern features you come to expect. They are
+structured in such a way to eliminate code duplication. Themes are also
+designed to be very easy to customize while retaining the ability to
+maintain upgradeability as the upstream theme changes.&lt;/p&gt;
+
+&lt;p&gt;Hugo currently doesn’t ship with a “default” theme, allowing the user to
+pick whichever theme best suits their project.&lt;/p&gt;
+
+&lt;p&gt;We hope you will find Hugo themes perfect for your site.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Themes</title>
+      <link>http://localhost:1313/themes/installing/</link>
+      <pubDate>Mon, 12 May 2014 10:09:49 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes/installing/</guid>
+      <description>
+
+&lt;p&gt;Community-contributed &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;Hugo themes&lt;/a&gt;, showcased
+at &lt;a href=&#34;//themes.gohugo.io/&#34;&gt;themes.gohugo.io&lt;/a&gt;, are hosted in a centralized
+GitHub repository.  The &lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;Hugo Themes Repo&lt;/a&gt;
+itself at &lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;github.com/spf13/hugoThemes&lt;/a&gt; is
+really a meta repository which contains pointers to set of contributed themes.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-all-themes:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Installing all themes&lt;/h2&gt;
+
+&lt;p&gt;If you would like to install all of the available Hugo themes, simply
+clone the entire repository from within your working directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git clone --recursive https://github.com/spf13/hugoThemes.git themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;installing-a-specific-theme:3cef5cab5612f8cc3d40c6e13331783b&#34;&gt;Installing a specific theme&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir themes
+$ cd themes
+$ git clone URL_TO_THEME
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using a Theme</title>
+      <link>http://localhost:1313/themes/usage/</link>
+      <pubDate>Mon, 12 May 2014 10:09:27 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes/usage/</guid>
+      <description>&lt;p&gt;Please make certain you have installed the themes you want to use in the
+&lt;code&gt;/themes&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;To use a theme for a site:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo -t ThemeName
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;em&gt;ThemeName&lt;/em&gt; must match the name of the directory inside &lt;code&gt;/themes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hugo will then apply the theme first, then apply anything that is in the local
+directory. To learn more, go to &lt;a href=&#34;http://localhost:1313/themes/customizing/&#34;&gt;customizing themes&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Customizing a Theme</title>
+      <link>http://localhost:1313/themes/customizing/</link>
+      <pubDate>Mon, 12 May 2014 10:09:34 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes/customizing/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;The following are key concepts for Hugo site customization. Hugo permits you to &lt;strong&gt;supplement or override&lt;/strong&gt; any theme template or static file, with files in your working directory.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;When you use a theme cloned from its git repository, you do not edit the theme&amp;rsquo;s files directly. Rather, you override them as per the following:&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;replace-static-files:0b8b0e4b5279f6824ca9414b485f6c4a&#34;&gt;Replace Static Files&lt;/h2&gt;
+
+&lt;p&gt;For including a different file than what the theme ships with. For example, if you would like to use a more recent version of jQuery than what the theme happens to include, simply place an identically-named file in the same relative location but in your working directory.&lt;/p&gt;
+
+&lt;p&gt;For example, if the theme has jQuery 1.6 in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/themes/themename/static/js/jquery.min.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; you would simply place your file in the same relative path, but in the root of your working folder:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/static/js/jquery.min.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;replace-a-single-template-file:0b8b0e4b5279f6824ca9414b485f6c4a&#34;&gt;Replace a single template file&lt;/h2&gt;
+
+&lt;p&gt;Anytime Hugo looks for a matching template, it will first check the working directory before looking in the theme directory. If you would like to modify a template, simply create that template in your local &lt;code&gt;layouts&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/templates/overview/&#34;&gt;template documentation&lt;/a&gt; &lt;em&gt;each different template type explains the rules it uses to determine which template to use&lt;/em&gt;. Read and understand these rules carefully.&lt;/p&gt;
+
+&lt;p&gt;This is especially helpful when the theme creator used &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;. These partial templates are perfect for easy injection into the theme with minimal maintenance to ensure future compatibility.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/themes/themename/layouts/_default/single.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; would be overridden by:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/layouts/_default/single.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: This only works for templates that Hugo &amp;ldquo;knows about&amp;rdquo; (that follow its convention for folder structure and naming). If the theme imports template files in a creatively-named directory, Hugo won’t know to look for the local &lt;code&gt;/layouts&lt;/code&gt; first.&lt;/p&gt;
+
+&lt;h2 id=&#34;replace-an-archetype:0b8b0e4b5279f6824ca9414b485f6c4a&#34;&gt;Replace an archetype&lt;/h2&gt;
+
+&lt;p&gt;If the archetype that ships with the theme for a given content type (or all content types) doesn’t fit with how you are using the theme, feel free to copy it to your &lt;code&gt;/archetypes&lt;/code&gt; directory and make modifications as you see fit.&lt;/p&gt;
+
+&lt;h2 id=&#34;beware-of-the-default:0b8b0e4b5279f6824ca9414b485f6c4a&#34;&gt;Beware of the default&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Default&lt;/strong&gt; is a very powerful force in Hugo, especially as it pertains to overwriting theme files. If a default is located in the local archetype directory or &lt;code&gt;/layouts/_default/&lt;/code&gt; directory, it will be used instead of any of the similar files in the theme.&lt;/p&gt;
+
+&lt;p&gt;It is usually better to override specific files rather than using the default in your working directory.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a Theme</title>
+      <link>http://localhost:1313/themes/creation/</link>
+      <pubDate>Mon, 12 May 2014 10:09:17 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes/creation/</guid>
+      <description>
+
+&lt;p&gt;Hugo has the ability to create a new theme in your themes directory for you
+using the &lt;code&gt;hugo new&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hugo new theme [name]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This command will initialize all of the files and directories a basic theme
+would need. Hugo themes are written in the Go template language. If you are new
+to Go, the &lt;a href=&#34;http://localhost:1313/layout/go-templates/&#34;&gt;Go template primer&lt;/a&gt; will help you get started.&lt;/p&gt;
+
+&lt;h2 id=&#34;theme-components:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Theme Components&lt;/h2&gt;
+
+&lt;p&gt;A theme consists of templates and static assets such as javascript and css
+files. Themes can also optionally provide &lt;a href=&#34;http://localhost:1313/content/archetypes/&#34;&gt;archetypes&lt;/a&gt;
+which are archetypal content types used by the &lt;code&gt;hugo new&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h3 id=&#34;layouts:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Layouts&lt;/h3&gt;
+
+&lt;p&gt;Hugo is built around the concept that things should be as simple as possible.
+Fundamentally website content is displayed in two different ways, a single
+piece of content and a list of content items. With Hugo a theme layout starts
+with the defaults. As additional layouts are defined they are used for the
+content type or section they apply to. This keeps layouts simple, but permits
+a large amount of flexibility.&lt;/p&gt;
+
+&lt;h3 id=&#34;single-content:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Single Content&lt;/h3&gt;
+
+&lt;p&gt;The default single file layout is located at &lt;code&gt;layouts/_default/single.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;list-of-contents:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;List of Contents&lt;/h3&gt;
+
+&lt;p&gt;The default list file layout is located at &lt;code&gt;layouts/_default/list.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;partial-templates:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Partial Templates&lt;/h3&gt;
+
+&lt;p&gt;Theme creators should liberally use &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;
+throughout their theme files. Not only is a good DRY practice to include shared
+code, but partials are a special template type that enables the themes end user
+to be able to overwrite just a small piece of a file or inject code into the
+theme from their local /layouts. These partial templates are perfect for easy
+injection into the theme with minimal maintenance to ensure future
+compatibility.&lt;/p&gt;
+
+&lt;h3 id=&#34;static:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Static&lt;/h3&gt;
+
+&lt;p&gt;Everything in the static directory will be copied directly into the final site
+when rendered. No structure is provided here to enable complete freedom. It is
+common to organize the static content into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/css
+/js
+/img
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The actual structure is entirely up to you, the theme creator, on how you would like to organize your files.&lt;/p&gt;
+
+&lt;h3 id=&#34;archetypes:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Archetypes&lt;/h3&gt;
+
+&lt;p&gt;If your theme makes use of specific keys in the front matter, it is a good idea
+to provide an archetype for each content type you have. Archetypes follow the
+&lt;a href=&#34;http://localhost:1313/content/archetypes/&#34;&gt;guidelines provided&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;generator-meta-tag:e2f4d16490492eca6fd5eb1f0df60240&#34;&gt;Generator meta tag&lt;/h3&gt;
+
+&lt;p&gt;With a growing community around Hugo we recommend theme creators to include the &lt;a href=&#34;http://localhost:1313/templates/variables/#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Generator meta tag&lt;/a&gt; with &lt;code&gt;.Hugo.Generator&lt;/code&gt; in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of your HTML code. The output  might looks like &lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.13&amp;quot; /&amp;gt;&lt;/code&gt; and helps us to analyse the usage and popularity of Hugo.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

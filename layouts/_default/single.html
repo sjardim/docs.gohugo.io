@@ -1,0 +1,17 @@
+{{ partial "main.html" . }}
+<h1>{{ .Title }}</h1>
+{{ if .Params.toc }}
+
+<aside id="toc" class="toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
+  <h5>Table of Contents</h5>
+  {{ .TableOfContents }}
+</aside>
+
+<section>
+{{ .Content }}
+</section>
+
+{{ else }}
+{{ .Content }}
+{{ end }}
+{{ partial "footer.html" . }}

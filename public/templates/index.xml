@@ -1,0 +1,2803 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Templates on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/templates/</link>
+    <description>Recent content in Templates on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/templates/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo Templates</title>
+      <link>http://localhost:1313/templates/overview/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/overview/</guid>
+      <description>
+
+&lt;p&gt;Hugo uses the excellent Go html/template library for its template engine.
+It is an extremely lightweight engine that provides a very small amount of
+logic. In our experience it is just the right amount of logic to be able
+to create a good static website.&lt;/p&gt;
+
+&lt;p&gt;While Hugo has a number of different template roles, most complete
+websites can be built using just a small number of template files.
+Please don’t be afraid of the variety of different template roles. They
+enable Hugo to build very complicated sites. Most sites will only
+need to create a &lt;a href=&#34;http://localhost:1313/templates/content/&#34;&gt;/layouts/_default/single.html&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;/layouts/_default/list.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are new to Go&amp;rsquo;s templates, the &lt;a href=&#34;http://localhost:1313/layout/go-templates/&#34;&gt;Go Template Primer&lt;/a&gt;
+is a great place to start.&lt;/p&gt;
+
+&lt;p&gt;If you are familiar with Go’s templates, Hugo provides some &lt;a href=&#34;http://localhost:1313/templates/functions/&#34;&gt;additional
+template functions&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;variables&lt;/a&gt; you will want to be familiar
+with.&lt;/p&gt;
+
+&lt;h2 id=&#34;primary-template-roles:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Primary Template roles&lt;/h2&gt;
+
+&lt;p&gt;There are 3 primary kinds of templates that Hugo works with.&lt;/p&gt;
+
+&lt;h3 id=&#34;single-templates-content:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/content/&#34;&gt;Single&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Render a single piece of content&lt;/p&gt;
+
+&lt;h3 id=&#34;list-templates-list:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;List&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Page that list multiple pieces of content&lt;/p&gt;
+
+&lt;h3 id=&#34;homepage-templates-homepage:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/homepage/&#34;&gt;Homepage&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;The homepage of your site&lt;/p&gt;
+
+&lt;h2 id=&#34;supporting-template-roles-optional:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Supporting Template Roles (optional)&lt;/h2&gt;
+
+&lt;p&gt;Hugo also has additional kinds of templates all of which are optional&lt;/p&gt;
+
+&lt;h3 id=&#34;partial-templates-templates-partials:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;Partial Templates&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Common page parts to be included in the above mentioned templates&lt;/p&gt;
+
+&lt;h3 id=&#34;content-views-templates-views:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/views/&#34;&gt;Content Views&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Different ways of rendering a (single) content type&lt;/p&gt;
+
+&lt;h3 id=&#34;taxonomy-terms-templates-terms:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;Taxonomy Terms&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A list of the terms used for a specific taxonomy, e.g. a Tag cloud&lt;/p&gt;
+
+&lt;h2 id=&#34;other-templates-generally-unnecessary:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Other Templates (generally unnecessary)&lt;/h2&gt;
+
+&lt;h3 id=&#34;rss-templates-rss:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/rss/&#34;&gt;RSS&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Used to render all rss documents&lt;/p&gt;
+
+&lt;h3 id=&#34;sitemap-templates-sitemap:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/sitemap/&#34;&gt;Sitemap&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Used to render the XML sitemap&lt;/p&gt;
+
+&lt;h3 id=&#34;404-templates-404:68f80267fa3a50980dbb745a782b8dca&#34;&gt;&lt;a href=&#34;http://localhost:1313/templates/404/&#34;&gt;404&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;This template will create a 404.html page used when hosting on GitHub Pages&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Go Template Primer</title>
+      <link>http://localhost:1313/templates/go-templates/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/go-templates/</guid>
+      <description>
+
+&lt;p&gt;Hugo uses the excellent &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;html/template&lt;/a&gt; library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks, you will find a lot of
+similarities in Go templates.&lt;/p&gt;
+
+&lt;p&gt;This document is a brief primer on using Go templates. The &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go docs&lt;/a&gt;
+go into more depth and cover features that aren&amp;rsquo;t mentioned here.&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction-to-go-templates:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Introduction to Go Templates&lt;/h2&gt;
+
+&lt;p&gt;Go templates provide an extremely simple template language. It adheres to the
+belief that only the most basic of logic belongs in the template or view layer.
+One consequence of this simplicity is that Go templates parse very quickly.&lt;/p&gt;
+
+&lt;p&gt;A unique characteristic of Go templates is they are content aware. Variables and
+content will be sanitized depending on the context of where they are used. More
+details can be found in the &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-syntax:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Basic Syntax&lt;/h2&gt;
+
+&lt;p&gt;Go lang templates are HTML files with the addition of variables and
+functions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Go variables and functions are accessible within {{ }}&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Accessing a predefined variable &amp;ldquo;foo&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ foo }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Parameters are separated using spaces&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Calling the &lt;code&gt;add&lt;/code&gt; function with input of 1, 2:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ add 1 2 }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Methods and fields are accessed via dot notation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Accessing the Page Parameter &amp;ldquo;bar&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ .Params.bar }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Parentheses can be used to group items together&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if or (isset .Params &amp;quot;alt&amp;quot;) (isset .Params &amp;quot;caption&amp;quot;) }} Caption {{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;variables:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Variables&lt;/h2&gt;
+
+&lt;p&gt;Each Go template has a struct (object) made available to it. In Hugo, each
+template is passed either a page or a node struct depending on which type of
+page you are rendering. More details are available on the
+&lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;A variable is accessed by referencing the variable name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Variables can also be defined and referenced.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $address := &amp;quot;123 Main St.&amp;quot;}}
+{{ $address }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;functions:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Functions&lt;/h2&gt;
+
+&lt;p&gt;Go template ships with a few functions which provide basic functionality. The Go
+template system also provides a mechanism for applications to extend the
+available functions with their own. &lt;a href=&#34;http://localhost:1313/layout/functions/&#34;&gt;Hugo template
+functions&lt;/a&gt; provide some additional functionality we believe
+are useful for building websites. Functions are called by using their name
+followed by the required parameters separated by spaces. Template
+functions cannot be added without recompiling Hugo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 1: Adding numbers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ add 1 2 }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2: Comparing numbers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ lt 1 2 }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(There are more boolean operators, detailed in the
+&lt;a href=&#34;http://golang.org/pkg/text/template/#hdr-Functions&#34;&gt;template documentation&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;h2 id=&#34;includes:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Includes&lt;/h2&gt;
+
+&lt;p&gt;When including another template, you will pass to it the data it will be
+able to access. To pass along the current context, please remember to
+include a trailing dot. The templates location will always be starting at
+the /layout/ directory within Hugo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ template &amp;quot;partials/header.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And, starting with Hugo v0.12, you may also use the &lt;code&gt;partial&lt;/code&gt; call
+for &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;logic:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Logic&lt;/h2&gt;
+
+&lt;p&gt;Go templates provide the most basic iteration and conditional logic.&lt;/p&gt;
+
+&lt;h3 id=&#34;iteration:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Iteration&lt;/h3&gt;
+
+&lt;p&gt;Just like in Go, the Go templates make heavy use of &lt;code&gt;range&lt;/code&gt; to iterate over
+a map, array or slice. The following are different examples of how to use
+range.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 1: Using Context&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range array }}
+    {{ . }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2: Declaring value variable name&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{range $element := array}}
+    {{ $element }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2: Declaring key and value variable name&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{range $index, $element := array}}
+    {{ $index }}
+    {{ $element }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;conditionals:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Conditionals&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;if&lt;/code&gt;, &lt;code&gt;else&lt;/code&gt;, &lt;code&gt;with&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt; &amp;amp; &lt;code&gt;and&lt;/code&gt; provide the framework for handling conditional
+logic in Go Templates. Like &lt;code&gt;range&lt;/code&gt;, each statement is closed with &lt;code&gt;end&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Go Templates treat the following values as false:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;false&lt;/li&gt;
+&lt;li&gt;0&lt;/li&gt;
+&lt;li&gt;any array, slice, map, or string of length zero&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 1: &lt;code&gt;if&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if isset .Params &amp;quot;title&amp;quot; }}&amp;lt;h4&amp;gt;{{ index .Params &amp;quot;title&amp;quot; }}&amp;lt;/h4&amp;gt;{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2: &lt;code&gt;if&lt;/code&gt; … &lt;code&gt;else&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if isset .Params &amp;quot;alt&amp;quot; }}
+    {{ index .Params &amp;quot;alt&amp;quot; }}
+{{else}}
+    {{ index .Params &amp;quot;caption&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 3: &lt;code&gt;and&lt;/code&gt; &amp;amp; &lt;code&gt;or&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if and (or (isset .Params &amp;quot;title&amp;quot;) (isset .Params &amp;quot;caption&amp;quot;)) (isset .Params &amp;quot;attr&amp;quot;)}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 4: &lt;code&gt;with&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An alternative way of writing &amp;ldquo;&lt;code&gt;if&lt;/code&gt;&amp;rdquo; and then referencing the same value
+is to use &amp;ldquo;&lt;code&gt;with&lt;/code&gt;&amp;rdquo; instead. &lt;code&gt;with&lt;/code&gt; rebinds the context &lt;code&gt;.&lt;/code&gt; within its scope,
+and skips the block if the variable is absent.&lt;/p&gt;
+
+&lt;p&gt;The first example above could be simplified as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with .Params.title }}&amp;lt;h4&amp;gt;{{ . }}&amp;lt;/h4&amp;gt;{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 5: &lt;code&gt;if&lt;/code&gt; … &lt;code&gt;else if&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if isset .Params &amp;quot;alt&amp;quot; }}
+    {{ index .Params &amp;quot;alt&amp;quot; }}
+{{ else if isset .Params &amp;quot;caption&amp;quot; }}
+    {{ index .Params &amp;quot;caption&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;pipes:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Pipes&lt;/h2&gt;
+
+&lt;p&gt;One of the most powerful components of Go templates is the ability to
+stack actions one after another. This is done by using pipes. Borrowed
+from Unix pipes, the concept is simple, each pipeline&amp;rsquo;s output becomes the
+input of the following pipe.&lt;/p&gt;
+
+&lt;p&gt;Because of the very simple syntax of Go templates, the pipe is essential
+to being able to chain together function calls. One limitation of the
+pipes is that they only can work with a single value and that value
+becomes the last parameter of the next pipeline.&lt;/p&gt;
+
+&lt;p&gt;A few simple examples should help convey how to use the pipe.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if eq 1 1 }} Same {{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;is the same as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ eq 1 1 | if }} Same {{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It does look odd to place the &lt;code&gt;if&lt;/code&gt; at the end, but it does provide a good
+illustration of how to use the pipes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ index .Params &amp;quot;disqus_url&amp;quot; | html }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Access the page parameter called &amp;ldquo;disqus_url&amp;rdquo; and escape the HTML.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;index&lt;/code&gt; function is a &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; built-in, and you can read about it &lt;a href=&#34;http://golang.org/pkg/text/template/&#34;&gt;here&lt;/a&gt;. &lt;code&gt;index&lt;/code&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip;returns the result of indexing its first argument by the following arguments. Thus &amp;ldquo;index x 1 2 3&amp;rdquo; is, in Go syntax, &lt;code&gt;x[1][2][3]&lt;/code&gt;. Each indexed item must be a map, slice, or array.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if or (or (isset .Params &amp;quot;title&amp;quot;) (isset .Params &amp;quot;caption&amp;quot;)) (isset .Params &amp;quot;attr&amp;quot;)}}
+Stuff Here
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Could be rewritten as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{  isset .Params &amp;quot;caption&amp;quot; | or isset .Params &amp;quot;title&amp;quot; | or isset .Params &amp;quot;attr&amp;quot; | if }}
+Stuff Here
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;internet-explorer-conditional-comments-using-pipes:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Internet Explorer conditional comments using Pipes&lt;/h3&gt;
+
+&lt;p&gt;By default, Go Templates remove HTML comments from output. This has the unfortunate side effect of removing Internet Explorer conditional comments. As a workaround, use something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ &amp;quot;&amp;lt;!--[if lt IE 9]&amp;gt;&amp;quot; | safeHTML }}
+  &amp;lt;script src=&amp;quot;html5shiv.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+{{ &amp;quot;&amp;lt;![endif]--&amp;gt;&amp;quot; | safeHTML }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alternatively, use the backtick (&lt;code&gt;`&lt;/code&gt;) to quote the IE conditional comments, avoiding the tedious task of escaping every double quotes (&lt;code&gt;&amp;quot;&lt;/code&gt;) inside, as demonstrated in the &lt;a href=&#34;http://golang.org/pkg/text/template/#hdr-Examples&#34;&gt;examples&lt;/a&gt; in the Go text/template documentation, e.g.:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ `&amp;lt;!--[if lt IE 7]&amp;gt;&amp;lt;html class=&amp;quot;no-js lt-ie9 lt-ie8 lt-ie7&amp;quot;&amp;gt;&amp;lt;![endif]--&amp;gt;` | safeHTML }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;context-a-k-a-the-dot:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Context (a.k.a. the dot)&lt;/h2&gt;
+
+&lt;p&gt;The most easily overlooked concept to understand about Go templates is that &lt;code&gt;{{ . }}&lt;/code&gt;
+always refers to the current context. In the top level of your template, this
+will be the data set made available to it. Inside of a iteration, however, it will have
+the value of the current item. When inside of a loop, the context has changed:
+&lt;code&gt;{{ . }}&lt;/code&gt; will no longer refer to the data available to the entire page. If you need
+to
+access this from within the loop, you will likely want to do one of the following:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Set it to a variable instead of depending on the context.  For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $title := .Site.Title }}
+{{ range .Params.tags }}
+  &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ $baseurl }}/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;
+    - {{ $title }}
+  &amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice how once we have entered the loop the value of &lt;code&gt;{{ . }}&lt;/code&gt; has changed. We
+have defined a variable outside of the loop so we have access to it from within
+the loop.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;$.&lt;/code&gt; to access the global context from anywhere.
+Here is an equivalent example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Params.tags }}
+  &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ $baseurl }}/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;
+    - {{ $.Site.Title }}
+  &amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is because &lt;code&gt;$&lt;/code&gt;, a special variable, is set to the starting value
+of &lt;code&gt;.&lt;/code&gt; the dot by default,
+a &lt;a href=&#34;http://golang.org/pkg/text/template/#hdr-Variables&#34;&gt;documented feature&lt;/a&gt;
+of Go text/template.  Very handy, eh?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;However, this little magic would cease to work if someone were to
+mischievously redefine &lt;code&gt;$&lt;/code&gt;, e.g. &lt;code&gt;{{ $ := .Site }}&lt;/code&gt;.
+&lt;em&gt;(No, don&amp;rsquo;t do it!)&lt;/em&gt;
+You may, of course, recover from this mischief by using &lt;code&gt;{{ $ := . }}&lt;/code&gt;
+in a global context to reset &lt;code&gt;$&lt;/code&gt; to its default value.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Hugo Parameters&lt;/h1&gt;
+
+&lt;p&gt;Hugo provides the option of passing values to the template language
+through the site configuration (for sitewide values), or through the meta
+data of each specific piece of content. You can define any values of any
+type (supported by your front matter/config format) and use them however
+you want to inside of your templates.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
+
+&lt;p&gt;In each piece of content, you can provide variables to be used by the
+templates. This happens in the &lt;a href=&#34;http://localhost:1313/content/front-matter/&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;An example of this is used in this documentation site. Most of the pages
+benefit from having the table of contents provided. Sometimes the TOC just
+doesn&amp;rsquo;t make a lot of sense. We&amp;rsquo;ve defined a variable in our front matter
+of some pages to turn off the TOC from being displayed.&lt;/p&gt;
+
+&lt;p&gt;Here is the example front matter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;Permalinks&amp;quot;
+date: &amp;quot;2013-11-18&amp;quot;
+aliases:
+  - &amp;quot;/doc/permalinks/&amp;quot;
+groups: [&amp;quot;extras&amp;quot;]
+groups_weight: 30
+notoc: true
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is the corresponding code inside of the template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  {{ if not .Params.notoc }}
+    &amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;well col-md-4 col-sm-6&amp;quot;&amp;gt;
+    {{ .TableOfContents }}
+    &amp;lt;/div&amp;gt;
+  {{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Site (config) Parameters&lt;/h2&gt;
+
+&lt;p&gt;In your top-level configuration file (e.g., &lt;code&gt;config.yaml&lt;/code&gt;) you can define site
+parameters, which are values which will be available to you in partials.&lt;/p&gt;
+
+&lt;p&gt;For instance, you might declare:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;params:
+  CopyrightHTML: &amp;quot;Copyright &amp;amp;#xA9; 2013 John Doe. All Rights Reserved.&amp;quot;
+  TwitterUser: &amp;quot;spf13&amp;quot;
+  SidebarRecentLimit: 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Within a footer layout, you might then declare a &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt; which is only
+provided if the &lt;code&gt;CopyrightHTML&lt;/code&gt; parameter is provided, and if it is given,
+you would declare it to be HTML-safe, so that the HTML entity is not escaped
+again.  This would let you easily update just your top-level config file each
+January 1st, instead of hunting through your templates.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{if .Site.Params.CopyrightHTML}}&amp;lt;footer&amp;gt;
+&amp;lt;div class=&amp;quot;text-center&amp;quot;&amp;gt;{{.Site.Params.CopyrightHTML | safeHTML}}&amp;lt;/div&amp;gt;
+&amp;lt;/footer&amp;gt;{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An alternative way of writing the &amp;ldquo;&lt;code&gt;if&lt;/code&gt;&amp;rdquo; and then referencing the same value
+is to use &amp;ldquo;&lt;code&gt;with&lt;/code&gt;&amp;rdquo; instead. With rebinds the context &lt;code&gt;.&lt;/code&gt; within its scope,
+and skips the block if the variable is absent:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{with .Site.Params.TwitterUser}}&amp;lt;span class=&amp;quot;twitter&amp;quot;&amp;gt;
+&amp;lt;a href=&amp;quot;https://twitter.com/{{.}}&amp;quot; rel=&amp;quot;author&amp;quot;&amp;gt;
+&amp;lt;img src=&amp;quot;/images/twitter.png&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot; title=&amp;quot;Twitter: {{.}}&amp;quot;
+ alt=&amp;quot;Twitter&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+&amp;lt;/span&amp;gt;{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, if you want to pull &amp;ldquo;magic constants&amp;rdquo; out of your layouts, you can do
+so, such as in this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;nav class=&amp;quot;recent&amp;quot;&amp;gt;
+  &amp;lt;h1&amp;gt;Recent Posts&amp;lt;/h1&amp;gt;
+  &amp;lt;ul&amp;gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{.RelPermalink}}&amp;quot;&amp;gt;{{.Title}}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  {{end}}&amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Template example: Show only upcoming events&lt;/h1&gt;
+
+&lt;p&gt;Go allows you to do more than what&amp;rsquo;s shown here.  Using Hugo&amp;rsquo;s
+&lt;a href=&#34;http://localhost:1313/templates/functions/#toc_4&#34;&gt;&lt;code&gt;where&lt;/code&gt;&lt;/a&gt; function and Go built-ins, we can list
+only the items from &lt;code&gt;content/events/&lt;/code&gt; whose date (set in the front matter) is in
+the future:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;h4&amp;gt;Upcoming Events&amp;lt;/h4&amp;gt;
+&amp;lt;ul class=&amp;quot;upcoming-events&amp;quot;&amp;gt;
+{{ range where .Data.Pages.ByDate &amp;quot;Section&amp;quot; &amp;quot;events&amp;quot; }}
+  {{ if ge .Date.Unix .Now.Unix }}
+    &amp;lt;li&amp;gt;&amp;lt;span class=&amp;quot;event-type&amp;quot;&amp;gt;{{ .Type | title }} —&amp;lt;/span&amp;gt;
+      {{ .Title }}
+      on &amp;lt;span class=&amp;quot;event-date&amp;quot;&amp;gt;
+      {{ .Date.Format &amp;quot;2 January at 3:04pm&amp;quot; }}&amp;lt;/span&amp;gt;
+      at {{ .Params.place }}
+    &amp;lt;/li&amp;gt;
+  {{ end }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ace Templates</title>
+      <link>http://localhost:1313/templates/ace/</link>
+      <pubDate>Sun, 20 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/ace/</guid>
+      <description>&lt;p&gt;In addition to &lt;a href=&#34;http://localhost:1313/templates/go-templates&#34;&gt;Go templates&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/amber&#34;&gt;Amber&lt;/a&gt; templates, Hugo supports the powerful Ace templates.&lt;/p&gt;
+
+&lt;p&gt;For template documentation, follow the links from the &lt;a href=&#34;https://github.com/yosssi/ace&#34;&gt;Ace project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ace templates must be named with the ace-suffix, e.g. &lt;code&gt;list.ace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s possible to use both Go templates and Ace templates side-by-side, and include one into the other&lt;/li&gt;
+&lt;li&gt;Full Go template syntax support, including all the useful helper funcs&lt;/li&gt;
+&lt;li&gt;Partials can be included both with the Ace and the Go template syntax:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;= include partials/foo.html .&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:e903dfd3240bd859a52c42789dc482bf:ace-theme&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:e903dfd3240bd859a52c42789dc482bf:ace-theme&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{ partial &amp;quot;foo&amp;quot; . }}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One noticeable difference between Ace and the others is the inheritance support through &lt;a href=&#34;https://github.com/yosssi/ace/tree/master/examples/base_inner_template&#34;&gt;base and inner templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In Hugo the base template will be chosen in the following order:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. &amp;lt;current-path&amp;gt;/&amp;lt;template-name&amp;gt;-baseof.ace, e.g. list-baseof.ace
+2. &amp;lt;current-path&amp;gt;/baseof.ace
+3. _default/&amp;lt;template-name&amp;gt;-baseof.ace, e.g. list-baseof.ace.
+4. _default/baseof.ace
+5. &amp;lt;themedir&amp;gt;/layouts/_default/&amp;lt;template-name&amp;gt;-baseof.ace
+6. &amp;lt;themedir&amp;gt;/layouts/_default/baseof.ace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above, &lt;code&gt;current-path&lt;/code&gt; is where the corresponding inner template lives, &lt;code&gt;list.ace&lt;/code&gt;, &lt;code&gt;single.ace&lt;/code&gt;, &lt;code&gt;index.ace&lt;/code&gt; &amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.:
+index.ace
+
+./blog:
+single.ace
+baseof.ace
+
+./_default:
+baseof.ace  list.ace  single.ace  single-baseof.ace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some examples for the layout files above:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Home page: &lt;code&gt;./index.ace&lt;/code&gt; +  &lt;code&gt;./_default/baseof.ace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Single page in the &lt;code&gt;blog&lt;/code&gt; section: &lt;code&gt;./blog/single.ace&lt;/code&gt; +  &lt;code&gt;./blog/baseof.ace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Single page in another section: &lt;code&gt;./_default/single.ace&lt;/code&gt; +  &lt;code&gt;./_default/single-baseof.ace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Taxonomy page in any section: &lt;code&gt;./_default/list.ace&lt;/code&gt; +  &lt;code&gt;./_default/baseof.ace&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; In most cases one &lt;code&gt;baseof.ace&lt;/code&gt; in &lt;code&gt;_default&lt;/code&gt; will suffice.
+&lt;strong&gt;Note:&lt;/strong&gt; An Ace template without a reference to a base section, e.g. &lt;code&gt;= content&lt;/code&gt;, will be handled as a standalone template.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:e903dfd3240bd859a52c42789dc482bf:ace-theme&#34;&gt;Note that the &lt;code&gt;html&lt;/code&gt; suffix is needed, even if the filename is suffixed &lt;code&gt;ace&lt;/code&gt;. This does not work from inside a theme, see &lt;a href=&#34;https://github.com/spf13/hugo/issues/763&#34;&gt;issue 763&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e903dfd3240bd859a52c42789dc482bf:ace-theme&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Amber Templates</title>
+      <link>http://localhost:1313/templates/amber/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/amber/</guid>
+      <description>&lt;p&gt;Amber templates are another template type which Hugo supports, in addition to &lt;a href=&#34;http://localhost:1313/templates/go-templates&#34;&gt;Go templates&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/ace/&#34;&gt;Ace templates&lt;/a&gt; templates.&lt;/p&gt;
+
+&lt;p&gt;For template documentation, follow the links from the &lt;a href=&#34;https://github.com/eknkc/amber&#34;&gt;Amber project&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amber templates must be named with the amber-suffix, e.g. &lt;code&gt;list.amber&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Partials in Amber or HTML can be included with the Amber template syntax:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;import ../partials/test.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;import ../partials/test_a.amber&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Template Functions</title>
+      <link>http://localhost:1313/templates/functions/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/functions/</guid>
+      <description>
+
+&lt;p&gt;Hugo uses the excellent Go html/template library for its template engine.
+It is an extremely lightweight engine that provides a very small amount of
+logic. In our experience, it is just the right amount of logic to be able
+to create a good static website.&lt;/p&gt;
+
+&lt;p&gt;Go templates are lightweight but extensible. Hugo has added the following
+functions to the basic template logic.&lt;/p&gt;
+
+&lt;p&gt;(Go itself supplies built-in functions, including comparison operators
+and other basic tools; these are listed in the
+&lt;a href=&#34;http://golang.org/pkg/text/template/#hdr-Functions&#34;&gt;Go template documentation&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;h2 id=&#34;general:904d9cf85d985550c869e6d9741448cc&#34;&gt;General&lt;/h2&gt;
+
+&lt;h3 id=&#34;delimit:904d9cf85d985550c869e6d9741448cc&#34;&gt;delimit&lt;/h3&gt;
+
+&lt;p&gt;Loops through any array, slice or map and returns a string of all the values separated by the delimiter. There is an optional third parameter that lets you choose a different delimiter to go between the last two values.
+Maps will be sorted by the keys, and only a slice of the values will be returned, keeping a consistent output order.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Front matter
++++
+tags: [ &amp;quot;tag1&amp;quot;, &amp;quot;tag2&amp;quot;, &amp;quot;tag3&amp;quot; ]
++++
+
+// Used anywhere in a template
+Tags: {{ delimit .Params.tags &amp;quot;, &amp;quot; }}
+
+// Outputs Tags: tag1, tag2, tag3
+
+// Example with the optional &amp;quot;last&amp;quot; parameter
+Tags: {{ delimit .Params.tags &amp;quot;, &amp;quot; &amp;quot; and &amp;quot; }}
+
+// Outputs Tags: tag1, tag2 and tag3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;dict:904d9cf85d985550c869e6d9741448cc&#34;&gt;dict&lt;/h3&gt;
+
+&lt;p&gt;Creates a dictionary (map[string, interface{}), expects parameters added in value:object fasion.
+Invalid combinations like keys that are not strings or uneven number of parameters, will result in an exception thrown
+Useful for passing maps to partials when adding to a template.&lt;/p&gt;
+
+&lt;p&gt;e.g. Pass into &amp;ldquo;foo.html&amp;rdquo; a map with the keys &amp;ldquo;important, content&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{$important := .Site.Params.SomethingImportant }}
+{{range .Site.Params.Bar}}
+    {{partial &amp;quot;foo&amp;quot; (dict &amp;quot;content&amp;quot; . &amp;quot;important&amp;quot; $important)}}
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;ldquo;foo.html&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Important {{.important}}
+{{.content}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or Create a map on the fly to pass into&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{partial &amp;quot;foo&amp;quot; (dict &amp;quot;important&amp;quot; &amp;quot;Smiles&amp;quot; &amp;quot;content&amp;quot; &amp;quot;You should do more&amp;quot;)}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;echoparam:904d9cf85d985550c869e6d9741448cc&#34;&gt;echoParam&lt;/h3&gt;
+
+&lt;p&gt;Prints a parameter if it is set.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ echoParam .Params &amp;quot;project_url&amp;quot; }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;eq:904d9cf85d985550c869e6d9741448cc&#34;&gt;eq&lt;/h3&gt;
+
+&lt;p&gt;Returns true if the parameters are equal.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if eq .Section &amp;quot;blog&amp;quot; }}current{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;first:904d9cf85d985550c869e6d9741448cc&#34;&gt;first&lt;/h3&gt;
+
+&lt;p&gt;Slices an array to only the first &lt;em&gt;N&lt;/em&gt; elements.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range first 10 .Data.Pages }}
+    {{ .Render &amp;quot;summary&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;last:904d9cf85d985550c869e6d9741448cc&#34;&gt;last&lt;/h3&gt;
+
+&lt;p&gt;Slices an array to only the last &lt;em&gt;N&lt;/em&gt; elements.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range last 10 .Data.Pages }}
+    {{ .Render &amp;quot;summary&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;after:904d9cf85d985550c869e6d9741448cc&#34;&gt;after&lt;/h3&gt;
+
+&lt;p&gt;Slices an array to only the items after the &lt;em&gt;N&lt;/em&gt;th item. Use this in combination
+with &lt;code&gt;first&lt;/code&gt; to use both halves of an array split at item &lt;em&gt;N&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range after 10 .Data.Pages }}
+    {{ .Render &amp;quot;title&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;getenv:904d9cf85d985550c869e6d9741448cc&#34;&gt;getenv&lt;/h3&gt;
+
+&lt;p&gt;Returns the value of an environment variable.&lt;/p&gt;
+
+&lt;p&gt;Takes a string containing the name of the variable as input. Returns
+an empty string if the variable is not set, otherwise returns the
+value of the variable. Note that in Unix-like environments, the
+variable must also be exported in order to be seen by &lt;code&gt;hugo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ getenv &amp;quot;HOME&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;in:904d9cf85d985550c869e6d9741448cc&#34;&gt;in&lt;/h3&gt;
+
+&lt;p&gt;Checks if an element is in an array (or slice) and returns a boolean.
+The elements supported are strings, integers and floats (only float64 will match as expected).
+In addition, it can also check if a substring exists in a string.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if in .Params.tags &amp;quot;Git&amp;quot; }}Follow me on GitHub!{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if in &amp;quot;this string contains a substring&amp;quot; &amp;quot;substring&amp;quot; }}Substring found!{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;intersect:904d9cf85d985550c869e6d9741448cc&#34;&gt;intersect&lt;/h3&gt;
+
+&lt;p&gt;Given two arrays (or slices), this function will return the common elements in the arrays.
+The elements supported are strings, integers and floats (only float64).&lt;/p&gt;
+
+&lt;p&gt;A useful example of this functionality is a &amp;lsquo;similar posts&amp;rsquo; block.
+Create a list of links to posts where any of the tags in the current post match any tags in other posts.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+{{ $page_link := .Permalink }}
+{{ $tags := .Params.tags }}
+{{ range .Site.Recent }}
+    {{ $page := . }}
+    {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+    {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $page.Permalink }}&amp;quot;&amp;gt;{{ $page.Title }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    {{ end }}
+{{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;isset:904d9cf85d985550c869e6d9741448cc&#34;&gt;isset&lt;/h3&gt;
+
+&lt;p&gt;Returns true if the parameter is set.
+Takes either a slice, array or channel and an index or a map and a key as input.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ if isset .Params &amp;quot;project_url&amp;quot; }} {{ index .Params &amp;quot;project_url&amp;quot; }}{{ end }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;seq:904d9cf85d985550c869e6d9741448cc&#34;&gt;seq&lt;/h3&gt;
+
+&lt;p&gt;Creates a sequence of integers. It&amp;rsquo;s named and used as GNU&amp;rsquo;s seq.&lt;/p&gt;
+
+&lt;p&gt;Some examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt; =&amp;gt; &lt;code&gt;1, 2, 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 2 4&lt;/code&gt; =&amp;gt; &lt;code&gt;1, 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-3&lt;/code&gt; =&amp;gt; &lt;code&gt;-1, -2, -3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 4&lt;/code&gt; =&amp;gt; &lt;code&gt;1, 2, 3, 4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 -2&lt;/code&gt; =&amp;gt; &lt;code&gt;1, 0, -1, -2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sort:904d9cf85d985550c869e6d9741448cc&#34;&gt;sort&lt;/h3&gt;
+
+&lt;p&gt;Sorts maps, arrays and slices, returning a sorted slice.
+A sorted array of map values will be returned, with the keys eliminated.
+There are two optional arguments, which are &lt;code&gt;sortByField&lt;/code&gt; and &lt;code&gt;sortAsc&lt;/code&gt;.
+If left blank, sort will sort by keys (for maps) in ascending order.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Front matter
++++
+tags: [ &amp;quot;tag3&amp;quot;, &amp;quot;tag1&amp;quot;, &amp;quot;tag2&amp;quot; ]
++++
+
+// Site config
++++
+[params.authors]
+  [params.authors.Derek]
+    &amp;quot;firstName&amp;quot;  = &amp;quot;Derek&amp;quot;
+    &amp;quot;lastName&amp;quot;   = &amp;quot;Perkins&amp;quot;
+  [params.authors.Joe]
+    &amp;quot;firstName&amp;quot;  = &amp;quot;Joe&amp;quot;
+    &amp;quot;lastName&amp;quot;   = &amp;quot;Bergevin&amp;quot;
+  [params.authors.Tanner]
+    &amp;quot;firstName&amp;quot;  = &amp;quot;Tanner&amp;quot;
+    &amp;quot;lastName&amp;quot;   = &amp;quot;Linsley&amp;quot;
++++
+
+// Use default sort options - sort by key / ascending
+Tags: {{ range sort .Params.tags }}{{ . }} {{ end }}
+
+// Outputs Tags: tag1 tag2 tag3
+
+// Sort by value / descending
+Tags: {{ range sort .Params.tags &amp;quot;value&amp;quot; &amp;quot;desc&amp;quot; }}{{ . }} {{ end }}
+
+// Outputs Tags: tag3 tag2 tag1
+
+// Use default sort options - sort by value / descending
+Authors: {{ range sort .Site.Params.authors }}{{ .firstName }} {{ end }}
+
+// Outputs Authors: Derek Joe Tanner
+
+// Use default sort options - sort by value / descending
+Authors: {{ range sort .Site.Params.authors &amp;quot;lastName&amp;quot; &amp;quot;desc&amp;quot; }}{{ .lastName }} {{ end }}
+
+// Outputs Authors: Perkins Linsley Bergevin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;where:904d9cf85d985550c869e6d9741448cc&#34;&gt;where&lt;/h3&gt;
+
+&lt;p&gt;Filters an array to only elements containing a matching value for a given field.&lt;/p&gt;
+
+&lt;p&gt;Works on &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range where .Data.Pages &amp;quot;Section&amp;quot; &amp;quot;post&amp;quot; }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It can be used with dot chaining second argument to refer a nested element of a value.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Front matter on some pages
++++
+series: golang
++++
+
+{{ range where .Site.Recent &amp;quot;Params.series&amp;quot; &amp;quot;golang&amp;quot; }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It can also be used with an operator like &lt;code&gt;!=&lt;/code&gt;, &lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;in&lt;/code&gt; etc. Without an operator (like above), &lt;code&gt;where&lt;/code&gt; compares a given field with a matching value in a way like &lt;code&gt;=&lt;/code&gt; is specified.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range where .Data.Pages &amp;quot;Section&amp;quot; &amp;quot;!=&amp;quot; &amp;quot;post&amp;quot; }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Following operators are now available&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;=&lt;/code&gt;, &lt;code&gt;==&lt;/code&gt;, &lt;code&gt;eq&lt;/code&gt;: True if a given field value equals a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!=&lt;/code&gt;, &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;, &lt;code&gt;ne&lt;/code&gt;: True if a given field value doesn&amp;rsquo;t equal a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;ge&lt;/code&gt;: True if a given field value is greater than or equal to a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;gt&lt;/code&gt;: True if a given field value is greater than a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;, &lt;code&gt;le&lt;/code&gt;: True if a given field value is lesser than or equal to a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;lt&lt;/code&gt;: True if a given field value is lesser than a matching value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;in&lt;/code&gt;: True if a given field value is included in a matching value. A matching value must be an array or a slice&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;not in&lt;/code&gt;: True if a given field value isn&amp;rsquo;t included in a matching value. A matching value must be an array or a slice&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;where&lt;/code&gt; and &lt;code&gt;first&lt;/code&gt; can be stacked, e.g.:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range first 5 (where .Data.Pages &amp;quot;Section&amp;quot; &amp;quot;post&amp;quot;) }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;unset-field:904d9cf85d985550c869e6d9741448cc&#34;&gt;Unset field&lt;/h3&gt;
+
+&lt;p&gt;Filter only work for set fields. To check whether a field is set or exist, use operand &lt;code&gt;nil&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This can be useful to filter a small amount of pages from a large pool. Instead of set field on all pages, you can set field on required pages only.&lt;/p&gt;
+
+&lt;p&gt;Only following operators are available for &lt;code&gt;nil&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;=&lt;/code&gt;, &lt;code&gt;==&lt;/code&gt;, &lt;code&gt;eq&lt;/code&gt;: True if the given field is not set.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!=&lt;/code&gt;, &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;, &lt;code&gt;ne&lt;/code&gt;: True if the given field is set.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range where .Data.Pages &amp;quot;.Params.specialpost&amp;quot; &amp;quot;!=&amp;quot; nil }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;math:904d9cf85d985550c869e6d9741448cc&#34;&gt;Math&lt;/h2&gt;
+
+&lt;table class=&#34;table table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;add&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Adds two integers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{add 1 2}}&lt;/code&gt; → 3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;div&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Divides two integers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{div 6 3}}&lt;/code&gt; → 2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;mod&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Modulus of two integers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{mod 15 3}}&lt;/code&gt; → 0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;modBool&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Boolean of modulus of two integers.  &lt;code&gt;true&lt;/code&gt; if modulus is 0.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{modBool 15 3}}&lt;/code&gt; → true&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;mul&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiplies two integers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{mul 2 3}}&lt;/code&gt; → 6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sub&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtracts two integers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{sub 3 2}}&lt;/code&gt; → 1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;strings:904d9cf85d985550c869e6d9741448cc&#34;&gt;Strings&lt;/h2&gt;
+
+&lt;h3 id=&#34;chomp:904d9cf85d985550c869e6d9741448cc&#34;&gt;chomp&lt;/h3&gt;
+
+&lt;p&gt;Removes any trailing newline characters. Useful in a pipeline to remove newlines added by other processing (including &lt;code&gt;markdownify&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;e.g., &lt;code&gt;{{chomp &amp;quot;&amp;lt;p&amp;gt;Blockhead&amp;lt;/p&amp;gt;\n&amp;quot;&lt;/code&gt; → &lt;code&gt;&amp;quot;&amp;lt;p&amp;gt;Blockhead&amp;lt;/p&amp;gt;&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dateformat:904d9cf85d985550c869e6d9741448cc&#34;&gt;dateFormat&lt;/h3&gt;
+
+&lt;p&gt;Converts the textual representation of the datetime into the other form or returns it of Go &lt;code&gt;time.Time&lt;/code&gt; type value.
+These are formatted with the layout string.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ dateFormat &amp;quot;Monday, Jan 2, 2006&amp;quot; &amp;quot;2015-01-21&amp;quot; }}&lt;/code&gt; →&amp;rdquo;Wednesday, Jan 21, 2015&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;highlight:904d9cf85d985550c869e6d9741448cc&#34;&gt;highlight&lt;/h3&gt;
+
+&lt;p&gt;Takes a string of code and a language, uses Pygments to return the syntax highlighted code in HTML.
+Used in the &lt;a href=&#34;http://localhost:1313/extras/highlighting/&#34;&gt;highlight shortcode&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;lower:904d9cf85d985550c869e6d9741448cc&#34;&gt;lower&lt;/h3&gt;
+
+&lt;p&gt;Converts all characters in string to lowercase.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{lower &amp;quot;BatMan&amp;quot;}}&lt;/code&gt; → &amp;ldquo;batman&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;markdownify:904d9cf85d985550c869e6d9741448cc&#34;&gt;markdownify&lt;/h3&gt;
+
+&lt;p&gt;Runs the string through the Markdown processor. The result will be declared as &amp;ldquo;safe&amp;rdquo; so Go templates will not filter it.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ .Title | markdownify }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pluralize:904d9cf85d985550c869e6d9741448cc&#34;&gt;pluralize&lt;/h3&gt;
+
+&lt;p&gt;Pluralize the given word with a set of common English pluralization rules.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ &amp;quot;cat&amp;quot; | pluralize }}&lt;/code&gt; → &amp;ldquo;cats&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;replace:904d9cf85d985550c869e6d9741448cc&#34;&gt;replace&lt;/h3&gt;
+
+&lt;p&gt;Replaces all occurrences of the search string with the replacement string.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ replace &amp;quot;Batman and Robin&amp;quot; &amp;quot;Robin&amp;quot; &amp;quot;Catwoman&amp;quot; }}&lt;/code&gt; → &amp;ldquo;Batman and Catwoman&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;safehtml:904d9cf85d985550c869e6d9741448cc&#34;&gt;safeHTML&lt;/h3&gt;
+
+&lt;p&gt;Declares the provided string as a &amp;ldquo;safe&amp;rdquo; HTML document fragment
+so Go html/template will not filter it.  It should not be used
+for HTML from a third-party, or HTML with unclosed tags or comments.&lt;/p&gt;
+
+&lt;p&gt;Example: Given a site-wide &lt;code&gt;config.toml&lt;/code&gt; that contains this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;copyright = &amp;quot;© 2015 Jane Doe.  &amp;lt;a href=\&amp;quot;http://creativecommons.org/licenses/by/4.0/\&amp;quot;&amp;gt;Some rights reserved&amp;lt;/a&amp;gt;.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;{{ .Site.Copyright | safeHTML }}&lt;/code&gt; would then output:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;© 2015 Jane Doe.  &lt;a href=&#34;http://creativecommons.org/licenses/by/4.0/&#34;&gt;Some rights reserved&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, without the &lt;code&gt;safeHTML&lt;/code&gt; function, html/template assumes
+&lt;code&gt;.Site.Copyright&lt;/code&gt; to be unsafe, escaping all HTML tags,
+rendering the whole string as plain-text like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;© 2015 Jane Doe.  &amp;lt;a href=&amp;#34;http://creativecommons.org/licenses/by/4.0/&amp;#34;&amp;gt;Some rights reserved&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--
+### safeHTMLAttr
+Declares the provided string as a &#34;safe&#34; HTML attribute
+from a trusted source, for example, ` dir=&#34;ltr&#34;`,
+so Go html/template will not filter it.
+
+Example: Given a site-wide `config.toml` that contains this menu entry:
+
+    [[menu.main]]
+        name = &#34;IRC: #golang at freenode&#34;
+        url = &#34;irc://irc.freenode.net/#golang&#34;
+
+* `&lt;a href=&#34;{{ .URL }}&#34;&gt;` ⇒ `&lt;a href=&#34;#ZgotmplZ&#34;&gt;` (Bad!)
+* `&lt;a {{ printf &#34;href=%q&#34; .URL | safeHTMLAttr }}&gt;` ⇒ `&lt;a href=&#34;irc://irc.freenode.net/#golang&#34;&gt;` (Good!)
+--&gt;
+
+&lt;h3 id=&#34;safecss:904d9cf85d985550c869e6d9741448cc&#34;&gt;safeCSS&lt;/h3&gt;
+
+&lt;p&gt;Declares the provided string as a known &amp;ldquo;safe&amp;rdquo; CSS string
+so Go html/templates will not filter it.
+&amp;ldquo;Safe&amp;rdquo; means CSS content that matches any of:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The CSS3 stylesheet production, such as &lt;code&gt;p { color: purple }&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The CSS3 rule production, such as &lt;code&gt;a[href=~&amp;quot;https:&amp;quot;].foo#bar&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;CSS3 declaration productions, such as &lt;code&gt;color: red; margin: 2px&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The CSS3 value production, such as &lt;code&gt;rgba(0, 0, 255, 127)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Example: Given &lt;code&gt;style = &amp;quot;color: red;&amp;quot;&lt;/code&gt; defined in the front matter of your &lt;code&gt;.md&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;p style=&amp;quot;{{ .Params.style | safeCSS }}&amp;quot;&amp;gt;…&amp;lt;/p&amp;gt;&lt;/code&gt; ⇒ &lt;code&gt;&amp;lt;p style=&amp;quot;color: red;&amp;quot;&amp;gt;…&amp;lt;/p&amp;gt;&lt;/code&gt; (Good!)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;p style=&amp;quot;{{ .Params.style }}&amp;quot;&amp;gt;…&amp;lt;/p&amp;gt;&lt;/code&gt; ⇒ &lt;code&gt;&amp;lt;p style=&amp;quot;ZgotmplZ&amp;quot;&amp;gt;…&amp;lt;/p&amp;gt;&lt;/code&gt; (Bad!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: &amp;ldquo;ZgotmplZ&amp;rdquo; is a special value that indicates that unsafe content reached a
+CSS or URL context.&lt;/p&gt;
+
+&lt;h3 id=&#34;safejs:904d9cf85d985550c869e6d9741448cc&#34;&gt;safeJS&lt;/h3&gt;
+
+&lt;p&gt;Declares the provided string as a known &amp;ldquo;safe&amp;rdquo; Javascript string so Go
+html/templates will not escape it.  &amp;ldquo;Safe&amp;rdquo; means the string encapsulates a known
+safe EcmaScript5 Expression, for example, &lt;code&gt;(x + y * z())&lt;/code&gt;. Template authors
+are responsible for ensuring that typed expressions do not break the intended
+precedence and that there is no statement/expression ambiguity as when passing
+an expression like &lt;code&gt;{ foo:bar() }\n[&#39;foo&#39;]()&lt;/code&gt;, which is both a valid Expression
+and a valid Program with a very different meaning.&lt;/p&gt;
+
+&lt;p&gt;Example: Given &lt;code&gt;hash = &amp;quot;619c16f&amp;quot;&lt;/code&gt; defined in the front matter of your &lt;code&gt;.md&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;var form_{{ .Params.hash | safeJS }};…&amp;lt;/script&amp;gt;&lt;/code&gt; ⇒ &lt;code&gt;&amp;lt;script&amp;gt;var form_619c16f;…&amp;lt;/script&amp;gt;&lt;/code&gt; (Good!)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;var form_{{ .Params.hash }};…&amp;lt;/script&amp;gt;&lt;/code&gt; ⇒ &lt;code&gt;&amp;lt;script&amp;gt;var form_&amp;quot;619c16f&amp;quot;;…&amp;lt;/script&amp;gt;&lt;/code&gt; (Bad!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;singularize:904d9cf85d985550c869e6d9741448cc&#34;&gt;singularize&lt;/h3&gt;
+
+&lt;p&gt;Singularize the given word with a set of common English singularization rules.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ &amp;quot;cats&amp;quot; | singularize }}&lt;/code&gt; → &amp;ldquo;cat&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;slicestr:904d9cf85d985550c869e6d9741448cc&#34;&gt;slicestr&lt;/h3&gt;
+
+&lt;p&gt;Slicing in &lt;code&gt;slicestr&lt;/code&gt; is done by specifying a half-open range with two indices, &lt;code&gt;start&lt;/code&gt; and &lt;code&gt;end&lt;/code&gt;.
+For example, 1 and 4 creates a slice including elements 1 through 3.
+The &lt;code&gt;end&lt;/code&gt; index can be omitted; it defaults to the string&amp;rsquo;s length.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{slicestr &amp;quot;BatMan&amp;quot; 3}}&lt;/code&gt; → &amp;ldquo;Man&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{slicestr &amp;quot;BatMan&amp;quot; 0 3}}&lt;/code&gt; → &amp;ldquo;Bat&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;substr:904d9cf85d985550c869e6d9741448cc&#34;&gt;substr&lt;/h3&gt;
+
+&lt;p&gt;Extracts parts of a string, beginning at the character at the specified
+position, and returns the specified number of characters.&lt;/p&gt;
+
+&lt;p&gt;It normally takes two parameters: &lt;code&gt;start&lt;/code&gt; and &lt;code&gt;length&lt;/code&gt;.
+It can also take one parameter: &lt;code&gt;start&lt;/code&gt;, i.e. &lt;code&gt;length&lt;/code&gt; is omitted, in which case
+the substring starting from start until the end of the string will be returned.&lt;/p&gt;
+
+&lt;p&gt;To extract characters from the end of the string, use a negative start number.&lt;/p&gt;
+
+&lt;p&gt;In addition, borrowing from the extended behavior described at &lt;a href=&#34;http://php.net/substr&#34;&gt;http://php.net/substr&lt;/a&gt;,
+if &lt;code&gt;length&lt;/code&gt; is given and is negative, then that many characters will be omitted from
+the end of string.&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{substr &amp;quot;BatMan&amp;quot; 0 -3}}&lt;/code&gt; → &amp;ldquo;Bat&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{substr &amp;quot;BatMan&amp;quot; 3 3}}&lt;/code&gt; → &amp;ldquo;Man&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;title:904d9cf85d985550c869e6d9741448cc&#34;&gt;title&lt;/h3&gt;
+
+&lt;p&gt;Converts all characters in string to titlecase.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{title &amp;quot;BatMan&amp;quot;}}&lt;/code&gt; → &amp;ldquo;Batman&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;trim:904d9cf85d985550c869e6d9741448cc&#34;&gt;trim&lt;/h3&gt;
+
+&lt;p&gt;Returns a slice of the string with all leading and trailing characters contained in cutset removed.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{ trim &amp;quot;++Batman--&amp;quot; &amp;quot;+-&amp;quot; }}&lt;/code&gt; → &amp;ldquo;Batman&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;upper:904d9cf85d985550c869e6d9741448cc&#34;&gt;upper&lt;/h3&gt;
+
+&lt;p&gt;Converts all characters in string to uppercase.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;{{upper &amp;quot;BatMan&amp;quot;}}&lt;/code&gt; → &amp;ldquo;BATMAN&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;urls:904d9cf85d985550c869e6d9741448cc&#34;&gt;URLs&lt;/h2&gt;
+
+&lt;h3 id=&#34;absurl-relurl:904d9cf85d985550c869e6d9741448cc&#34;&gt;absURL, relURL&lt;/h3&gt;
+
+&lt;p&gt;Both &lt;code&gt;absURL&lt;/code&gt; and &lt;code&gt;relURL&lt;/code&gt; considers the configured value of &lt;code&gt;baseURL&lt;/code&gt;, so given a &lt;code&gt;baseURL&lt;/code&gt; set to &lt;code&gt;http://mysite.com/hugo/&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{ &amp;quot;mystyle.css&amp;quot; | absURL }}&lt;/code&gt; → &amp;ldquo;&lt;a href=&#34;http://mysite.com/hugo/mystyle.css&amp;quot;&#34;&gt;http://mysite.com/hugo/mystyle.css&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{ &amp;quot;mystyle.css&amp;quot; | relURL }}&lt;/code&gt; → &amp;ldquo;/hugo/mystyle.css&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{ &amp;quot;http://gohugo.io/&amp;quot; | relURL }}&lt;/code&gt; →  &amp;ldquo;&lt;a href=&#34;http://gohugo.io/&amp;quot;&#34;&gt;http://gohugo.io/&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{ &amp;quot;http://gohugo.io/&amp;quot; | absURL }}&lt;/code&gt; →  &amp;ldquo;&lt;a href=&#34;http://gohugo.io/&amp;quot;&#34;&gt;http://gohugo.io/&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The last two examples may look funky, but is useful if you, say, have a list of images, some of them hosted externally, some locally:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;application/ld+json&amp;quot;&amp;gt;
+{
+    &amp;quot;@context&amp;quot; : &amp;quot;http://schema.org&amp;quot;,
+    &amp;quot;@type&amp;quot; : &amp;quot;BlogPosting&amp;quot;,
+    &amp;quot;image&amp;quot; : {{ apply .Params.images &amp;quot;absURL&amp;quot; &amp;quot;.&amp;quot; }}
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above also exploits the fact that the Go template parser JSON-encodes objects inside &lt;code&gt;script&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; These functions are smart about missing slashes, but will not add one to the end if not present.&lt;/p&gt;
+
+&lt;h3 id=&#34;ref-relref:904d9cf85d985550c869e6d9741448cc&#34;&gt;ref, relref&lt;/h3&gt;
+
+&lt;p&gt;Looks up a content page by relative path or logical name to return the permalink (&lt;code&gt;ref&lt;/code&gt;) or relative permalink (&lt;code&gt;relref&lt;/code&gt;). Requires a Node or Page object (usually satisfied with &lt;code&gt;.&lt;/code&gt;). Used in the &lt;a href=&#34;http://localhost:1313/extras/crossreferences/&#34;&gt;&lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; shortcodes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;e.g. {{ ref . &amp;ldquo;about.md&amp;rdquo; }}&lt;/p&gt;
+
+&lt;h3 id=&#34;safeurl:904d9cf85d985550c869e6d9741448cc&#34;&gt;safeURL&lt;/h3&gt;
+
+&lt;p&gt;Declares the provided string as a &amp;ldquo;safe&amp;rdquo; URL or URL substring (see &lt;a href=&#34;http://tools.ietf.org/html/rfc3986&#34;&gt;RFC 3986&lt;/a&gt;).
+A URL like &lt;code&gt;javascript:checkThatFormNotEditedBeforeLeavingPage()&lt;/code&gt; from a trusted
+source should go in the page, but by default dynamic &lt;code&gt;javascript:&lt;/code&gt; URLs are
+filtered out since they are a frequently exploited injection vector.&lt;/p&gt;
+
+&lt;p&gt;Without &lt;code&gt;safeURL&lt;/code&gt;, only the URI schemes &lt;code&gt;http:&lt;/code&gt;, &lt;code&gt;https:&lt;/code&gt; and &lt;code&gt;mailto:&lt;/code&gt;
+are considered safe by Go.  If any other URI schemes, e.g.&amp;nbsp;&lt;code&gt;irc:&lt;/code&gt; and
+&lt;code&gt;javascript:&lt;/code&gt;, are detected, the whole URL would be replaced with
+&lt;code&gt;#ZgotmplZ&lt;/code&gt;.  This is to &amp;ldquo;defang&amp;rdquo; any potential attack in the URL,
+rendering it useless.&lt;/p&gt;
+
+&lt;p&gt;Example: Given a site-wide &lt;code&gt;config.toml&lt;/code&gt; that contains this menu entry:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+    name = &amp;quot;IRC: #golang at freenode&amp;quot;
+    url = &amp;quot;irc://irc.freenode.net/#golang&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul class=&amp;quot;sidebar-menu&amp;quot;&amp;gt;
+  {{ range .Site.Menus.main }}
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  {{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;would produce &lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#ZgotmplZ&amp;quot;&amp;gt;IRC: #golang at freenode&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt;
+for the &lt;code&gt;irc://…&lt;/code&gt; URL.&lt;/p&gt;
+
+&lt;p&gt;To fix this, add &lt;code&gt;| safeURL&lt;/code&gt; after &lt;code&gt;.URL&lt;/code&gt; on the 3rd line, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL | safeURL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this change, we finally get &lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;irc://irc.freenode.net/#golang&amp;quot;&amp;gt;IRC: #golang at freenode&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt;
+as intended.&lt;/p&gt;
+
+&lt;h3 id=&#34;urlize:904d9cf85d985550c869e6d9741448cc&#34;&gt;urlize&lt;/h3&gt;
+
+&lt;p&gt;Takes a string and sanitizes it for usage in URLs, converts spaces to &amp;ldquo;-&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;&amp;lt;a href=&amp;quot;/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;content-views:904d9cf85d985550c869e6d9741448cc&#34;&gt;Content Views&lt;/h2&gt;
+
+&lt;h3 id=&#34;render:904d9cf85d985550c869e6d9741448cc&#34;&gt;Render&lt;/h3&gt;
+
+&lt;p&gt;Takes a view to render the content with.  The view is an alternate layout, and should be a file name that points to a template in one of the locations specified in the documentation for &lt;a href=&#34;http://localhost:1313/templates/views&#34;&gt;Content Views&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This function is only available on a piece of content, and in list context.&lt;/p&gt;
+
+&lt;p&gt;This example could render a piece of content using the content view located at &lt;code&gt;/layouts/_default/summary.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages }}
+    {{ .Render &amp;quot;summary&amp;quot;}}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;advanced:904d9cf85d985550c869e6d9741448cc&#34;&gt;Advanced&lt;/h2&gt;
+
+&lt;h3 id=&#34;apply:904d9cf85d985550c869e6d9741448cc&#34;&gt;apply&lt;/h3&gt;
+
+&lt;p&gt;Given a map, array, or slice, returns a new slice with a function applied over it. Expects at least three parameters, depending on the function being applied. The first parameter is the sequence to operate on; the second is the name of the function as a string, which must be in the Hugo function map (generally, it is these functions documented here). After that, the parameters to the applied function are provided, with the string &lt;code&gt;&amp;quot;.&amp;quot;&lt;/code&gt; standing in for each element of the sequence the function is to be applied against. An example is in order:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+names: [ &amp;quot;Derek Perkins&amp;quot;, &amp;quot;Joe Bergevin&amp;quot;, &amp;quot;Tanner Linsley&amp;quot; ]
++++
+
+{{ apply .Params.names &amp;quot;urlize&amp;quot; &amp;quot;.&amp;quot; }} → [ &amp;quot;derek-perkins&amp;quot;, &amp;quot;joe-bergevin&amp;quot;, &amp;quot;tanner-linsley&amp;quot; ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is roughly equivalent to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Params.names }}{{ . | urlize }}{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, it isn’t possible to provide the output of a range to the &lt;code&gt;delimit&lt;/code&gt; function, so you need to &lt;code&gt;apply&lt;/code&gt; it. A more complete example should explain this. Let&amp;rsquo;s say you have two partials for displaying tag links in a post,  &amp;ldquo;post/tag/list.html&amp;rdquo; and &amp;ldquo;post/tag/link.html&amp;rdquo;, as shown below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- post/tag/list.html --&amp;gt;
+{{ with .Params.tags }}
+&amp;lt;div class=&amp;quot;tags-list&amp;quot;&amp;gt;
+  Tags:
+  {{ $len := len . }}
+  {{ if eq $len 1 }}
+    {{ partial &amp;quot;post/tag/link&amp;quot; (index . 0) }}
+  {{ else }}
+    {{ $last := sub $len 1 }}
+    {{ range first $last . }}
+      {{ partial &amp;quot;post/tag/link&amp;quot; . }},
+    {{ end }}
+    {{ partial &amp;quot;post/tag/link&amp;quot; (index . $last) }}
+  {{ end }}
+&amp;lt;/div&amp;gt;
+{{ end }}
+
+
+&amp;lt;!-- post/tag/link.html --&amp;gt;
+&amp;lt;a class=&amp;quot;post-tag post-tag-{{ . | urlize }}&amp;quot; href=&amp;quot;/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This works, but the complexity of &amp;ldquo;post/tag/list.html&amp;rdquo; is fairly high; the Hugo template needs to perform special behaviour for the case where there’s only one tag, and it has to treat the last tag as special. Additionally, the tag list will be rendered something like &amp;ldquo;Tags: tag1 , tag2 , tag3&amp;rdquo; because of the way that the HTML is generated and it is interpreted by a browser.&lt;/p&gt;
+
+&lt;p&gt;This is Hugo. We have a better way. If this were your &amp;ldquo;post/tag/list.html&amp;rdquo; instead, all of those problems are fixed automatically (this first version separates all of the operations for ease of reading; the combined version will be shown after the explanation).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- post/tag/list.html --&amp;gt;
+{{ with.Params.tags }}
+&amp;lt;div class=&amp;quot;tags-list&amp;quot;&amp;gt;
+  Tags:
+  {{ $sort := sort . }}
+  {{ $links := apply $sort &amp;quot;partial&amp;quot; &amp;quot;post/tag/link&amp;quot; &amp;quot;.&amp;quot; }}
+  {{ $clean := apply $links &amp;quot;chomp&amp;quot; &amp;quot;.&amp;quot; }}
+  {{ delimit $clean &amp;quot;, &amp;quot; }}
+&amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this version, we are now sorting the tags, converting them to links with &amp;ldquo;post/tag/link.html&amp;rdquo;, cleaning off stray newlines, and joining them together in a delimited list for presentation. That can also be written as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- post/tag/list.html --&amp;gt;
+{{ with.Params.tags }}
+&amp;lt;div class=&amp;quot;tags-list&amp;quot;&amp;gt;
+  Tags:
+  {{ delimit (apply (apply (sort .) &amp;quot;partial&amp;quot; &amp;quot;post/tag/link&amp;quot; &amp;quot;.&amp;quot;) &amp;quot;chomp&amp;quot; &amp;quot;.&amp;quot;) &amp;quot;, &amp;quot; }}
+&amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;apply&lt;/code&gt; does not work when receiving the sequence as an argument through a pipeline.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;base64encode-and-base64decode:904d9cf85d985550c869e6d9741448cc&#34;&gt;base64Encode and base64Decode&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;base64Encode&lt;/code&gt; and &lt;code&gt;base64Decode&lt;/code&gt; let you easily decode content with a base64 encoding and vice versa through pipes. Let&amp;rsquo;s take a look at an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ &amp;quot;Hello world&amp;quot; | base64Encode }}
+&amp;lt;!-- will output &amp;quot;SGVsbG8gd29ybGQ=&amp;quot; and --&amp;gt;
+
+{{ &amp;quot;SGVsbG8gd29ybGQ=&amp;quot; | base64Decode }}
+&amp;lt;!-- becomes &amp;quot;Hello world&amp;quot; again. --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also pass other datatypes as argument to the template function which tries
+to convert them. Now we use an integer instead of a string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ 42 | base64Encode | base64Decode }}
+&amp;lt;!-- will output &amp;quot;42&amp;quot;. Both functions always return a string. --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Using base64 to decode and encode becomes really powerful if we have to handle
+responses of APIs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $resp := getJSON &amp;quot;https://api.github.com/repos/spf13/hugo/readme&amp;quot;  }}
+{{ $resp.content | base64Decode | markdownify }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The response of the GitHub API contains the base64-encoded version of the &lt;a href=&#34;https://github.com/spf13/hugo/blob/master/README.md&#34;&gt;README.md&lt;/a&gt; in the Hugo repository. Now we can decode it and parse the Markdown. The final output will look similar to the rendered version on GitHub.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Template Variables</title>
+      <link>http://localhost:1313/templates/variables/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/variables/</guid>
+      <description>
+
+&lt;p&gt;Hugo makes a set of values available to the templates. Go templates are context based. The following
+are available in the context for the templates.&lt;/p&gt;
+
+&lt;h2 id=&#34;page-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Page Variables&lt;/h2&gt;
+
+&lt;p&gt;The following is a list of most of the accessible variables which can be
+defined for a piece of content. Many of these will be defined in the front
+matter, content or derived from file location.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See also:&lt;/strong&gt; &lt;a href=&#34;http://localhost:1313/extras/scratch&#34;&gt;Scratch&lt;/a&gt; for page-scoped writable variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Title&lt;/strong&gt;  The title for the content.&lt;br&gt;
+&lt;strong&gt;.Content&lt;/strong&gt; The content itself, defined below the front matter.&lt;br&gt;
+&lt;strong&gt;.Summary&lt;/strong&gt; A generated summary of the content for easily showing a snippet in a summary view. Note that the breakpoint can be set manually by inserting &lt;code&gt;&amp;lt;!&amp;#x2d;&amp;#x2d;more&amp;#x2d;&amp;#x2d;&amp;gt;&lt;/code&gt; at the appropriate place in the content page.  See &lt;a href=&#34;http://localhost:1313/content/summaries/&#34;&gt;Summaries&lt;/a&gt; for more details.&lt;br&gt;
+&lt;strong&gt;.Truncated&lt;/strong&gt; A boolean, &lt;code&gt;true&lt;/code&gt; if the &lt;code&gt;.Summary&lt;/code&gt; is truncated.  Useful for showing a &amp;ldquo;Read more&amp;hellip;&amp;rdquo; link only if necessary.  See &lt;a href=&#34;http://localhost:1313/content/summaries/&#34;&gt;Summaries&lt;/a&gt; for more details.&lt;br&gt;
+&lt;strong&gt;.Description&lt;/strong&gt; The description for the content.&lt;br&gt;
+&lt;strong&gt;.Keywords&lt;/strong&gt; The meta keywords for this content.&lt;br&gt;
+&lt;strong&gt;.Date&lt;/strong&gt; The date the content is associated with.&lt;br&gt;
+&lt;strong&gt;.PublishDate&lt;/strong&gt; The date the content is published on.&lt;br&gt;
+&lt;strong&gt;.Type&lt;/strong&gt; The content &lt;a href=&#34;http://localhost:1313/content/types/&#34;&gt;type&lt;/a&gt; (e.g. post).&lt;br&gt;
+&lt;strong&gt;.Section&lt;/strong&gt; The &lt;a href=&#34;http://localhost:1313/content/sections/&#34;&gt;section&lt;/a&gt; this content belongs to.&lt;br&gt;
+&lt;strong&gt;.Permalink&lt;/strong&gt; The Permanent link for this page.&lt;br&gt;
+&lt;strong&gt;.RelPermalink&lt;/strong&gt; The Relative permanent link for this page.&lt;br&gt;
+&lt;strong&gt;.LinkTitle&lt;/strong&gt; Access when creating links to this content. Will use &lt;code&gt;linktitle&lt;/code&gt; if set in front matter, else &lt;code&gt;title&lt;/code&gt;.&lt;br&gt;
+&lt;strong&gt;.Taxonomies&lt;/strong&gt; These will use the field name of the plural form of the taxonomy (see tags and categories below).&lt;br&gt;
+&lt;strong&gt;.RSSLink&lt;/strong&gt; Link to the taxonomies&amp;rsquo; RSS link.&lt;br&gt;
+&lt;strong&gt;.TableOfContents&lt;/strong&gt; The rendered table of contents for this content.&lt;br&gt;
+&lt;strong&gt;.Prev&lt;/strong&gt; Pointer to the previous content (based on pub date).&lt;br&gt;
+&lt;strong&gt;.Next&lt;/strong&gt; Pointer to the following content (based on pub date).&lt;br&gt;
+&lt;strong&gt;.PrevInSection&lt;/strong&gt; Pointer to the previous content within the same section (based on pub date)&lt;br&gt;
+&lt;strong&gt;.NextInSection&lt;/strong&gt; Pointer to the following content within the same section (based on pub date)&lt;br&gt;
+&lt;strong&gt;.FuzzyWordCount&lt;/strong&gt; The approximate number of words in the content.&lt;br&gt;
+&lt;strong&gt;.WordCount&lt;/strong&gt; The number of words in the content.&lt;br&gt;
+&lt;strong&gt;.ReadingTime&lt;/strong&gt; The estimated time it takes to read the content in minutes.&lt;br&gt;
+&lt;strong&gt;.Weight&lt;/strong&gt; Assigned weight (in the front matter) to this content, used in sorting.&lt;br&gt;
+&lt;strong&gt;.RawContent&lt;/strong&gt; Raw Markdown content without the metadata header. Useful with &lt;a href=&#34;http://remarkjs.com&#34;&gt;remarkjs.com&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;.IsNode&lt;/strong&gt; Always false for pages.&lt;br&gt;
+&lt;strong&gt;.IsPage&lt;/strong&gt; Always true for page.&lt;br&gt;
+&lt;strong&gt;.Site&lt;/strong&gt; See &lt;a href=&#34;#site-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Site Variables&lt;/a&gt; below.&lt;br&gt;
+&lt;strong&gt;.Hugo&lt;/strong&gt; See &lt;a href=&#34;#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Hugo Variables&lt;/a&gt; below.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;page-params:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Page Params&lt;/h2&gt;
+
+&lt;p&gt;Any other value defined in the front matter, including taxonomies, will be made available under &lt;code&gt;.Params&lt;/code&gt;.
+Take for example I&amp;rsquo;m using &lt;em&gt;tags&lt;/em&gt; and &lt;em&gt;categories&lt;/em&gt; as my taxonomies. The following would be how I would access them:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;.Params.tags&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.Params.categories&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;All Params are only accessible using all lowercase characters.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;param-method:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Param method&lt;/h3&gt;
+
+&lt;p&gt;In Hugo you can declare params both for the site and the individual page.  A common use case is to have a general value for the site and a more specific value for some of the pages (i.e. an image).&lt;/p&gt;
+
+&lt;p&gt;With the &lt;code&gt;Param&lt;/code&gt; method the most specific value will be selected for you, and it is safe to use it in any template (it&amp;rsquo;s defined on both Page and Node):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$.Param(&amp;quot;image&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;node-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Node Variables&lt;/h2&gt;
+
+&lt;p&gt;In Hugo, a node is any page not rendered directly by a content file. This
+includes taxonomies, lists and the homepage.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See also:&lt;/strong&gt; &lt;a href=&#34;http://localhost:1313/extras/scratch&#34;&gt;Scratch&lt;/a&gt; for global node variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Title&lt;/strong&gt;  The title for the content.&lt;br&gt;
+&lt;strong&gt;.Date&lt;/strong&gt; The date the content is published on.&lt;br&gt;
+&lt;strong&gt;.Permalink&lt;/strong&gt; The Permanent link for this node&lt;br&gt;
+&lt;strong&gt;.URL&lt;/strong&gt; The relative URL for this node.&lt;br&gt;
+&lt;strong&gt;.Ref(ref)&lt;/strong&gt; Returns the permalink for &lt;code&gt;ref&lt;/code&gt;. See &lt;a href=&#34;http://localhost:1313/extras/crossreferences/&#34;&gt;cross-references&lt;/a&gt;. Does not handle in-page fragments correctly.&lt;br&gt;
+&lt;strong&gt;.RelRef(ref)&lt;/strong&gt; Returns the relative permalink for &lt;code&gt;ref&lt;/code&gt;. See &lt;a href=&#34;http://localhost:1313/extras/crossreferences/&#34;&gt;cross-references&lt;/a&gt;. Does not handle in-page fragments correctly.&lt;br&gt;
+&lt;strong&gt;.RSSLink&lt;/strong&gt; Link to the taxonomies&amp;rsquo; RSS link.&lt;br&gt;
+&lt;strong&gt;.Data&lt;/strong&gt; The data specific to this type of node.&lt;br&gt;
+&lt;strong&gt;.IsNode&lt;/strong&gt; Always true for nodes.&lt;br&gt;
+&lt;strong&gt;.IsPage&lt;/strong&gt; Always false for nodes.&lt;br&gt;
+&lt;strong&gt;.Site&lt;/strong&gt; See &lt;a href=&#34;#site-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Site Variables&lt;/a&gt; below.&lt;br&gt;
+&lt;strong&gt;.Hugo&lt;/strong&gt; See &lt;a href=&#34;#hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Hugo Variables&lt;/a&gt; below.&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;taxonomy-term-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Taxonomy Term Variables&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;Taxonomy Terms&lt;/a&gt; pages are of the type &amp;ldquo;node&amp;rdquo; and have the following additional variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Data.Singular&lt;/strong&gt; The singular name of the taxonomy&lt;br&gt;
+&lt;strong&gt;.Data.Plural&lt;/strong&gt; The plural name of the taxonomy&lt;br&gt;
+&lt;strong&gt;.Data.Pages&lt;/strong&gt; the list of pages in this taxonomy&lt;br&gt;
+&lt;strong&gt;.Data.Terms&lt;/strong&gt; The taxonomy itself&lt;br&gt;
+&lt;strong&gt;.Data.Terms.Alphabetical&lt;/strong&gt; The Terms alphabetized&lt;br&gt;
+&lt;strong&gt;.Data.Terms.ByCount&lt;/strong&gt; The Terms ordered by popularity&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The last two can also be reversed: &lt;strong&gt;.Data.Terms.Alphabetical.Reverse&lt;/strong&gt;, &lt;strong&gt;.Data.Terms.ByCount.Reverse&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;site-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Site Variables&lt;/h2&gt;
+
+&lt;p&gt;Also available is &lt;code&gt;.Site&lt;/code&gt; which has the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Site.BaseURL&lt;/strong&gt; The base URL for the site as defined in the site configuration file.&lt;br&gt;
+&lt;strong&gt;.Site.RSSLink&lt;/strong&gt; The URL for the site RSS.&lt;br&gt;
+&lt;strong&gt;.Site.Taxonomies&lt;/strong&gt; The &lt;a href=&#34;http://localhost:1313/taxonomies/usage/&#34;&gt;taxonomies&lt;/a&gt; for the entire site.  Replaces the now-obsolete &lt;code&gt;.Site.Indexes&lt;/code&gt; since v0.11.&lt;br&gt;
+&lt;strong&gt;.Site.Pages&lt;/strong&gt; Array of all content ordered by Date, newest first.  Replaces the now-deprecated &lt;code&gt;.Site.Recent&lt;/code&gt; starting v0.13.&lt;br&gt;
+&lt;strong&gt;.Site.Params&lt;/strong&gt; A container holding the values from the &lt;code&gt;params&lt;/code&gt; section of your site configuration file. For example, a TOML config file might look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://yoursite.example.com/&amp;quot;
+
+[params]
+  description = &amp;quot;Tesla&#39;s Awesome Hugo Site&amp;quot;
+  author = &amp;quot;Nikola Tesla&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;.Site.Sections&lt;/strong&gt; Top level directories of the site.&lt;br&gt;
+&lt;strong&gt;.Site.Files&lt;/strong&gt; All of the source files of the site.&lt;br&gt;
+&lt;strong&gt;.Site.Menus&lt;/strong&gt; All of the menus in the site.&lt;br&gt;
+&lt;strong&gt;.Site.Title&lt;/strong&gt; A string representing the title of the site.&lt;br&gt;
+&lt;strong&gt;.Site.Author&lt;/strong&gt; A map of the authors as defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.LanguageCode&lt;/strong&gt; A string representing the language as defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.DisqusShortname&lt;/strong&gt; A string representing the shortname of the Disqus shortcode as defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.GoogleAnalytics&lt;/strong&gt; A string representing your tracking code for Google Analytics as defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.Copyright&lt;/strong&gt; A string representing the copyright of your web site as defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.LastChange&lt;/strong&gt; A string representing the date/time of the most recent change to your site, based on the &lt;a href=&#34;http://localhost:1313/content/front-matter/#required-variables:d8a1b1beb27369de117e34d907999758&#34;&gt;&lt;code&gt;date&lt;/code&gt; variable&lt;/a&gt; in the front matter of your content pages.&lt;br&gt;
+&lt;strong&gt;.Site.Permalinks&lt;/strong&gt; A string to override the default permalink format. Defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.BuildDrafts&lt;/strong&gt; A boolean (Default: false) to indicate whether to build drafts. Defined in the site configuration.&lt;br&gt;
+&lt;strong&gt;.Site.Data&lt;/strong&gt;  Custom data, see &lt;a href=&#34;http://localhost:1313/extras/datafiles/&#34;&gt;Data Files&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo-variables:2b8b8ac4006be88c769f5e3fd99b009a&#34;&gt;Hugo Variables&lt;/h2&gt;
+
+&lt;p&gt;Also available is &lt;code&gt;.Hugo&lt;/code&gt; which has the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Hugo.Generator&lt;/strong&gt; Meta tag for the version of Hugo that generated the site. Highly recommended to be included by default in all theme headers so we can start to track Hugo usage and popularity. e.g. &lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.13&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;.Hugo.Version&lt;/strong&gt; The current version of the Hugo binary you are using e.g. &lt;code&gt;0.13-DEV&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;.Hugo.CommitHash&lt;/strong&gt; The git commit hash of the current Hugo binary e.g. &lt;code&gt;0e8bed9ccffba0df554728b46c5bbf6d78ae5247&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;.Hugo.BuildDate&lt;/strong&gt; The compile date of the current Hugo binary formatted with RFC 3339 e.g. &lt;code&gt;2002-10-02T10:00:00-05:00&lt;/code&gt;&lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Single Content Template</title>
+      <link>http://localhost:1313/templates/content/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/content/</guid>
+      <description>
+
+&lt;p&gt;The primary view of content in Hugo is the single view. Hugo, for every
+Markdown file provided, will render it with a single template.&lt;/p&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:05301946b75cb988bc2be8549079b4fa&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when
+rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;Hugo will use the following prioritized list. If a file isn’t present,
+then the next one in the list will be used. This enables you to craft
+specific layouts when you want to without creating more templates
+than necessary. For most sites, only the &lt;code&gt;_default&lt;/code&gt; file at the end of
+the list will be needed.&lt;/p&gt;
+
+&lt;p&gt;Users can specify the &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;layout&lt;/code&gt; in the &lt;a href=&#34;http://localhost:1313/content/front-matter/&#34;&gt;front-matter&lt;/a&gt;. &lt;code&gt;Section&lt;/code&gt;
+is determined based on the content file’s location. If &lt;code&gt;type&lt;/code&gt; is provide,
+it will be used instead of &lt;code&gt;section&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;single:05301946b75cb988bc2be8549079b4fa&#34;&gt;Single&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;-or-&lt;code&gt;SECTION&lt;/code&gt;/&lt;code&gt;LAYOUT&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;-or-&lt;code&gt;SECTION&lt;/code&gt;/single.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;-or-&lt;code&gt;SECTION&lt;/code&gt;/&lt;code&gt;LAYOUT&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;-or-&lt;code&gt;SECTION&lt;/code&gt;/single.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;example-single-template-file:05301946b75cb988bc2be8549079b4fa&#34;&gt;Example Single Template File&lt;/h2&gt;
+
+&lt;p&gt;Content pages are of the type &amp;ldquo;page&amp;rdquo; and have all the &lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;page
+variables&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;site
+variables&lt;/a&gt; available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;In the following examples we have created two different content types as well as
+a default content type.&lt;/p&gt;
+
+&lt;p&gt;The default content template to be used in the event that a specific
+template has not been provided for that type. The default type works the
+same as the other types, but the directory must be called &amp;ldquo;_default&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ layouts/
+  ▾ _default/
+      single.html
+  ▾ post/
+      single.html
+  ▾ project/
+      single.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;post-single-html:05301946b75cb988bc2be8549079b4fa&#34;&gt;post/single.html&lt;/h3&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.
+It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+{{ $baseurl := .Site.BaseURL }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+  &amp;lt;div&amp;gt;
+        &amp;lt;article id=&amp;quot;content&amp;quot;&amp;gt;
+           {{ .Content }}
+        &amp;lt;/article&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+&amp;lt;aside id=&amp;quot;meta&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+    &amp;lt;section&amp;gt;
+      &amp;lt;h4 id=&amp;quot;date&amp;quot;&amp;gt; {{ .Date.Format &amp;quot;Mon Jan 2, 2006&amp;quot; }} &amp;lt;/h4&amp;gt;
+      &amp;lt;h5 id=&amp;quot;wc&amp;quot;&amp;gt; {{ .FuzzyWordCount }} Words &amp;lt;/h5&amp;gt;
+    &amp;lt;/section&amp;gt;
+    &amp;lt;ul id=&amp;quot;categories&amp;quot;&amp;gt;
+      {{ range .Params.topics }}
+        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $baseurl }}/topics/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+      {{ end }}
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;ul id=&amp;quot;tags&amp;quot;&amp;gt;
+      {{ range .Params.tags }}
+        &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;{{ $baseurl }}/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+      {{ end }}
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div&amp;gt;
+        {{ if .Prev }}
+          &amp;lt;a class=&amp;quot;previous&amp;quot; href=&amp;quot;{{.Prev.Permalink}}&amp;quot;&amp;gt; {{.Prev.Title}}&amp;lt;/a&amp;gt;
+        {{ end }}
+        {{ if .Next }}
+          &amp;lt;a class=&amp;quot;next&amp;quot; href=&amp;quot;{{.Next.Permalink}}&amp;quot;&amp;gt; {{.Next.Title}}&amp;lt;/a&amp;gt;
+        {{ end }}
+    &amp;lt;/div&amp;gt;
+&amp;lt;/aside&amp;gt;
+
+{{ partial &amp;quot;disqus.html&amp;quot; . }}
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;project-single-html:05301946b75cb988bc2be8549079b4fa&#34;&gt;project/single.html&lt;/h3&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.
+It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+{{ $baseurl := .Site.BaseURL }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+  &amp;lt;div&amp;gt;
+        &amp;lt;article id=&amp;quot;content&amp;quot;&amp;gt;
+           {{ .Content }}
+        &amp;lt;/article&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+&amp;lt;aside id=&amp;quot;meta&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+    &amp;lt;section&amp;gt;
+      &amp;lt;h4 id=&amp;quot;date&amp;quot;&amp;gt; {{ .Date.Format &amp;quot;Mon Jan 2, 2006&amp;quot; }} &amp;lt;/h4&amp;gt;
+      &amp;lt;h5 id=&amp;quot;wc&amp;quot;&amp;gt; {{ .FuzzyWordCount }} Words &amp;lt;/h5&amp;gt;
+    &amp;lt;/section&amp;gt;
+    &amp;lt;ul id=&amp;quot;categories&amp;quot;&amp;gt;
+      {{ range .Params.topics }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $baseurl }}/topics/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+      {{ end }}
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;ul id=&amp;quot;tags&amp;quot;&amp;gt;
+      {{ range .Params.tags }}
+        &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;{{ $baseurl }}/tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+      {{ end }}
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/aside&amp;gt;
+
+{{if isset .Params &amp;quot;project_url&amp;quot; }}
+&amp;lt;div id=&amp;quot;ribbon&amp;quot;&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ index .Params &amp;quot;project_url&amp;quot; }}&amp;quot; rel=&amp;quot;me&amp;quot;&amp;gt;Fork me on GitHub&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+{{ end }}
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice how the project/single.html template uses an additional parameter unique
+to this template. This doesn&amp;rsquo;t need to be defined ahead of time. If the key is
+present in the front matter than it can be used in the template. To
+easily generate new content of this type with these keys ready use
+&lt;a href=&#34;http://localhost:1313/content/archetypes/&#34;&gt;content archetypes&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Content List Template</title>
+      <link>http://localhost:1313/templates/list/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/list/</guid>
+      <description>
+
+&lt;p&gt;A list template is any template that will be used to render multiple pieces of
+content in a single HTML page (with the exception of the &lt;a href=&#34;http://localhost:1313/layout/homepage/&#34;&gt;homepage&lt;/a&gt; which has a
+dedicated template).&lt;/p&gt;
+
+&lt;p&gt;We are using the term list in its truest sense, a sequential arrangement
+of material, especially in alphabetical or numerical order. Hugo uses
+list templates to render anyplace where content is being listed such as
+taxonomies and sections.&lt;/p&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when
+rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;Hugo will use the following prioritized list. If a file isn’t present,
+then the next one in the list will be used. This enables you to craft
+specific layouts when you want to without creating more templates
+than necessary. For most sites only the _default file at the end of
+the list will be needed.&lt;/p&gt;
+
+&lt;h3 id=&#34;section-lists:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Section Lists&lt;/h3&gt;
+
+&lt;p&gt;A Section will be rendered at /&lt;code&gt;SECTION&lt;/code&gt;/ (e.g.&amp;nbsp;&lt;a href=&#34;http://spf13.com/project/&#34;&gt;http://spf13.com/project/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/section.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/section.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;taxonomy-lists:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Taxonomy Lists&lt;/h3&gt;
+
+&lt;p&gt;A Taxonomy will be rendered at /&lt;code&gt;PLURAL&lt;/code&gt;/&lt;code&gt;TERM&lt;/code&gt;/ (e.g.&amp;nbsp;&lt;a href=&#34;http://spf13.com/topics/golang/&#34;&gt;http://spf13.com/topics/golang/&lt;/a&gt;) from:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.html (e.g.&amp;nbsp;&lt;code&gt;/layouts/taxonomy/topic.html&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;/layouts/_default/taxonomy.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/taxonomy.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;section-rss:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Section RSS&lt;/h3&gt;
+
+&lt;p&gt;A Section’s RSS will be rendered at /&lt;code&gt;SECTION&lt;/code&gt;/index.xml (e.g.&amp;nbsp;&lt;a href=&#34;http://spf13.com/project/index.xml&#34;&gt;http://spf13.com/project/index.xml&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hugo ships with its own &lt;a href=&#34;http://cyber.law.harvard.edu/rss/rss.html&#34; title=&#34;RSS 2.0 Specification&#34;&gt;RSS 2.0&lt;/a&gt; template. In most cases this will
+be sufficient, and an RSS template will not need to be provided by the
+user.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo provides the ability for you to define any RSS type you wish, and
+can have different RSS files for each section and taxonomy.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;taxonomy-rss:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Taxonomy RSS&lt;/h3&gt;
+
+&lt;p&gt;A Taxonomy’s RSS will be rendered at /&lt;code&gt;PLURAL&lt;/code&gt;/&lt;code&gt;TERM&lt;/code&gt;/index.xml (e.g.&amp;nbsp;&lt;a href=&#34;http://spf13.com/topics/golang/index.xml&#34;&gt;http://spf13.com/topics/golang/index.xml&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hugo ships with its own &lt;a href=&#34;http://cyber.law.harvard.edu/rss/rss.html&#34; title=&#34;RSS 2.0 Specification&#34;&gt;RSS 2.0&lt;/a&gt; template. In most cases this will
+be sufficient, and an RSS template will not need to be provided by the
+user.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo provides the ability for you to define any RSS type you wish, and
+can have different RSS files for each section and taxonomy.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;variables:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Variables&lt;/h2&gt;
+
+&lt;p&gt;List pages are of the type &amp;ldquo;node&amp;rdquo; and have all the &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;node variables&lt;/a&gt;
+and &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;site variables&lt;/a&gt; available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;Taxonomy pages will additionally have:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Data.&lt;code&gt;Singular&lt;/code&gt;&lt;/strong&gt; The taxonomy itself.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;example-list-template-pages:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Example List Template Pages&lt;/h2&gt;
+
+&lt;h3 id=&#34;example-section-template-post-html:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Example section template (post.html)&lt;/h3&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.
+It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;. All examples use a
+&lt;a href=&#34;http://localhost:1313/templates/views/&#34;&gt;view&lt;/a&gt; called either &amp;ldquo;li&amp;rdquo; or &amp;ldquo;summary&amp;rdquo; which this example site
+defined.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+   &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+        &amp;lt;ul id=&amp;quot;list&amp;quot;&amp;gt;
+            {{ range .Data.Pages }}
+                {{ .Render &amp;quot;li&amp;quot;}}
+            {{ end }}
+        &amp;lt;/ul&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-taxonomy-template-tag-html:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Example taxonomy template (tag.html)&lt;/h3&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.
+It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;. All examples use a
+&lt;a href=&#34;http://localhost:1313/templates/views/&#34;&gt;view&lt;/a&gt; called either &amp;ldquo;li&amp;rdquo; or &amp;ldquo;summary&amp;rdquo; which this example site
+defined.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+   &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    {{ range .Data.Pages }}
+        {{ .Render &amp;quot;summary&amp;quot;}}
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ordering-content:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Ordering Content&lt;/h2&gt;
+
+&lt;p&gt;In the case of Hugo, each list will render the content based on metadata provided in the &lt;a href=&#34;http://localhost:1313/content/front-matter/&#34;&gt;front
+matter&lt;/a&gt;. See &lt;a href=&#34;http://localhost:1313/content/ordering/&#34;&gt;ordering content&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;Here are a variety of different ways you can order the content items in
+your list templates:&lt;/p&gt;
+
+&lt;h3 id=&#34;order-by-weight-date-default:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by Weight -&amp;gt; Date (default)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-weight-date:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by Weight -&amp;gt; Date&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByWeight }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-date:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by Date&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByDate }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-publishdate:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by PublishDate&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByPublishDate }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .PublishDate.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-length:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by Length&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByLength }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-title:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by Title&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByTitle }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-linktitle:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Order by LinkTitle&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByLinkTitle }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .LinkTitle }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;reverse-order:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Reverse Order&lt;/h3&gt;
+
+&lt;p&gt;Can be applied to any of the above. Using Date for an example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.ByDate.Reverse }}
+&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;grouping-content:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping Content&lt;/h2&gt;
+
+&lt;p&gt;Hugo provides some grouping functions for list pages. You can use them to
+group pages by Section, Type, Date etc.&lt;/p&gt;
+
+&lt;p&gt;Here are a variety of different ways you can group the content items in
+your list templates:&lt;/p&gt;
+
+&lt;h3 id=&#34;grouping-by-page-field:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping by Page field&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupBy &amp;quot;Section&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;grouping-by-page-date:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping by Page date&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByDate &amp;quot;2006-01&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;grouping-by-page-publish-date:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping by Page publish date&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByPublishDate &amp;quot;2006-01&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .PublishDate.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;grouping-by-page-param:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping by Page param&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByParam &amp;quot;param_key&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;grouping-by-page-param-in-date-format:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Grouping by Page param in date format&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByParamDate &amp;quot;param_key&amp;quot; &amp;quot;2006-01&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;reversing-key-order:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Reversing Key Order&lt;/h3&gt;
+
+&lt;p&gt;The ordering of the groups is performed by keys in alphanumeric order (A–Z,
+1–100) and in reverse chronological order (newest first) for dates.&lt;/p&gt;
+
+&lt;p&gt;While these are logical defaults, they are not always the desired order. There
+are two different syntaxes to change the order; they both work the same way, so
+it’s really just a matter of preference.&lt;/p&gt;
+
+&lt;h4 id=&#34;reverse-method:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Reverse method&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range (.Data.Pages.GroupBy &amp;quot;Section&amp;quot;).Reverse }}
+...
+
+{{ range (.Data.Pages.GroupByDate &amp;quot;2006-01&amp;quot;).Reverse }}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;providing-the-alternate-direction:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Providing the (alternate) direction&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByDate &amp;quot;2006-01&amp;quot; &amp;quot;asc&amp;quot; }}
+...
+
+{{ range .Data.Pages.GroupBy &amp;quot;Section&amp;quot; &amp;quot;desc&amp;quot; }}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ordering-pages-within-group:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Ordering Pages within Group&lt;/h3&gt;
+
+&lt;p&gt;Because Grouping returns a key and a slice of pages, all of the ordering methods listed above are available.&lt;/p&gt;
+
+&lt;p&gt;In this example, I’ve ordered the groups in chronological order and the content
+within each group in alphabetical order by title.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Data.Pages.GroupByDate &amp;quot;2006-01&amp;quot; &amp;quot;asc&amp;quot; }}
+&amp;lt;h3&amp;gt;{{ .Key }}&amp;lt;/h3&amp;gt;
+&amp;lt;ul&amp;gt;
+    {{ range .Pages.ByTitle }}
+    &amp;lt;li&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+    {{ end }}
+&amp;lt;/ul&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;filtering-limiting-content:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;Filtering &amp;amp; Limiting Content&lt;/h2&gt;
+
+&lt;p&gt;Sometimes you only want to list a subset of the available content. A common
+request is to only display “Posts” on the homepage. Using the &lt;code&gt;where&lt;/code&gt; function,
+you can do just that.&lt;/p&gt;
+
+&lt;h3 id=&#34;first:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;&lt;code&gt;first&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;first&lt;/code&gt; works like the &lt;code&gt;limit&lt;/code&gt; keyword in SQL. It reduces the array to only the
+first &lt;em&gt;N&lt;/em&gt; elements. It takes the array and number of elements as input.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range first 10 .Data.Pages }}
+    {{ .Render &amp;quot;summary&amp;quot; }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;where:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;&lt;code&gt;where&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;where&lt;/code&gt; works in a similar manner to the &lt;code&gt;where&lt;/code&gt; keyword in SQL. It selects all
+elements of the slice that match the provided field and value. It takes three
+arguments: &amp;lsquo;array or slice of maps or structs&amp;rsquo;, &amp;lsquo;key or field name&amp;rsquo; and &amp;lsquo;match
+value&amp;rsquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range where .Data.Pages &amp;quot;Section&amp;quot; &amp;quot;post&amp;quot; }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;first-where-together:8c265e2adc353bedf8022b542a0b78ab&#34;&gt;&lt;code&gt;first&lt;/code&gt; &amp;amp; &lt;code&gt;where&lt;/code&gt; Together&lt;/h3&gt;
+
+&lt;p&gt;Using both together can be very powerful.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range first 5 (where .Data.Pages &amp;quot;Section&amp;quot; &amp;quot;post&amp;quot;) }}
+   {{ .Content }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If &lt;code&gt;where&lt;/code&gt; or &lt;code&gt;first&lt;/code&gt; receives invalid input or a field name that doesn’t exist,
+it will return an error and stop site generation.&lt;/p&gt;
+
+&lt;p&gt;These are both template functions and work on not only
+&lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;lists&lt;/a&gt;, but &lt;a href=&#34;http://localhost:1313/taxonomies/displaying/&#34;&gt;taxonomies&lt;/a&gt;,
+&lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;terms&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;groups&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Homepage</title>
+      <link>http://localhost:1313/templates/homepage/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/homepage/</guid>
+      <description>
+
+&lt;p&gt;The home page of a website is often formatted differently than the other
+pages. In Hugo you can define your own homepage template.&lt;/p&gt;
+
+&lt;p&gt;Homepage is of the type &amp;ldquo;node&amp;rdquo; and have all the &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;node
+variables&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;site
+variables&lt;/a&gt; available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is the only required template for building a site and useful when
+bootstrapping a new site and template. It is also the only required
+template when using a single page site.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition to the standard node variables, the homepage has access to
+all site content accessible from &lt;code&gt;.Data.Pages&lt;/code&gt;. Details on how to use the
+list of pages can be found in the &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;Lists Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:df172b50a72343cc3a669e7d2f82e221&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when
+rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;Hugo will use the following prioritized list. If a file isn’t present,
+then the next one in the list will be used. This enables you to craft
+specific layouts when you want to without creating more templates
+than necessary. For most sites, only the _default file at the end of
+the list will be needed.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/index.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/index.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;example-index-html:df172b50a72343cc3a669e7d2f82e221&#34;&gt;Example index.html&lt;/h2&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt; and uses a similar approach as a &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;List&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html class=&amp;quot;no-js&amp;quot; lang=&amp;quot;en-US&amp;quot; prefix=&amp;quot;og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+
+    {{ partial &amp;quot;meta.html&amp;quot; . }}
+
+    &amp;lt;base href=&amp;quot;{{ .Site.BaseURL }}&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ .Site.Title }}&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;
+    &amp;lt;link href=&amp;quot;{{ .RSSlink }}&amp;quot; rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; title=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt;
+
+    {{ partial &amp;quot;head_includes.html&amp;quot; . }}
+&amp;lt;/head&amp;gt;
+&amp;lt;body lang=&amp;quot;en&amp;quot;&amp;gt;
+
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    {{ range first 10 .Data.Pages }}
+        {{ .Render &amp;quot;summary&amp;quot;}}
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Taxonomy Terms Template</title>
+      <link>http://localhost:1313/templates/terms/</link>
+      <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/terms/</guid>
+      <description>
+
+&lt;p&gt;A unique template is needed to create a list of the terms for a given
+taxonomy. This is different from the &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list template&lt;/a&gt;
+as that template is a list of content, whereas this is a list of meta data.&lt;/p&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when
+rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;A Taxonomy Terms List will be rendered at /&lt;code&gt;PLURAL&lt;/code&gt;/
+(e.g. &lt;a href=&#34;http://spf13.com/topics/&#34;&gt;http://spf13.com/topics/&lt;/a&gt;)
+from the following prioritized list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.terms.html (e.g. &lt;code&gt;/layouts/taxonomy/topic.terms.html&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;/layouts/_default/terms.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If a file isn’t present,
+then the next one in the list will be used. This enables you to craft
+specific layouts when you want to without creating more templates
+than necessary. For most sites, only the &lt;code&gt;_default&lt;/code&gt; file at the end of
+the list will be needed.&lt;/p&gt;
+
+&lt;p&gt;If that neither file is found in either the /layouts or /theme/layouts
+directory, then Hugo will not render the taxonomy terms pages. It is also
+common for people to render taxonomy terms lists on other pages such as
+the homepage or the sidebar (such as a tag cloud) and not have a
+dedicated page for the terms.&lt;/p&gt;
+
+&lt;h2 id=&#34;variables:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Variables&lt;/h2&gt;
+
+&lt;p&gt;Taxonomy Terms pages are of the type &amp;ldquo;node&amp;rdquo; and have all the
+&lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;node variables&lt;/a&gt; and
+&lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;site variables&lt;/a&gt;
+available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;Taxonomy Terms pages will additionally have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;.Data.Singular&lt;/strong&gt; The singular name of the taxonomy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.Data.Plural&lt;/strong&gt; The plural name of the taxonomy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.Data.Terms&lt;/strong&gt; The taxonomy itself&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.Data.Terms.Alphabetical&lt;/strong&gt; The Terms alphabetized&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.Data.Terms.ByCount&lt;/strong&gt; The Terms ordered by popularity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The last two can also be reversed: &lt;strong&gt;.Data.Terms.Alphabetical.Reverse&lt;/strong&gt;, &lt;strong&gt;.Data.Terms.ByCount.Reverse&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-terms-html-files:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Example terms.html files&lt;/h3&gt;
+
+&lt;p&gt;List pages are of the type &amp;ldquo;node&amp;rdquo; and have all the
+&lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;node variables&lt;/a&gt; and
+&lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;site variables&lt;/a&gt;
+available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.
+It makes use of &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial templates&lt;/a&gt;. The list of taxonomy
+templates cannot use a &lt;a href=&#34;http://localhost:1313/templates/views/&#34;&gt;content view&lt;/a&gt; as they don&amp;rsquo;t display the content, but
+rather information about the content.&lt;/p&gt;
+
+&lt;p&gt;This particular template lists all of the Tags used on
+&lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt; and provides a count for the number of pieces of
+content tagged with each tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.Data.Terms&lt;/code&gt; is a map of terms ⇒ [contents]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+
+    &amp;lt;ul&amp;gt;
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $key | urlize }}&amp;quot;&amp;gt;{{ $key }}&amp;lt;/a&amp;gt; {{ len $value }}&amp;lt;/li&amp;gt;
+    {{ end }}
+   &amp;lt;/ul&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another example listing the content for each term (ordered by Date):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+    &amp;lt;h2&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $value.Name | urlize }}&amp;quot;&amp;gt;{{ $value.Name }}&amp;lt;/a&amp;gt; {{ $value.Count }}&amp;lt;/h2&amp;gt;
+    &amp;lt;ul&amp;gt;
+    {{ range $value.Pages.ByDate }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    {{ end }}
+    &amp;lt;/ul&amp;gt;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ordering:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Ordering&lt;/h2&gt;
+
+&lt;p&gt;Hugo can order the meta data in two different ways. It can be ordered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;by the number of contents assigned to that key, or&lt;/li&gt;
+&lt;li&gt;alphabetically.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;example-terms-html-file-alphabetical:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Example terms.html file (alphabetical)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;ul&amp;gt;
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $value.Name | urlize }}&amp;quot;&amp;gt;{{ $value.Name }}&amp;lt;/a&amp;gt; {{ $value.Count }}&amp;lt;/li&amp;gt;
+    {{ end }}
+    &amp;lt;/ul&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-terms-html-file-ordered-by-popularity:9b10c1f64082d3869fd4cb1f85809430&#34;&gt;Example terms.html file (ordered by popularity)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;ul&amp;gt;
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms.ByCount }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $value.Name | urlize }}&amp;quot;&amp;gt;{{ $value.Name }}&amp;lt;/a&amp;gt; {{ $value.Count }}&amp;lt;/li&amp;gt;
+    {{ end }}
+    &amp;lt;/ul&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Content Views</title>
+      <link>http://localhost:1313/templates/views/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/views/</guid>
+      <description>
+
+&lt;p&gt;In addition to the &lt;a href=&#34;http://localhost:1313/templates/content/&#34;&gt;single content template&lt;/a&gt;, Hugo can render alternative views of
+your content. These are especially useful in &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example you may want content of every type to be shown on the
+homepage, but only a summary view of it there. Perhaps on a taxonomy
+list page you would only want a bulleted list of your content. Views
+make this very straightforward by delegating the rendering of each
+different type of content to the content itself.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-content-view:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;Creating a content view&lt;/h2&gt;
+
+&lt;p&gt;To create a new view, simply create a template in each of your different
+content type directories with the view name. In the following example, we
+have created a &amp;ldquo;li&amp;rdquo; view and a &amp;ldquo;summary&amp;rdquo; view for our two content types
+of post and project. As you can see, these sit next to the &lt;a href=&#34;http://localhost:1313/templates/content/&#34;&gt;single
+content view&lt;/a&gt; template &amp;ldquo;single.html&amp;rdquo;. You can even
+provide a specific view for a given type and continue to use the
+_default/single.html for the primary view.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ layouts/
+  ▾ post/
+      li.html
+      single.html
+      summary.html
+  ▾ project/
+      li.html
+      single.html
+      summary.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hugo also has support for a default content template to be used in the event
+that a specific template has not been provided for that type. The default type
+works the same as the other types, but the directory must be called &amp;ldquo;_default&amp;rdquo;.
+Content views can also be defined in the &amp;ldquo;_default&amp;rdquo; directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ layouts/
+  ▾ _default/
+      li.html
+      single.html
+      summary.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when
+rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;Hugo will use the following prioritized list. If a file isn’t present,
+then the next one in the list will be used. This enables you to craft
+specific layouts when you want to without creating more templates
+than necessary. For most sites only the _default file at the end of
+the list will be needed.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;/&lt;code&gt;VIEW&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/&lt;code&gt;VIEW&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/&lt;code&gt;TYPE&lt;/code&gt;/&lt;code&gt;VIEW&lt;/code&gt;.html&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/&lt;code&gt;view&lt;/code&gt;.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;example-using-views:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;Example using views&lt;/h2&gt;
+
+&lt;h3 id=&#34;rendering-view-inside-of-a-list:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;rendering view inside of a list&lt;/h3&gt;
+
+&lt;p&gt;Using the summary view (defined below) inside of a (&lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list
+templates&lt;/a&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+&amp;lt;div&amp;gt;
+&amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+{{ range .Data.Pages }}
+{{ .Render &amp;quot;summary&amp;quot;}}
+{{ end }}
+&amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above example, you will notice that we have called &lt;code&gt;.Render&lt;/code&gt; and passed in
+which view to render the content with. &lt;code&gt;.Render&lt;/code&gt; is a special function available on
+a content which tells the content to render itself with the provided view template.
+In this example, we are not using the li view. To use this we would
+change the render line to &lt;code&gt;{{ .Render &amp;quot;li&amp;quot; }}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;li-html:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;li.html&lt;/h3&gt;
+
+&lt;p&gt;Hugo will pass the entire page object to the view template. See &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;page
+variables&lt;/a&gt; for a complete list.&lt;/p&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;
+&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;
+&amp;lt;div class=&amp;quot;meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }}&amp;lt;/div&amp;gt;
+&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;summary-html:26ec5f5c36efaeaee4a3ac86cdec358e&#34;&gt;summary.html&lt;/h3&gt;
+
+&lt;p&gt;Hugo will pass the entire page object to the view template. See &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;page
+variables&lt;/a&gt; for a complete list.&lt;/p&gt;
+
+&lt;p&gt;This content template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;article class=&amp;quot;post&amp;quot;&amp;gt;
+&amp;lt;header&amp;gt;
+&amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{ .Permalink }}&#39;&amp;gt; {{ .Title }}&amp;lt;/a&amp;gt; &amp;lt;/h2&amp;gt;
+&amp;lt;div class=&amp;quot;post-meta&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;Mon, Jan 2, 2006&amp;quot; }} - {{ .FuzzyWordCount }} Words &amp;lt;/div&amp;gt;
+&amp;lt;/header&amp;gt;
+
+{{ .Summary }}
+&amp;lt;footer&amp;gt;
+&amp;lt;a href=&#39;{{ .Permalink }}&#39;&amp;gt;&amp;lt;nobr&amp;gt;Read more →&amp;lt;/nobr&amp;gt;&amp;lt;/a&amp;gt;
+&amp;lt;/footer&amp;gt;
+&amp;lt;/article&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Partial Templates</title>
+      <link>http://localhost:1313/templates/partials/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/partials/</guid>
+      <description>
+
+&lt;p&gt;In practice, it&amp;rsquo;s very convenient to split out common template portions into a
+partial template that can be included anywhere. As you create the rest of your
+templates, you will include templates from the /layout/partials directory, or from arbitrary subdirectories like /layout/partials/post/tag.&lt;/p&gt;
+
+&lt;p&gt;Partials are especially important for themes as it gives users an opportunity
+to overwrite just a small part of your theme, while maintaining future compatibility.&lt;/p&gt;
+
+&lt;p&gt;Theme developers may want to include a few partials with empty HTML
+files in the theme just so end users have an easy place to inject their
+customized content.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found it helpful to include a header and footer template in
+partials so I can include those in all the full page layouts.  There is
+nothing special about header.html and footer.html other than they seem
+like good names to use for inclusion in your other templates.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ layouts/
+  ▾ partials/
+      header.html
+      footer.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By ensuring that we only reference &lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;variables&lt;/a&gt;
+used for both nodes and pages, we can use the same partials for both.&lt;/p&gt;
+
+&lt;h2 id=&#34;partial-vs-template:60445d32b6d7b7ead61b36cd70256d44&#34;&gt;Partial vs Template&lt;/h2&gt;
+
+&lt;p&gt;Version v0.12 of Hugo introduced the &lt;code&gt;partial&lt;/code&gt; call inside the template system.
+This is a change to the way partials were handled previously inside the
+template system. In earlier versions, Hugo didn’t treat partials specially, and
+you could include a partial template with the &lt;code&gt;template&lt;/code&gt; call in the standard
+template language.&lt;/p&gt;
+
+&lt;p&gt;With the addition of the theme system in v0.11, it became apparent that a theme
+&amp;amp; override aware partial was needed.&lt;/p&gt;
+
+&lt;p&gt;When using Hugo v0.12 and above, please use the &lt;code&gt;partial&lt;/code&gt; call (and leave out
+the “partial/” path). The old approach would still work, but wouldn’t benefit from
+the ability to have users override the partial theme file with local layouts.&lt;/p&gt;
+
+&lt;h2 id=&#34;example-header-html:60445d32b6d7b7ead61b36cd70256d44&#34;&gt;Example header.html&lt;/h2&gt;
+
+&lt;p&gt;This header template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html class=&amp;quot;no-js&amp;quot; lang=&amp;quot;en-US&amp;quot; prefix=&amp;quot;og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+
+    {{ partial &amp;quot;meta.html&amp;quot; . }}
+
+    &amp;lt;base href=&amp;quot;{{ .Site.BaseURL }}&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt; {{ .Title }} : spf13.com &amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;
+    {{ if .RSSlink }}&amp;lt;link href=&amp;quot;{{ .RSSlink }}&amp;quot; rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; title=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt;{{ end }}
+
+    {{ partial &amp;quot;head_includes.html&amp;quot; . }}
+&amp;lt;/head&amp;gt;
+&amp;lt;body lang=&amp;quot;en&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;example-footer-html:60445d32b6d7b7ead61b36cd70256d44&#34;&gt;Example footer.html&lt;/h2&gt;
+
+&lt;p&gt;This footer template is used for &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13.com&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;footer&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;p&amp;gt;
+    &amp;amp;copy; 2013-14 Steve Francia.
+    &amp;lt;a href=&amp;quot;http://creativecommons.org/licenses/by/3.0/&amp;quot; title=&amp;quot;Creative Commons Attribution&amp;quot;&amp;gt;Some rights reserved&amp;lt;/a&amp;gt;;
+    please attribute properly and link back. Hosted by &amp;lt;a href=&amp;quot;http://servergrove.com&amp;quot;&amp;gt;ServerGrove&amp;lt;/a&amp;gt;.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/footer&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+
+  var _gaq = _gaq || [];
+  _gaq.push([&#39;_setAccount&#39;, &#39;UA-XYSYXYSY-X&#39;]);
+  _gaq.push([&#39;_trackPageview&#39;]);
+
+  (function() {
+    var ga = document.createElement(&#39;script&#39;);
+    ga.src = (&#39;https:&#39; == document.location.protocol ? &#39;https://ssl&#39; :
+        &#39;http://www&#39;) + &#39;.google-analytics.com/ga.js&#39;;
+    ga.setAttribute(&#39;async&#39;, &#39;true&#39;);
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+
+&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To reference a partial template stored in a subfolder, e.g. &lt;code&gt;/layout/partials/post/tag/list.html&lt;/code&gt;, call it this way:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; {{ partial &amp;quot;post/tag/list&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the subdirectories you create under /layout/partials can be named whatever you like.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For more examples of referencing these templates, see &lt;a href=&#34;http://localhost:1313/templates/content/&#34;&gt;single content
+templates&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list templates&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/templates/homepage/&#34;&gt;homepage templates&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSS (feed) Templates</title>
+      <link>http://localhost:1313/templates/rss/</link>
+      <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/rss/</guid>
+      <description>
+
+&lt;p&gt;Like all other templates, you can use a single RSS template to generate all of your RSS feeds, or you can create a specific template for each individual feed.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Unlike other Hugo templates&lt;/em&gt;, Hugo ships with its own &lt;a href=&#34;#the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320&#34;&gt;RSS 2.0 template&lt;/a&gt;. In most cases this will be sufficient, and an RSS template will not need to be provided by the user. But you can provide an rss template if you like, as you can see in the next section.&lt;/p&gt;
+
+&lt;p&gt;RSS pages are of the &lt;strong&gt;type &amp;ldquo;node&amp;rdquo;&lt;/strong&gt; and have all the &lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;node variables&lt;/a&gt; available to use in the templates.&lt;/p&gt;
+
+&lt;h2 id=&#34;which-template-will-be-rendered:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Which Template will be rendered?&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses a set of rules to figure out which template to use when rendering a specific page.&lt;/p&gt;
+
+&lt;p&gt;Hugo will use the following prioritized list. If a file isn’t present, then the next one in the list will be used. This enables you to craft specific layouts when you want to without creating more templates than necessary. For most sites only the &lt;code&gt;\_default&lt;/code&gt; file at the end of the list will be needed.&lt;/p&gt;
+
+&lt;h3 id=&#34;main-rss:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Main RSS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/rss.xml&lt;/li&gt;
+&lt;li&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Embedded rss.xml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;section-rss:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Section RSS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/section/&lt;code&gt;SECTION&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Embedded rss.xml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;taxonomy-rss:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Taxonomy RSS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/taxonomy/&lt;code&gt;SINGULAR&lt;/code&gt;.rss.xml&lt;/li&gt;
+&lt;li&gt;/themes/&lt;code&gt;THEME&lt;/code&gt;/layouts/_default/rss.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Embedded rss.xml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;configuring-rss:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Configuring RSS&lt;/h2&gt;
+
+&lt;p&gt;If the following values are specified in the site’s config file (&lt;code&gt;config.toml&lt;/code&gt;), then they will be included in the RSS output. Example values are provided.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;languageCode = &amp;quot;en-us&amp;quot;
+copyright = &amp;quot;This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.&amp;quot;
+
+[author]
+    name = &amp;quot;My Name Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-embedded-rss-xml:eceb479b7b3b2077408a2878a29e1320&#34;&gt;The Embedded rss.xml&lt;/h2&gt;
+
+&lt;p&gt;This is the default RSS template that ships with Hugo. It adheres to the &lt;a href=&#34;http://cyber.law.harvard.edu/rss/rss.html&#34; title=&#34;RSS 2.0 Specification&#34;&gt;RSS 2.0 Specification&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot; xmlns:atom=&amp;quot;http://www.w3.org/2005/Atom&amp;quot;&amp;gt;
+  &amp;lt;channel&amp;gt;
+    &amp;lt;title&amp;gt;{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}&amp;lt;/title&amp;gt;
+    &amp;lt;link&amp;gt;{{ .Permalink }}&amp;lt;/link&amp;gt;
+    &amp;lt;description&amp;gt;Recent content {{ with .Title }}in {{.}} {{ end }}on {{ .Site.Title }}&amp;lt;/description&amp;gt;
+    &amp;lt;generator&amp;gt;Hugo -- gohugo.io&amp;lt;/generator&amp;gt;{{ with .Site.LanguageCode }}
+    &amp;lt;language&amp;gt;{{.}}&amp;lt;/language&amp;gt;{{end}}{{ with .Site.Author.email }}
+    &amp;lt;managingEditor&amp;gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&amp;lt;/managingEditor&amp;gt;{{end}}{{ with .Site.Author.email }}
+    &amp;lt;webMaster&amp;gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&amp;lt;/webMaster&amp;gt;{{end}}{{ with .Site.Copyright }}
+    &amp;lt;copyright&amp;gt;{{.}}&amp;lt;/copyright&amp;gt;{{end}}{{ if not .Date.IsZero }}
+    &amp;lt;lastBuildDate&amp;gt;{{ .Date.Format &amp;quot;Mon, 02 Jan 2006 15:04:05 -0700&amp;quot; | safeHTML }}&amp;lt;/lastBuildDate&amp;gt;{{ end }}
+    &amp;lt;atom:link href=&amp;quot;{{.URL}}&amp;quot; rel=&amp;quot;self&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; /&amp;gt;
+    {{ range first 15 .Data.Pages }}
+    &amp;lt;item&amp;gt;
+      &amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt;
+      &amp;lt;link&amp;gt;{{ .Permalink }}&amp;lt;/link&amp;gt;
+      &amp;lt;pubDate&amp;gt;{{ .Date.Format &amp;quot;Mon, 02 Jan 2006 15:04:05 -0700&amp;quot; | safeHTML }}&amp;lt;/pubDate&amp;gt;
+      {{ with .Site.Author.email }}&amp;lt;author&amp;gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&amp;lt;/author&amp;gt;{{end}}
+      &amp;lt;guid&amp;gt;{{ .Permalink }}&amp;lt;/guid&amp;gt;
+      &amp;lt;description&amp;gt;{{ .Content | html }}&amp;lt;/description&amp;gt;
+    &amp;lt;/item&amp;gt;
+    {{ end }}
+  &amp;lt;/channel&amp;gt;
+&amp;lt;/rss&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: &lt;em&gt;Hugo will automatically add the following header line to this file on render… please don&amp;rsquo;t include this in the template as it&amp;rsquo;s not valid HTML.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; standalone=&amp;quot;yes&amp;quot; ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;referencing-your-rss-feed-in-head:eceb479b7b3b2077408a2878a29e1320&#34;&gt;Referencing your RSS Feed in &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;In your &lt;code&gt;header.html&lt;/code&gt; template, you can specify your RSS feed in your &lt;code&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; tag like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .RSSlink }}
+  &amp;lt;link href=&amp;quot;{{ .RSSlink }}&amp;quot; rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; title=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt;
+  &amp;lt;link href=&amp;quot;{{ .RSSlink }}&amp;quot; rel=&amp;quot;feed&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; title=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; with the autodiscovery link specified by the line with &lt;code&gt;rel=&amp;quot;alternate&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;.RSSlink&lt;/code&gt; will render the appropriate RSS feed URL for the section, whether it&amp;rsquo;s everything, posts in a section, or a taxonomy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;N.b.&lt;/strong&gt;, if you reference your RSS link, be sure to specify the mime type with &lt;code&gt;type=&amp;quot;application/rss+xml&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;a href=&amp;quot;{{ .URL }}&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;{{ .SomeText }}&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sitemap Template</title>
+      <link>http://localhost:1313/templates/sitemap/</link>
+      <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/sitemap/</guid>
+      <description>
+
+&lt;p&gt;A single Sitemap template is used to generate the &lt;code&gt;sitemap.xml&lt;/code&gt; file.
+Hugo automatically comes with this template file. &lt;strong&gt;No work is needed on
+the users&amp;rsquo; part unless they want to customize &lt;code&gt;sitemap.xml&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This page is of the type &amp;ldquo;node&amp;rdquo; and have all the &lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;node
+variables&lt;/a&gt; available to use in this template
+along with Sitemap-specific ones:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Sitemap.ChangeFreq&lt;/strong&gt; The page change frequency&lt;br&gt;
+&lt;strong&gt;.Sitemap.Priority&lt;/strong&gt; The priority of the page&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition to the standard node variables, the homepage has access to all
+site pages through &lt;code&gt;.Data.Pages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If provided, Hugo will use &lt;code&gt;/layouts/sitemap.xml&lt;/code&gt; instead of the internal
+one.&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo-s-sitemap-xml:3d0a9b61d194120d73ece3fe86b621b5&#34;&gt;Hugo’s sitemap.xml&lt;/h2&gt;
+
+&lt;p&gt;This template respects the version 0.9 of the &lt;a href=&#34;http://www.sitemaps.org/protocol.html&#34;&gt;Sitemap
+Protocol&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;urlset xmlns=&amp;quot;http://www.sitemaps.org/schemas/sitemap/0.9&amp;quot;&amp;gt;
+  {{ range .Data.Pages }}
+  &amp;lt;url&amp;gt;
+    &amp;lt;loc&amp;gt;{{ .Permalink }}&amp;lt;/loc&amp;gt;
+    &amp;lt;lastmod&amp;gt;{{ safeHTML ( .Date.Format &amp;quot;2006-01-02T15:04:05-07:00&amp;quot; ) }}&amp;lt;/lastmod&amp;gt;{{ with .Sitemap.ChangeFreq }}
+    &amp;lt;changefreq&amp;gt;{{ . }}&amp;lt;/changefreq&amp;gt;{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
+    &amp;lt;priority&amp;gt;{{ .Sitemap.Priority }}&amp;lt;/priority&amp;gt;{{ end }}
+  &amp;lt;/url&amp;gt;
+  {{ end }}
+&amp;lt;/urlset&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Important:&lt;/strong&gt; Hugo will automatically add the following header line to this file
+on render. Please don&amp;rsquo;t include this in the template as it&amp;rsquo;s not valid HTML.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; standalone=&amp;quot;yes&amp;quot; ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configuring-sitemap-xml:3d0a9b61d194120d73ece3fe86b621b5&#34;&gt;Configuring sitemap.xml&lt;/h2&gt;
+
+&lt;p&gt;Defaults for &lt;code&gt;&amp;lt;changefreq&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;priority&amp;gt;&lt;/code&gt; values can be set in the site&amp;rsquo;s config file, e.g.:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[sitemap]
+  changefreq = &amp;quot;monthly&amp;quot;
+  priority = 0.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The same fields can be specified in an individual page&amp;rsquo;s front matter in order to override the value for that page.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>404.html Templates</title>
+      <link>http://localhost:1313/templates/404/</link>
+      <pubDate>Wed, 21 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/templates/404/</guid>
+      <description>
+
+&lt;p&gt;When using Hugo with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;, you can provide
+your own template for a &lt;a href=&#34;https://help.github.com/articles/custom-404-pages/&#34;&gt;custom 404 error page&lt;/a&gt;
+by creating a 404.html template file in your &lt;code&gt;/layouts&lt;/code&gt; folder.
+When Hugo generates your site, the &lt;code&gt;404.html&lt;/code&gt; file will be placed in the root.&lt;/p&gt;
+
+&lt;p&gt;404 pages are of the type &lt;strong&gt;&amp;ldquo;node&amp;rdquo;&lt;/strong&gt; and have all the &lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;node
+variables&lt;/a&gt; available to use in the templates.&lt;/p&gt;
+
+&lt;p&gt;In addition to the standard node variables, the 404 page has access to
+all site content accessible from &lt;code&gt;.Data.Pages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ layouts/
+    404.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;404-html:ad51e5da25a9033d8e045d219725624f&#34;&gt;404.html&lt;/h2&gt;
+
+&lt;p&gt;This is a basic example of a 404.html template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+{{ partial &amp;quot;subheader.html&amp;quot; . }}
+
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+   &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;automatic-loading:ad51e5da25a9033d8e045d219725624f&#34;&gt;Automatic Loading&lt;/h3&gt;
+
+&lt;p&gt;Your 404.html file can be set to load automatically when a visitor enters a mistaken URL path, dependent upon the web serving environment you are using. For example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;GitHub Pages&lt;/em&gt; - it&amp;rsquo;s automatic.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Apache&lt;/em&gt; - one way is to specify &lt;code&gt;ErrorDocument 404 /404.html&lt;/code&gt; in an &lt;code&gt;.htaccess&lt;/code&gt; file in the root of your site.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Nginx&lt;/em&gt; - you might specify &lt;code&gt;error_page   404  =  /404.html;&lt;/code&gt; in your &lt;code&gt;nginx.conf&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Amazon AWS S3&lt;/em&gt; - when setting a bucket up for static web serving, you can specify the error file.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

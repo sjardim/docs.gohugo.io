@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taxonomies on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/taxonomies/</link>
+    <description>Recent content in Taxonomies on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/taxonomies/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Taxonomy Overview</title>
+      <link>http://localhost:1313/taxonomies/overview/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/overview/</guid>
+      <description>
+
+&lt;p&gt;Hugo includes support for user-defined groupings of content called
+taxonomies.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:68f80267fa3a50980dbb745a782b8dca:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:68f80267fa3a50980dbb745a782b8dca:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Taxonomies give us a way to classify our content so we can
+demonstrate relationships in a variety of logical ways.&lt;/p&gt;
+
+&lt;p&gt;The default taxonomies for Hugo are &lt;em&gt;tags&lt;/em&gt; and &lt;em&gt;categories&lt;/em&gt;. These
+taxonomies are common to many website systems (e.g. WordPress, Drupal,
+Jekyll). Unlike all of those systems, Hugo makes it trivial to customize
+the taxonomies you will be using for your site however you wish. Another
+good use for taxonomies is to group a set of posts into a series. Other
+common uses would include &lt;em&gt;categories&lt;/em&gt;, &lt;em&gt;tags&lt;/em&gt;, &lt;em&gt;groups&lt;/em&gt;, &lt;em&gt;series&lt;/em&gt; and many
+more.&lt;/p&gt;
+
+&lt;p&gt;When taxonomies are used (and templates are provided), Hugo will
+automatically create pages listing all of the taxonomies, their terms
+and all of the content attached to those terms.&lt;/p&gt;
+
+&lt;h2 id=&#34;definitions:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Taxonomy:&lt;/strong&gt; A categorization that can be used to classify content&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Term:&lt;/strong&gt; A key within that taxonomy&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Value:&lt;/strong&gt; A piece of content assigned to that Term&lt;/p&gt;
+
+&lt;h2 id=&#34;example:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;For example, if I was writing about movies, I may want the following
+taxonomies:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Actors&lt;/li&gt;
+&lt;li&gt;Directors&lt;/li&gt;
+&lt;li&gt;Studios&lt;/li&gt;
+&lt;li&gt;Genre&lt;/li&gt;
+&lt;li&gt;Year&lt;/li&gt;
+&lt;li&gt;Awards&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I would then specify in each movie’s front-matter the specific terms for
+each of those taxonomies. Hugo would then automatically create pages for
+each Actor, Director, Studio, Genre, Year and Award listing all of the
+Movies that matched that specific Actor, Director, etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;taxonomy-organization:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Taxonomy Organization&lt;/h3&gt;
+
+&lt;p&gt;Let’s use an example to demonstrate the different labels in action.
+From the perspective of the taxonomy, it could be visualized as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Actor                    &amp;lt;- Taxonomy
+    Bruce Willis         &amp;lt;- Term
+        The Six Sense    &amp;lt;- Content
+        Unbreakable      &amp;lt;- Content
+        Moonrise Kingdom &amp;lt;- Content
+    Samuel L. Jackson    &amp;lt;- Term
+        Unbreakable      &amp;lt;- Content
+        The Avengers     &amp;lt;- Content
+        xXx              &amp;lt;- Content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the perspective of the content, it would appear differently, though
+the data and labels used are the same:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Unbreakable                 &amp;lt;- Content
+    Actors                  &amp;lt;- Taxonomy
+        Bruce Willis        &amp;lt;- Term
+        Samuel L. Jackson   &amp;lt;- Term
+    Director                &amp;lt;- Taxonomy
+        M. Night Shyamalan  &amp;lt;- Term
+    ...
+Moonrise Kingdom            &amp;lt;- Content
+    Actors                  &amp;lt;- Taxonomy
+        Bruce Willis        &amp;lt;- Term
+        Bill Murray         &amp;lt;- Term
+    Director                &amp;lt;- Taxonomy
+        Wes Anderson        &amp;lt;- Term
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:68f80267fa3a50980dbb745a782b8dca:1&#34;&gt;Taxonomies were called &lt;em&gt;indexes&lt;/em&gt; in Hugo prior to v0.11.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:68f80267fa3a50980dbb745a782b8dca:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Taxonomies</title>
+      <link>http://localhost:1313/taxonomies/usage/</link>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/usage/</guid>
+      <description>
+
+&lt;h2 id=&#34;defining-taxonomies-for-a-site:dc32fe45042973266ca60588597e0b66&#34;&gt;Defining taxonomies for a site&lt;/h2&gt;
+
+&lt;p&gt;Taxonomies must be defined in the site configuration before they can be
+used throughout the site. You need to provide both the plural and
+singular labels for each taxonomy.&lt;/p&gt;
+
+&lt;p&gt;Here is an example configuration in TOML and YAML
+that specifies three taxonomies (the default two, plus &lt;code&gt;series&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Notice the format is &lt;code&gt;&lt;strong&gt;singular key&lt;/strong&gt; = &amp;quot;&lt;em&gt;plural value&lt;/em&gt;&amp;quot;&lt;/code&gt; for TOML,
+or &lt;code&gt;&lt;strong&gt;singular key&lt;/strong&gt;: &amp;quot;&lt;em&gt;plural value&lt;/em&gt;&amp;quot;&lt;/code&gt; for YAML:&lt;/p&gt;
+
+&lt;table class=&#34;table&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;config.toml excerpt:&lt;/th&gt;&lt;th&gt;config.yaml excerpt:&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr valign=&#34;top&#34;&gt;
+&lt;td&gt;&lt;pre&gt;&lt;code&gt;[taxonomies]
+  tag = &#34;tags&#34;
+  category = &#34;categories&#34;
+  series = &#34;series&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td&gt;&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;taxonomies:
+  tag: &#34;tags&#34;
+  category: &#34;categories&#34;
+  series: &#34;series&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;assigning-taxonomy-values-to-content:dc32fe45042973266ca60588597e0b66&#34;&gt;Assigning taxonomy values to content&lt;/h2&gt;
+
+&lt;p&gt;Once an taxonomy is defined at the site level, any piece of content
+can be assigned to it regardless of content type or section.&lt;/p&gt;
+
+&lt;p&gt;Assigning content to an taxonomy is done in the front matter.
+Simply create a variable with the &lt;em&gt;plural&lt;/em&gt; name of the taxonomy
+and assign all terms you want to apply to this content.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;taxonomy values are case insensitive&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;front-matter-example-in-toml:dc32fe45042973266ca60588597e0b66&#34;&gt;Front Matter Example (in TOML)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+title = &amp;quot;Hugo: A fast and flexible static site generator&amp;quot;
+tags = [ &amp;quot;Development&amp;quot;, &amp;quot;Go&amp;quot;, &amp;quot;fast&amp;quot;, &amp;quot;Blogging&amp;quot; ]
+categories = [ &amp;quot;Development&amp;quot; ]
+series = [ &amp;quot;Go Web Dev&amp;quot; ]
+slug = &amp;quot;hugo&amp;quot;
+project_url = &amp;quot;https://github.com/spf13/hugo&amp;quot;
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;front-matter-example-in-json:dc32fe45042973266ca60588597e0b66&#34;&gt;Front Matter Example (in JSON)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;title&amp;quot;: &amp;quot;Hugo: A fast and flexible static site generator&amp;quot;,
+    &amp;quot;tags&amp;quot;: [
+        &amp;quot;Development&amp;quot;,
+        &amp;quot;Go&amp;quot;,
+        &amp;quot;fast&amp;quot;,
+        &amp;quot;Blogging&amp;quot;
+    ],
+    &amp;quot;categories&amp;quot; : [
+        &amp;quot;Development&amp;quot;
+    ],
+    &amp;quot;series&amp;quot; : [
+        &amp;quot;Go Web Dev&amp;quot;
+    ],
+    &amp;quot;slug&amp;quot;: &amp;quot;hugo&amp;quot;,
+    &amp;quot;project_url&amp;quot;: &amp;quot;https://github.com/spf13/hugo&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Displaying Taxonomies</title>
+      <link>http://localhost:1313/taxonomies/displaying/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/displaying/</guid>
+      <description>
+
+&lt;p&gt;There are four common ways you can display the data in your
+taxonomies in addition to the automatic taxonomy pages created by hugo
+using the &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list templates&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;For a given piece of content, you can list the terms attached&lt;/li&gt;
+&lt;li&gt;For a given piece of content, you can list other content with the same
+term&lt;/li&gt;
+&lt;li&gt;You can list all terms for a taxonomy&lt;/li&gt;
+&lt;li&gt;You can list all taxonomies (with their terms)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;1-displaying-taxonomy-terms-assigned-to-this-content:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;1. Displaying taxonomy terms assigned to this content&lt;/h2&gt;
+
+&lt;p&gt;Within your content templates, you may wish to display
+the taxonomies that that piece of content is assigned to.&lt;/p&gt;
+
+&lt;p&gt;Because we are leveraging the front matter system to
+define taxonomies for content, the taxonomies assigned to
+each content piece are located in the usual place
+(.Params.&lt;code&gt;plural&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;example:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul id=&amp;quot;tags&amp;quot;&amp;gt;
+  {{ range .Params.tags }}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;tags/{{ . | urlize }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+  {{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-listing-content-with-the-same-taxonomy-term:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;2. Listing content with the same taxonomy term&lt;/h2&gt;
+
+&lt;p&gt;First, you may be asking why you would use this. If you are using a
+taxonomy for something like a series of posts, this is exactly how you
+would do it. It’s also an quick and dirty way to show some related
+content.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-1:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+  {{ range .Site.Taxonomies.series.golang }}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  {{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;3-listing-all-content-in-a-given-taxonomy:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;3. Listing all content in a given taxonomy&lt;/h2&gt;
+
+&lt;p&gt;This would be very useful in a sidebar as “featured content”. You could
+even have different sections of “featured content” by assigning
+different terms to the content.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-2:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;section id=&amp;quot;menu&amp;quot;&amp;gt;
+    &amp;lt;ul&amp;gt;
+        {{ range $key, $taxonomy := .Site.Taxonomies.featured }}
+        &amp;lt;li&amp;gt; {{ $key }} &amp;lt;/li&amp;gt;
+        &amp;lt;ul&amp;gt;
+            {{ range $taxonomy.Pages }}
+            &amp;lt;li hugo-nav=&amp;quot;{{ .RelPermalink}}&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;{{ .Permalink}}&amp;quot;&amp;gt; {{ .LinkTitle }} &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+            {{ end }}
+        &amp;lt;/ul&amp;gt;
+        {{ end }}
+    &amp;lt;/ul&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;4-rendering-a-site-s-taxonomies:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;4. Rendering a Site&amp;rsquo;s Taxonomies&lt;/h2&gt;
+
+&lt;p&gt;If you wish to display the list of all keys for a taxonomy, you can find retrieve
+them from the &lt;code&gt;.Site&lt;/code&gt; variable which is available on every page.&lt;/p&gt;
+
+&lt;p&gt;This may take the form of a tag cloud, a menu or simply a list.&lt;/p&gt;
+
+&lt;p&gt;The following example displays all tag keys:&lt;/p&gt;
+
+&lt;h3 id=&#34;example-3:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul id=&amp;quot;all-tags&amp;quot;&amp;gt;
+  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/tags/{{ $name | urlize }}&amp;quot;&amp;gt;{{ $name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  {{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;complete-example:bb66d83b0ec41d28c4ebb43a87a7711a&#34;&gt;Complete Example&lt;/h3&gt;
+
+&lt;p&gt;This example will list all taxonomies, each of their keys and all the content assigned to each key.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;section&amp;gt;
+  &amp;lt;ul&amp;gt;
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/{{ $taxonomyname | urlize }}&amp;quot;&amp;gt;{{ $taxonomyname }}&amp;lt;/a&amp;gt;
+        &amp;lt;ul&amp;gt;
+          {{ range $key, $value := $taxonomy }}
+          &amp;lt;li&amp;gt; {{ $key }} &amp;lt;/li&amp;gt;
+                &amp;lt;ul&amp;gt;
+                {{ range $value.Pages }}
+                    &amp;lt;li hugo-nav=&amp;quot;{{ .RelPermalink}}&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;{{ .Permalink}}&amp;quot;&amp;gt; {{ .LinkTitle }} &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+                {{ end }}
+                &amp;lt;/ul&amp;gt;
+          {{ end }}
+        &amp;lt;/ul&amp;gt;
+      &amp;lt;/li&amp;gt;
+    {{ end }}
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Taxonomy Templates</title>
+      <link>http://localhost:1313/taxonomies/templates/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/templates/</guid>
+      <description>&lt;p&gt;There are two different templates that the use of taxonomies will require you to provide.&lt;/p&gt;
+
+&lt;p&gt;Both templates are covered in detail in the templates section.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list template&lt;/a&gt; is any template that will be used to render multiple pieces of
+content in a single html page. This template will be used to generate
+all the automatically created taxonomy pages.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&#34;http://localhost:1313/templates/terms/&#34;&gt;taxonomy terms template&lt;/a&gt; is a template used to
+generate the list of terms for a given template.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ordering Taxonomies</title>
+      <link>http://localhost:1313/taxonomies/ordering/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/ordering/</guid>
+      <description>
+
+&lt;p&gt;Hugo provides the ability to both:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Order the way the keys for a taxonomy are displayed&lt;/li&gt;
+&lt;li&gt;Order the way taxonomyed content appears&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;ordering-taxonomies:561853832019df340acf603aaa8ed39a&#34;&gt;Ordering Taxonomies&lt;/h2&gt;
+
+&lt;p&gt;Taxonomies can be ordered by either alphabetical key or by the number of content pieces assigned to that key.&lt;/p&gt;
+
+&lt;h3 id=&#34;order-alphabetically-example:561853832019df340acf603aaa8ed39a&#34;&gt;Order Alphabetically Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+{{ $data := .Data }}
+{{ range $key, $value := .Data.Taxonomy.Alphabetical }}
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $value.Name | urlize }}&amp;quot;&amp;gt; {{ $value.Name }} &amp;lt;/a&amp;gt; {{ $value.Count }} &amp;lt;/li&amp;gt;
+{{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;order-by-popularity-example:561853832019df340acf603aaa8ed39a&#34;&gt;Order by Popularity Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+{{ $data := .Data }}
+{{ range $key, $value := .Data.Taxonomy.ByCount }}
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $data.Plural }}/{{ $value.Name | urlize }}&amp;quot;&amp;gt; {{ $value.Name }} &amp;lt;/a&amp;gt; {{ $value.Count }} &amp;lt;/li&amp;gt;
+{{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;See Also Taxonomy Lists&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ordering-content-within-taxonomies:561853832019df340acf603aaa8ed39a&#34;&gt;Ordering Content within Taxonomies&lt;/h2&gt;
+
+&lt;p&gt;Hugo uses both &lt;strong&gt;Date&lt;/strong&gt; and &lt;strong&gt;Weight&lt;/strong&gt; to order content within taxonomies.&lt;/p&gt;
+
+&lt;p&gt;Each piece of content in Hugo can optionally be assigned a date.
+It can also be assigned a weight for each taxonomy it is assigned to.&lt;/p&gt;
+
+&lt;p&gt;When iterating over content within taxonomies the default sort is first by weight then by date. This means that if the weights for two pieces of content are the same, than the more recent content will be displayed first. The default weight for any piece of content is 0.&lt;/p&gt;
+
+&lt;h3 id=&#34;assigning-weight:561853832019df340acf603aaa8ed39a&#34;&gt;Assigning Weight&lt;/h3&gt;
+
+&lt;p&gt;Content can be assigned weight for each taxonomy that it&amp;rsquo;s assigned to.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+tags = [ &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot; ]
+tags_weight = 22
+categories = [&amp;quot;d&amp;quot;]
+title = &amp;quot;foo&amp;quot;
+categories_weight = 44
++++
+Front Matter with weighted tags and categories
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The convention is &lt;code&gt;taxonomyname_weight&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the above example, this piece of content has a weight of 22 which applies to the sorting when rendering the pages assigned to the &amp;ldquo;a&amp;rdquo;, &amp;ldquo;b&amp;rdquo; and &amp;ldquo;c&amp;rdquo; values of the &amp;lsquo;tag&amp;rsquo; taxonomy.&lt;/p&gt;
+
+&lt;p&gt;It has also been assigned the weight of 44 when rendering the &amp;rsquo;d&amp;rsquo; category.&lt;/p&gt;
+
+&lt;p&gt;With this the same piece of content can appear in different positions in different taxonomies.&lt;/p&gt;
+
+&lt;p&gt;Currently taxonomies only support the default ordering of content which is weight -&amp;gt; date.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Taxonomies</title>
+      <link>http://localhost:1313/taxonomies/methods/</link>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/taxonomies/methods/</guid>
+      <description>
+
+&lt;p&gt;Hugo makes a set of values and methods available on the various Taxonomy structures.&lt;/p&gt;
+
+&lt;h2 id=&#34;taxonomy-methods:8f7fb4fc4dd3d9d669ba80ed8a1fb3a7&#34;&gt;Taxonomy Methods&lt;/h2&gt;
+
+&lt;p&gt;A Taxonomy is a &lt;code&gt;map[string]WeightedPages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Get(term)&lt;/strong&gt; Returns the WeightedPages for a term. &lt;br&gt;
+&lt;strong&gt;.Count(term)&lt;/strong&gt; The number of pieces of content assigned to this term.&lt;br&gt;
+&lt;strong&gt;.Alphabetical&lt;/strong&gt; Returns an OrderedTaxonomy (slice) ordered by Term. &lt;br&gt;
+&lt;strong&gt;.ByCount&lt;/strong&gt; Returns an OrderedTaxonomy (slice) ordered by number of entries. &lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;orderedtaxonomy:8f7fb4fc4dd3d9d669ba80ed8a1fb3a7&#34;&gt;OrderedTaxonomy&lt;/h2&gt;
+
+&lt;p&gt;Since Maps are unordered, an OrderedTaxonomy is a special structure that has a defined order.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[]struct {
+    Name          string
+    WeightedPages WeightedPages
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each element of the slice has:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.Term&lt;/strong&gt;  The Term used.&lt;br&gt;
+&lt;strong&gt;.WeightedPages&lt;/strong&gt;  A slice of Weighted Pages.&lt;br&gt;
+&lt;strong&gt;.Count&lt;/strong&gt; The number of pieces of content assigned to this term.&lt;br&gt;
+&lt;strong&gt;.Pages&lt;/strong&gt;  All Pages assigned to this term. All &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list methods&lt;/a&gt; are available to this.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;weightedpages:8f7fb4fc4dd3d9d669ba80ed8a1fb3a7&#34;&gt;WeightedPages&lt;/h2&gt;
+
+&lt;p&gt;WeightedPages is simply a slice of WeightedPage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;type WeightedPages []WeightedPage
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;.Count(term)&lt;/strong&gt; The number of pieces of content assigned to this term.&lt;br&gt;
+&lt;strong&gt;.Pages&lt;/strong&gt; Returns a slice of pages, which then can be ordered using any of the &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;list methods&lt;/a&gt;. &lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

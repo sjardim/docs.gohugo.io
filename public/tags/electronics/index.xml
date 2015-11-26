@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electronics on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/tags/electronics/</link>
+    <description>Recent content in Electronics on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Nov 2015 11:20:00 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/electronics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>LosslessLife</title>
+      <link>http://localhost:1313/showcase/losslesslife/</link>
+      <pubDate>Sun, 15 Nov 2015 11:20:00 -0800</pubDate>
+      
+      <guid>http://localhost:1313/showcase/losslesslife/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Richard Sumilang - Top Secret Labs</title>
+      <link>http://localhost:1313/showcase/richardsumilang/</link>
+      <pubDate>Mon, 07 Sep 2015 00:12:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/showcase/richardsumilang/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

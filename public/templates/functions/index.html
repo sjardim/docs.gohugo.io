@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation of Hugo, a fast and flexible static site generator built with love by spf13, bep and friends in Go">
+    <meta name="author" content="Steve Francia (spf13) and friends">
+    <meta name="generator" content="Hugo 0.14" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Hugo - Hugo Template Functions</title>
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    
+    
+    <link rel="stylesheet" href="/css/reset.css"> 
+    <link rel="stylesheet" href="/css/style.css"> 
+    <script src="/js/modernizr.js"></script> 
+  </head>
+
+  <body>
+    
+  <header class="cd-main-header">
+  <a href="#0" class="cd-logo"><img src="/img/hugo-logo.png" alt="Logo"></a>
+  
+  <div class="cd-search is-hidden">
+    
+    <form role="search" method="get" id="" class="" action="http://ricardo-wp4.dev/search/?q=">
+      <input type="search" placeholder="Search...">
+    </form>
+  </div> 
+
+  <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+  <nav class="cd-nav">
+    <ul class="cd-top-nav">
+      <li><a href="http://gohugo.io/showcase/">Showcase</a></li>
+      <li><a href="http://discuss.gohugo.io/">Forum</a></li>
+      <li><a href="https://github.com/spf13/hugo/issues">Issues &amp; Help</a></li>
+    </ul>
+  </nav>
+</header> 
+
+    <main class="cd-main-content">
+      <nav class="cd-side-nav">
+        <ul>
+          <li class="cd-label">Version 0.15-DEV</li>
+          <li class="action-btn"><a href="https://github.com/spf13/hugo/releases">Download Hugo</a></li>
+        </ul>
+        <ul>        
+          
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M10.25,2.375c-4.212,0-7.625,3.413-7.625,7.625s3.413,7.625,7.625,7.625s7.625-3.413,7.625-7.625S14.462,2.375,10.25,2.375M10.651,16.811v-0.403c0-0.221-0.181-0.401-0.401-0.401s-0.401,0.181-0.401,0.401v0.403c-3.443-0.201-6.208-2.966-6.409-6.409h0.404c0.22,0,0.401-0.181,0.401-0.401S4.063,9.599,3.843,9.599H3.439C3.64,6.155,6.405,3.391,9.849,3.19v0.403c0,0.22,0.181,0.401,0.401,0.401s0.401-0.181,0.401-0.401V3.19c3.443,0.201,6.208,2.965,6.409,6.409h-0.404c-0.22,0-0.4,0.181-0.4,0.401s0.181,0.401,0.4,0.401h0.404C16.859,13.845,14.095,16.609,10.651,16.811 M12.662,12.412c-0.156,0.156-0.409,0.159-0.568,0l-2.127-2.129C9.986,10.302,9.849,10.192,9.849,10V5.184c0-0.221,0.181-0.401,0.401-0.401s0.401,0.181,0.401,0.401v4.651l2.011,2.008C12.818,12.001,12.818,12.256,12.662,12.412"></path></svg> Getting Started</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/overview/introduction/">Introduction</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/overview/quickstart/">Quickstart</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/overview/installing/">Installing Hugo</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/overview/usage/">Using Hugo</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/overview/configuration/">Configuration</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/overview/source-directory/">Source Organization</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"></path></svg> Creating Content</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/content/organization/">Organization</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/supported-formats/">Supported Formats</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/front-matter/">Front Matter</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/sections/">Sections</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/types/">Types</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/archetypes/">Archetypes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/ordering/">Ordering</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/summaries/">Summaries</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/content/example/">Example</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M17.237,3.056H2.93c-0.694,0-1.263,0.568-1.263,1.263v8.837c0,0.694,0.568,1.263,1.263,1.263h4.629v0.879c-0.015,0.086-0.183,0.306-0.273,0.423c-0.223,0.293-0.455,0.592-0.293,0.92c0.07,0.139,0.226,0.303,0.577,0.303h4.819c0.208,0,0.696,0,0.862-0.379c0.162-0.37-0.124-0.682-0.374-0.955c-0.089-0.097-0.231-0.252-0.268-0.328v-0.862h4.629c0.694,0,1.263-0.568,1.263-1.263V4.319C18.5,3.625,17.932,3.056,17.237,3.056 M8.053,16.102C8.232,15.862,8.4,15.597,8.4,15.309v-0.89h3.366v0.89c0,0.303,0.211,0.562,0.419,0.793H8.053z M17.658,13.156c0,0.228-0.193,0.421-0.421,0.421H2.93c-0.228,0-0.421-0.193-0.421-0.421v-1.263h15.149V13.156z M17.658,11.052H2.509V4.319c0-0.228,0.193-0.421,0.421-0.421h14.308c0.228,0,0.421,0.193,0.421,0.421V11.052z"></path></svg> Themes</a>
+              <ul>
+                  
+                  <li>
+                    <a href="http://themes.gohugo.io">Theme Showcase</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/themes/overview/">Themes Overview</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/themes/installing/">Installing Themes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/themes/usage/">Using a Theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/themes/customizing/">Customizing a Theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/themes/creation/">Creating a Theme</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children active ">
+              <a href=""> Templates</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/templates/overview/">Overview</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/go-templates/">Go Template Primer</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/ace/">Ace templates</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/amber/">Amber templates</a>
+                  </li>
+                  
+                  <li class="active">
+                    <a href="/templates/functions/">Functions</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/variables/">Variables</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/content/">Single Content</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/list/">List of Content</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/homepage/">Homepage</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/terms/">Taxonomy Terms</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/views/">Content Views</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/partials/">Partial Templates</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/rss/">RSS</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/sitemap/">Sitemap</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/404/">Custom 404 page</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/templates/debugging/">Debugging</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M17.35,2.219h-5.934c-0.115,0-0.225,0.045-0.307,0.128l-8.762,8.762c-0.171,0.168-0.171,0.443,0,0.611l5.933,5.934c0.167,0.171,0.443,0.169,0.612,0l8.762-8.763c0.083-0.083,0.128-0.192,0.128-0.307V2.651C17.781,2.414,17.587,2.219,17.35,2.219M16.916,8.405l-8.332,8.332l-5.321-5.321l8.333-8.332h5.32V8.405z M13.891,4.367c-0.957,0-1.729,0.772-1.729,1.729c0,0.957,0.771,1.729,1.729,1.729s1.729-0.772,1.729-1.729C15.619,5.14,14.848,4.367,13.891,4.367 M14.502,6.708c-0.326,0.326-0.896,0.326-1.223,0c-0.338-0.342-0.338-0.882,0-1.224c0.342-0.337,0.881-0.337,1.223,0C14.84,5.826,14.84,6.366,14.502,6.708"></path></svg> Taxonomies</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/taxonomies/overview/">Overview</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/taxonomies/usage/">Usage</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/taxonomies/displaying/">Displaying</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/taxonomies/templates/">Templates</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/taxonomies/ordering/">Ordering</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/taxonomies/methods/">Structure &amp; Methods</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"></path></svg> Extras</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/extras/aliases/">Aliases</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/builders/">Builders</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/comments/">Comments</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/crossreferences/">Cross-References</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/livereload/">LiveReload</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/menus/">Menus</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/permalinks/">Permalinks</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/pagination/">Pagination</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/scratch/">Scratch</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/shortcodes/">Shortcodes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/datafiles/">Data Files</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/highlighting/">Syntax Highlighting</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/datadrivencontent/">Data-driven Content</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/toc/">Table of Contents</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/localfiles/">Traversing Local Files</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/extras/urls/">URLs</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""> Community</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/community/mailing-list/">Mailing List</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/community/contributing/">Contributing to Hugo</a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://discuss.gohugo.io">Discussion Forum</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M8.627,7.885C8.499,8.388,7.873,8.101,8.13,8.177L4.12,7.143c-0.218-0.057-0.351-0.28-0.293-0.498c0.057-0.218,0.279-0.351,0.497-0.294l4.011,1.037C8.552,7.444,8.685,7.667,8.627,7.885 M8.334,10.123L4.323,9.086C4.105,9.031,3.883,9.162,3.826,9.38C3.769,9.598,3.901,9.82,4.12,9.877l4.01,1.037c-0.262-0.062,0.373,0.192,0.497-0.294C8.685,10.401,8.552,10.18,8.334,10.123 M7.131,12.507L4.323,11.78c-0.218-0.057-0.44,0.076-0.497,0.295c-0.057,0.218,0.075,0.439,0.293,0.495l2.809,0.726c-0.265-0.062,0.37,0.193,0.495-0.293C7.48,12.784,7.35,12.562,7.131,12.507M18.159,3.677v10.701c0,0.186-0.126,0.348-0.306,0.393l-7.755,1.948c-0.07,0.016-0.134,0.016-0.204,0l-7.748-1.948c-0.179-0.045-0.306-0.207-0.306-0.393V3.677c0-0.267,0.249-0.461,0.509-0.396l7.646,1.921l7.654-1.921C17.91,3.216,18.159,3.41,18.159,3.677 M9.589,5.939L2.656,4.203v9.857l6.933,1.737V5.939z M17.344,4.203l-6.939,1.736v9.859l6.939-1.737V4.203z M16.168,6.645c-0.058-0.218-0.279-0.351-0.498-0.294l-4.011,1.037c-0.218,0.057-0.351,0.28-0.293,0.498c0.128,0.503,0.755,0.216,0.498,0.292l4.009-1.034C16.092,7.085,16.225,6.863,16.168,6.645 M16.168,9.38c-0.058-0.218-0.279-0.349-0.498-0.294l-4.011,1.036c-0.218,0.057-0.351,0.279-0.293,0.498c0.124,0.486,0.759,0.232,0.498,0.294l4.009-1.037C16.092,9.82,16.225,9.598,16.168,9.38 M14.963,12.385c-0.055-0.219-0.276-0.35-0.495-0.294l-2.809,0.726c-0.218,0.056-0.351,0.279-0.293,0.496c0.127,0.506,0.755,0.218,0.498,0.293l2.807-0.723C14.89,12.825,15.021,12.603,14.963,12.385"></path></svg> Tutorials</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/tutorials/automated-deployments/">Automated deployments</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/creating-a-new-theme/">Creating a New Theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/github-pages-blog/">Hosting on GitHub</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/installing-on-mac/">Installing on Mac</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/installing-on-windows/">Installing on Windows</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/mathjax/">MathJax Support</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/migrate-from-jekyll/">Migrating from Jekyll</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/tutorials/create-a-multilingual-site/">Multilingual Site</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+
+            <li class="has-children">
+              <a href=""> Troubleshooting</a>
+              <ul>
+                  
+                  <li>
+                    <a href="/troubleshooting/overview/">Troubleshooting Overview</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/troubleshooting/strange-eof-error/">Strange EOF error</a>
+                  </li>
+                  
+                  <li>
+                    <a href="/troubleshooting/categories-with-accented-characters/">Accented Categories</a>
+                  </li>
+                  
+              </ul>
+              
+                </li>
+          
+              
+                
+                <li>
+                  <a class="" href="/tools/"> Tools</a>
+              
+                </li>
+          
+              
+                
+                <li>
+                  <a class="" href="/commands/"><svg class="svg-icon" viewBox="0 0 20 20"><path d="M17.498,11.697c-0.453-0.453-0.704-1.055-0.704-1.697c0-0.642,0.251-1.244,0.704-1.697c0.069-0.071,0.15-0.141,0.257-0.22c0.127-0.097,0.181-0.262,0.137-0.417c-0.164-0.558-0.388-1.093-0.662-1.597c-0.075-0.141-0.231-0.22-0.391-0.199c-0.13,0.02-0.238,0.027-0.336,0.027c-1.325,0-2.401-1.076-2.401-2.4c0-0.099,0.008-0.207,0.027-0.336c0.021-0.158-0.059-0.316-0.199-0.391c-0.503-0.274-1.039-0.498-1.597-0.662c-0.154-0.044-0.32,0.01-0.416,0.137c-0.079,0.106-0.148,0.188-0.22,0.257C11.244,2.956,10.643,3.207,10,3.207c-0.642,0-1.244-0.25-1.697-0.704c-0.071-0.069-0.141-0.15-0.22-0.257C7.987,2.119,7.821,2.065,7.667,2.109C7.109,2.275,6.571,2.497,6.07,2.771C5.929,2.846,5.85,3.004,5.871,3.162c0.02,0.129,0.027,0.237,0.027,0.336c0,1.325-1.076,2.4-2.401,2.4c-0.098,0-0.206-0.007-0.335-0.027C3.001,5.851,2.845,5.929,2.77,6.07C2.496,6.572,2.274,7.109,2.108,7.667c-0.044,0.154,0.01,0.32,0.137,0.417c0.106,0.079,0.187,0.148,0.256,0.22c0.938,0.936,0.938,2.458,0,3.394c-0.069,0.072-0.15,0.141-0.256,0.221c-0.127,0.096-0.181,0.262-0.137,0.416c0.166,0.557,0.388,1.096,0.662,1.596c0.075,0.143,0.231,0.221,0.392,0.199c0.129-0.02,0.237-0.027,0.335-0.027c1.325,0,2.401,1.076,2.401,2.402c0,0.098-0.007,0.205-0.027,0.334C5.85,16.996,5.929,17.154,6.07,17.23c0.501,0.273,1.04,0.496,1.597,0.66c0.154,0.047,0.32-0.008,0.417-0.137c0.079-0.105,0.148-0.186,0.22-0.256c0.454-0.453,1.055-0.703,1.697-0.703c0.643,0,1.244,0.25,1.697,0.703c0.071,0.07,0.141,0.15,0.22,0.256c0.073,0.098,0.188,0.152,0.307,0.152c0.036,0,0.073-0.004,0.109-0.016c0.558-0.164,1.096-0.387,1.597-0.66c0.141-0.076,0.22-0.234,0.199-0.393c-0.02-0.129-0.027-0.236-0.027-0.334c0-1.326,1.076-2.402,2.401-2.402c0.098,0,0.206,0.008,0.336,0.027c0.159,0.021,0.315-0.057,0.391-0.199c0.274-0.5,0.496-1.039,0.662-1.596c0.044-0.154-0.01-0.32-0.137-0.416C17.648,11.838,17.567,11.77,17.498,11.697 M16.671,13.334c-0.059-0.002-0.114-0.002-0.168-0.002c-1.749,0-3.173,1.422-3.173,3.172c0,0.053,0.002,0.109,0.004,0.166c-0.312,0.158-0.64,0.295-0.976,0.406c-0.039-0.045-0.077-0.086-0.115-0.123c-0.601-0.6-1.396-0.93-2.243-0.93s-1.643,0.33-2.243,0.93c-0.039,0.037-0.077,0.078-0.116,0.123c-0.336-0.111-0.664-0.248-0.976-0.406c0.002-0.057,0.004-0.113,0.004-0.166c0-1.75-1.423-3.172-3.172-3.172c-0.054,0-0.11,0-0.168,0.002c-0.158-0.312-0.293-0.639-0.405-0.975c0.044-0.039,0.085-0.078,0.124-0.115c1.236-1.236,1.236-3.25,0-4.486C3.009,7.719,2.969,7.68,2.924,7.642c0.112-0.336,0.247-0.664,0.405-0.976C3.387,6.668,3.443,6.67,3.497,6.67c1.75,0,3.172-1.423,3.172-3.172c0-0.054-0.002-0.11-0.004-0.168c0.312-0.158,0.64-0.293,0.976-0.405C7.68,2.969,7.719,3.01,7.757,3.048c0.6,0.6,1.396,0.93,2.243,0.93s1.643-0.33,2.243-0.93c0.038-0.039,0.076-0.079,0.115-0.123c0.336,0.112,0.663,0.247,0.976,0.405c-0.002,0.058-0.004,0.114-0.004,0.168c0,1.749,1.424,3.172,3.173,3.172c0.054,0,0.109-0.002,0.168-0.004c0.158,0.312,0.293,0.64,0.405,0.976c-0.045,0.038-0.086,0.077-0.124,0.116c-0.6,0.6-0.93,1.396-0.93,2.242c0,0.847,0.33,1.645,0.93,2.244c0.038,0.037,0.079,0.076,0.124,0.115C16.964,12.695,16.829,13.021,16.671,13.334 M10,5.417c-2.528,0-4.584,2.056-4.584,4.583c0,2.529,2.056,4.584,4.584,4.584s4.584-2.055,4.584-4.584C14.584,7.472,12.528,5.417,10,5.417 M10,13.812c-2.102,0-3.812-1.709-3.812-3.812c0-2.102,1.71-3.812,3.812-3.812c2.102,0,3.812,1.71,3.812,3.812C13.812,12.104,12.102,13.812,10,13.812"></path></svg> Hugo Cmd Reference</a>
+              
+                </li>
+          
+
+        </ul>
+        <ul>
+          <li class="cd-label">Other info</li>
+          
+            
+            
+
+            <li class="has-children">
+              <a href=""><svg class="svg-icon" viewBox="0 0 20 20"><path d="M9.719,17.073l-6.562-6.51c-0.27-0.268-0.504-0.567-0.696-0.888C1.385,7.89,1.67,5.613,3.155,4.14c0.864-0.856,2.012-1.329,3.233-1.329c1.924,0,3.115,1.12,3.612,1.752c0.499-0.634,1.689-1.752,3.612-1.752c1.221,0,2.369,0.472,3.233,1.329c1.484,1.473,1.771,3.75,0.693,5.537c-0.19,0.32-0.425,0.618-0.695,0.887l-6.562,6.51C10.125,17.229,9.875,17.229,9.719,17.073 M6.388,3.61C5.379,3.61,4.431,4,3.717,4.707C2.495,5.92,2.259,7.794,3.145,9.265c0.158,0.265,0.351,0.51,0.574,0.731L10,16.228l6.281-6.232c0.224-0.221,0.416-0.466,0.573-0.729c0.887-1.472,0.651-3.346-0.571-4.56C15.57,4,14.621,3.61,13.612,3.61c-1.43,0-2.639,0.786-3.268,1.863c-0.154,0.264-0.536,0.264-0.69,0C9.029,4.397,7.82,3.61,6.388,3.61"></path></svg> About Hugo</a>
+              <ul>
+                  
+                    <li>
+                      <a href="/meta/release-notes/">Release Notes</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/meta/roadmap/">Hugo Roadmap</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/meta/license/">License</a>
+                    </li>
+                  
+              </ul>
+            </li>
+
+            
+              </li>
+          
+            
+               
+
+              <li class="">                
+                <a href="/community/press/"><svg class="svg-icon" viewBox="0 0 20 20"><path d="M15.684,16.959L10.879,8.52c0.886-0.343,1.517-1.193,1.517-2.186c0-1.296-1.076-2.323-2.396-2.323S7.604,5.037,7.604,6.333c0,0.993,0.63,1.843,1.517,2.186l-4.818,8.439c-0.189,0.311,0.038,0.708,0.412,0.708h10.558C15.645,17.667,15.871,17.27,15.684,16.959 M8.562,6.333c0-0.778,0.645-1.382,1.438-1.382s1.438,0.604,1.438,1.382c0,0.779-0.645,1.412-1.438,1.412S8.562,7.113,8.562,6.333 M5.55,16.726L10,8.91l4.435,7.815H5.55z M15.285,9.62c1.26-2.046,1.26-4.525,0-6.572c-0.138-0.223-0.064-0.512,0.162-0.646c0.227-0.134,0.521-0.063,0.658,0.16c1.443,2.346,1.443,5.2,0,7.546c-0.236,0.382-0.641,0.17-0.658,0.159C15.221,10.131,15.147,9.842,15.285,9.62 M13.395,8.008c0.475-1.063,0.475-2.286,0-3.349c-0.106-0.238,0.004-0.515,0.246-0.62c0.242-0.104,0.525,0.004,0.632,0.242c0.583,1.305,0.583,2.801,0,4.106c-0.214,0.479-0.747,0.192-0.632,0.242C13.398,8.523,13.288,8.247,13.395,8.008 M3.895,10.107c-1.444-2.346-1.444-5.2,0-7.546c0.137-0.223,0.431-0.294,0.658-0.16c0.226,0.135,0.299,0.424,0.162,0.646c-1.26,2.047-1.26,4.525,0,6.572c0.137,0.223,0.064,0.512-0.162,0.646C4.535,10.277,4.131,10.489,3.895,10.107 M5.728,8.387c-0.583-1.305-0.583-2.801,0-4.106c0.106-0.238,0.39-0.346,0.631-0.242c0.242,0.105,0.353,0.382,0.247,0.62c-0.475,1.063-0.475,2.286,0,3.349c0.106,0.238-0.004,0.515-0.247,0.62c-0.062,0.027-0.128,0.04-0.192,0.04C5.982,8.668,5.807,8.563,5.728,8.387"></path></svg> Press &amp; Articles</a>
+              
+              </li>
+          
+            
+               
+
+              <li class="">                
+                <a href="/www.twitter.com/spf13/"><svg class="svg-icon" viewBox="0 0 20 20"><path fill="none" d="M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266"></path></svg> Follow @spf13</a>
+              
+              </li>
+          
+            
+                <li><svg class="svg-icon" viewBox="0 0 20 20"><path d="M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"></path></svg><a href="https://github.com/spf13/hugo/edit/master/docs/content/templates/functions.md"> Edit this Page</a> </li>
+            
+        </ul>
+      </nav>
+
+      <div class="content-wrapper">
+      
+
+
+  <ol class="cd-breadcrumb custom-separator">
+    <li class="current"><a href="/">Home</a></li>
+    
+      
+        
+        <li><a href='http://localhost:1313/templates'>templates</a></li>
+        
+        
+    
+      
+        
+        <li><a href='http://localhost:1313/templates/functions'>functions</a></li>
+        
+        
+    
+      
+        
+    
+  </ol>
+
+  
+  
+<h1>Hugo Template Functions</h1>
+
+
+<aside id="toc" class="toc compact">
+  <h5>Table of Contents</h5>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#general:904d9cf85d985550c869e6d9741448cc">General</a>
+<ul>
+<li><a href="#delimit:904d9cf85d985550c869e6d9741448cc">delimit</a></li>
+<li><a href="#dict:904d9cf85d985550c869e6d9741448cc">dict</a></li>
+<li><a href="#echoparam:904d9cf85d985550c869e6d9741448cc">echoParam</a></li>
+<li><a href="#eq:904d9cf85d985550c869e6d9741448cc">eq</a></li>
+<li><a href="#first:904d9cf85d985550c869e6d9741448cc">first</a></li>
+<li><a href="#last:904d9cf85d985550c869e6d9741448cc">last</a></li>
+<li><a href="#after:904d9cf85d985550c869e6d9741448cc">after</a></li>
+<li><a href="#getenv:904d9cf85d985550c869e6d9741448cc">getenv</a></li>
+<li><a href="#in:904d9cf85d985550c869e6d9741448cc">in</a></li>
+<li><a href="#intersect:904d9cf85d985550c869e6d9741448cc">intersect</a></li>
+<li><a href="#isset:904d9cf85d985550c869e6d9741448cc">isset</a></li>
+<li><a href="#seq:904d9cf85d985550c869e6d9741448cc">seq</a></li>
+<li><a href="#sort:904d9cf85d985550c869e6d9741448cc">sort</a></li>
+<li><a href="#where:904d9cf85d985550c869e6d9741448cc">where</a></li>
+<li><a href="#unset-field:904d9cf85d985550c869e6d9741448cc">Unset field</a></li>
+</ul></li>
+<li><a href="#math:904d9cf85d985550c869e6d9741448cc">Math</a></li>
+<li><a href="#strings:904d9cf85d985550c869e6d9741448cc">Strings</a>
+<ul>
+<li><a href="#chomp:904d9cf85d985550c869e6d9741448cc">chomp</a></li>
+<li><a href="#dateformat:904d9cf85d985550c869e6d9741448cc">dateFormat</a></li>
+<li><a href="#highlight:904d9cf85d985550c869e6d9741448cc">highlight</a></li>
+<li><a href="#lower:904d9cf85d985550c869e6d9741448cc">lower</a></li>
+<li><a href="#markdownify:904d9cf85d985550c869e6d9741448cc">markdownify</a></li>
+<li><a href="#pluralize:904d9cf85d985550c869e6d9741448cc">pluralize</a></li>
+<li><a href="#replace:904d9cf85d985550c869e6d9741448cc">replace</a></li>
+<li><a href="#safehtml:904d9cf85d985550c869e6d9741448cc">safeHTML</a></li>
+<li><a href="#safecss:904d9cf85d985550c869e6d9741448cc">safeCSS</a></li>
+<li><a href="#safejs:904d9cf85d985550c869e6d9741448cc">safeJS</a></li>
+<li><a href="#singularize:904d9cf85d985550c869e6d9741448cc">singularize</a></li>
+<li><a href="#slicestr:904d9cf85d985550c869e6d9741448cc">slicestr</a></li>
+<li><a href="#substr:904d9cf85d985550c869e6d9741448cc">substr</a></li>
+<li><a href="#title:904d9cf85d985550c869e6d9741448cc">title</a></li>
+<li><a href="#trim:904d9cf85d985550c869e6d9741448cc">trim</a></li>
+<li><a href="#upper:904d9cf85d985550c869e6d9741448cc">upper</a></li>
+</ul></li>
+<li><a href="#urls:904d9cf85d985550c869e6d9741448cc">URLs</a>
+<ul>
+<li><a href="#absurl-relurl:904d9cf85d985550c869e6d9741448cc">absURL, relURL</a></li>
+<li><a href="#ref-relref:904d9cf85d985550c869e6d9741448cc">ref, relref</a></li>
+<li><a href="#safeurl:904d9cf85d985550c869e6d9741448cc">safeURL</a></li>
+<li><a href="#urlize:904d9cf85d985550c869e6d9741448cc">urlize</a></li>
+</ul></li>
+<li><a href="#content-views:904d9cf85d985550c869e6d9741448cc">Content Views</a>
+<ul>
+<li><a href="#render:904d9cf85d985550c869e6d9741448cc">Render</a></li>
+</ul></li>
+<li><a href="#advanced:904d9cf85d985550c869e6d9741448cc">Advanced</a>
+<ul>
+<li><a href="#apply:904d9cf85d985550c869e6d9741448cc">apply</a></li>
+<li><a href="#base64encode-and-base64decode:904d9cf85d985550c869e6d9741448cc">base64Encode and base64Decode</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+
+<section>
+
+
+<p>Hugo uses the excellent Go html/template library for its template engine.
+It is an extremely lightweight engine that provides a very small amount of
+logic. In our experience, it is just the right amount of logic to be able
+to create a good static website.</p>
+
+<p>Go templates are lightweight but extensible. Hugo has added the following
+functions to the basic template logic.</p>
+
+<p>(Go itself supplies built-in functions, including comparison operators
+and other basic tools; these are listed in the
+<a href="http://golang.org/pkg/text/template/#hdr-Functions">Go template documentation</a>.)</p>
+
+<h2 id="general:904d9cf85d985550c869e6d9741448cc">General</h2>
+
+<h3 id="delimit:904d9cf85d985550c869e6d9741448cc">delimit</h3>
+
+<p>Loops through any array, slice or map and returns a string of all the values separated by the delimiter. There is an optional third parameter that lets you choose a different delimiter to go between the last two values.
+Maps will be sorted by the keys, and only a slice of the values will be returned, keeping a consistent output order.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>// Front matter
++++
+tags: [ &quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot; ]
++++
+
+// Used anywhere in a template
+Tags: {{ delimit .Params.tags &quot;, &quot; }}
+
+// Outputs Tags: tag1, tag2, tag3
+
+// Example with the optional &quot;last&quot; parameter
+Tags: {{ delimit .Params.tags &quot;, &quot; &quot; and &quot; }}
+
+// Outputs Tags: tag1, tag2 and tag3
+</code></pre>
+
+<h3 id="dict:904d9cf85d985550c869e6d9741448cc">dict</h3>
+
+<p>Creates a dictionary (map[string, interface{}), expects parameters added in value:object fasion.
+Invalid combinations like keys that are not strings or uneven number of parameters, will result in an exception thrown
+Useful for passing maps to partials when adding to a template.</p>
+
+<p>e.g. Pass into &ldquo;foo.html&rdquo; a map with the keys &ldquo;important, content&rdquo;</p>
+
+<pre><code>{{$important := .Site.Params.SomethingImportant }}
+{{range .Site.Params.Bar}}
+    {{partial &quot;foo&quot; (dict &quot;content&quot; . &quot;important&quot; $important)}}
+{{end}}
+</code></pre>
+
+<p>&ldquo;foo.html&rdquo;</p>
+
+<pre><code>Important {{.important}}
+{{.content}}
+</code></pre>
+
+<p>or Create a map on the fly to pass into</p>
+
+<pre><code>{{partial &quot;foo&quot; (dict &quot;important&quot; &quot;Smiles&quot; &quot;content&quot; &quot;You should do more&quot;)}}
+</code></pre>
+
+<h3 id="echoparam:904d9cf85d985550c869e6d9741448cc">echoParam</h3>
+
+<p>Prints a parameter if it is set.</p>
+
+<p>e.g. <code>{{ echoParam .Params &quot;project_url&quot; }}</code></p>
+
+<h3 id="eq:904d9cf85d985550c869e6d9741448cc">eq</h3>
+
+<p>Returns true if the parameters are equal.</p>
+
+<p>e.g.</p>
+
+<pre><code>{{ if eq .Section &quot;blog&quot; }}current{{ end }}
+</code></pre>
+
+<h3 id="first:904d9cf85d985550c869e6d9741448cc">first</h3>
+
+<p>Slices an array to only the first <em>N</em> elements.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>{{ range first 10 .Data.Pages }}
+    {{ .Render &quot;summary&quot; }}
+{{ end }}
+</code></pre>
+
+<h3 id="last:904d9cf85d985550c869e6d9741448cc">last</h3>
+
+<p>Slices an array to only the last <em>N</em> elements.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>{{ range last 10 .Data.Pages }}
+    {{ .Render &quot;summary&quot; }}
+{{ end }}
+</code></pre>
+
+<h3 id="after:904d9cf85d985550c869e6d9741448cc">after</h3>
+
+<p>Slices an array to only the items after the <em>N</em>th item. Use this in combination
+with <code>first</code> to use both halves of an array split at item <em>N</em>.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>{{ range after 10 .Data.Pages }}
+    {{ .Render &quot;title&quot; }}
+{{ end }}
+</code></pre>
+
+<h3 id="getenv:904d9cf85d985550c869e6d9741448cc">getenv</h3>
+
+<p>Returns the value of an environment variable.</p>
+
+<p>Takes a string containing the name of the variable as input. Returns
+an empty string if the variable is not set, otherwise returns the
+value of the variable. Note that in Unix-like environments, the
+variable must also be exported in order to be seen by <code>hugo</code>.</p>
+
+<p>e.g.</p>
+
+<pre><code>{{ getenv &quot;HOME&quot; }}
+</code></pre>
+
+<h3 id="in:904d9cf85d985550c869e6d9741448cc">in</h3>
+
+<p>Checks if an element is in an array (or slice) and returns a boolean.
+The elements supported are strings, integers and floats (only float64 will match as expected).
+In addition, it can also check if a substring exists in a string.</p>
+
+<p>e.g.</p>
+
+<pre><code>{{ if in .Params.tags &quot;Git&quot; }}Follow me on GitHub!{{ end }}
+</code></pre>
+
+<p>or</p>
+
+<pre><code>{{ if in &quot;this string contains a substring&quot; &quot;substring&quot; }}Substring found!{{ end }}
+</code></pre>
+
+<h3 id="intersect:904d9cf85d985550c869e6d9741448cc">intersect</h3>
+
+<p>Given two arrays (or slices), this function will return the common elements in the arrays.
+The elements supported are strings, integers and floats (only float64).</p>
+
+<p>A useful example of this functionality is a &lsquo;similar posts&rsquo; block.
+Create a list of links to posts where any of the tags in the current post match any tags in other posts.</p>
+
+<p>e.g.</p>
+
+<pre><code>&lt;ul&gt;
+{{ $page_link := .Permalink }}
+{{ $tags := .Params.tags }}
+{{ range .Site.Recent }}
+    {{ $page := . }}
+    {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+    {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+        &lt;li&gt;&lt;a href=&quot;{{ $page.Permalink }}&quot;&gt;{{ $page.Title }}&lt;/a&gt;&lt;/li&gt;
+    {{ end }}
+{{ end }}
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="isset:904d9cf85d985550c869e6d9741448cc">isset</h3>
+
+<p>Returns true if the parameter is set.
+Takes either a slice, array or channel and an index or a map and a key as input.</p>
+
+<p>e.g. <code>{{ if isset .Params &quot;project_url&quot; }} {{ index .Params &quot;project_url&quot; }}{{ end }}</code></p>
+
+<h3 id="seq:904d9cf85d985550c869e6d9741448cc">seq</h3>
+
+<p>Creates a sequence of integers. It&rsquo;s named and used as GNU&rsquo;s seq.</p>
+
+<p>Some examples:</p>
+
+<ul>
+<li><code>3</code> =&gt; <code>1, 2, 3</code></li>
+<li><code>1 2 4</code> =&gt; <code>1, 3</code></li>
+<li><code>-3</code> =&gt; <code>-1, -2, -3</code></li>
+<li><code>1 4</code> =&gt; <code>1, 2, 3, 4</code></li>
+<li><code>1 -2</code> =&gt; <code>1, 0, -1, -2</code></li>
+</ul>
+
+<h3 id="sort:904d9cf85d985550c869e6d9741448cc">sort</h3>
+
+<p>Sorts maps, arrays and slices, returning a sorted slice.
+A sorted array of map values will be returned, with the keys eliminated.
+There are two optional arguments, which are <code>sortByField</code> and <code>sortAsc</code>.
+If left blank, sort will sort by keys (for maps) in ascending order.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>// Front matter
++++
+tags: [ &quot;tag3&quot;, &quot;tag1&quot;, &quot;tag2&quot; ]
++++
+
+// Site config
++++
+[params.authors]
+  [params.authors.Derek]
+    &quot;firstName&quot;  = &quot;Derek&quot;
+    &quot;lastName&quot;   = &quot;Perkins&quot;
+  [params.authors.Joe]
+    &quot;firstName&quot;  = &quot;Joe&quot;
+    &quot;lastName&quot;   = &quot;Bergevin&quot;
+  [params.authors.Tanner]
+    &quot;firstName&quot;  = &quot;Tanner&quot;
+    &quot;lastName&quot;   = &quot;Linsley&quot;
++++
+
+// Use default sort options - sort by key / ascending
+Tags: {{ range sort .Params.tags }}{{ . }} {{ end }}
+
+// Outputs Tags: tag1 tag2 tag3
+
+// Sort by value / descending
+Tags: {{ range sort .Params.tags &quot;value&quot; &quot;desc&quot; }}{{ . }} {{ end }}
+
+// Outputs Tags: tag3 tag2 tag1
+
+// Use default sort options - sort by value / descending
+Authors: {{ range sort .Site.Params.authors }}{{ .firstName }} {{ end }}
+
+// Outputs Authors: Derek Joe Tanner
+
+// Use default sort options - sort by value / descending
+Authors: {{ range sort .Site.Params.authors &quot;lastName&quot; &quot;desc&quot; }}{{ .lastName }} {{ end }}
+
+// Outputs Authors: Perkins Linsley Bergevin
+</code></pre>
+
+<h3 id="where:904d9cf85d985550c869e6d9741448cc">where</h3>
+
+<p>Filters an array to only elements containing a matching value for a given field.</p>
+
+<p>Works on <a href="/templates/list/">lists</a>, <a href="/taxonomies/displaying/">taxonomies</a>, <a href="/templates/terms/">terms</a>, <a href="/templates/list/">groups</a></p>
+
+<p>e.g.</p>
+
+<pre><code>{{ range where .Data.Pages &quot;Section&quot; &quot;post&quot; }}
+   {{ .Content }}
+{{ end }}
+</code></pre>
+
+<p>It can be used with dot chaining second argument to refer a nested element of a value.</p>
+
+<p>e.g.</p>
+
+<pre><code>// Front matter on some pages
++++
+series: golang
++++
+
+{{ range where .Site.Recent &quot;Params.series&quot; &quot;golang&quot; }}
+   {{ .Content }}
+{{ end }}
+</code></pre>
+
+<p>It can also be used with an operator like <code>!=</code>, <code>&gt;=</code>, <code>in</code> etc. Without an operator (like above), <code>where</code> compares a given field with a matching value in a way like <code>=</code> is specified.</p>
+
+<p>e.g.</p>
+
+<pre><code>{{ range where .Data.Pages &quot;Section&quot; &quot;!=&quot; &quot;post&quot; }}
+   {{ .Content }}
+{{ end }}
+</code></pre>
+
+<p>Following operators are now available</p>
+
+<ul>
+<li><code>=</code>, <code>==</code>, <code>eq</code>: True if a given field value equals a matching value</li>
+<li><code>!=</code>, <code>&lt;&gt;</code>, <code>ne</code>: True if a given field value doesn&rsquo;t equal a matching value</li>
+<li><code>&gt;=</code>, <code>ge</code>: True if a given field value is greater than or equal to a matching value</li>
+<li><code>&gt;</code>, <code>gt</code>: True if a given field value is greater than a matching value</li>
+<li><code>&lt;=</code>, <code>le</code>: True if a given field value is lesser than or equal to a matching value</li>
+<li><code>&lt;</code>, <code>lt</code>: True if a given field value is lesser than a matching value</li>
+<li><code>in</code>: True if a given field value is included in a matching value. A matching value must be an array or a slice</li>
+<li><code>not in</code>: True if a given field value isn&rsquo;t included in a matching value. A matching value must be an array or a slice</li>
+</ul>
+
+<p><em><code>where</code> and <code>first</code> can be stacked, e.g.:</em></p>
+
+<pre><code>{{ range first 5 (where .Data.Pages &quot;Section&quot; &quot;post&quot;) }}
+   {{ .Content }}
+{{ end }}
+</code></pre>
+
+<h3 id="unset-field:904d9cf85d985550c869e6d9741448cc">Unset field</h3>
+
+<p>Filter only work for set fields. To check whether a field is set or exist, use operand <code>nil</code>.</p>
+
+<p>This can be useful to filter a small amount of pages from a large pool. Instead of set field on all pages, you can set field on required pages only.</p>
+
+<p>Only following operators are available for <code>nil</code></p>
+
+<ul>
+<li><code>=</code>, <code>==</code>, <code>eq</code>: True if the given field is not set.</li>
+<li><code>!=</code>, <code>&lt;&gt;</code>, <code>ne</code>: True if the given field is set.</li>
+</ul>
+
+<p>e.g.</p>
+
+<pre><code>{{ range where .Data.Pages &quot;.Params.specialpost&quot; &quot;!=&quot; nil }}
+   {{ .Content }}
+{{ end }}
+</code></pre>
+
+<h2 id="math:904d9cf85d985550c869e6d9741448cc">Math</h2>
+
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>add</code></td>
+<td>Adds two integers.</td>
+<td><code>{{add 1 2}}</code> → 3</td>
+</tr>
+
+<tr>
+<td><code>div</code></td>
+<td>Divides two integers.</td>
+<td><code>{{div 6 3}}</code> → 2</td>
+</tr>
+
+<tr>
+<td><code>mod</code></td>
+<td>Modulus of two integers.</td>
+<td><code>{{mod 15 3}}</code> → 0</td>
+</tr>
+
+<tr>
+<td><code>modBool</code></td>
+<td>Boolean of modulus of two integers.  <code>true</code> if modulus is 0.</td>
+<td><code>{{modBool 15 3}}</code> → true</td>
+</tr>
+
+<tr>
+<td><code>mul</code></td>
+<td>Multiplies two integers.</td>
+<td><code>{{mul 2 3}}</code> → 6</td>
+</tr>
+
+<tr>
+<td><code>sub</code></td>
+<td>Subtracts two integers.</td>
+<td><code>{{sub 3 2}}</code> → 1</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2 id="strings:904d9cf85d985550c869e6d9741448cc">Strings</h2>
+
+<h3 id="chomp:904d9cf85d985550c869e6d9741448cc">chomp</h3>
+
+<p>Removes any trailing newline characters. Useful in a pipeline to remove newlines added by other processing (including <code>markdownify</code>).</p>
+
+<p>e.g., <code>{{chomp &quot;&lt;p&gt;Blockhead&lt;/p&gt;\n&quot;</code> → <code>&quot;&lt;p&gt;Blockhead&lt;/p&gt;&quot;</code></p>
+
+<h3 id="dateformat:904d9cf85d985550c869e6d9741448cc">dateFormat</h3>
+
+<p>Converts the textual representation of the datetime into the other form or returns it of Go <code>time.Time</code> type value.
+These are formatted with the layout string.</p>
+
+<p>e.g. <code>{{ dateFormat &quot;Monday, Jan 2, 2006&quot; &quot;2015-01-21&quot; }}</code> →&rdquo;Wednesday, Jan 21, 2015&rdquo;</p>
+
+<h3 id="highlight:904d9cf85d985550c869e6d9741448cc">highlight</h3>
+
+<p>Takes a string of code and a language, uses Pygments to return the syntax highlighted code in HTML.
+Used in the <a href="/extras/highlighting/">highlight shortcode</a>.</p>
+
+<h3 id="lower:904d9cf85d985550c869e6d9741448cc">lower</h3>
+
+<p>Converts all characters in string to lowercase.</p>
+
+<p>e.g. <code>{{lower &quot;BatMan&quot;}}</code> → &ldquo;batman&rdquo;</p>
+
+<h3 id="markdownify:904d9cf85d985550c869e6d9741448cc">markdownify</h3>
+
+<p>Runs the string through the Markdown processor. The result will be declared as &ldquo;safe&rdquo; so Go templates will not filter it.</p>
+
+<p>e.g. <code>{{ .Title | markdownify }}</code></p>
+
+<h3 id="pluralize:904d9cf85d985550c869e6d9741448cc">pluralize</h3>
+
+<p>Pluralize the given word with a set of common English pluralization rules.</p>
+
+<p>e.g. <code>{{ &quot;cat&quot; | pluralize }}</code> → &ldquo;cats&rdquo;</p>
+
+<h3 id="replace:904d9cf85d985550c869e6d9741448cc">replace</h3>
+
+<p>Replaces all occurrences of the search string with the replacement string.</p>
+
+<p>e.g. <code>{{ replace &quot;Batman and Robin&quot; &quot;Robin&quot; &quot;Catwoman&quot; }}</code> → &ldquo;Batman and Catwoman&rdquo;</p>
+
+<h3 id="safehtml:904d9cf85d985550c869e6d9741448cc">safeHTML</h3>
+
+<p>Declares the provided string as a &ldquo;safe&rdquo; HTML document fragment
+so Go html/template will not filter it.  It should not be used
+for HTML from a third-party, or HTML with unclosed tags or comments.</p>
+
+<p>Example: Given a site-wide <code>config.toml</code> that contains this line:</p>
+
+<pre><code>copyright = &quot;© 2015 Jane Doe.  &lt;a href=\&quot;http://creativecommons.org/licenses/by/4.0/\&quot;&gt;Some rights reserved&lt;/a&gt;.&quot;
+</code></pre>
+
+<p><code>{{ .Site.Copyright | safeHTML }}</code> would then output:</p>
+
+<blockquote>
+<p>© 2015 Jane Doe.  <a href="http://creativecommons.org/licenses/by/4.0/">Some rights reserved</a>.</p>
+</blockquote>
+
+<p>However, without the <code>safeHTML</code> function, html/template assumes
+<code>.Site.Copyright</code> to be unsafe, escaping all HTML tags,
+rendering the whole string as plain-text like this:</p>
+
+<blockquote>
+<p>© 2015 Jane Doe.  &lt;a href=&#34;http://creativecommons.org/licenses/by/4.0/&#34;&gt;Some rights reserved&lt;/a&gt;.</p>
+</blockquote>
+
+<!--
+### safeHTMLAttr
+Declares the provided string as a "safe" HTML attribute
+from a trusted source, for example, ` dir="ltr"`,
+so Go html/template will not filter it.
+
+Example: Given a site-wide `config.toml` that contains this menu entry:
+
+    [[menu.main]]
+        name = "IRC: #golang at freenode"
+        url = "irc://irc.freenode.net/#golang"
+
+* `<a href="{{ .URL }}">` ⇒ `<a href="#ZgotmplZ">` (Bad!)
+* `<a {{ printf "href=%q" .URL | safeHTMLAttr }}>` ⇒ `<a href="irc://irc.freenode.net/#golang">` (Good!)
+-->
+
+<h3 id="safecss:904d9cf85d985550c869e6d9741448cc">safeCSS</h3>
+
+<p>Declares the provided string as a known &ldquo;safe&rdquo; CSS string
+so Go html/templates will not filter it.
+&ldquo;Safe&rdquo; means CSS content that matches any of:</p>
+
+<ol>
+<li>The CSS3 stylesheet production, such as <code>p { color: purple }</code>.</li>
+<li>The CSS3 rule production, such as <code>a[href=~&quot;https:&quot;].foo#bar</code>.</li>
+<li>CSS3 declaration productions, such as <code>color: red; margin: 2px</code>.</li>
+<li>The CSS3 value production, such as <code>rgba(0, 0, 255, 127)</code>.</li>
+</ol>
+
+<p>Example: Given <code>style = &quot;color: red;&quot;</code> defined in the front matter of your <code>.md</code> file:</p>
+
+<ul>
+<li><code>&lt;p style=&quot;{{ .Params.style | safeCSS }}&quot;&gt;…&lt;/p&gt;</code> ⇒ <code>&lt;p style=&quot;color: red;&quot;&gt;…&lt;/p&gt;</code> (Good!)</li>
+<li><code>&lt;p style=&quot;{{ .Params.style }}&quot;&gt;…&lt;/p&gt;</code> ⇒ <code>&lt;p style=&quot;ZgotmplZ&quot;&gt;…&lt;/p&gt;</code> (Bad!)</li>
+</ul>
+
+<p>Note: &ldquo;ZgotmplZ&rdquo; is a special value that indicates that unsafe content reached a
+CSS or URL context.</p>
+
+<h3 id="safejs:904d9cf85d985550c869e6d9741448cc">safeJS</h3>
+
+<p>Declares the provided string as a known &ldquo;safe&rdquo; Javascript string so Go
+html/templates will not escape it.  &ldquo;Safe&rdquo; means the string encapsulates a known
+safe EcmaScript5 Expression, for example, <code>(x + y * z())</code>. Template authors
+are responsible for ensuring that typed expressions do not break the intended
+precedence and that there is no statement/expression ambiguity as when passing
+an expression like <code>{ foo:bar() }\n['foo']()</code>, which is both a valid Expression
+and a valid Program with a very different meaning.</p>
+
+<p>Example: Given <code>hash = &quot;619c16f&quot;</code> defined in the front matter of your <code>.md</code> file:</p>
+
+<ul>
+<li><code>&lt;script&gt;var form_{{ .Params.hash | safeJS }};…&lt;/script&gt;</code> ⇒ <code>&lt;script&gt;var form_619c16f;…&lt;/script&gt;</code> (Good!)</li>
+<li><code>&lt;script&gt;var form_{{ .Params.hash }};…&lt;/script&gt;</code> ⇒ <code>&lt;script&gt;var form_&quot;619c16f&quot;;…&lt;/script&gt;</code> (Bad!)</li>
+</ul>
+
+<h3 id="singularize:904d9cf85d985550c869e6d9741448cc">singularize</h3>
+
+<p>Singularize the given word with a set of common English singularization rules.</p>
+
+<p>e.g. <code>{{ &quot;cats&quot; | singularize }}</code> → &ldquo;cat&rdquo;</p>
+
+<h3 id="slicestr:904d9cf85d985550c869e6d9741448cc">slicestr</h3>
+
+<p>Slicing in <code>slicestr</code> is done by specifying a half-open range with two indices, <code>start</code> and <code>end</code>.
+For example, 1 and 4 creates a slice including elements 1 through 3.
+The <code>end</code> index can be omitted; it defaults to the string&rsquo;s length.</p>
+
+<p>e.g.</p>
+
+<ul>
+<li><code>{{slicestr &quot;BatMan&quot; 3}}</code> → &ldquo;Man&rdquo;</li>
+<li><code>{{slicestr &quot;BatMan&quot; 0 3}}</code> → &ldquo;Bat&rdquo;</li>
+</ul>
+
+<h3 id="substr:904d9cf85d985550c869e6d9741448cc">substr</h3>
+
+<p>Extracts parts of a string, beginning at the character at the specified
+position, and returns the specified number of characters.</p>
+
+<p>It normally takes two parameters: <code>start</code> and <code>length</code>.
+It can also take one parameter: <code>start</code>, i.e. <code>length</code> is omitted, in which case
+the substring starting from start until the end of the string will be returned.</p>
+
+<p>To extract characters from the end of the string, use a negative start number.</p>
+
+<p>In addition, borrowing from the extended behavior described at <a href="http://php.net/substr">http://php.net/substr</a>,
+if <code>length</code> is given and is negative, then that many characters will be omitted from
+the end of string.</p>
+
+<p>e.g.</p>
+
+<ul>
+<li><code>{{substr &quot;BatMan&quot; 0 -3}}</code> → &ldquo;Bat&rdquo;</li>
+<li><code>{{substr &quot;BatMan&quot; 3 3}}</code> → &ldquo;Man&rdquo;</li>
+</ul>
+
+<h3 id="title:904d9cf85d985550c869e6d9741448cc">title</h3>
+
+<p>Converts all characters in string to titlecase.</p>
+
+<p>e.g. <code>{{title &quot;BatMan&quot;}}</code> → &ldquo;Batman&rdquo;</p>
+
+<h3 id="trim:904d9cf85d985550c869e6d9741448cc">trim</h3>
+
+<p>Returns a slice of the string with all leading and trailing characters contained in cutset removed.</p>
+
+<p>e.g. <code>{{ trim &quot;++Batman--&quot; &quot;+-&quot; }}</code> → &ldquo;Batman&rdquo;</p>
+
+<h3 id="upper:904d9cf85d985550c869e6d9741448cc">upper</h3>
+
+<p>Converts all characters in string to uppercase.</p>
+
+<p>e.g. <code>{{upper &quot;BatMan&quot;}}</code> → &ldquo;BATMAN&rdquo;</p>
+
+<h2 id="urls:904d9cf85d985550c869e6d9741448cc">URLs</h2>
+
+<h3 id="absurl-relurl:904d9cf85d985550c869e6d9741448cc">absURL, relURL</h3>
+
+<p>Both <code>absURL</code> and <code>relURL</code> considers the configured value of <code>baseURL</code>, so given a <code>baseURL</code> set to <code>http://mysite.com/hugo/</code>:</p>
+
+<ul>
+<li><code>{{ &quot;mystyle.css&quot; | absURL }}</code> → &ldquo;<a href="http://mysite.com/hugo/mystyle.css&quot;">http://mysite.com/hugo/mystyle.css&quot;</a></li>
+<li><code>{{ &quot;mystyle.css&quot; | relURL }}</code> → &ldquo;/hugo/mystyle.css&rdquo;</li>
+<li><code>{{ &quot;http://gohugo.io/&quot; | relURL }}</code> →  &ldquo;<a href="http://gohugo.io/&quot;">http://gohugo.io/&quot;</a></li>
+<li><code>{{ &quot;http://gohugo.io/&quot; | absURL }}</code> →  &ldquo;<a href="http://gohugo.io/&quot;">http://gohugo.io/&quot;</a></li>
+</ul>
+
+<p>The last two examples may look funky, but is useful if you, say, have a list of images, some of them hosted externally, some locally:</p>
+
+<pre><code>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+    &quot;@context&quot; : &quot;http://schema.org&quot;,
+    &quot;@type&quot; : &quot;BlogPosting&quot;,
+    &quot;image&quot; : {{ apply .Params.images &quot;absURL&quot; &quot;.&quot; }}
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>The above also exploits the fact that the Go template parser JSON-encodes objects inside <code>script</code> tags.</p>
+
+<p><strong>Note:</strong> These functions are smart about missing slashes, but will not add one to the end if not present.</p>
+
+<h3 id="ref-relref:904d9cf85d985550c869e6d9741448cc">ref, relref</h3>
+
+<p>Looks up a content page by relative path or logical name to return the permalink (<code>ref</code>) or relative permalink (<code>relref</code>). Requires a Node or Page object (usually satisfied with <code>.</code>). Used in the <a href="http://localhost:1313/extras/crossreferences/"><code>ref</code> and <code>relref</code> shortcodes</a>.</p>
+
+<p>e.g. {{ ref . &ldquo;about.md&rdquo; }}</p>
+
+<h3 id="safeurl:904d9cf85d985550c869e6d9741448cc">safeURL</h3>
+
+<p>Declares the provided string as a &ldquo;safe&rdquo; URL or URL substring (see <a href="http://tools.ietf.org/html/rfc3986">RFC 3986</a>).
+A URL like <code>javascript:checkThatFormNotEditedBeforeLeavingPage()</code> from a trusted
+source should go in the page, but by default dynamic <code>javascript:</code> URLs are
+filtered out since they are a frequently exploited injection vector.</p>
+
+<p>Without <code>safeURL</code>, only the URI schemes <code>http:</code>, <code>https:</code> and <code>mailto:</code>
+are considered safe by Go.  If any other URI schemes, e.g.&nbsp;<code>irc:</code> and
+<code>javascript:</code>, are detected, the whole URL would be replaced with
+<code>#ZgotmplZ</code>.  This is to &ldquo;defang&rdquo; any potential attack in the URL,
+rendering it useless.</p>
+
+<p>Example: Given a site-wide <code>config.toml</code> that contains this menu entry:</p>
+
+<pre><code>[[menu.main]]
+    name = &quot;IRC: #golang at freenode&quot;
+    url = &quot;irc://irc.freenode.net/#golang&quot;
+</code></pre>
+
+<p>The following template:</p>
+
+<pre><code>&lt;ul class=&quot;sidebar-menu&quot;&gt;
+  {{ range .Site.Menus.main }}
+  &lt;li&gt;&lt;a href=&quot;{{ .URL }}&quot;&gt;{{ .Name }}&lt;/a&gt;&lt;/li&gt;
+  {{ end }}
+&lt;/ul&gt;
+</code></pre>
+
+<p>would produce <code>&lt;li&gt;&lt;a href=&quot;#ZgotmplZ&quot;&gt;IRC: #golang at freenode&lt;/a&gt;&lt;/li&gt;</code>
+for the <code>irc://…</code> URL.</p>
+
+<p>To fix this, add <code>| safeURL</code> after <code>.URL</code> on the 3rd line, like this:</p>
+
+<pre><code>  &lt;li&gt;&lt;a href=&quot;{{ .URL | safeURL }}&quot;&gt;{{ .Name }}&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p>With this change, we finally get <code>&lt;li&gt;&lt;a href=&quot;irc://irc.freenode.net/#golang&quot;&gt;IRC: #golang at freenode&lt;/a&gt;&lt;/li&gt;</code>
+as intended.</p>
+
+<h3 id="urlize:904d9cf85d985550c869e6d9741448cc">urlize</h3>
+
+<p>Takes a string and sanitizes it for usage in URLs, converts spaces to &ldquo;-&rdquo;.</p>
+
+<p>e.g. <code>&lt;a href=&quot;/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;</code></p>
+
+<h2 id="content-views:904d9cf85d985550c869e6d9741448cc">Content Views</h2>
+
+<h3 id="render:904d9cf85d985550c869e6d9741448cc">Render</h3>
+
+<p>Takes a view to render the content with.  The view is an alternate layout, and should be a file name that points to a template in one of the locations specified in the documentation for <a href="/templates/views">Content Views</a>.</p>
+
+<p>This function is only available on a piece of content, and in list context.</p>
+
+<p>This example could render a piece of content using the content view located at <code>/layouts/_default/summary.html</code>:</p>
+
+<pre><code>{{ range .Data.Pages }}
+    {{ .Render &quot;summary&quot;}}
+{{ end }}
+</code></pre>
+
+<h2 id="advanced:904d9cf85d985550c869e6d9741448cc">Advanced</h2>
+
+<h3 id="apply:904d9cf85d985550c869e6d9741448cc">apply</h3>
+
+<p>Given a map, array, or slice, returns a new slice with a function applied over it. Expects at least three parameters, depending on the function being applied. The first parameter is the sequence to operate on; the second is the name of the function as a string, which must be in the Hugo function map (generally, it is these functions documented here). After that, the parameters to the applied function are provided, with the string <code>&quot;.&quot;</code> standing in for each element of the sequence the function is to be applied against. An example is in order:</p>
+
+<pre><code>+++
+names: [ &quot;Derek Perkins&quot;, &quot;Joe Bergevin&quot;, &quot;Tanner Linsley&quot; ]
++++
+
+{{ apply .Params.names &quot;urlize&quot; &quot;.&quot; }} → [ &quot;derek-perkins&quot;, &quot;joe-bergevin&quot;, &quot;tanner-linsley&quot; ]
+</code></pre>
+
+<p>This is roughly equivalent to:</p>
+
+<pre><code>{{ range .Params.names }}{{ . | urlize }}{{ end }}
+</code></pre>
+
+<p>However, it isn’t possible to provide the output of a range to the <code>delimit</code> function, so you need to <code>apply</code> it. A more complete example should explain this. Let&rsquo;s say you have two partials for displaying tag links in a post,  &ldquo;post/tag/list.html&rdquo; and &ldquo;post/tag/link.html&rdquo;, as shown below.</p>
+
+<pre><code>&lt;!-- post/tag/list.html --&gt;
+{{ with .Params.tags }}
+&lt;div class=&quot;tags-list&quot;&gt;
+  Tags:
+  {{ $len := len . }}
+  {{ if eq $len 1 }}
+    {{ partial &quot;post/tag/link&quot; (index . 0) }}
+  {{ else }}
+    {{ $last := sub $len 1 }}
+    {{ range first $last . }}
+      {{ partial &quot;post/tag/link&quot; . }},
+    {{ end }}
+    {{ partial &quot;post/tag/link&quot; (index . $last) }}
+  {{ end }}
+&lt;/div&gt;
+{{ end }}
+
+
+&lt;!-- post/tag/link.html --&gt;
+&lt;a class=&quot;post-tag post-tag-{{ . | urlize }}&quot; href=&quot;/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+</code></pre>
+
+<p>This works, but the complexity of &ldquo;post/tag/list.html&rdquo; is fairly high; the Hugo template needs to perform special behaviour for the case where there’s only one tag, and it has to treat the last tag as special. Additionally, the tag list will be rendered something like &ldquo;Tags: tag1 , tag2 , tag3&rdquo; because of the way that the HTML is generated and it is interpreted by a browser.</p>
+
+<p>This is Hugo. We have a better way. If this were your &ldquo;post/tag/list.html&rdquo; instead, all of those problems are fixed automatically (this first version separates all of the operations for ease of reading; the combined version will be shown after the explanation).</p>
+
+<pre><code>&lt;!-- post/tag/list.html --&gt;
+{{ with.Params.tags }}
+&lt;div class=&quot;tags-list&quot;&gt;
+  Tags:
+  {{ $sort := sort . }}
+  {{ $links := apply $sort &quot;partial&quot; &quot;post/tag/link&quot; &quot;.&quot; }}
+  {{ $clean := apply $links &quot;chomp&quot; &quot;.&quot; }}
+  {{ delimit $clean &quot;, &quot; }}
+&lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>In this version, we are now sorting the tags, converting them to links with &ldquo;post/tag/link.html&rdquo;, cleaning off stray newlines, and joining them together in a delimited list for presentation. That can also be written as:</p>
+
+<pre><code>&lt;!-- post/tag/list.html --&gt;
+{{ with.Params.tags }}
+&lt;div class=&quot;tags-list&quot;&gt;
+  Tags:
+  {{ delimit (apply (apply (sort .) &quot;partial&quot; &quot;post/tag/link&quot; &quot;.&quot;) &quot;chomp&quot; &quot;.&quot;) &quot;, &quot; }}
+&lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p><code>apply</code> does not work when receiving the sequence as an argument through a pipeline.</p>
+
+<hr />
+
+<h3 id="base64encode-and-base64decode:904d9cf85d985550c869e6d9741448cc">base64Encode and base64Decode</h3>
+
+<p><code>base64Encode</code> and <code>base64Decode</code> let you easily decode content with a base64 encoding and vice versa through pipes. Let&rsquo;s take a look at an example:</p>
+
+<pre><code>{{ &quot;Hello world&quot; | base64Encode }}
+&lt;!-- will output &quot;SGVsbG8gd29ybGQ=&quot; and --&gt;
+
+{{ &quot;SGVsbG8gd29ybGQ=&quot; | base64Decode }}
+&lt;!-- becomes &quot;Hello world&quot; again. --&gt;
+</code></pre>
+
+<p>You can also pass other datatypes as argument to the template function which tries
+to convert them. Now we use an integer instead of a string:</p>
+
+<pre><code>{{ 42 | base64Encode | base64Decode }}
+&lt;!-- will output &quot;42&quot;. Both functions always return a string. --&gt;
+</code></pre>
+
+<p><strong>Tip:</strong> Using base64 to decode and encode becomes really powerful if we have to handle
+responses of APIs.</p>
+
+<pre><code>{{ $resp := getJSON &quot;https://api.github.com/repos/spf13/hugo/readme&quot;  }}
+{{ $resp.content | base64Decode | markdownify }}
+</code></pre>
+
+<p>The response of the GitHub API contains the base64-encoded version of the <a href="https://github.com/spf13/hugo/blob/master/README.md">README.md</a> in the Hugo repository. Now we can decode it and parse the Markdown. The final output will look similar to the rendered version on GitHub.</p>
+
+</section>
+
+
+
+    
+    <script src="/js/jquery-2.1.4.js"></script>
+    <script src="/js/jquery.menu-aim.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    
+    
+    <script src="/js/main.js"></script> 
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7131036-4', 'spf13.com');
+  ga('send', 'pageview');
+
+</script>
+

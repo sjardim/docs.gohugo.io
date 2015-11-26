@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commands on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/commands/</link>
+    <description>Recent content in Commands on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Sep 2015 22:45:13 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hugo</title>
+      <link>http://localhost:1313/commands/hugo/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo:32ab7241d48fcc174c877413a917f8cf&#34;&gt;hugo&lt;/h2&gt;
+
+&lt;p&gt;hugo builds your site&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:32ab7241d48fcc174c877413a917f8cf&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;hugo is the main command, used to build your Hugo site.&lt;/p&gt;
+
+&lt;p&gt;Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.&lt;/p&gt;
+
+&lt;p&gt;Complete documentation is available at &lt;a href=&#34;http://gohugo.io/&#34;&gt;http://gohugo.io/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:32ab7241d48fcc174c877413a917f8cf&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --noTimes[=false]: Don&#39;t sync modification time of files
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+  -w, --watch[=false]: watch filesystem for changes and recreate as needed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:32ab7241d48fcc174c877413a917f8cf&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_benchmark/&#34;&gt;hugo benchmark&lt;/a&gt;    - Benchmark hugo by building a site a number of times.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_check/&#34;&gt;hugo check&lt;/a&gt;    - Check content in the source directory&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_config/&#34;&gt;hugo config&lt;/a&gt;  - Print the site configuration&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert/&#34;&gt;hugo convert&lt;/a&gt;    - Convert your content to different formats&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_genautocomplete/&#34;&gt;hugo genautocomplete&lt;/a&gt;    - Generate shell autocompletion script for Hugo&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_gendoc/&#34;&gt;hugo gendoc&lt;/a&gt;  - Generate Markdown documentation for the Hugo CLI.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_list/&#34;&gt;hugo list&lt;/a&gt;  - Listing out various types of content&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_new/&#34;&gt;hugo new&lt;/a&gt;    - Create new content for your site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_server/&#34;&gt;hugo server&lt;/a&gt;  - Hugo runs its own webserver to render the files&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_undraft/&#34;&gt;hugo undraft&lt;/a&gt;    - Undraft changes the content&amp;rsquo;s draft status from &amp;lsquo;True&amp;rsquo; to &amp;lsquo;False&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_version/&#34;&gt;hugo version&lt;/a&gt;    - Print the version number of Hugo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:32ab7241d48fcc174c877413a917f8cf&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo benchmark</title>
+      <link>http://localhost:1313/commands/hugo_benchmark/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_benchmark/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-benchmark:be30998735f3649b1584bdc245006fd4&#34;&gt;hugo benchmark&lt;/h2&gt;
+
+&lt;p&gt;Benchmark hugo by building a site a number of times.&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:be30998735f3649b1584bdc245006fd4&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Hugo can build a site many times over and analyze the running process
+creating a benchmark.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo benchmark
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:be30998735f3649b1584bdc245006fd4&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -n, --count=13: number of times to build the site
+      --cpuprofile=&amp;quot;&amp;quot;: path/filename for the CPU profile file
+      --memprofile=&amp;quot;&amp;quot;: path/filename for the memory profile file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:be30998735f3649b1584bdc245006fd4&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:be30998735f3649b1584bdc245006fd4&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:be30998735f3649b1584bdc245006fd4&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo check</title>
+      <link>http://localhost:1313/commands/hugo_check/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_check/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-check:bf8eb1db065949cd4e369539a92a3312&#34;&gt;hugo check&lt;/h2&gt;
+
+&lt;p&gt;Check content in the source directory&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:bf8eb1db065949cd4e369539a92a3312&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Hugo will perform some basic analysis on the content provided
+and will give feedback.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo check
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:bf8eb1db065949cd4e369539a92a3312&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:bf8eb1db065949cd4e369539a92a3312&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:bf8eb1db065949cd4e369539a92a3312&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo config</title>
+      <link>http://localhost:1313/commands/hugo_config/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_config/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-config:2cf04645ddff16200bc32023ba4bfb6c&#34;&gt;hugo config&lt;/h2&gt;
+
+&lt;p&gt;Print the site configuration&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:2cf04645ddff16200bc32023ba4bfb6c&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Print the site configuration, both default and custom settings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:2cf04645ddff16200bc32023ba4bfb6c&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:2cf04645ddff16200bc32023ba4bfb6c&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:2cf04645ddff16200bc32023ba4bfb6c&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo convert</title>
+      <link>http://localhost:1313/commands/hugo_convert/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_convert/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-convert:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;hugo convert&lt;/h2&gt;
+
+&lt;p&gt;Convert your content to different formats&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Convert your content (e.g. front matter) to different formats.&lt;/p&gt;
+
+&lt;p&gt;See convert&amp;rsquo;s subcommands toJSON, toTOML and toYAML for more information.&lt;/p&gt;
+
+&lt;h3 id=&#34;options:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -o, --output=&amp;quot;&amp;quot;: filesystem path to write files to
+      --unsafe[=false]: enable less safe operations, please backup first
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert_tojson/&#34;&gt;hugo convert toJSON&lt;/a&gt;  - Convert front matter to JSON&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert_totoml/&#34;&gt;hugo convert toTOML&lt;/a&gt;  - Convert front matter to TOML&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert_toyaml/&#34;&gt;hugo convert toYAML&lt;/a&gt;  - Convert front matter to YAML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:025593726ef5b3763a8b94852c1d4b1c&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo convert toJSON</title>
+      <link>http://localhost:1313/commands/hugo_convert_tojson/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_convert_tojson/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-convert-tojson:ba4e17e4662006884d9669ac6a59127d&#34;&gt;hugo convert toJSON&lt;/h2&gt;
+
+&lt;p&gt;Convert front matter to JSON&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:ba4e17e4662006884d9669ac6a59127d&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;toJSON converts all front matter in the content directory
+to use JSON for the front matter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo convert toJSON
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:ba4e17e4662006884d9669ac6a59127d&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+  -o, --output=&amp;quot;&amp;quot;: filesystem path to write files to
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+      --unsafe[=false]: enable less safe operations, please backup first
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:ba4e17e4662006884d9669ac6a59127d&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert/&#34;&gt;hugo convert&lt;/a&gt;    - Convert your content to different formats&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:ba4e17e4662006884d9669ac6a59127d&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo convert toTOML</title>
+      <link>http://localhost:1313/commands/hugo_convert_totoml/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_convert_totoml/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-convert-totoml:754ec1fbc6916322786738c8139f6557&#34;&gt;hugo convert toTOML&lt;/h2&gt;
+
+&lt;p&gt;Convert front matter to TOML&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:754ec1fbc6916322786738c8139f6557&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;toTOML converts all front matter in the content directory
+to use TOML for the front matter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo convert toTOML
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:754ec1fbc6916322786738c8139f6557&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+  -o, --output=&amp;quot;&amp;quot;: filesystem path to write files to
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+      --unsafe[=false]: enable less safe operations, please backup first
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:754ec1fbc6916322786738c8139f6557&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert/&#34;&gt;hugo convert&lt;/a&gt;    - Convert your content to different formats&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:754ec1fbc6916322786738c8139f6557&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo convert toYAML</title>
+      <link>http://localhost:1313/commands/hugo_convert_toyaml/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_convert_toyaml/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-convert-toyaml:4b37852f3c70d945d5d13ce17242d69c&#34;&gt;hugo convert toYAML&lt;/h2&gt;
+
+&lt;p&gt;Convert front matter to YAML&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:4b37852f3c70d945d5d13ce17242d69c&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;toYAML converts all front matter in the content directory
+to use YAML for the front matter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo convert toYAML
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:4b37852f3c70d945d5d13ce17242d69c&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+  -o, --output=&amp;quot;&amp;quot;: filesystem path to write files to
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+      --unsafe[=false]: enable less safe operations, please backup first
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:4b37852f3c70d945d5d13ce17242d69c&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_convert/&#34;&gt;hugo convert&lt;/a&gt;    - Convert your content to different formats&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:4b37852f3c70d945d5d13ce17242d69c&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo genautocomplete</title>
+      <link>http://localhost:1313/commands/hugo_genautocomplete/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_genautocomplete/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-genautocomplete:f464c05b08906c1dbe199272524d9e90&#34;&gt;hugo genautocomplete&lt;/h2&gt;
+
+&lt;p&gt;Generate shell autocompletion script for Hugo&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:f464c05b08906c1dbe199272524d9e90&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Generates a shell autocompletion script for Hugo.&lt;/p&gt;
+
+&lt;p&gt;NOTE: The current version supports Bash only.
+      This should work for *nix systems with Bash installed.&lt;/p&gt;
+
+&lt;p&gt;By default, the file is written directly to /etc/bash_completion.d
+for convenience, and the command may need superuser rights, e.g.:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo hugo genautocomplete
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add &lt;code&gt;--completionfile=/path/to/file&lt;/code&gt; flag to set alternative
+file-path and name.&lt;/p&gt;
+
+&lt;p&gt;Logout and in again to reload the completion scripts,
+or just source them in directly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ . /etc/bash_completion
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo genautocomplete
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:f464c05b08906c1dbe199272524d9e90&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;      --completionfile=&amp;quot;/etc/bash_completion.d/hugo.sh&amp;quot;: Autocompletion file
+      --type=&amp;quot;bash&amp;quot;: Autocompletion type (currently only bash supported)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:f464c05b08906c1dbe199272524d9e90&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:f464c05b08906c1dbe199272524d9e90&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:f464c05b08906c1dbe199272524d9e90&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo gendoc</title>
+      <link>http://localhost:1313/commands/hugo_gendoc/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_gendoc/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-gendoc:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;hugo gendoc&lt;/h2&gt;
+
+&lt;p&gt;Generate Markdown documentation for the Hugo CLI.&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Generate Markdown documentation for the Hugo CLI.&lt;/p&gt;
+
+&lt;p&gt;This command is, mostly, used to create up-to-date documentation
+of Hugo&amp;rsquo;s command-line interface for &lt;a href=&#34;http://gohugo.io/&#34;&gt;http://gohugo.io/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It creates one Markdown file per command with front matter suitable
+for rendering in Hugo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo gendoc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;      --dir=&amp;quot;/tmp/hugodoc/&amp;quot;: the directory to write the doc.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:004057f9d8cb5b806d6041a6a984cfc5&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo list</title>
+      <link>http://localhost:1313/commands/hugo_list/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_list/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-list:90264f8abdfef8393d2690badbd8a602&#34;&gt;hugo list&lt;/h2&gt;
+
+&lt;p&gt;Listing out various types of content&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:90264f8abdfef8393d2690badbd8a602&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Listing out various types of content.&lt;/p&gt;
+
+&lt;p&gt;List requires a subcommand, e.g. &lt;code&gt;hugo list drafts&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:90264f8abdfef8393d2690badbd8a602&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:90264f8abdfef8393d2690badbd8a602&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_list_drafts/&#34;&gt;hugo list drafts&lt;/a&gt;    - List all drafts&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_list_future/&#34;&gt;hugo list future&lt;/a&gt;    - List all posts dated in the future&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:90264f8abdfef8393d2690badbd8a602&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo list drafts</title>
+      <link>http://localhost:1313/commands/hugo_list_drafts/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_list_drafts/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-list-drafts:5174da9c5d85eece5d412c36fffb77d7&#34;&gt;hugo list drafts&lt;/h2&gt;
+
+&lt;p&gt;List all drafts&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:5174da9c5d85eece5d412c36fffb77d7&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;List all of the drafts in your content directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo list drafts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:5174da9c5d85eece5d412c36fffb77d7&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:5174da9c5d85eece5d412c36fffb77d7&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_list/&#34;&gt;hugo list&lt;/a&gt;  - Listing out various types of content&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:5174da9c5d85eece5d412c36fffb77d7&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo list future</title>
+      <link>http://localhost:1313/commands/hugo_list_future/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_list_future/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-list-future:c3c965ab33e4ff824f810a18b48092c0&#34;&gt;hugo list future&lt;/h2&gt;
+
+&lt;p&gt;List all posts dated in the future&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:c3c965ab33e4ff824f810a18b48092c0&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;List all of the posts in your content directory which will be
+posted in the future.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo list future
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:c3c965ab33e4ff824f810a18b48092c0&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:c3c965ab33e4ff824f810a18b48092c0&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_list/&#34;&gt;hugo list&lt;/a&gt;  - Listing out various types of content&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:c3c965ab33e4ff824f810a18b48092c0&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo new</title>
+      <link>http://localhost:1313/commands/hugo_new/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_new/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-new:bac745478435477ad6f4e0e94b94ab63&#34;&gt;hugo new&lt;/h2&gt;
+
+&lt;p&gt;Create new content for your site&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:bac745478435477ad6f4e0e94b94ab63&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Create a new content file and automatically set the date and title.
+It will guess which kind of file to create based on the path provided.&lt;/p&gt;
+
+&lt;p&gt;You can also specify the kind with &lt;code&gt;-k KIND&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If archetypes are provided in your theme or site, they will be used.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new [path]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:bac745478435477ad6f4e0e94b94ab63&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -f, --format=&amp;quot;toml&amp;quot;: frontmatter format
+  -k, --kind=&amp;quot;&amp;quot;: Content type to create
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:bac745478435477ad6f4e0e94b94ab63&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:bac745478435477ad6f4e0e94b94ab63&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo/&#34;&gt;hugo&lt;/a&gt;    - hugo builds your site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_new_site/&#34;&gt;hugo new site&lt;/a&gt;  - Create a new site (skeleton)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_new_theme/&#34;&gt;hugo new theme&lt;/a&gt;    - Create a new theme&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:bac745478435477ad6f4e0e94b94ab63&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>hugo new site</title>
+      <link>http://localhost:1313/commands/hugo_new_site/</link>
+      <pubDate>Tue, 08 Sep 2015 22:45:13 -0600</pubDate>
+      
+      <guid>http://localhost:1313/commands/hugo_new_site/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo-new-site:97fe7a8c35589085df545651671c86da&#34;&gt;hugo new site&lt;/h2&gt;
+
+&lt;p&gt;Create a new site (skeleton)&lt;/p&gt;
+
+&lt;h3 id=&#34;synopsis:97fe7a8c35589085df545651671c86da&#34;&gt;Synopsis&lt;/h3&gt;
+
+&lt;p&gt;Create a new site in the provided directory.
+The new site will have the correct structure, but no content or theme yet.
+Use &lt;code&gt;hugo new [contentPath]&lt;/code&gt; to create new content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new site [path]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:97fe7a8c35589085df545651671c86da&#34;&gt;Options&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -f, --format=&amp;quot;toml&amp;quot;: config &amp;amp; frontmatter format
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options-inherited-from-parent-commands:97fe7a8c35589085df545651671c86da&#34;&gt;Options inherited from parent commands&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  -b, --baseURL=&amp;quot;&amp;quot;: hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts[=false]: include content marked as draft
+  -F, --buildFuture[=false]: include content with publishdate in the future
+      --cacheDir=&amp;quot;&amp;quot;: filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --config=&amp;quot;&amp;quot;: config file (default is path/config.yaml|json|toml)
+  -d, --destination=&amp;quot;&amp;quot;: filesystem path to write files to
+      --disableRSS[=false]: Do not build RSS files
+      --disableSitemap[=false]: Do not build Sitemap file
+      --editor=&amp;quot;&amp;quot;: edit new content with this editor, if provided
+      --ignoreCache[=false]: Ignores the cache directory for reading but still writes to it
+      --log[=false]: Enable Logging
+      --logFile=&amp;quot;&amp;quot;: Log File path (if set, logging enabled automatically)
+      --pluralizeListTitles[=true]: Pluralize titles in lists using inflect
+      --preserveTaxonomyNames[=false]: Preserve taxonomy names as written (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;gerard-depardieu&amp;quot;)
+  -s, --source=&amp;quot;&amp;quot;: filesystem path to read files relative from
+      --stepAnalysis[=false]: display memory and timing of different steps of the program
+  -t, --theme=&amp;quot;&amp;quot;: theme to use (located in /themes/THEMENAME/)
+      --uglyURLs[=false]: if true, use /filename.html instead of /filename/
+  -v, --verbose[=false]: verbose output
+      --verboseLog[=false]: verbose logging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;see-also:97fe7a8c35589085df545651671c86da&#34;&gt;SEE ALSO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/commands/hugo_new/&#34;&gt;hugo new&lt;/a&gt;    - Create new content for your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;auto-generated-by-spf13-cobra-on-8-sep-2015:97fe7a8c35589085df545651671c86da&#34;&gt;Auto generated by spf13/cobra on 8-Sep-2015&lt;/h6&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

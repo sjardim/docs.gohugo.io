@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/tags/portfolio/</link>
+    <description>Recent content in Portfolio on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Nov 2013 07:32:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Davide Petilli</title>
+      <link>http://localhost:1313/showcase/davidepetilli/</link>
+      <pubDate>Fri, 01 Nov 2013 07:32:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/showcase/davidepetilli/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

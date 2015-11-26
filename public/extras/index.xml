@@ -1,0 +1,1821 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extras on Hugo: A Fast and Flexible Website Generator</title>
+    <link>http://localhost:1313/extras/</link>
+    <description>Recent content in Extras on Hugo: A Fast and Flexible Website Generator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 09 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/extras/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Aliases</title>
+      <link>http://localhost:1313/extras/aliases/</link>
+      <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/aliases/</guid>
+      <description>
+
+&lt;p&gt;For people migrating existing published content to Hugo, there&amp;rsquo;s a good chance you need a mechanism to handle redirecting old URLs.&lt;/p&gt;
+
+&lt;p&gt;Luckily, redirects can be handled easily with &lt;em&gt;aliases&lt;/em&gt; in Hugo.&lt;/p&gt;
+
+&lt;h2 id=&#34;example:86c3b43f52adb2002b6f349546284b0a&#34;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;Given a post on your current Hugo site, with a path of:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;content/posts/my-awesome-blog-post.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;hellip; you create an &amp;ldquo;aliases&amp;rdquo; section in the frontmatter of your post, and add previous paths to that.&lt;/p&gt;
+
+&lt;h3 id=&#34;toml-frontmatter:86c3b43f52adb2002b6f349546284b0a&#34;&gt;TOML frontmatter&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;+++
+        ...
+aliases = [
+    &amp;quot;/posts/my-original-url/&amp;quot;,
+    &amp;quot;/2010/01/01/even-earlier-url.html&amp;quot;
+]
+        ...
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;yaml-frontmatter:86c3b43f52adb2002b6f349546284b0a&#34;&gt;YAML frontmatter&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
+        ...
+aliases:
+    - /posts/my-original-url/
+    - /2010/01/01/even-earlier-url.html
+        ...
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now when you visit any of the locations specified in aliases, &lt;em&gt;assuming the same site domain&lt;/em&gt;, you&amp;rsquo;ll be redirected to the page they are specified on.&lt;/p&gt;
+
+&lt;h2 id=&#34;important-behaviors:86c3b43f52adb2002b6f349546284b0a&#34;&gt;Important Behaviors&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Hugo makes no assumptions about aliases. They also don&amp;rsquo;t change based
+on your UglyURLs setting. You need to provide absolute path to your webroot and the
+complete filename or directory.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Aliases are rendered prior to any content and will be overwritten by
+any content with the same location.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;how-hugo-aliases-work:86c3b43f52adb2002b6f349546284b0a&#34;&gt;How Hugo Aliases Work&lt;/h2&gt;
+
+&lt;p&gt;When aliases are specified, Hugo creates a physical folder structure to match the alias entry, and, an html file specifying the canonical URL for the page, and a redirect target.&lt;/p&gt;
+
+&lt;p&gt;Assuming a baseurl of &lt;code&gt;mysite.tld&lt;/code&gt;, the contents of the html file will look something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;http://mysite.tld/posts/my-original-url&amp;quot;/&amp;gt;
+    &amp;lt;meta http-equiv=&amp;quot;content-type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot;/&amp;gt;
+    &amp;lt;meta http-equiv=&amp;quot;refresh&amp;quot; content=&amp;quot;0;url=http://mysite.tld/posts/my-original-url&amp;quot;/&amp;gt;
+  &amp;lt;/head&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;http-equiv=&amp;quot;refresh&amp;quot;&lt;/code&gt; line is what performs the redirect, in 0 seconds in this case.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Builders</title>
+      <link>http://localhost:1313/extras/builders/</link>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/builders/</guid>
+      <description>
+
+&lt;p&gt;Hugo provides the functionality to quickly get a site, theme or page
+started.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-site:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Site&lt;/h2&gt;
+
+&lt;p&gt;Want to get a site built quickly?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site /path/to/site
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hugo will create all the needed directories and files to get started
+quickly.&lt;/p&gt;
+
+&lt;p&gt;Hugo will only touch the files and create the directories (in the right
+places), &lt;a href=&#34;http://localhost:1313/overview/configuration/&#34;&gt;configuration&lt;/a&gt; and content are up to
+you&amp;hellip; but luckily we have builders for content (see below).&lt;/p&gt;
+
+&lt;h2 id=&#34;new-theme:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Theme&lt;/h2&gt;
+
+&lt;p&gt;Want to design a new theme?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new theme THEME_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Run from your working directory, this will create a new theme with all
+the needed files in your themes directory. Hugo will provide you with a
+license and theme.toml file with most of the work done for you.&lt;/p&gt;
+
+&lt;p&gt;Follow the &lt;a href=&#34;http://localhost:1313/themes/creation/&#34;&gt;Theme Creation Guide&lt;/a&gt; once the builder is
+done.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-content:37270f2fc999ab1e18b3647fc537a653&#34;&gt;New Content&lt;/h2&gt;
+
+&lt;p&gt;You will use this builder the most of all. Every time you want to create
+a new piece of content, the content builder will get you started right.&lt;/p&gt;
+
+&lt;p&gt;Leveraging &lt;a href=&#34;http://localhost:1313/content/archetypes/&#34;&gt;content archetypes&lt;/a&gt; the content builder
+will not only insert the current date and appropriate metadata, but it
+will pre-populate values based on the content type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new relative/path/to/content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This assumes it is being run from your working directory and the content
+path starts from your content directory.&lt;/p&gt;
+
+&lt;p&gt;I typically keep two different terminals open, one to run &lt;code&gt;hugo server
+--watch&lt;/code&gt;, and another to use the builders to create new content.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comments in Hugo</title>
+      <link>http://localhost:1313/extras/comments/</link>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/comments/</guid>
+      <description>
+
+&lt;p&gt;As Hugo is a static site generator, the content produced is static and doesn’t interact with the users. The most common interaction people ask for is comment capability.&lt;/p&gt;
+
+&lt;p&gt;Hugo ships with support for &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;, a third-party service that provides comment and community capabilities to website via JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Your theme may already support Disqus, but even it if doesn’t, it is easy to add.&lt;/p&gt;
+
+&lt;h1 id=&#34;disqus-support:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Disqus Support&lt;/h1&gt;
+
+&lt;h2 id=&#34;adding-disqus-to-a-template:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Adding Disqus to a template&lt;/h2&gt;
+
+&lt;p&gt;Hugo comes with all the code you would need to include load Disqus. Simply include the following line where you want your comments to appear:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ template &amp;quot;_internal/disqus.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configuring-disqus:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Configuring Disqus&lt;/h2&gt;
+
+&lt;p&gt;That template requires you to set a single value in your site config file, e.g. config.yaml.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;disqusShortname = &amp;quot;XYW&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, you can optionally set the following in the front matter
+for a given piece of content:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;disqus_identifier&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;disqus_title&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;disqus_url&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conditional-loading-of-disqus-comments:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Conditional Loading of Disqus Comments&lt;/h2&gt;
+
+&lt;p&gt;Users have noticed that enabling Disqus comments when running the Hugo web server on localhost causes the creation of unwanted discussions on the associated Disqus account. In order to prevent this, a slightly tweaked partial template is required. So, rather than using the built-in &lt;code&gt;&amp;quot;_internal/disqus.html&amp;quot;&lt;/code&gt; template referenced above, create a template in your &lt;code&gt;partials&lt;/code&gt; folder that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;disqus_thread&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+
+(function() {
+    // Don&#39;t ever inject Disqus on localhost--it creates unwanted
+    // discussions from &#39;localhost:1313&#39; on your Disqus account...
+    if (window.location.hostname == &amp;quot;localhost&amp;quot;)
+        return;
+
+    var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+    var disqus_shortname = &#39;{{ .Site.Params.disqusShortname }}&#39;;
+    dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+    (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&amp;lt;/script&amp;gt;
+&amp;lt;noscript&amp;gt;Please enable JavaScript to view the &amp;lt;a href=&amp;quot;http://disqus.com/?ref_noscript&amp;quot;&amp;gt;comments powered by Disqus.&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;
+&amp;lt;a href=&amp;quot;http://disqus.com/&amp;quot; class=&amp;quot;dsq-brlink&amp;quot;&amp;gt;comments powered by &amp;lt;span class=&amp;quot;logo-disqus&amp;quot;&amp;gt;Disqus&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that there is a simple &lt;code&gt;if&lt;/code&gt; statement that detects when you are running on localhost and skips the initialization of the Disqus comment injection.&lt;/p&gt;
+
+&lt;p&gt;Now, reference the partial template from your page template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;disqus.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;alternatives:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Alternatives&lt;/h1&gt;
+
+&lt;p&gt;A few alternatives exist to &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.discourse.org&#34;&gt;Discourse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://intensedebate.com/&#34;&gt;IntenseDebate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://livefyre.com/&#34;&gt;Livefyre&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://muut.com/&#34;&gt;Muut&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://duoshuo.com/&#34;&gt;多说&lt;/a&gt; (&lt;a href=&#34;http://duoshuo.com/&#34;&gt;Duoshuo&lt;/a&gt;, popular in China)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://posativ.org/isso/&#34;&gt;isso&lt;/a&gt; (Self-hosted, Python)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/kaiju&#34;&gt;Kaiju&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;kaiju:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Kaiju&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/kaiju&#34;&gt;Kaiju&lt;/a&gt; is an open-source project started by &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13&lt;/a&gt; (Hugo’s author) to bring easy and fast real time discussions to the web.&lt;/p&gt;
+
+&lt;p&gt;Written using Go, Socket.io and MongoDB, it is very fast and easy to deploy.&lt;/p&gt;
+
+&lt;p&gt;It is in early development but shows promise. If you have interest, please help by contributing whether via a pull request, an issue or even just a tweet. Everything helps.&lt;/p&gt;
+
+&lt;h2 id=&#34;discourse:03e7713c1e56da666eeab8dfbbf51091&#34;&gt;Discourse&lt;/h2&gt;
+
+&lt;p&gt;Additionally, you may recognize &lt;a href=&#34;http://www.discourse.org&#34;&gt;Discourse&lt;/a&gt; as the system that powers the &lt;a href=&#34;http://discuss.gohugo.io&#34;&gt;Hugo Discussion Forum&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cross-References</title>
+      <link>http://localhost:1313/extras/crossreferences/</link>
+      <pubDate>Tue, 25 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/crossreferences/</guid>
+      <description>
+
+&lt;p&gt;Hugo makes it easy to link documents together with the &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; shortcodes. These shortcodes are also used to safely provide links to headings inside of your content, whether across documents or within a document. The only difference between &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; is whether the resulting URL is absolute (&lt;code&gt;http://1.com/about/&lt;/code&gt;) or relative (&lt;code&gt;/about/&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;using-ref-and-relref:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Using &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;document&amp;quot; &amp;gt;}}
+{{&amp;lt; ref &amp;quot;#anchor&amp;quot; &amp;gt;}}
+{{&amp;lt; ref &amp;quot;document#anchor&amp;quot; &amp;gt;}}
+{{&amp;lt; relref &amp;quot;document&amp;quot; &amp;gt;}}
+{{&amp;lt; relref &amp;quot;#anchor&amp;quot; &amp;gt;}}
+{{&amp;lt; relref &amp;quot;document#anchor&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The single parameter to &lt;code&gt;ref&lt;/code&gt; is a string with a content &lt;em&gt;document name&lt;/em&gt; (&lt;code&gt;about.md&lt;/code&gt;), an in-document &lt;em&gt;anchor&lt;/em&gt; (&lt;code&gt;#who&lt;/code&gt;), or both (&lt;code&gt;about.md#who&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;document-names:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Document Names&lt;/h3&gt;
+
+&lt;p&gt;The &lt;em&gt;document name&lt;/em&gt; is the name of a document including the format extension; this may be just the filename, or the relative path from the &lt;code&gt;content/&lt;/code&gt; directory. With a document &lt;code&gt;content/blog/post.md&lt;/code&gt;, either format will produce the same result.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;blog/post.md&amp;quot; &amp;gt;}} ⇒ `/blog/post/`
+{{&amp;lt; relref &amp;quot;post.md&amp;quot; &amp;gt;}} ⇒ `/blog/post/`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you have multiple sections with the same filename, you should only use the relative path format, because the behaviour is &lt;em&gt;undefined&lt;/em&gt;. So, if I also have a document &lt;code&gt;link/post.md&lt;/code&gt;, the output of &lt;code&gt;ref&lt;/code&gt; is unknown for &lt;code&gt;post.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;blog/post.md&amp;quot; &amp;gt;}} ⇒ `/blog/post/`
+{{&amp;lt; relref &amp;quot;post.md&amp;quot; &amp;gt;}} ⇒ `/blog/post/` (maybe)
+{{&amp;lt; relref &amp;quot;post.md&amp;quot; &amp;gt;}} ⇒ `/link/post/` (maybe)
+{{&amp;lt; relref &amp;quot;link/post.md&amp;quot; &amp;gt;}} ⇒ `/link/post/`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A relative document name must &lt;em&gt;not&lt;/em&gt; begin with a slash (&lt;code&gt;/&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;/blog/post.md&amp;quot; &amp;gt;}} ⇒ `&amp;quot;&amp;quot;`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Anchors&lt;/h3&gt;
+
+&lt;p&gt;When an &lt;em&gt;anchor&lt;/em&gt; is provided by itself, the current page’s unique identifier will be appended; when an &lt;em&gt;anchor&lt;/em&gt; is provided with a document name, the found page&amp;rsquo;s unique identifier will be appended.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;#who&amp;quot; &amp;gt;}} ⇒ `#who:9decaf7`
+{{&amp;lt; relref &amp;quot;blog/post.md#who&amp;quot; &amp;gt;}} ⇒ `/blog/post/#who:badcafe`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;More information about document unique identifiers and headings can be found &lt;a href=&#34;#hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;below&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;examples:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Examples&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;blog/post.md&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;http://1.com/blog/post/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;post.md#tldr&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;http://1.com/blog/post/#tldr:caffebad&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;post.md&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;/blog/post/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;blog/post.md#tldr&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;/blog/post/#tldr:caffebad&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; ref &amp;quot;#tldr&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;#tldr:badcaffe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;#tldr&amp;quot; &amp;gt;}}&lt;/code&gt; ⇒ &lt;code&gt;#tldr:badcaffe&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hugo-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Hugo Heading Anchors&lt;/h2&gt;
+
+&lt;p&gt;When using Markdown document types, Hugo generates heading anchors automatically. The generated anchor for this section is &lt;code&gt;hugo-heading-anchors&lt;/code&gt;. Because the heading anchors are generated automatically, Hugo takes some effort to ensure that heading anchors are unique both inside a document and across the entire site.&lt;/p&gt;
+
+&lt;p&gt;Ensuring heading uniqueness across the site is accomplished with a unique identifier for each document based on its path. Unless a document is renamed or moved between sections &lt;em&gt;in the filesystem&lt;/em&gt;, the unique identifier for the document will not change: &lt;code&gt;blog/post.md&lt;/code&gt; will always have a unique identifier of &lt;code&gt;81df004c333b392d34a49fd3a91ba720&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; were added so you can make these reference links without having to know the document’s unique identifier. (The links in document tables of contents are automatically up-to-date with this value.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; relref &amp;quot;extras/crossreferences.md#hugo-heading-anchors&amp;quot; &amp;gt;}}
+/extras/crossreferences/#hugo-heading-anchors:77cd9ea530577debf4ce0f28c8dca242
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;What follows is a deeper discussion of &lt;em&gt;why&lt;/em&gt; and &lt;em&gt;how&lt;/em&gt; Hugo generates heading anchors. It is not necessary to know this to use &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt;, but it may be useful in understanding how some anchors may not match your expectations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;how-to-generate-a-heading-anchor:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;How to Generate a Heading Anchor&lt;/h3&gt;
+
+&lt;p&gt;Convert the text of the heading to lowercase.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Hugo: A Fast &amp;amp; Modern Static Web Engine
+hugo: a fast &amp;amp; modern static web engine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Replace anything that isn&amp;rsquo;t an ASCII letter (&lt;code&gt;a-z&lt;/code&gt;) or number (&lt;code&gt;0-9&lt;/code&gt;) with a dash (&lt;code&gt;-&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo: a fast &amp;amp; modern static web engine
+hugo--a-fast---modern-static-web-engine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get rid of extra dashes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo--a-fast---modern-static-web-engine
+hugo-a-fast-modern-static-web-engine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You have just converting the text of a heading to a suitable anchor. If your document has unique heading text, all of the anchors will be unique, too.&lt;/p&gt;
+
+&lt;h4 id=&#34;specifying-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Specifying Heading Anchors&lt;/h4&gt;
+
+&lt;p&gt;You can also tell Hugo to use a particular heading anchor.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Hugo: A Fast &amp;amp; Modern Static Web Engine {#hugo-main}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hugo will use &lt;code&gt;hugo-main&lt;/code&gt; as the heading anchor.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-about-duplicate-heading-anchors:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;What About Duplicate Heading Anchors?&lt;/h3&gt;
+
+&lt;p&gt;The technique outlined above works well enough, but some documents have headings with identical text, like the &lt;a href=&#34;http://localhost:1313/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; page—there are three headings with the text &amp;ldquo;Example&amp;rdquo;. You can specify heading anchors manually:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;### Example {#example-1}
+### Example {#example-2}
+### Example {#example-3}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It’s easy to forget to do that all the time, and Hugo is smart enough to do it for you. It just adds &lt;code&gt;-x&lt;/code&gt; to the end of each heading it has already seen.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;### Example&lt;/code&gt; ⇒ &lt;code&gt;example&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;### Example&lt;/code&gt; ⇒ &lt;code&gt;example-1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;### Example&lt;/code&gt; ⇒ &lt;code&gt;example-2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sometimes it&amp;rsquo;s a little harder, but Hugo can recover from those, too, by adding more suffixes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;# Heading&lt;/code&gt; ⇒ &lt;code&gt;heading&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# Heading 1&lt;/code&gt; ⇒ &lt;code&gt;heading-1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# Heading&lt;/code&gt; ⇒ &lt;code&gt;heading-1-1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# Heading&lt;/code&gt; ⇒ &lt;code&gt;heading-1-2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# Heading 1&lt;/code&gt; ⇒ &lt;code&gt;heading-2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This can even affect specified heading anchors that come after a generated heading anchor.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;# My Heading&lt;/code&gt; ⇒ &lt;code&gt;my-heading&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# My Heading {#my-heading}&lt;/code&gt; ⇒ &lt;code&gt;my-heading-1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This particular collision and override is unfortunate, but unavoidable because Hugo processes each heading for collision detection as it sees it during conversion.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This technique works well for documents rendered on individual pages, like blog posts. What about on Hugo list pages?&lt;/p&gt;
+
+&lt;h3 id=&#34;unique-heading-anchors-in-lists:f9181d98331131b1d3ed696c0dc6a868&#34;&gt;Unique Heading Anchors in Lists&lt;/h3&gt;
+
+&lt;p&gt;Hugo converts each document from Markdown independently. it doesn’t know that &lt;code&gt;blog/post.md&lt;/code&gt; has an &amp;ldquo;Example&amp;rdquo; heading that will collide with the &amp;ldquo;Example&amp;rdquo; heading in &lt;code&gt;blog/post2.md&lt;/code&gt;. Even if it did know this, the addition of &lt;code&gt;blog/post3.md&lt;/code&gt; should not cause the anchors for the headings in the other blog posts to change.&lt;/p&gt;
+
+&lt;p&gt;Enter the document’s unique identifier. To prevent this sort of collision on
+list pages, Hugo always appends the document&amp;rsquo;s to a generated heading anchor.
+So, the &amp;ldquo;Example&amp;rdquo; heading in &lt;code&gt;blog/post.md&lt;/code&gt; actually turns into
+&lt;code&gt;#example:81df004…&lt;/code&gt;, and the &amp;ldquo;Example&amp;rdquo; heading in &lt;code&gt;blog/post2.md&lt;/code&gt; actually
+turns into &lt;code&gt;#example:8cf1599…&lt;/code&gt;. All you have to know is the heading anchor that
+was generated, not the document identifier; &lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; take care of the
+rest for you.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&#39;{{&amp;lt; relref &amp;quot;blog/post.md#example&amp;quot; &amp;gt;}}&#39;&amp;gt;Post Example&amp;lt;/a&amp;gt;
+&amp;lt;a href=&#39;http://localhost:1313/blog/post.md#81df004…&#39;&amp;gt;Post Example&amp;lt;/a&amp;gt;
+
+[Post Two Example]({{&amp;lt; relref &amp;quot;blog/post2.md#example&amp;quot; &amp;gt;}})
+&amp;lt;a href=&#39;http://localhost:1313/blog/post2.md#8cf1599…&#39;&amp;gt;Post Two Example&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you know.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LiveReload</title>
+      <link>http://localhost:1313/extras/livereload/</link>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/livereload/</guid>
+      <description>
+
+&lt;p&gt;Hugo may not be the first static site generator to utilize LiveReload
+technology, but it’s the first to do it right.&lt;/p&gt;
+
+&lt;p&gt;The combination of Hugo’s insane build speed and LiveReload make
+crafting your content pure joy. Virtually instantly after you hit save
+your rebuilt content will appear in your browser.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-livereload:8af1ea668632c6d0f95688c7177cb178&#34;&gt;Using LiveReload&lt;/h2&gt;
+
+&lt;p&gt;Hugo comes with LiveReload built in. There are no additional packages to
+install. A common way to use Hugo while developing a site is to have
+Hugo run a server and watch for changes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server --watch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will run a full functioning web server while simultaneously
+watching your file system for additions, deletions or changes within
+your:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;static files&lt;/li&gt;
+&lt;li&gt;content&lt;/li&gt;
+&lt;li&gt;data files&lt;/li&gt;
+&lt;li&gt;layouts&lt;/li&gt;
+&lt;li&gt;current theme&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Whenever anything changes Hugo will rebuild the site, continue to serve
+the content and as soon as the build is finished it will tell the
+browser and silently reload the page. Because most hugo builds are so
+fast they are barely noticeable, you merely need to glance at your open
+browser and you will see the change already there.&lt;/p&gt;
+
+&lt;p&gt;This means that keeping the site open on a second monitor (or another
+half of your current monitor) allows you to see exactly what your
+content looks like without even leaving your text editor.&lt;/p&gt;
+
+&lt;h2 id=&#34;disabling-livereload:8af1ea668632c6d0f95688c7177cb178&#34;&gt;Disabling LiveReload&lt;/h2&gt;
+
+&lt;p&gt;LiveReload works by injecting JavaScript into the pages it
+creates that creates a web socket client to the hugo web socket server.&lt;/p&gt;
+
+&lt;p&gt;Awesome for development, but not something you would want to do in
+production. Since many people use &lt;code&gt;hugo server --watch&lt;/code&gt; in production to
+instantly display any updated content, we’ve made it easy to disable the
+LiveReload functionality.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server --watch --disableLiveReload
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Menus</title>
+      <link>http://localhost:1313/extras/menus/</link>
+      <pubDate>Wed, 14 May 2014 02:36:37 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/menus/</guid>
+      <description>
+
+&lt;p&gt;Hugo has a simple yet powerful menu system that permits content to be
+placed in menus with a good degree of control without a lot of work.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;TIP:&lt;/em&gt; If all you want is a simple menu for your sections, see &lt;a href=&#34;#section-menu-for-the-lazy-blogger:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some of the features of Hugo Menus:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Place content in one or many menus&lt;/li&gt;
+&lt;li&gt;Handle nested menus with unlimited depth&lt;/li&gt;
+&lt;li&gt;Create menu entries without being attached to any content&lt;/li&gt;
+&lt;li&gt;Distinguish active element (and active branch)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-is-a-menu:4044c7430755cd64e5b7c48e836cea57&#34;&gt;What is a menu?&lt;/h2&gt;
+
+&lt;p&gt;A menu is a named array of menu entries accessible on the site under
+&lt;code&gt;.Site.Menus&lt;/code&gt; by name. For example, if I have a menu called &lt;code&gt;main&lt;/code&gt;, I would
+access it via &lt;code&gt;.Site.Menus.main&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A menu entry has the following properties:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;URL&lt;/strong&gt;        string&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;       string&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Menu&lt;/strong&gt;       string&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identifier&lt;/strong&gt; string&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pre&lt;/strong&gt;        template.HTML&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post&lt;/strong&gt;       template.HTML&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weight&lt;/strong&gt;     int&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parent&lt;/strong&gt;     string&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Children&lt;/strong&gt;   Menu&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And the following functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HasChildren&lt;/strong&gt; bool&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Additionally, there are some relevant functions available on the page:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IsMenuCurrent&lt;/strong&gt; (menu string, menuEntry *MenuEntry ) bool&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HasMenuCurrent&lt;/strong&gt; (menu string, menuEntry *MenuEntry) bool&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;adding-content-to-menus:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Adding content to menus&lt;/h2&gt;
+
+&lt;p&gt;Hugo supports a couple of different methods of adding a piece of content
+to the front matter.&lt;/p&gt;
+
+&lt;h3 id=&#34;simple:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Simple&lt;/h3&gt;
+
+&lt;p&gt;If all you need to do is add an entry to a menu, the simple form works
+well.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A single menu:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+menu: &amp;quot;main&amp;quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple menus:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+menu: [&amp;quot;main&amp;quot;, &amp;quot;footer&amp;quot;]
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;advanced:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Advanced&lt;/h3&gt;
+
+&lt;p&gt;If more control is required, then the advanced approach gives you the
+control you want. All of the menu entry properties listed above are
+available.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+menu:
+  main:
+    parent: &#39;extras&#39;
+    weight: 20
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;adding-non-content-entries-to-a-menu:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Adding (non-content) entries to a menu&lt;/h2&gt;
+
+&lt;p&gt;You can also add entries to menus that aren’t attached to a piece of
+content. This takes place in the sitewide &lt;a href=&#34;http://localhost:1313/overview/configuration/&#34;&gt;config file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+    name = &amp;quot;about hugo&amp;quot;
+    pre = &amp;quot;&amp;lt;i class=&#39;fa fa-heart&#39;&amp;gt;&amp;lt;/i&amp;gt;&amp;quot;
+    weight = -110
+    identifier = &amp;quot;about&amp;quot;
+    url = &amp;quot;/about/&amp;quot;
+[[menu.main]]
+    name = &amp;quot;getting started&amp;quot;
+    pre = &amp;quot;&amp;lt;i class=&#39;fa fa-road&#39;&amp;gt;&amp;lt;/i&amp;gt;&amp;quot;
+    weight = -100
+    url = &amp;quot;/getting-started/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And the equivalent example &lt;code&gt;config.yaml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+menu:
+  main:
+      - Name: &amp;quot;about hugo&amp;quot;
+        Pre: &amp;quot;&amp;lt;i class=&#39;fa fa-heart&#39;&amp;gt;&amp;lt;/i&amp;gt;&amp;quot;
+        Weight: -110
+        Identifier: &amp;quot;about&amp;quot;
+        URL: &amp;quot;/about/&amp;quot;
+      - Name: &amp;quot;getting started&amp;quot;
+        Pre: &amp;quot;&amp;lt;i class=&#39;fa fa-road&#39;&amp;gt;&amp;lt;/i&amp;gt;&amp;quot;
+        Weight: -100
+        URL: &amp;quot;/getting-started/&amp;quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; The URLs must be relative to the context root. If the &lt;code&gt;BaseURL&lt;/code&gt; is &lt;code&gt;http://example.com/mysite/&lt;/code&gt;, then the URLs in the menu must not include the context root &lt;code&gt;mysite&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;nesting:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Nesting&lt;/h2&gt;
+
+&lt;p&gt;All nesting of content is done via the &lt;code&gt;parent&lt;/code&gt; field.&lt;/p&gt;
+
+&lt;p&gt;The parent of an entry should be the identifier of another entry.
+Identifier should be unique (within a menu).&lt;/p&gt;
+
+&lt;p&gt;The following order is used to determine identity Identifier &amp;gt; Name &amp;gt;
+LinkTitle &amp;gt; Title. This means that the title will be used unless
+linktitle is present, etc. In practice Name and Identifier are never
+displayed and only used to structure relationships.&lt;/p&gt;
+
+&lt;p&gt;In this example, the top level of the menu is defined in the config file
+and all content entries are attached to one of these entries via the
+&lt;code&gt;parent&lt;/code&gt; field.&lt;/p&gt;
+
+&lt;h2 id=&#34;rendering-menus:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Rendering menus&lt;/h2&gt;
+
+&lt;p&gt;Hugo makes no assumptions about how your rendered HTML will be
+structured. Instead, it provides all of the functions you will need to be
+able to build your menu however you want.&lt;/p&gt;
+
+&lt;p&gt;The following is an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!--sidebar start--&amp;gt;
+&amp;lt;aside&amp;gt;
+    &amp;lt;div id=&amp;quot;sidebar&amp;quot; class=&amp;quot;nav-collapse&amp;quot;&amp;gt;
+        &amp;lt;!-- sidebar menu start--&amp;gt;
+        &amp;lt;ul class=&amp;quot;sidebar-menu&amp;quot;&amp;gt;
+          {{ $currentNode := . }}
+          {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+
+            &amp;lt;li class=&amp;quot;sub-menu{{if $currentNode.HasMenuCurrent &amp;quot;main&amp;quot; . }} active{{end}}&amp;quot;&amp;gt;
+            &amp;lt;a href=&amp;quot;javascript:;&amp;quot; class=&amp;quot;&amp;quot;&amp;gt;
+                {{ .Pre }}
+                &amp;lt;span&amp;gt;{{ .Name }}&amp;lt;/span&amp;gt;
+                &amp;lt;span class=&amp;quot;menu-arrow arrow_carrot-right&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+            &amp;lt;/a&amp;gt;
+            &amp;lt;ul class=&amp;quot;sub&amp;quot;&amp;gt;
+                {{ range .Children }}
+                &amp;lt;li{{if $currentNode.IsMenuCurrent &amp;quot;main&amp;quot; . }} class=&amp;quot;active&amp;quot;{{end}}&amp;gt;&amp;lt;a href=&amp;quot;{{.URL}}&amp;quot;&amp;gt; {{ .Name }} &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+                {{ end }}
+            &amp;lt;/ul&amp;gt;
+          {{else}}
+            &amp;lt;li&amp;gt;
+            &amp;lt;a class=&amp;quot;&amp;quot; href=&amp;quot;{{.URL}}&amp;quot;&amp;gt;
+                {{ .Pre }}
+                &amp;lt;span&amp;gt;{{ .Name }}&amp;lt;/span&amp;gt;
+            &amp;lt;/a&amp;gt;
+          {{end}}
+          &amp;lt;/li&amp;gt;
+          {{end}}
+            &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;https://github.com/spf13/hugo/issues&amp;quot; target=&amp;quot;blank&amp;quot;&amp;gt;Questions and Issues&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;blank&amp;quot;&amp;gt;Edit this Page&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+        &amp;lt;!-- sidebar menu end--&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/aside&amp;gt;
+&amp;lt;!--sidebar end--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;section-menu-for-the-lazy-blogger:4044c7430755cd64e5b7c48e836cea57&#34;&gt;Section Menu for &amp;ldquo;the Lazy Blogger&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;To enable this menu, add this to your site config, i.e. &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SectionPagesMenu = &amp;quot;main&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The menu name can be anything, but take a note of what it is.&lt;/p&gt;
+
+&lt;p&gt;This will create a menu with all the sections as menu items and all the sections&amp;rsquo; pages as &amp;ldquo;shadow-members&amp;rdquo;. The &lt;em&gt;shadow&lt;/em&gt; implies that the pages isn&amp;rsquo;t represented by a menu-item themselves, but this enables you to create a top-level menu like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;lt;nav class=&amp;quot;sidebar-nav&amp;quot;&amp;gt;
+        {{ $currentNode := . }}
+        {{ range .Site.Menus.main }}
+        &amp;lt;a class=&amp;quot;sidebar-nav-item{{if or ($currentNode.IsMenuCurrent &amp;quot;main&amp;quot; .) ($currentNode.HasMenuCurrent &amp;quot;main&amp;quot; .) }} active{{end}}&amp;quot; href=&amp;quot;{{.URL}}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;
+        {{ end }}
+    &amp;lt;/nav&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above, the menu item is marked as active if on the current section&amp;rsquo;s list page or on a page in that section.&lt;/p&gt;
+
+&lt;p&gt;The above is all that&amp;rsquo;s needed. But if you want custom menu items, e.g. changing weight or name, you can define them manually in the site config, i.e. &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; [[menu.main]]
+        name = &amp;quot;This is the blog section&amp;quot;
+        weight = -110
+        identifier = &amp;quot;blog&amp;quot;
+        url = &amp;quot;/blog/&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; that the &lt;code&gt;identifier&lt;/code&gt; must match the section name.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Permalinks</title>
+      <link>http://localhost:1313/extras/permalinks/</link>
+      <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/permalinks/</guid>
+      <description>&lt;p&gt;By default, content is laid out into the target &lt;code&gt;publishdir&lt;/code&gt; (public)
+namespace matching its layout within the &lt;code&gt;contentdir&lt;/code&gt; hierarchy.
+The &lt;code&gt;permalinks&lt;/code&gt; site configuration option allows you to adjust this on a
+per-section basis.
+This will change where the files are written to and will change the page&amp;rsquo;s
+internal &amp;ldquo;canonical&amp;rdquo; location, such that template references to
+&lt;code&gt;.RelPermalink&lt;/code&gt; will honour the adjustments made as a result of the mappings
+in this option.&lt;/p&gt;
+
+&lt;p&gt;For instance, if one of your sections is called &lt;code&gt;post&lt;/code&gt;, and you want to adjust
+the canonical path to be hierarchical based on the year and month, then you
+might use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;permalinks:
+  post: /:year/:month/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Only the content under &lt;code&gt;post/&lt;/code&gt; will be so rewritten.
+A file named &lt;code&gt;content/post/sample-entry&lt;/code&gt; which contains a line
+&lt;code&gt;date: 2013-11-18T19:20:00-05:00&lt;/code&gt; might end up with the rendered page
+appearing at &lt;code&gt;public/2013/11/sample-entry/index.html&lt;/code&gt; and be reachable via
+the URL &lt;a href=&#34;http://yoursite.example.com/2013/11/sample-entry/&#34;&gt;http://yoursite.example.com/2013/11/sample-entry/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following is a list of values that can be used in a permalink definition.
+All references to time are dependent on the content&amp;rsquo;s date.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;:year&lt;/strong&gt; the 4-digit year&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:month&lt;/strong&gt; the 2-digit month&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:monthname&lt;/strong&gt; the name of the month&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:day&lt;/strong&gt; the 2-digit day&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:weekday&lt;/strong&gt; the 1-digit day of the week (Sunday = 0)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:weekdayname&lt;/strong&gt; the name of the day of the week&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:yearday&lt;/strong&gt; the 1- to 3-digit day of the year&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:section&lt;/strong&gt; the content&amp;rsquo;s section&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:title&lt;/strong&gt; the content&amp;rsquo;s title&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:slug&lt;/strong&gt; the content&amp;rsquo;s slug (or title if no slug)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:filename&lt;/strong&gt; the content&amp;rsquo;s filename (without extension)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratch</title>
+      <link>http://localhost:1313/extras/scratch/</link>
+      <pubDate>Thu, 22 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/scratch/</guid>
+      <description>
+
+&lt;p&gt;&lt;code&gt;Scratch&lt;/code&gt; &amp;ndash; a &amp;ldquo;scratchpad&amp;rdquo; for your node- or page-scoped variables. In most cases you can do well without &lt;code&gt;Scratch&lt;/code&gt;, but there are some use cases that aren&amp;rsquo;t solvable with Go&amp;rsquo;s templates without &lt;code&gt;Scratch&lt;/code&gt;&amp;rsquo;s help, due to scoping issues.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Scratch&lt;/code&gt; is added to both &lt;code&gt;Node&lt;/code&gt; and &lt;code&gt;Page&lt;/code&gt; &amp;ndash; with following methods:
+* &lt;code&gt;Set&lt;/code&gt; and &lt;code&gt;Add&lt;/code&gt; takes a &lt;code&gt;key&lt;/code&gt; and the &lt;code&gt;value&lt;/code&gt; to add.
+* &lt;code&gt;Get&lt;/code&gt; returns the &lt;code&gt;value&lt;/code&gt; for the &lt;code&gt;key&lt;/code&gt; given.
+* &lt;code&gt;SetInMap&lt;/code&gt; takes a &lt;code&gt;key&lt;/code&gt;, &lt;code&gt;mapKey&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt;
+* &lt;code&gt;GetSortedMapValues&lt;/code&gt; returns array of values from &lt;code&gt;key&lt;/code&gt; sorted by &lt;code&gt;mapKey&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Set&lt;/code&gt; and &lt;code&gt;SetInMap&lt;/code&gt; can store values of any type. &lt;code&gt;Add&lt;/code&gt; accepts values that support Go&amp;rsquo;s &lt;code&gt;+&lt;/code&gt; operator.&lt;/p&gt;
+
+&lt;p&gt;The scope of the backing data is global for the given &lt;code&gt;Node&lt;/code&gt; or &lt;code&gt;Page&lt;/code&gt;, and spans partial and shortcode includes.&lt;/p&gt;
+
+&lt;h2 id=&#34;sample-usage:3bac06a8e9407e5288df1fa9a0b291fa&#34;&gt;Sample usage&lt;/h2&gt;
+
+&lt;p&gt;The usage is best illustrated with some samples:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $.Scratch.Add &amp;quot;a1&amp;quot; 12 }}
+{{ $.Scratch.Get &amp;quot;a1&amp;quot; }} {{/* =&amp;gt; 12 */}}
+{{ $.Scratch.Add &amp;quot;a1&amp;quot; 1 }}
+{{ $.Scratch.Get &amp;quot;a1&amp;quot; }} // {{/* =&amp;gt; 13 */}}
+
+{{ $.Scratch.Add &amp;quot;a2&amp;quot; &amp;quot;AB&amp;quot; }}
+{{ $.Scratch.Get &amp;quot;a2&amp;quot; }} {{/* =&amp;gt; AB */}}
+{{ $.Scratch.Add &amp;quot;a2&amp;quot; &amp;quot;CD&amp;quot; }}
+{{ $.Scratch.Get &amp;quot;a2&amp;quot; }} {{/* =&amp;gt; ABCD */}}
+
+{{ $.Scratch.Set &amp;quot;v1&amp;quot; 123 }}
+{{ $.Scratch.Get &amp;quot;v1&amp;quot; }}  {{/* =&amp;gt; 123 */}}
+
+{{ $.Scratch.SetInMap &amp;quot;a3&amp;quot; &amp;quot;b&amp;quot; &amp;quot;XX&amp;quot; }}
+{{ $.Scratch.SetInMap &amp;quot;a3&amp;quot; &amp;quot;a&amp;quot; &amp;quot;AA&amp;quot; }}
+{{ $.Scratch.SetInMap &amp;quot;a3&amp;quot; &amp;quot;c&amp;quot; &amp;quot;CC&amp;quot; }}
+{{ $.Scratch.SetInMap &amp;quot;a3&amp;quot; &amp;quot;b&amp;quot; &amp;quot;BB&amp;quot; }}
+{{ $.Scratch.GetSortedMapValues &amp;quot;a3&amp;quot; }} {{/* =&amp;gt; []interface {}{&amp;quot;AA&amp;quot;, &amp;quot;BB&amp;quot;, &amp;quot;CC&amp;quot;} */}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The examples above uses the special &lt;code&gt;$&lt;/code&gt; variable, which refers to the top-level node. This is the behavior you most likely want, and will help remove some confusion when using &lt;code&gt;Scratch&lt;/code&gt; inside page range loops &amp;ndash; and you start inadvertently calling the wrong &lt;code&gt;Scratch&lt;/code&gt;. But there may be use cases for &lt;code&gt;{{ .Scratch.Add &amp;quot;key&amp;quot; &amp;quot;some value&amp;quot; }}&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pagination</title>
+      <link>http://localhost:1313/extras/pagination/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/pagination/</guid>
+      <description>
+
+&lt;p&gt;Hugo supports pagination for the home page, sections and taxonomies. It&amp;rsquo;s built to be easy use, but with loads of flexibility when needed. The real power shines when you combine it with &lt;a href=&#34;http://localhost:1313/templates/functions/&#34;&gt;&lt;code&gt;where&lt;/code&gt;&lt;/a&gt;, with its SQL-like operators, &lt;code&gt;first&lt;/code&gt; and others &amp;mdash; you can even &lt;a href=&#34;http://localhost:1313/templates/list/&#34;&gt;order the content&lt;/a&gt; the way you&amp;rsquo;ve become used to with Hugo.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuration:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Pagination can be configured in the site configuration (e.g. &lt;code&gt;config.toml&lt;/code&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Paginate&lt;/code&gt; (default &lt;code&gt;10&lt;/code&gt;) (this setting can be overridden in the template)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PaginatePath&lt;/code&gt; (default &lt;code&gt;page&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Setting &lt;code&gt;Paginate&lt;/code&gt; to a positive value will split the list pages for the home page, sections and taxonomies into chunks of that size. But note that the generation of the pagination pages for sections, taxonomies and home page is &lt;em&gt;lazy&lt;/em&gt; &amp;mdash; the pages will not be created if not referenced by a &lt;code&gt;.Paginator&lt;/code&gt; (see below).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;PaginatePath&lt;/code&gt; is used to adapt the &lt;code&gt;URL&lt;/code&gt; to the pages in the paginator (the default setting will produce URLs on the form &lt;code&gt;/page/1/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-the-pages:8933c44b45493d40d2007cdf0ce43109&#34;&gt;List the pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;A &lt;code&gt;.Paginator&lt;/code&gt; is provided to help building a pager menu. This is only relevant for the templates for the home page and the list pages (sections and taxonomies).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two ways to configure and use a &lt;code&gt;.Paginator&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The simplest way is just to call &lt;code&gt;.Paginator.Pages&lt;/code&gt; from a template. It will contain the pages for &lt;em&gt;that page&lt;/em&gt; .&lt;/li&gt;
+&lt;li&gt;Select a sub-set of the pages with the available template functions and ordering options, and pass the slice to &lt;code&gt;.Paginate&lt;/code&gt;, e.g. &lt;code&gt;{{ range (.Paginate ( first 50 .Data.Pages.ByTitle )).Pages }}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For a given &lt;strong&gt;Node&lt;/strong&gt;, it&amp;rsquo;s one of the options above. The &lt;code&gt;.Paginator&lt;/code&gt; is static and cannot change once created.&lt;/p&gt;
+
+&lt;p&gt;The global page size setting (&lt;code&gt;Paginate&lt;/code&gt;) can be overridden by providing a positive integer as the last argument. The examples below will give five items per page:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{ range (.Paginator 5).Pages }}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{ $paginator := .Paginate (where .Data.Pages &amp;quot;Type&amp;quot; &amp;quot;post&amp;quot;) 5 }}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is also possible to use the &lt;code&gt;GroupBy&lt;/code&gt; functions in combination with pagination:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range (.Paginate (.Data.Pages.GroupByDate &amp;quot;2006&amp;quot;)).PageGroups  }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;build-the-navigation:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Build the navigation&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;.Paginator&lt;/code&gt; contains enough information to build a paginator interface.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to add this to your pages is to include the built-in template (with &lt;code&gt;Bootstrap&lt;/code&gt;-compatible styles):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ template &amp;quot;_internal/pagination.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you use any filters or ordering functions to create your &lt;code&gt;.Paginator&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; you want the navigation buttons to be shown before the page listing, you must create the &lt;code&gt;.Paginator&lt;/code&gt; before it&amp;rsquo;s used:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $paginator := .Paginate (where .Data.Pages &amp;quot;Type&amp;quot; &amp;quot;post&amp;quot;) }}
+{{ template &amp;quot;_internal/pagination.html&amp;quot; . }}
+{{ range $paginator.Pages }}
+   {{ .Title }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without the where-filter, the above is simpler:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ template &amp;quot;_internal/pagination.html&amp;quot; . }}
+{{ range .Paginator.Pages }}
+   {{ .Title }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to build custom navigation, you can do so using the &lt;code&gt;.Paginator&lt;/code&gt; object:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PageNumber&lt;/code&gt;: The current page&amp;rsquo;s number in the pager sequence&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;URL&lt;/code&gt;: The relative URL to the current pager&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Pages&lt;/code&gt;: The pages in the current pager&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NumberOfElements&lt;/code&gt;: The number of elements on this page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HasPrev&lt;/code&gt;: Whether there are page(s) before the current&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Prev&lt;/code&gt;: The pager for the previous page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HasNext&lt;/code&gt;: Whether there are page(s) after the current&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Next&lt;/code&gt;: The pager for the next page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;First&lt;/code&gt;: The pager for the first page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Last&lt;/code&gt;: The pager for the last page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Pagers&lt;/code&gt;: A list of pagers that can be used to build a pagination menu&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PageSize&lt;/code&gt;: Size of each pager&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TotalPages&lt;/code&gt;: The number of pages in the paginator&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TotalNumberOfElements&lt;/code&gt;: The number of elements on all pages in this paginator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;additional-information:8933c44b45493d40d2007cdf0ce43109&#34;&gt;Additional information&lt;/h2&gt;
+
+&lt;p&gt;The pages are built on the following form (&lt;code&gt;BLANK&lt;/code&gt; means no value):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[SECTION/TAXONOMY/BLANK]/index.html
+[SECTION/TAXONOMY/BLANK]/page/1/index.html =&amp;gt; redirect to  [SECTION/TAXONOMY/BLANK]/index.html
+[SECTION/TAXONOMY/BLANK]/page/2/index.html
+....
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>http://localhost:1313/extras/shortcodes/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/shortcodes/</guid>
+      <description>
+
+&lt;p&gt;Hugo uses Markdown for its simple content format. However, there are a lot
+of things that Markdown doesn’t support well.&lt;/p&gt;
+
+&lt;p&gt;We are unwilling to accept being constrained by our simple format. Also
+unacceptable is writing raw HTML in our Markdown every time we want to include
+unsupported content such as a video. To do so is in complete opposition to the
+intent of using a bare bones format for our content and utilizing templates to
+apply styling for display.&lt;/p&gt;
+
+&lt;p&gt;To avoid both of these limitations, Hugo created shortcodes.&lt;/p&gt;
+
+&lt;p&gt;A shortcode is a simple snippet inside a content file that Hugo will render
+using a predefined template. Note that shortcodes will not work in template
+files&amp;mdash;if you need a functionality like that in a template, you most likely
+want a &lt;a href=&#34;http://localhost:1313/templates/partials/&#34;&gt;partial template&lt;/a&gt; instead.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-shortcode:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Using a shortcode&lt;/h2&gt;
+
+&lt;p&gt;In your content files, a shortcode can be called by using the &lt;code&gt;{{% name parameters
+%}}&lt;/code&gt; form. Shortcode parameters are space delimited.  Parameters with spaces
+can be quoted.&lt;/p&gt;
+
+&lt;p&gt;The first word is always the name of the shortcode. Parameters follow the name.
+Depending upon how the shortcode is defined, the parameters may be named,
+positional or both (although you can&amp;rsquo;t mixed parameter types in a single call).
+The format for named parameters models that of HTML with the format
+&lt;code&gt;name=&amp;quot;value&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some shortcodes use or require closing shortcodes. Like HTML, the opening and closing
+shortcodes match (name only), the closing being prepended with a slash.&lt;/p&gt;
+
+&lt;p&gt;Example of a paired shortcode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight go &amp;gt;}} A bunch of code here {{&amp;lt; /highlight &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The examples above use two different delimiters, the difference being the &lt;code&gt;%&lt;/code&gt; and the &lt;code&gt;&amp;lt;&lt;/code&gt; character:&lt;/p&gt;
+
+&lt;h3 id=&#34;shortcodes-with-markdown:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Shortcodes with Markdown&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;%&lt;/code&gt; characters indicates that the shortcode&amp;rsquo;s inner content needs further processing by the page&amp;rsquo;s rendering processor (i.e. Markdown), needed to get the &lt;strong&gt;bold&lt;/strong&gt; text in the example below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{% myshortcode %}}Hello **World!**{{% /myshortcode %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;shortcodes-without-markdown:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Shortcodes without Markdown&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;&amp;lt;&lt;/code&gt; character indicates that the shortcode&amp;rsquo;s inner content doesn&amp;rsquo;t need any further rendering, this will typically be pure HTML:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; myshortcode &amp;gt;}}&amp;lt;p&amp;gt;Hello &amp;lt;strong&amp;gt;World!&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;{{&amp;lt; /myshortcode &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;built-in-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Built-in Shortcodes&lt;/h2&gt;
+
+&lt;p&gt;Hugo ships with a set of predefined shortcodes.&lt;/p&gt;
+
+&lt;h3 id=&#34;highlight:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;highlight&lt;/h3&gt;
+
+&lt;p&gt;This shortcode will convert the source code provided into syntax highlighted
+HTML. Read more on &lt;a href=&#34;http://localhost:1313/extras/highlighting/&#34;&gt;highlighting&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;usage:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;highlight&lt;/code&gt; takes exactly one required parameter of &lt;em&gt;language&lt;/em&gt; and requires a
+closing shortcode.&lt;/p&gt;
+
+&lt;h4 id=&#34;example:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight html &amp;gt;}}
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+   &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    {{ range .Data.Pages }}
+        {{ .Render &amp;quot;summary&amp;quot;}}
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+{{&amp;lt; /highlight &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;example-output:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example Output&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;section&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;main&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;
+  &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;lt;/span&amp;gt;
+   &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;h1&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;title&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;{{ .Title }}&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/h1&amp;amp;gt;&amp;lt;/span&amp;gt;
+    {{ range .Data.Pages }}
+        {{ .Render &amp;amp;quot;summary&amp;amp;quot;}}
+    {{ end }}
+  &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/section&amp;amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;figure:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;figure&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;figure&lt;/code&gt; is simply an extension of the image capabilities present with Markdown.
+&lt;code&gt;figure&lt;/code&gt; provides the ability to add captions, CSS classes, alt text, links etc.&lt;/p&gt;
+
+&lt;h4 id=&#34;usage-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;figure&lt;/code&gt; can use the following named parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;src&lt;/li&gt;
+&lt;li&gt;link&lt;/li&gt;
+&lt;li&gt;title&lt;/li&gt;
+&lt;li&gt;caption&lt;/li&gt;
+&lt;li&gt;class&lt;/li&gt;
+&lt;li&gt;attr (attribution)&lt;/li&gt;
+&lt;li&gt;attrlink&lt;/li&gt;
+&lt;li&gt;alt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;example-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;/media/spf13.jpg&amp;quot; title=&amp;quot;Steve Francia&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;example-output-1:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example output&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;figure&amp;gt;
+    &amp;lt;img src=&amp;quot;/media/spf13.jpg&amp;quot;  /&amp;gt;
+    &amp;lt;figcaption&amp;gt;
+        &amp;lt;h4&amp;gt;Steve Francia&amp;lt;/h4&amp;gt;
+    &amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;ref-relref:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;ref, relref&lt;/h3&gt;
+
+&lt;p&gt;These shortcodes will look up the pages by their relative path (e.g.,
+&lt;code&gt;blog/post.md&lt;/code&gt;) or their logical name (&lt;code&gt;post.md&lt;/code&gt;) and return the permalink
+(&lt;code&gt;ref&lt;/code&gt;) or relative permalink (&lt;code&gt;relref&lt;/code&gt;) for the found page.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; also make it possible to make fragmentary links that work
+for the header links generated by Hugo.&lt;/p&gt;
+
+&lt;p&gt;Read more on &lt;a href=&#34;http://localhost:1313/extras/crossreferences/&#34;&gt;cross-references&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;usage-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Usage&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;ref&lt;/code&gt; and &lt;code&gt;relref&lt;/code&gt; take exactly one required parameter of &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;example-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;[Neat]({{&amp;lt; ref &amp;quot;blog/neat.md&amp;quot; &amp;gt;}})
+[Who]({{&amp;lt; relref &amp;quot;about.md#who&amp;quot; &amp;gt;}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;example-output-2:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Example Output&lt;/h4&gt;
+
+&lt;p&gt;Assuming that standard Hugo pretty URLs are turned on.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;/blog/neat&amp;quot;&amp;gt;Neat&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;quot;/about/#who:c28654c202e73453784cfd2c5ab356c0&amp;quot;&amp;gt;Who&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;twitter:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Twitter&lt;/h3&gt;
+
+&lt;p&gt;You want to include a single tweet into your blog post? Everything you need is the URL of the tweet:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://twitter.com/spf13/status/666616452582129664
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pass the tweet&amp;rsquo;s id from the URL as parameter to the shortcode as shown below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; tweet 666616452582129664 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;youtube:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Youtube&lt;/h3&gt;
+
+&lt;p&gt;This shortcode embeds a responsive video player for Youtube videos. Only the id of the video is required:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://www.youtube.com/watch?v=w7Ft2ymGmfc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Copy the id from behind &lt;code&gt;v=&lt;/code&gt; and pass it the shortcode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;vimeo:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Vimeo&lt;/h3&gt;
+
+&lt;p&gt;Adding a video from Vimeo is equivalent to the Youtube shortcode above. Extract the id from the URL&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://vimeo.com/channels/staffpicks/146022717
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and pass it to the shortcode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; vimeo 146022717 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;github-gists:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Github gists&lt;/h3&gt;
+
+&lt;p&gt;Including code snippets with Github gists while writing a tutorial is common situation bloggers face. With a given URL of the gist&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://gist.github.com/spf13/7896402
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pass the owner and the id of the gist to the shortcode:&lt;/p&gt;
+
+&lt;p&gt;{{&amp;lt; gist spf13 7896402 &amp;gt;}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;speakerdeck:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Speakerdeck&lt;/h3&gt;
+
+&lt;p&gt;To embed slides from Speakerdeck copy the URL of the slide look for &amp;lsquo;Embed&amp;rsquo; right next to the template on Speakerdeck an copy the URL:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script async class=&amp;quot;speakerdeck-embed&amp;quot; data-id=&amp;quot;4e8126e72d853c0060001f97&amp;quot; data-ratio=&amp;quot;1.33333333333333&amp;quot; src=&amp;quot;//speakerdeck.com/assets/embed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Extract the value from the field &lt;code&gt;id&lt;/code&gt; and pass it to the shortcode:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; speakerdeck 4e8126e72d853c0060001f97 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;creating-your-own-shortcodes:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Creating your own shortcodes&lt;/h2&gt;
+
+&lt;p&gt;To create a shortcode, place a template in the layouts/shortcodes directory. The
+template name will be the name of the shortcode.&lt;/p&gt;
+
+&lt;p&gt;In creating a shortcode, you can choose if the shortcode will use &lt;em&gt;positional
+parameters&lt;/em&gt; or &lt;em&gt;named parameters&lt;/em&gt; or &lt;em&gt;both&lt;/em&gt;. A good rule of thumb is that if a
+shortcode has a single required value in the case of the &lt;code&gt;youtube&lt;/code&gt; example below,
+then positional works very well. For more complex layouts with optional
+parameters, named parameters work best.  Allowing both types of parameters is
+useful for complex layouts where you want to set default values that can be
+overridden.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Inside the template&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To access a parameter by position, the &lt;code&gt;.Get&lt;/code&gt; method can be used:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ .Get 0 }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To access a parameter by name, the &lt;code&gt;.Get&lt;/code&gt; method should be utilized:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ .Get &amp;quot;class&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;with&lt;/code&gt; is great when the output depends on a parameter being set:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with .Get &amp;quot;class&amp;quot;}} class=&amp;quot;{{.}}&amp;quot;{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.Get&lt;/code&gt; can also be used to check if a parameter has been provided. This is
+most helpful when the condition depends on either one value or another&amp;hellip;
+or both:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ or .Get &amp;quot;title&amp;quot; | .Get &amp;quot;alt&amp;quot; | if }} alt=&amp;quot;{{ with .Get &amp;quot;alt&amp;quot;}}{{.}}{{else}}{{.Get &amp;quot;title&amp;quot;}}{{end}}&amp;quot;{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If a closing shortcode is used, the variable &lt;code&gt;.Inner&lt;/code&gt; will be populated with all
+of the content between the opening and closing shortcodes. If a closing
+shortcode is required, you can check the length of &lt;code&gt;.Inner&lt;/code&gt; and provide a warning
+to the user.&lt;/p&gt;
+
+&lt;p&gt;A shortcode with &lt;code&gt;.Inner&lt;/code&gt; content can be used without the inline content, and without the closing shortcode, by using the self-closing syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; innershortcode /&amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The variable &lt;code&gt;.Params&lt;/code&gt; contains the list of parameters in case you need to do
+more complicated things than &lt;code&gt;.Get&lt;/code&gt;.  It is sometimes useful to provide a
+flexible shortcode that can take named or positional parameters.  To meet this
+need, Hugo shortcodes have a &lt;code&gt;.IsNamedParams&lt;/code&gt; boolean available that can be used
+such as &lt;code&gt;{{ if .IsNamedParams }}...{{ else }}...{{ end }}&lt;/code&gt;.  See the
+&lt;code&gt;Single Flexible Example&lt;/code&gt; below for an example.&lt;/p&gt;
+
+&lt;p&gt;You can also use the variable &lt;code&gt;.Page&lt;/code&gt; to access all the normal &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;Page Variables&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;single-positional-example-youtube:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Single Positional Example: youtube&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube 09jf3ow9jfw &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would load the template /layouts/shortcodes/youtube.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;embed video-player&amp;quot;&amp;gt;
+&amp;lt;iframe class=&amp;quot;youtube-player&amp;quot; type=&amp;quot;text/html&amp;quot; width=&amp;quot;640&amp;quot; height=&amp;quot;385&amp;quot; src=&amp;quot;http://www.youtube.com/embed/{{ index .Params 0 }}&amp;quot; allowfullscreen frameborder=&amp;quot;0&amp;quot;&amp;gt;
+&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would be rendered as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;embed video-player&amp;quot;&amp;gt;
+&amp;lt;iframe class=&amp;quot;youtube-player&amp;quot; type=&amp;quot;text/html&amp;quot;
+    width=&amp;quot;640&amp;quot; height=&amp;quot;385&amp;quot;
+    src=&amp;quot;http://www.youtube.com/embed/09jf3ow9jfw&amp;quot;
+    allowfullscreen frameborder=&amp;quot;0&amp;quot;&amp;gt;
+&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;single-named-example-image-with-caption:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Single Named Example: image with caption&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; img src=&amp;quot;/media/spf13.jpg&amp;quot; title=&amp;quot;Steve Francia&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would load the template /layouts/shortcodes/img.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- image --&amp;gt;
+&amp;lt;figure {{ with .Get &amp;quot;class&amp;quot; }}class=&amp;quot;{{.}}&amp;quot;{{ end }}&amp;gt;
+    {{ with .Get &amp;quot;link&amp;quot;}}&amp;lt;a href=&amp;quot;{{.}}&amp;quot;&amp;gt;{{ end }}
+        &amp;lt;img src=&amp;quot;{{ .Get &amp;quot;src&amp;quot; }}&amp;quot; {{ if or (.Get &amp;quot;alt&amp;quot;) (.Get &amp;quot;caption&amp;quot;) }}alt=&amp;quot;{{ with .Get &amp;quot;alt&amp;quot;}}{{.}}{{else}}{{ .Get &amp;quot;caption&amp;quot; }}{{ end }}&amp;quot;{{ end }} /&amp;gt;
+    {{ if .Get &amp;quot;link&amp;quot;}}&amp;lt;/a&amp;gt;{{ end }}
+    {{ if or (or (.Get &amp;quot;title&amp;quot;) (.Get &amp;quot;caption&amp;quot;)) (.Get &amp;quot;attr&amp;quot;)}}
+    &amp;lt;figcaption&amp;gt;{{ if isset .Params &amp;quot;title&amp;quot; }}
+        &amp;lt;h4&amp;gt;{{ .Get &amp;quot;title&amp;quot; }}&amp;lt;/h4&amp;gt;{{ end }}
+        {{ if or (.Get &amp;quot;caption&amp;quot;) (.Get &amp;quot;attr&amp;quot;)}}&amp;lt;p&amp;gt;
+        {{ .Get &amp;quot;caption&amp;quot; }}
+        {{ with .Get &amp;quot;attrlink&amp;quot;}}&amp;lt;a href=&amp;quot;{{.}}&amp;quot;&amp;gt; {{ end }}
+            {{ .Get &amp;quot;attr&amp;quot; }}
+        {{ if .Get &amp;quot;attrlink&amp;quot;}}&amp;lt;/a&amp;gt; {{ end }}
+        &amp;lt;/p&amp;gt; {{ end }}
+    &amp;lt;/figcaption&amp;gt;
+    {{ end }}
+&amp;lt;/figure&amp;gt;
+&amp;lt;!-- image --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would be rendered as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;figure &amp;gt;
+    &amp;lt;img src=&amp;quot;/media/spf13.jpg&amp;quot;  /&amp;gt;
+    &amp;lt;figcaption&amp;gt;
+        &amp;lt;h4&amp;gt;Steve Francia&amp;lt;/h4&amp;gt;
+    &amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;single-flexible-example-vimeo-with-defaults:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Single Flexible Example: vimeo with defaults&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; vimeo 49718712 &amp;gt;}}
+{{&amp;lt; vimeo id=&amp;quot;49718712&amp;quot; class=&amp;quot;flex-video&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would load the template /layouts/shortcodes/vimeo.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if .IsNamedParams }}
+  &amp;lt;div class=&amp;quot;{{ if .Get &amp;quot;class&amp;quot; }}{{ .Get &amp;quot;class&amp;quot; }}{{ else }}vimeo-container{{ end }}&amp;quot;&amp;gt;
+    &amp;lt;iframe src=&amp;quot;//player.vimeo.com/video/{{ .Get &amp;quot;id&amp;quot; }}&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;
+  &amp;lt;/div&amp;gt;
+{{ else }}
+  &amp;lt;div class=&amp;quot;{{ if len .Params | eq 2 }}{{ .Get 1 }}{{ else }}vimeo-container{{ end }}&amp;quot;&amp;gt;
+    &amp;lt;iframe src=&amp;quot;//player.vimeo.com/video/{{ .Get 0 }}&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would be rendered as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;vimeo-container&amp;quot;&amp;gt;
+  &amp;lt;iframe src=&amp;quot;//player.vimeo.com/video/49718712&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;flex-video&amp;quot;&amp;gt;
+  &amp;lt;iframe src=&amp;quot;//player.vimeo.com/video/49718712&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;paired-example-highlight:10ef41a6c37b90d6a6452868d5ba00ba&#34;&gt;Paired Example: Highlight&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Hugo already ships with the &lt;code&gt;highlight&lt;/code&gt; shortcode&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight html &amp;gt;}}
+&amp;lt;html&amp;gt;
+    &amp;lt;body&amp;gt; This HTML &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+{{&amp;lt; /highlight &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The template for this utilizes the following code (already include in Hugo)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ .Get 0 | highlight .Inner  }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And will be rendered as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;highlight&amp;quot; style=&amp;quot;background: #272822&amp;quot;&amp;gt;&amp;lt;pre style=&amp;quot;line-height: 125%&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;html&amp;amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;body&amp;amp;gt;&amp;lt;/span&amp;gt; This HTML &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/body&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/html&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please notice that this template makes use of a Hugo-specific template function
+called &lt;code&gt;highlight&lt;/code&gt; which uses Pygments to add the highlighting code.&lt;/p&gt;
+
+&lt;p&gt;More shortcode examples can be found at &lt;a href=&#34;https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes&#34;&gt;spf13.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Files</title>
+      <link>http://localhost:1313/extras/datafiles/</link>
+      <pubDate>Thu, 22 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/datafiles/</guid>
+      <description>
+
+&lt;p&gt;In addition to the &lt;a href=&#34;http://localhost:1313/templates/variables/&#34;&gt;built-in variables&lt;/a&gt; available from Hugo, you can specify your own custom data that can be accessed via templates or shortcodes.&lt;/p&gt;
+
+&lt;p&gt;Hugo supports loading data from &lt;a href=&#34;http://yaml.org/&#34;&gt;YAML&lt;/a&gt;, &lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;, and &lt;a href=&#34;https://github.com/toml-lang/toml&#34;&gt;TOML&lt;/a&gt; files located in the &lt;code&gt;data&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It even works with &lt;a href=&#34;http://localhost:1313/extras/livereload/&#34;&gt;LiveReload&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Data Files can also be used in &lt;a href=&#34;http://localhost:1313/themes/overview/&#34;&gt;themes&lt;/a&gt;, but note: If the same &lt;code&gt;key&lt;/code&gt; is used in both the main data folder and in the theme&amp;rsquo;s data folder, the main one will win. So, for theme authors,  for theme specific data items that shouldn&amp;rsquo;t be overridden, it can be wise to prefix the folder structure with a namespace, e.g. &lt;code&gt;mytheme/data/mytheme/somekey/...&lt;/code&gt;. To check if any such duplicate exists, run hugo with the &lt;code&gt;-v&lt;/code&gt; flag, e.g. &lt;code&gt;hugo -v&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-data-folder:b7483484c046f999a03a52bf9f841f0a&#34;&gt;The Data Folder&lt;/h2&gt;
+
+&lt;p&gt;As explained in &lt;a href=&#34;http://localhost:1313/overview/source-directory/&#34;&gt;Source Organization&lt;/a&gt;, the &lt;code&gt;data&lt;/code&gt; folder is where you can store additional data for Hugo to use when generating your site. These files must be YAML, JSON or TOML files (using either the &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt; or &lt;code&gt;toml&lt;/code&gt; extension) and the data will be accessible as a &lt;code&gt;map&lt;/code&gt; in &lt;code&gt;.Site.Data&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The keys in this map will be a dot chained set of &lt;em&gt;path&lt;/em&gt;, &lt;em&gt;filename&lt;/em&gt; and &lt;em&gt;key&lt;/em&gt; in file (if applicable).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is best explained with an example:&lt;/p&gt;
+
+&lt;h2 id=&#34;example-jaco-pastorius-solo-discography:b7483484c046f999a03a52bf9f841f0a&#34;&gt;Example: Jaco Pastorius&amp;rsquo; Solo Discography&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Jaco_Pastorius_discography&#34;&gt;Jaco Pastorius&lt;/a&gt; was a great bass player, but his solo discography is short enough to use as an example. &lt;a href=&#34;http://en.wikipedia.org/wiki/John_Patitucci&#34;&gt;John Patitucci&lt;/a&gt; is another bass giant.&lt;/p&gt;
+
+&lt;p&gt;The example below is a bit constructed, but it illustrates the flexibility of Data Files. It uses TOML as file format.&lt;/p&gt;
+
+&lt;p&gt;Given the files:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;data/jazz/bass/jacopastorius.toml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data/jazz/bass/johnpatitucci.toml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;jacopastorius.toml&lt;/code&gt; contains the content below, &lt;code&gt;johnpatitucci.toml&lt;/code&gt; contains a similar list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;discography = [
+&amp;quot;1974 – Modern American Music … Period! The Criteria Sessions&amp;quot;,
+&amp;quot;1974 – Jaco&amp;quot;,
+&amp;quot;1976 - Jaco Pastorius&amp;quot;,
+&amp;quot;1981 - Word of Mouth&amp;quot;,
+&amp;quot;1981 - The Birthday Concert (released in 1995)&amp;quot;,
+&amp;quot;1982 - Twins I &amp;amp; II (released in 1999)&amp;quot;,
+&amp;quot;1983 - Invitation&amp;quot;,
+&amp;quot;1986 - Broadway Blues (released in 1998)&amp;quot;,
+&amp;quot;1986 - Honestly Solo Live (released in 1990)&amp;quot;,
+&amp;quot;1986 - Live In Italy (released in 1991)&amp;quot;,
+&amp;quot;1986 - Heavy&#39;n Jazz (released in 1992)&amp;quot;,
+&amp;quot;1991 - Live In New York City, Volumes 1-7.&amp;quot;,
+&amp;quot;1999 - Rare Collection (compilation)&amp;quot;,
+&amp;quot;2003 - Punk Jazz: The Jaco Pastorius Anthology (compilation)&amp;quot;,
+&amp;quot;2007 - The Essential Jaco Pastorius (compilation)&amp;quot;
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The list of bass players can be accessed via &lt;code&gt;.Site.Data.jazz.bass&lt;/code&gt;, a single bass player by adding the filename without the suffix, e.g. &lt;code&gt;.Site.Data.jazz.bass.jacopastorius&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can now render the list of recordings for all the bass players in a template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range $.Site.Data.jazz.bass }}
+   {{ partial &amp;quot;artist.html&amp;quot; . }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then in &lt;code&gt;partial/artist.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+{{ range .discography }}
+  &amp;lt;li&amp;gt;{{ . }}&amp;lt;/li&amp;gt;
+{{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Discover a new favourite bass player? Just add another TOML-file.&lt;/p&gt;
+
+&lt;h2 id=&#34;example-accessing-named-values-in-a-data-file:b7483484c046f999a03a52bf9f841f0a&#34;&gt;Example: Accessing named values in a Data File&lt;/h2&gt;
+
+&lt;p&gt;Assuming you have the following YAML structure to your &lt;code&gt;User0123.yml&lt;/code&gt; Data File located directly in &lt;code&gt;data/&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Name: User0123
+&amp;quot;Short Description&amp;quot;: &amp;quot;He is a **jolly good** fellow.&amp;quot;
+Achievements:
+  - &amp;quot;Can create a Key, Value list from Data File&amp;quot;
+  - &amp;quot;Learns Hugo&amp;quot;
+  - &amp;quot;Reads documentation&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To render the &lt;code&gt;Short Description&lt;/code&gt; in your &lt;code&gt;layout&lt;/code&gt; File following code is required.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div&amp;gt;Short Description of {{.Site.Data.User0123.Name}}: &amp;lt;p&amp;gt;{{ index .Site.Data.User0123 &amp;quot;Short Description&amp;quot; | markdownify }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the use of the &lt;code&gt;markdownify&lt;/code&gt; template function. This will send the description through the Blackfriday Markdown rendering engine.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Syntax Highlighting</title>
+      <link>http://localhost:1313/extras/highlighting/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/highlighting/</guid>
+      <description>
+
+&lt;p&gt;Hugo provides the ability for you to highlight source code in &lt;em&gt;two different ways&lt;/em&gt; &amp;mdash; either pre-processed server side from your content, or to defer the processing to the client side, using a JavaScript library.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The advantage of server side&lt;/strong&gt; is that it doesn’t depend on a JavaScript library and consequently works very well when read from an RSS feed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The advantage of client side&lt;/strong&gt; is that it doesn’t cost anything when building your site and some of the highlighting scripts available cover more languages than Pygments does.&lt;/p&gt;
+
+&lt;h2 id=&#34;server-side:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Server-side&lt;/h2&gt;
+
+&lt;p&gt;For the pre-processed approach, highlighting is performed by an external Python-based program called &lt;a href=&#34;http://pygments.org/&#34;&gt;Pygments&lt;/a&gt; and is triggered via an embedded Hugo shortcode (see example below). If Pygments is absent from the path, it will silently simply pass the content along unhighlighted.&lt;/p&gt;
+
+&lt;h3 id=&#34;pygments:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Pygments&lt;/h3&gt;
+
+&lt;p&gt;If you have never worked with Pygments before, here is a brief primer:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install Python from &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;python.org&lt;/a&gt;. Version 2.7.x is already sufficient.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;pip install Pygments&lt;/code&gt; in order to install Pygments. Once installed, Pygments gives you a command &lt;code&gt;pygmentize&lt;/code&gt;. Make sure it sits in your PATH, otherwise Hugo cannot find it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On Debian and Ubuntu systems, you may also install Pygments by running &lt;code&gt;sudo apt-get install python3-pygments&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hugo gives you two options that you can set with the variable &lt;code&gt;pygmentsuseclasses&lt;/code&gt; (default &lt;code&gt;false&lt;/code&gt;) in &lt;code&gt;config.toml&lt;/code&gt; (or &lt;code&gt;config.yaml&lt;/code&gt;).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Color-codes for highlighting keywords are directly inserted if &lt;code&gt;pygmentsuseclasses = false&lt;/code&gt; (default). See in the example below. The color-codes depend on your choice of the &lt;code&gt;pygmentsstyle&lt;/code&gt; (default &lt;code&gt;&amp;quot;monokai&amp;quot;&lt;/code&gt;). You can explore the different color styles on &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments.org&lt;/a&gt; after inserting some example code.&lt;/li&gt;
+&lt;li&gt;If you choose &lt;code&gt;pygmentsuseclasses = true&lt;/code&gt;, Hugo includes class names in your code instead of color-codes. For class-names to be meaningful, you need to include a &lt;code&gt;.css&lt;/code&gt;-file in your website representing your color-scheme. You can either generate this &lt;code&gt;.css&lt;/code&gt;-files according to this &lt;a href=&#34;http://pygments.org/docs/cmdline/&#34;&gt;description&lt;/a&gt; or download the standard ones from the &lt;a href=&#34;https://github.com/richleland/pygments-css&#34;&gt;GitHub pygments-css repository&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;usage:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Usage&lt;/h3&gt;
+
+&lt;p&gt;Highlighting is carried out via the in-built shortcode &lt;code&gt;highlight&lt;/code&gt;. &lt;code&gt;highlight&lt;/code&gt; takes exactly one required parameter of language, and requires a closing shortcode. Note that &lt;code&gt;highlight&lt;/code&gt; is &lt;em&gt;not&lt;/em&gt; used for client-side javascript highlighting.&lt;/p&gt;
+
+&lt;h3 id=&#34;example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight html &amp;gt;}}
+&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    {{ range .Data.Pages }}
+      {{ .Render &amp;quot;summary&amp;quot;}}
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+{{&amp;lt; /highlight &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-output:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Example Output&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;section&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;main&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;
+  &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;h1&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color: #a6e22e&amp;quot;&amp;gt;id=&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #e6db74&amp;quot;&amp;gt;&amp;amp;quot;title&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;{{ .Title }}&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/h1&amp;amp;gt;&amp;lt;/span&amp;gt;
+    {{ range .Data.Pages }}
+      {{ .Render &amp;amp;quot;summary&amp;amp;quot;}}
+    {{ end }}
+  &amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color: #f92672&amp;quot;&amp;gt;&amp;amp;lt;/section&amp;amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;options:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Options&lt;/h3&gt;
+
+&lt;p&gt;Options to control highlighting can be added as a quoted, comma separated key-value list as the second argument in the shortcode. The example below will highlight as language &lt;code&gt;go&lt;/code&gt; with inline line numbers, with line number 2 and 3 highlighted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; highlight go &amp;quot;linenos=inline,hl_lines=2 3&amp;quot; &amp;gt;}}
+var a string
+var b string
+var c string
+var d string
+{{&amp;lt; / highlight &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Supported keywords:  &lt;code&gt;style&lt;/code&gt;, &lt;code&gt;encoding&lt;/code&gt;, &lt;code&gt;noclasses&lt;/code&gt;, &lt;code&gt;hl_lines&lt;/code&gt;, &lt;code&gt;linenos&lt;/code&gt;. Note that &lt;code&gt;style&lt;/code&gt; and &lt;code&gt;noclasses&lt;/code&gt; will override the similar setting in the global config.&lt;/p&gt;
+
+&lt;p&gt;The keywords are the same you would using with Pygments from the command line, see the &lt;a href=&#34;http://pygments.org/docs/&#34;&gt;Pygments doc&lt;/a&gt; for more info.&lt;/p&gt;
+
+&lt;h3 id=&#34;disclaimers:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Disclaimers&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pygments is relatively slow and &lt;em&gt;causes a performance hit when building your site&lt;/em&gt;, but Hugo has been designed to cache the results to disk.&lt;/li&gt;
+&lt;li&gt;Languages available depends on your Pygments installation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;client-side:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Client-side&lt;/h2&gt;
+
+&lt;p&gt;Alternatively, code highlighting can be done in client-side JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Client-side syntax highlighting is very simple to add. You&amp;rsquo;ll need to pick
+a library and a corresponding theme. Some popular libraries are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://highlightjs.org/&#34;&gt;Highlight.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://prismjs.com&#34;&gt;Prism&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://craig.is/making/rainbows&#34;&gt;Rainbow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://alexgorbatchev.com/SyntaxHighlighter/&#34;&gt;Syntax Highlighter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/google/code-prettify&#34;&gt;Google Prettify&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;highlight-js-example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Highlight.js example&lt;/h3&gt;
+
+&lt;p&gt;This example uses the popular &lt;a href=&#34;http://highlightjs.org/&#34;&gt;Highlight.js&lt;/a&gt; library, hosted by &lt;a href=&#34;http://yandex.ru/&#34;&gt;Yandex&lt;/a&gt;, a popular Russian search engine.&lt;/p&gt;
+
+&lt;p&gt;In your &lt;code&gt;./layouts/partials/&lt;/code&gt; (or &lt;code&gt;./layouts/chrome/&lt;/code&gt;) folder, depending on your specific theme, there will be a snippet that will be included in every generated HTML page, such as &lt;code&gt;header.html&lt;/code&gt; or &lt;code&gt;header.includes.html&lt;/code&gt;. Simply add the css and js to initialize &lt;a href=&#34;http://highlightjs.org/&#34;&gt;Highlight.js&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://yandex.st/highlightjs/8.0/styles/default.min.css&amp;quot;&amp;gt;
+&amp;lt;script src=&amp;quot;https://yandex.st/highlightjs/8.0/highlight.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;prism-example:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Prism example&lt;/h3&gt;
+
+&lt;p&gt;Prism is another popular highlighter library, used on some major sites. Similar to Highlight.js, you simply load &lt;code&gt;prism.css&lt;/code&gt; in your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; via whatever Hugo partial template is creating that part of your pages, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;...
+&amp;lt;link href=&amp;quot;/css/prism.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; and add &lt;code&gt;prism.js&lt;/code&gt; near the bottom of your &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag, again in whatever Hugo partial template is appropriate for your site or theme.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;...
+&amp;lt;script src=&amp;quot;/js/prism.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+...
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example, the local paths indicate that your own copy of these files are being added to the site, typically under &lt;code&gt;./static/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;using-client-side-highlighting:c4210b265c792cac9a6cf6a5f53b671d&#34;&gt;Using Client-side highlighting&lt;/h3&gt;
+
+&lt;p&gt;To use client-side highlighting, most of these javascript libraries expect your code to be wrapped in semantically correct &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tags, with the language expressed in a class attribute on the &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag, such as &lt;code&gt;class=&amp;quot;language-abc&amp;quot;&lt;/code&gt;, where the &lt;code&gt;abc&lt;/code&gt; is the code the highlighter script uses to represent that language.&lt;/p&gt;
+
+&lt;p&gt;The script would be looking for classes like &lt;code&gt;language-go&lt;/code&gt;, &lt;code&gt;language-html&lt;/code&gt;, or &lt;code&gt;language-css&lt;/code&gt;. If you look at the page&amp;rsquo;s source, it would be marked up like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;pre&amp;gt;
+&amp;lt;code class=&amp;quot;language-css&amp;quot;&amp;gt;
+body {
+  font-family: &amp;quot;Noto Sans&amp;quot;, sans-serif;
+}
+&amp;lt;/code&amp;gt;
+&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The markup in your content pages (e.g. &lt;code&gt;my-css-tutorial.md&lt;/code&gt;) needs to look like the following, with the name of the language to be highlighted entered directly after the first &amp;ldquo;fence&amp;rdquo;, in a fenced code block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;&amp;#126;&amp;#126;&amp;#126;css
+body {
+  font-family: &#34;Noto Sans&#34;, sans-serif;
+}
+&amp;#126;&amp;#126;&amp;#126;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When passed through the highlighter script, it would yield something like this output when viewed on your rendered page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;body {
+  font-family: &amp;quot;Noto Sans&amp;quot;, sans-serif;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please see individual libraries&amp;rsquo; documentation for how to implement each of the JavaScript-based libraries.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data-driven Content</title>
+      <link>http://localhost:1313/extras/datadrivencontent/</link>
+      <pubDate>Sat, 14 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/datadrivencontent/</guid>
+      <description>
+
+&lt;p&gt;Data-driven content with a static site generator? Yes, it is possible!&lt;/p&gt;
+
+&lt;p&gt;In addition to the &lt;a href=&#34;http://localhost:1313/extras/datafiles/&#34;&gt;data files&lt;/a&gt; feature, we have also
+implemented the feature &amp;ldquo;Data-driven Content&amp;rdquo;, which lets you load
+any &lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt; or
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Comma-separated_values&#34;&gt;CSV&lt;/a&gt; file
+from nearly any resource.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Data-driven Content&amp;rdquo; currently consists of two functions, &lt;code&gt;getJSON&lt;/code&gt;
+and &lt;code&gt;getCSV&lt;/code&gt;, which are available in &lt;strong&gt;all template files&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;implementation-details:53a307f845b42397fddcceecaf40b15b&#34;&gt;Implementation details&lt;/h2&gt;
+
+&lt;h3 id=&#34;calling-the-functions-with-an-url:53a307f845b42397fddcceecaf40b15b&#34;&gt;Calling the functions with an URL&lt;/h3&gt;
+
+&lt;p&gt;In any HTML template or Markdown document, call the functions like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $dataJ := getJSON &amp;quot;url&amp;quot; }}
+{{ $dataC := getCSV &amp;quot;separator&amp;quot; &amp;quot;url&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or, if you use a prefix or postfix for the URL, the functions
+accept &lt;a href=&#34;http://en.wikipedia.org/wiki/Variadic_function&#34;&gt;variadic arguments&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $dataJ := getJSON &amp;quot;url prefix&amp;quot; &amp;quot;arg1&amp;quot; &amp;quot;arg2&amp;quot; &amp;quot;arg n&amp;quot; }}
+{{ $dataC := getCSV  &amp;quot;separator&amp;quot; &amp;quot;url prefix&amp;quot; &amp;quot;arg1&amp;quot; &amp;quot;arg2&amp;quot; &amp;quot;arg n&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The separator for &lt;code&gt;getCSV&lt;/code&gt; must be put in the first position and can only
+be one character long.&lt;/p&gt;
+
+&lt;p&gt;All passed arguments will be joined to the final URL; for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $urlPre := &amp;quot;https://api.github.com&amp;quot; }}
+{{ $gistJ := getJSON $urlPre &amp;quot;/users/GITHUB_USERNAME/gists&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will resolve internally to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $gistJ := getJSON &amp;quot;https://api.github.com/users/GITHUB_USERNAME/gists&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, you can range over an array. This example will output the
+first 5 gists for a GitHub user:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+  {{ $urlPre := &amp;quot;https://api.github.com&amp;quot; }}
+  {{ $gistJ := getJSON $urlPre &amp;quot;/users/GITHUB_USERNAME/gists&amp;quot; }}
+  {{ range first 5 $gistJ }}
+    {{ if .public }}
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .html_url }}&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;{{ .description }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    {{ end }}
+  {{ end }}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-for-csv-files:53a307f845b42397fddcceecaf40b15b&#34;&gt;Example for CSV files&lt;/h3&gt;
+
+&lt;p&gt;For &lt;code&gt;getCSV&lt;/code&gt;, the one-character long separator must be placed in the
+first position followed by the URL.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+  &amp;lt;thead&amp;gt;
+    &amp;lt;tr&amp;gt;
+    &amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;Position&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;Salary&amp;lt;/th&amp;gt;
+    &amp;lt;/tr&amp;gt;
+  &amp;lt;/thead&amp;gt;
+  &amp;lt;tbody&amp;gt;
+  {{ $url := &amp;quot;http://a-big-corp.com/finance/employee-salaries.csv&amp;quot; }}
+  {{ $sep := &amp;quot;,&amp;quot; }}
+  {{ range $i, $r := getCSV $sep $url }}
+    &amp;lt;tr&amp;gt;
+      &amp;lt;td&amp;gt;{{ index $r 0 }}&amp;lt;/td&amp;gt;
+      &amp;lt;td&amp;gt;{{ index $r 1 }}&amp;lt;/td&amp;gt;
+      &amp;lt;td&amp;gt;{{ index $r 2 }}&amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+  {{ end }}
+  &amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The expression &lt;code&gt;{{index $r number}}&lt;/code&gt; must be used to output the nth-column from
+the current row.&lt;/p&gt;
+
+&lt;h3 id=&#34;caching-of-urls:53a307f845b42397fddcceecaf40b15b&#34;&gt;Caching of URLs&lt;/h3&gt;
+
+&lt;p&gt;Each downloaded URL will be cached in the default folder &lt;code&gt;$TMPDIR/hugo_cache/&lt;/code&gt;.
+The variable &lt;code&gt;$TMPDIR&lt;/code&gt; will be resolved to your system-dependent
+temporary directory.&lt;/p&gt;
+
+&lt;p&gt;With the command-line flag &lt;code&gt;--cacheDir&lt;/code&gt;, you can specify any folder on
+your system as a caching directory.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t like caching at all, you can fully disable to read from the
+cache with the command line flag &lt;code&gt;--ignoreCache&lt;/code&gt;. However, Hugo will always
+write, on each build of the site, to the cache folder (silent backup).&lt;/p&gt;
+
+&lt;h3 id=&#34;authentication-when-using-rest-urls:53a307f845b42397fddcceecaf40b15b&#34;&gt;Authentication when using REST URLs&lt;/h3&gt;
+
+&lt;p&gt;Currently, you can only use those authentication methods that can
+be put into an URL. &lt;a href=&#34;http://en.wikipedia.org/wiki/OAuth&#34;&gt;OAuth&lt;/a&gt; or
+other authentication methods are not implemented.&lt;/p&gt;
+
+&lt;h3 id=&#34;loading-local-files:53a307f845b42397fddcceecaf40b15b&#34;&gt;Loading local files&lt;/h3&gt;
+
+&lt;p&gt;To load local files with the two functions &lt;code&gt;getJSON&lt;/code&gt; and &lt;code&gt;getCSV&lt;/code&gt;, the
+source files must reside within Hugo&amp;rsquo;s working directory. The file
+extension does not matter but the content.&lt;/p&gt;
+
+&lt;p&gt;It applies the same output logic as in the topic: &lt;em&gt;Calling the functions with an URL&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;livereload:53a307f845b42397fddcceecaf40b15b&#34;&gt;LiveReload&lt;/h2&gt;
+
+&lt;p&gt;There is no chance to trigger a &lt;a href=&#34;http://localhost:1313/extras/livereload/&#34;&gt;LiveReload&lt;/a&gt; when
+the content of an URL changes. However, when a local JSON/CSV file changes,
+then a LiveReload will be triggered of course. Symlinks not supported.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;URLs and LiveReload&lt;/strong&gt;: If you change any local file and the LiveReload
+got triggered, Hugo will either read the URL content from the cache or, if
+you have disabled the cache, Hugo will re-download the content.
+This can create huge traffic and you may also reach API limits quickly.&lt;/p&gt;
+
+&lt;p&gt;As downloading of content takes a while, Hugo stops with processing
+your Markdown files until the content has been downloaded.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples:53a307f845b42397fddcceecaf40b15b&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Photo gallery JSON powered: &lt;a href=&#34;https://github.com/pcdummy/hugo-lightslider-example&#34;&gt;https://github.com/pcdummy/hugo-lightslider-example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub Starred Repositories &lt;a href=&#34;https://github.com/SchumacherFM/blog-cs/blob/master/content%2Fposts%2Fgithub-starred.md&#34;&gt;in a posts&lt;/a&gt; with the related &lt;a href=&#34;https://github.com/SchumacherFM/blog-cs/blob/master/layouts%2Fshortcodes%2FghStarred.html&#34;&gt;short code&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;More?  Please tell us!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Table of Contents</title>
+      <link>http://localhost:1313/extras/toc/</link>
+      <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/toc/</guid>
+      <description>
+
+&lt;p&gt;Hugo will automatically parse the Markdown for your content and create
+a Table of Contents you can use to guide readers to the sections within
+your content.&lt;/p&gt;
+
+&lt;h2 id=&#34;usage:238ab96260bdf422aa9a88a86db1dda8&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Simply create content like you normally would with the appropriate
+headers.&lt;/p&gt;
+
+&lt;p&gt;Hugo will take this Markdown and create a table of contents stored in the
+&lt;a href=&#34;http://localhost:1313/layout/variables/&#34;&gt;content variable&lt;/a&gt; &lt;code&gt;.TableOfContents&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;template-example:238ab96260bdf422aa9a88a86db1dda8&#34;&gt;Template Example&lt;/h2&gt;
+
+&lt;p&gt;This is example code of a &lt;a href=&#34;http://localhost:1313/layout/content/&#34;&gt;single.html template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;header.html&amp;quot; . }}
+    &amp;lt;div id=&amp;quot;toc&amp;quot; class=&amp;quot;well col-md-4 col-sm-6&amp;quot;&amp;gt;
+    {{ .TableOfContents }}
+    &amp;lt;/div&amp;gt;
+    &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    {{ .Content }}
+{{ partial &amp;quot;footer.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Traversing Local Files</title>
+      <link>http://localhost:1313/extras/localfiles/</link>
+      <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/extras/localfiles/</guid>
+      <description>
+
+&lt;h2 id=&#34;traversing-local-files:54589f690180b2208f5fefce7c4ac7c4&#34;&gt;Traversing Local Files&lt;/h2&gt;
+
+&lt;p&gt;Hugo includes a way to traverse local files.
+This is done using the &amp;lsquo;readDir&amp;rsquo; function.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-readdir:54589f690180b2208f5fefce7c4ac7c4&#34;&gt;Using readDir&lt;/h2&gt;
+
+&lt;p&gt;readDir takes a single string input that is relative to the root directory of the site. It returns an array of &lt;a href=&#34;https://golang.org/pkg/os/#FileInfo&#34;&gt;os.FileInfo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create a shortcode to build a file index with links using readDir.&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;fileindex.html&amp;rsquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table style=&amp;quot;width=100%&amp;quot;&amp;gt;
+&amp;lt;th&amp;gt;Size in bytes&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt;
+{{$dir := .Get &amp;quot;dir&amp;quot;}}
+{{ $url := .Get &amp;quot;baseurl&amp;quot; }}
+
+{{ $files := readDir $dir }}
+    {{ range $files }}
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;{{.Size}}&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;
+                    &amp;lt;a href=&amp;quot;{{$url}}{{.Name | urlize }}&amp;quot;&amp;gt; {{.Name}}&amp;lt;/a&amp;gt;
+                    &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+     {{ end }}
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now lets use it to list the css files used on this site&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; fileindex dir=&amp;quot;static/css&amp;quot; baseurl=&amp;quot;/css/&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is rendered as:&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
