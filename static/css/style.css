@@ -821,7 +821,8 @@ code {
 }
 
 pre code {
-  background: none
+  background: none;
+  padding: 0
 }
 
 /* Styled keypress from Wikipedia */
