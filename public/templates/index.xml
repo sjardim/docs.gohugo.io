@@ -403,7 +403,7 @@ in a global context to reset &lt;code&gt;$&lt;/code&gt; to its default value.&lt
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&#34;hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Hugo Parameters&lt;/h1&gt;
+&lt;h2 id=&#34;hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Hugo Parameters&lt;/h2&gt;
 
 &lt;p&gt;Hugo provides the option of passing values to the template language
 through the site configuration (for sitewide values), or through the meta
@@ -411,7 +411,7 @@ data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.&lt;/p&gt;
 
-&lt;h2 id=&#34;using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
+&lt;h3 id=&#34;using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Content (page) Parameters&lt;/h3&gt;
 
 &lt;p&gt;In each piece of content, you can provide variables to be used by the
 templates. This happens in the &lt;a href=&#34;http://localhost:1313/content/front-matter/&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
@@ -443,7 +443,7 @@ notoc: true
   {{ end }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Site (config) Parameters&lt;/h2&gt;
+&lt;h3 id=&#34;using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Using Site (config) Parameters&lt;/h3&gt;
 
 &lt;p&gt;In your top-level configuration file (e.g., &lt;code&gt;config.yaml&lt;/code&gt;) you can define site
 parameters, which are values which will be available to you in partials.&lt;/p&gt;
@@ -489,7 +489,7 @@ so, such as in this example:&lt;/p&gt;
 &amp;lt;/nav&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Template example: Show only upcoming events&lt;/h1&gt;
+&lt;h2 id=&#34;template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3&#34;&gt;Template example: Show only upcoming events&lt;/h2&gt;
 
 &lt;p&gt;Go allows you to do more than what&amp;rsquo;s shown here.  Using Hugo&amp;rsquo;s
 &lt;a href=&#34;http://localhost:1313/templates/functions/#toc_4&#34;&gt;&lt;code&gt;where&lt;/code&gt;&lt;/a&gt; function and Go built-ins, we can list

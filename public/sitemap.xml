@@ -53,6 +53,16 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/commands/hugo_benchmark/</loc>
+    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/commands/hugo_convert/</loc>
+    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/commands/hugo/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
@@ -63,22 +73,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_convert/</loc>
-    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/commands/hugo_check/</loc>
-    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/commands/hugo_benchmark/</loc>
-    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/commands/hugo_convert_tojson/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
@@ -88,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_convert_toyaml/</loc>
+    <loc>http://localhost:1313/commands/hugo_convert_tojson/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
@@ -98,12 +93,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_gendoc/</loc>
+    <loc>http://localhost:1313/commands/hugo_convert_toyaml/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_list/</loc>
+    <loc>http://localhost:1313/commands/hugo_gendoc/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
@@ -113,17 +108,17 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/commands/hugo_list/</loc>
+    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/commands/hugo_list_future/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_new_site/</loc>
-    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/commands/hugo_new/</loc>
+    <loc>http://localhost:1313/commands/hugo_new_theme/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
@@ -133,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/commands/hugo_new_theme/</loc>
+    <loc>http://localhost:1313/commands/hugo_new/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   
@@ -144,6 +139,11 @@
   
   <url>
     <loc>http://localhost:1313/commands/hugo_version/</loc>
+    <lastmod>2015-09-08T22:45:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/commands/hugo_new_site/</loc>
     <lastmod>2015-09-08T22:45:13-06:00</lastmod>
   </url>
   

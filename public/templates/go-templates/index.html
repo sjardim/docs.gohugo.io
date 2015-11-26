@@ -35,7 +35,7 @@
 
   <nav class="cd-nav">
     <ul class="cd-top-nav">
-      <li><a href="http://gohugo.io/showcase/">Showcase</a></li>
+      <li><a href="/showcase/">Showcase</a></li>
       <li><a href="http://discuss.gohugo.io/">Forum</a></li>
       <li><a href="https://github.com/spf13/hugo/issues">Issues &amp; Help</a></li>
     </ul>
@@ -549,13 +549,13 @@
 <li><a href="#internet-explorer-conditional-comments-using-pipes:e2fc23c6497b774f0cb0b339042e10c3">Internet Explorer conditional comments using Pipes</a></li>
 </ul></li>
 <li><a href="#context-a-k-a-the-dot:e2fc23c6497b774f0cb0b339042e10c3">Context (a.k.a. the dot)</a></li>
-</ul></li>
 <li><a href="#hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3">Hugo Parameters</a>
 <ul>
 <li><a href="#using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Content (page) Parameters</a></li>
 <li><a href="#using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Site (config) Parameters</a></li>
 </ul></li>
 <li><a href="#template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3">Template example: Show only upcoming events</a></li>
+</ul></li>
 </ul>
 </nav>
 </aside>
@@ -876,7 +876,7 @@ in a global context to reset <code>$</code> to its default value.</p>
 </blockquote></li>
 </ol>
 
-<h1 id="hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3">Hugo Parameters</h1>
+<h2 id="hugo-parameters:e2fc23c6497b774f0cb0b339042e10c3">Hugo Parameters</h2>
 
 <p>Hugo provides the option of passing values to the template language
 through the site configuration (for sitewide values), or through the meta
@@ -884,7 +884,7 @@ data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.</p>
 
-<h2 id="using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Content (page) Parameters</h2>
+<h3 id="using-content-page-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Content (page) Parameters</h3>
 
 <p>In each piece of content, you can provide variables to be used by the
 templates. This happens in the <a href="/content/front-matter/">front matter</a>.</p>
@@ -916,7 +916,7 @@ notoc: true
   {{ end }}
 </code></pre>
 
-<h2 id="using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Site (config) Parameters</h2>
+<h3 id="using-site-config-parameters:e2fc23c6497b774f0cb0b339042e10c3">Using Site (config) Parameters</h3>
 
 <p>In your top-level configuration file (e.g., <code>config.yaml</code>) you can define site
 parameters, which are values which will be available to you in partials.</p>
@@ -962,7 +962,7 @@ so, such as in this example:</p>
 &lt;/nav&gt;
 </code></pre>
 
-<h1 id="template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3">Template example: Show only upcoming events</h1>
+<h2 id="template-example-show-only-upcoming-events:e2fc23c6497b774f0cb0b339042e10c3">Template example: Show only upcoming events</h2>
 
 <p>Go allows you to do more than what&rsquo;s shown here.  Using Hugo&rsquo;s
 <a href="/templates/functions/#toc_4"><code>where</code></a> function and Go built-ins, we can list
@@ -986,7 +986,8 @@ the future:</p>
 </section>
 
 
-
+        </div> 
+    </main> 
     
     <script src="/js/jquery-2.1.4.js"></script>
     <script src="/js/jquery.menu-aim.js"></script>
@@ -1010,4 +1011,11 @@ the future:</p>
   ga('send', 'pageview');
 
 </script>
+
+
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
 
