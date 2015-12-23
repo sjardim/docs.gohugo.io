@@ -1,5 +1,5 @@
 title = "Hugo: A Fast and Flexible Website Generator"
-baseurl = "http://gohugo.io/"
+baseurl = "http://hugodocs.netlify.com/"
 MetaDataFormat = "yaml"
 theme = "bourbon"
 pluralizeListTitles = false
