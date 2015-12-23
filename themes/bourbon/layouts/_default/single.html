@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+  <main class="cd-main-content">
+   
+    {{ partial "nav.html" . }}
+
+    <div class="content-wrapper">
+
+      <h1>{{ .Title }}</h1>
+
+      {{ if .Params.toc }}
+
+        <div id="toc" class="toc {{ if gt (len .TableOfContents) 900 }}full{{ end }}">            
+            {{ .TableOfContents }}
+        </div>        
+      {{ end }}
+
+      {{ .Content }}
+    
+    </div> <!-- .content-wrapper -->
+  
+  </main> <!-- .cd-main-content -->
+
+{{ partial "footer.html" . }}

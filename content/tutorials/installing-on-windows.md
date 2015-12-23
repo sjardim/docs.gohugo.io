@@ -4,7 +4,7 @@ date: 2015-03-30
 linktitle: Installing on Windows
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/mathjax
 prev: /tutorials/installing-on-mac
@@ -68,21 +68,22 @@ D:\Hugo\Sites> hugo new site example.com
 ```
 
 5. You should now have a directory at D:\Hugo\Sites\example.com.  Change into that directory and list the contents. You should get output similar to the following:
-```
-D:\Hugo\Sites>cd example.com
-D:\Hugo\Sites\example.com>dir
- Directory of D:\hugo\sites\example.com
 
-04/13/2015  10:44 PM    <DIR>          .
-04/13/2015  10:44 PM    <DIR>          ..
-04/13/2015  10:44 PM    <DIR>          archetypes
-04/13/2015  10:44 PM                83 config.toml
-04/13/2015  10:44 PM    <DIR>          content
-04/13/2015  10:44 PM    <DIR>          data
-04/13/2015  10:44 PM    <DIR>          layouts
-04/13/2015  10:44 PM    <DIR>          static
-               1 File(s)             83 bytes
-               7 Dir(s)   6,273,331,200 bytes free
+```
+    D:\Hugo\Sites>cd example.com
+    D:\Hugo\Sites\example.com>dir
+     Directory of D:\hugo\sites\example.com
+
+    04/13/2015  10:44 PM    <DIR>          .
+    04/13/2015  10:44 PM    <DIR>          ..
+    04/13/2015  10:44 PM    <DIR>          archetypes
+    04/13/2015  10:44 PM                83 config.toml
+    04/13/2015  10:44 PM    <DIR>          content
+    04/13/2015  10:44 PM    <DIR>          data
+    04/13/2015  10:44 PM    <DIR>          layouts
+    04/13/2015  10:44 PM    <DIR>          static
+                   1 File(s)             83 bytes
+                   7 Dir(s)   6,273,331,200 bytes free
 
 ```
 

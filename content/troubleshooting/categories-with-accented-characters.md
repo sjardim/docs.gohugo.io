@@ -1,7 +1,7 @@
 ---
 date: 2015-01-08T16:32:00-07:00
 menu:
-  main:
+  other:
     parent: troubleshooting
 title: Accented Categories
 weight: 10

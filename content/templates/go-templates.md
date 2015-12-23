@@ -296,7 +296,7 @@ access this from within the loop, you will likely want to do one of the followin
     > You may, of course, recover from this mischief by using `{{ $ := . }}`
     > in a global context to reset `$` to its default value.
 
-## Hugo Parameters
+# Hugo Parameters
 
 Hugo provides the option of passing values to the template language
 through the site configuration (for sitewide values), or through the meta
@@ -305,7 +305,7 @@ type (supported by your front matter/config format) and use them however
 you want to inside of your templates.
 
 
-### Using Content (page) Parameters
+## Using Content (page) Parameters
 
 In each piece of content, you can provide variables to be used by the
 templates. This happens in the [front matter](/content/front-matter/).
@@ -339,7 +339,7 @@ Here is the corresponding code inside of the template:
 
 
 
-### Using Site (config) Parameters
+## Using Site (config) Parameters
 In your top-level configuration file (e.g., `config.yaml`) you can define site
 parameters, which are values which will be available to you in partials.
 
@@ -388,7 +388,7 @@ so, such as in this example:
 </nav>
 ```
 
-## Template example: Show only upcoming events
+# Template example: Show only upcoming events
 
 Go allows you to do more than what's shown here.  Using Hugo's
 [`where`](/templates/functions/#toc_4) function and Go built-ins, we can list

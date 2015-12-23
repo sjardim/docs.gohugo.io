@@ -1,0 +1,72 @@
+<nav class="cd-side-nav">
+        <ul>
+          <li class="cd-label">Version 0.15-DEV</li>
+          <li class="action-btn"><a href="https://github.com/spf13/hugo/releases">Download Hugo</a></li>
+        </ul>
+        <ul>        
+          {{ $currentNode := . }}
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+
+            <li class="has-children{{if $currentNode.HasMenuCurrent "main" . }} active {{end}} {{ .Identifier }}">
+              <a href="{{ if .URL }}{{.URL}}{{else}}#{{end}}">{{ .Name }}</a>
+              <ul>
+                  {{ range .Children }}
+                  <li{{if $currentNode.IsMenuCurrent "main" . }} class="active {{ .Identifier }}"{{end}}>
+                    <a href="{{.URL}}" class="children">{{ .Name }}</a>
+                  </li>
+                  {{ end }}
+              </ul>
+              {{else}}
+                <li class="{{ .Identifier }}">
+                  <a href="{{.URL}}">{{ .Name }}</a>
+              {{end}}
+                </li>
+          {{end}}
+        </ul>
+
+        <ul>
+          <li class="cd-label">Resources</li>        
+          {{ $currentNode := . }}
+          {{ range .Site.Menus.resources }}
+            {{ if .HasChildren }}            
+            <li class="has-children{{if $currentNode.HasMenuCurrent "resources" . }} active {{end}} {{ .Identifier }}">
+              <a href="{{ if .URL }}{{.URL}}{{else}}#{{end}}">{{ .Name }}</a>
+              <ul>
+                  {{ range .Children }}
+                  <li{{if $currentNode.IsMenuCurrent "resources" . }} class="active {{ .Identifier }}"{{end}}>
+                    <a href="{{.URL}}" class="children">{{ .Name }}</a>
+                  </li>
+                  {{ end }}
+              </ul>
+              {{else}}
+                <li class="{{ .Identifier }}">
+                  <a href="{{.URL}}">{{ .Name }}</a>
+              {{end}}
+                </li>
+          {{end}}
+        </ul>
+
+        <ul>
+          <li class="cd-label">Other info</li>        
+          {{ $currentNode := . }}
+          {{ range .Site.Menus.other }}
+            {{ if .HasChildren }}            
+            <li class="has-children{{if $currentNode.HasMenuCurrent "other" . }} active {{end}} {{ .Identifier }}">
+              <a href="{{ if .URL }}{{.URL}}{{else}}#{{end}}">{{ .Name }}</a>
+              <ul>
+                  {{ range .Children }}
+                  <li{{if $currentNode.IsMenuCurrent "other" . }} class="active {{ .Identifier }}"{{end}}>
+                    <a href="{{.URL}}" class="children">{{ .Name }}</a>
+                  </li>
+                  {{ end }}
+              </ul>
+              {{else}}
+                <li class="{{ .Identifier }}">
+                  <a href="{{.URL}}">{{ .Name }}</a>
+              {{end}}
+                </li>
+          {{end}}
+        </ul>
+
+      </nav>

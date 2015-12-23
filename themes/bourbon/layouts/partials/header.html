@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ .Hugo.Generator }}
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+{{ .Scratch.Add "title" "" }}{{ if isset .Site.Data.titles .Title }}{{ .Scratch.Set "title" (index .Site.Data.titles .Title).title }}{{ else }}{{ .Scratch.Set "title" .Title}}{{end}}
+  <title>Hugo - {{ .Scratch.Get "title" }}</title>
+
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css"> <!-- Resource style -->
+  <script src="{{ .Site.BaseURL }}js/modernizr.js"></script> <!-- Modernizr -->
+    
+</head>
+<body>
+  <header class="cd-main-header">
+    <a href="#0" class="cd-logo"><img src="/img/hugo-logo.svg" alt="Logo"></a>
+    
+    <div class="cd-search is-hidden">
+      <form action="#0">
+        <input type="search" placeholder="Search...">
+      </form>
+    </div> <!-- cd-search -->
+
+    <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+    <nav class="cd-nav">
+      <ul class="cd-top-nav">  
+        {{ $currentNode := . }}
+          {{ range .Site.Menus.header }}
+            {{ if .HasChildren }}
+
+            <li class="has-children{{if $currentNode.HasMenuCurrent "header" . }} {{end}} {{ .Identifier }}">
+              <a href="{{.URL}}">{{ .Name }}</a>
+              <ul>
+                  {{ range .Children }}
+                  <li{{if $currentNode.IsMenuCurrent "header" . }} class="{{ .Identifier }}"{{end}}>
+                    <a href="{{.URL}}" class="children">{{ .Name }}</a>
+                  </li>
+                  {{ end }}
+              </ul>
+              {{else}}
+                
+                <li class="{{ .Identifier }}">
+                  <a href="{{.URL}}">{{ .Name }}</a>
+              {{end}}
+                </li>
+          {{end}}
+      </ul>
+    </nav>
+  </header> <!-- .cd-main-header -->

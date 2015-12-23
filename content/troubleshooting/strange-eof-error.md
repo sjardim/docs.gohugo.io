@@ -1,7 +1,7 @@
 ---
 date: 2015-01-08T16:11:23-07:00
 menu:
-  main:
+  other:
     parent: troubleshooting
 title: Strange EOF error
 weight: 5

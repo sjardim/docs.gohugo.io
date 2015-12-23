@@ -1,7 +1,7 @@
 ---
 date: 2013-07-01
 menu:
-  main:
+  header:
     parent: community
 next: /community/contributing
 prev: /extras/urls

@@ -4,7 +4,7 @@ aliases:
 - /meta/roadmap/
 date: 2013-07-01
 menu:
-  secondary:
+  header:
     parent: about
 notoc: true
 title: Hugo Roadmap

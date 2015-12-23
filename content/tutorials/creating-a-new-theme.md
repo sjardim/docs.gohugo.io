@@ -4,7 +4,7 @@ date: 2014-09-28
 linktitle: Creating a New Theme
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/github-pages-blog
 prev: /tutorials/automated-deployments

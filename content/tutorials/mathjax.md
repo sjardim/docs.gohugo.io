@@ -2,7 +2,7 @@
 author: Spencer Lyon
 date: 2014-03-20
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/migrate-from-jekyll
 prev: /tutorials/installing-on-windows

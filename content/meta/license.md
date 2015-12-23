@@ -5,7 +5,7 @@ aliases:
 - /meta/license/
 date: 2013-07-01
 menu:
-  secondary:
+  header:
     parent: about
 title: License
 weight: 50

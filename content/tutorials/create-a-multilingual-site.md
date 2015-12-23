@@ -3,11 +3,12 @@ author: "Rick Cogley"
 date: 2015-07-08
 linktitle: Multilingual Site
 menu:
-  main:
+  resources:
     parent: tutorials
 prev: /tutorials/migrate-from-jekyll
 title: Create a Multilingual Site
 weight: 10
+toc: true
 ---
 
 ## Introduction

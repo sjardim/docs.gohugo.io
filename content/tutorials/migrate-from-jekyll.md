@@ -3,7 +3,7 @@ date: 2014-03-10
 linktitle: Migrating from Jekyll
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 prev: /tutorials/mathjax
 next: /tutorials/create-a-multilingual-site

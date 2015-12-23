@@ -4,7 +4,7 @@ aliases:
 date: 2013-07-01
 menu:
   main:
-    parent: getting started
+    parent: getting-started
 next: /overview/configuration
 notoc: true
 prev: /overview/installing

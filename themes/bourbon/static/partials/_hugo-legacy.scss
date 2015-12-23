@@ -1,0 +1,149 @@
+
+/* Google Custom Search box */
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button,
+.gsc-inline-block {
+  box-sizing: content-box;
+  line-height: normal;
+}
+
+.gsc-control-cse {
+  padding: 0.1em 0 0.5em 1em !important;
+  width: 16em !important;
+  float: right;
+}
+
+input.gsc-search-button-v2 {
+  padding: 6px 12px !important;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  padding-right: 1px !important;
+}
+
+/* Styled keypress from Wikipedia */
+
+kbd {
+  border: 1px solid #aaa;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+  -moz-box-shadow: 0.1em 0.2em 0.2em #ddd;
+  -webkit-box-shadow: 0.1em 0.2em 0.2em #ddd;
+  box-shadow: 0.1em 0.2em 0.2em #ddd;
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
+  background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
+  background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
+  background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
+  padding: 0.1em 0.3em;
+  font-family: inherit;
+  font-size: 0.85em;
+}
+
+/* For the table used in overview/configuration */
+
+table.table {
+  margin: 1em 0;
+}
+table code {
+  background: none;
+}
+.table-bordered th {
+  background: #eee
+}
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid $color-2;
+  padding: .8em;
+}
+
+td.purpose-title {
+  text-align: right;
+  vertical-align: top;
+  border-right: 0;
+  padding-right: 0.5em;
+  font-weight: bold;
+}
+
+td.purpose-description {
+  border-left: 0;
+}
+
+/* For definitions of variables */
+
+dl {
+    margin: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+dt {
+    float: left;
+    clear: left;
+    width: 9.5em;
+    margin: 0.125em;
+    padding: 2px 4px;
+}
+
+dd {
+    padding: 0.2em 0 0.2em 10em;
+    border-top: 1px solid #ccc;
+}
+
+/* Responsive videos */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Google custom search */
+.cse {
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+
+
+.showcase-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.showcase-container img {
+  border: 1px solid #555;
+}
+
+.showcase-container h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.dummy {
+    padding-top: 90%; /* Making rows line up even if img proportions off */
+}
+
+.thumbnail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

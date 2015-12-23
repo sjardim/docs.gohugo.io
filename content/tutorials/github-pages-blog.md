@@ -6,7 +6,7 @@ date: 2014-03-21
 linktitle: Hosting on GitHub
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/installing-on-mac
 prev: /tutorials/creating-a-new-theme

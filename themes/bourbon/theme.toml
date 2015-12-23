@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Bourbon"
+license = "MIT"
+licenselink = "https://github.com/sjardim/hugo-bourbon-theme/blob/master/LICENSE.md"
+description = "A theme for Hugo documentation based on a CodyHouse template"
+homepage = "http://hugodocs.sergiojardim.com/"
+tags = ["bourbon", "sass", "dark", "clean"]
+features = ["", ""]
+min_version = 0.14
+
+[author]
+  name = "Sérgio Jardim"
+  homepage = "http://www.twitter.com/sjardim"
+
+# If porting an existing theme
+[original]
+  name = "Responsive Sidebar Navigation"
+  homepage = "https://codyhouse.co/gem/responsive-sidebar-navigation/"
+  repo = ""

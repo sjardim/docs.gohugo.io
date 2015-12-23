@@ -4,7 +4,7 @@ date: 2015-02-22
 linktitle: Installing on Mac
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/installing-on-windows
 prev: /tutorials/github-pages-blog
@@ -29,14 +29,7 @@ There's no "best" way to do this. You should use the method that works best for 
 
 There are pros and cons for each.
 
-1. `Brew` is the simplest and least work to maintain. The drawbacks
-   aren't severe. The default package will be for the most recent
-   release, so it will not have bug-fixes until the next release
-   (unless you install it with the `--HEAD` option). The release to
-   `brew` may lag a few days behind because it has to be coordinated
-   with another team. Still, I'd recommend `brew` if you want to work
-   from a stable, widely used source. It works well and is really easy
-   to update.
+1. `Brew` is the simplest and least work to maintain. The drawbacks aren't severe. The default package will be for the most recent release, so it will not have bug-fixes until the next release (unless you install it with the `--HEAD` option). The release to `brew` may lag a few days behind because it has to be coordinated with another team. Still, I'd recommend `brew` if you want to work from a stable, widely used source. It works well and is really easy to update.
 
 2. Downloading the tarball and installing from it is also easy. You have to have a few more command line skills. Updates are easy, too. You just repeat the process with the new binary. This gives you the flexibility to have multiple versions on your computer. If you don't want to use `brew`, then the binary is a good choice.
 
@@ -60,14 +53,14 @@ When I did this, I had some problems with directory permissions. Searches on Goo
 ### Step 2: Run the `brew` command to install `hugo`
 
 Replace `brew install hugo` with `brew install hugo --HEAD` if you
-want the absolute latest version—there might be bugs!
+want the absolute latest versionthere might be bugs!
 
 ```
 $ brew install hugo
 ==> Downloading https://homebrew.bintray.com/bottles/hugo-0.13_1.yosemite.bottle.tar.gz
 ######################################################################## 100.0%
 ==> Pouring hugo-0.13_1.yosemite.bottle.tar.gz
-🍺  /usr/local/Cellar/hugo/0.13_1: 4 files,  14M
+  /usr/local/Cellar/hugo/0.13_1: 4 files,  14M
 ```
 
 `Brew` should have updated your path to include Hugo. Confirm by opening a new terminal window and running a few commands:

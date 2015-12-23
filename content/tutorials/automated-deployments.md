@@ -6,15 +6,13 @@ date: 2015-01-12
 linktitle: Automated deployments
 toc: true
 menu:
-  main:
+  resources:
     parent: tutorials
 next: /tutorials/creating-a-new-theme
 prev: /community/contributing
 title: Automated deployments with Wercker
 weight: 10
 ---
-
-# Automated deployments with Wercker
 
 In this tutorial we will set up a basic Hugo project and then configure a free tool called Wercker to automatically deploy the generated site any time we add an article. We will deploy it to GitHub pages as that is easiest to set up, but you will see that we can use anything. This tutorial takes you through every step of the process, complete with screenshots and is fairly long.
 
@@ -245,7 +243,7 @@ deploy:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: hugo-wercker.ig.nore.me
+        doresources: hugo-wercker.ig.nore.me
         basedir: public
 ```
 

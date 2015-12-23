@@ -4,7 +4,7 @@ aliases:
 - /meta/contributing/
 date: 2013-07-01
 menu:
-  main:
+  header:
     parent: community
 next: /tutorials/automated-deployments
 prev: /community/mailing-list

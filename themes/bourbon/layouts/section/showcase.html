@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+  <main class="cd-main-content">
+   
+    {{ partial "nav.html" . }}
+
+    <div class="content-wrapper">
+
+      <h1>Hugo-built Sites (with source)</h1>
+
+      <div class="row">
+        {{ range .Data.Pages.ByDate }}
+            {{ .Render "thumbnail"}}
+        {{ end }}
+        </div>
+
+      <p>If you want to be added to this page, please send a <a href="https://github.com/spf13/hugo/pulls">pull request</a>.</p>
+    
+    </div> <!-- .content-wrapper -->
+  
+  </main> <!-- .cd-main-content -->
+
+{{ partial "footer.html" . }}
