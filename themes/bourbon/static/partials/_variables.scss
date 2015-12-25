@@ -1,11 +1,16 @@
 // colors
+/* 
+remeber to check contrast at:
+- http://leaverou.github.io/contrast-ratio
+- http://webaim.org/resources/contrastchecker/
+*/
 
-$color-1: #26425F; // Dark Grayish Blue
-$color-2: #CB087E; // Pink
+$color-1: #26425F; // Dark Grayish Blue – used on as the base color for backgrounds
+$color-2: #CB087E; // Pink – used on h2 titles, variables etc.
 $color-3: #ffffff; // White
-$color-4: #1784c7; // Blue
-$color-5: #00A98A; // Green
-$color-6: #ECBA46; // Yellow
+$color-4: #1472ac; // Blue – used on h1 and h3 titles
+$color-5: #007a46; // Green – used on h4 titles
+$color-6: #ECBA46; // Yellow – currently only used on a:hover on sidebar and header
 
 // fonts 
 
@@ -19,7 +24,7 @@ $header-height-M: 55px;
 //sidebar size
 
 $sidebar-width-M: 110px;
-$sidebar-width-L: 200px;
+$sidebar-width-L: 220px;
 
 //svg-icons by http://www.flaticon.com
 $svg-icon-width: 24px;

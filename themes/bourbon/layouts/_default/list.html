@@ -1,0 +1,38 @@
+{{ partial "header.html" . }}
+
+<main class="cd-main-content">
+   
+    {{ partial "nav.html" . }}
+
+    <div class="content-wrapper">
+
+
+      
+
+      <h1 id="title">{{ .Title }}</h1>
+
+      <div id="toc" class="toc full index">
+        <h4 class="toc-title">In Alphabetical Order</h4>
+        
+        <nav id="TableOfContents">      
+          <ul>
+            {{ range .Data.Pages.ByTitle }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>      
+            </li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+
+      <ul id="list">
+          {{ range .Data.Pages.ByTitle }}
+              {{ .Render "summary"}}
+          {{ end }}
+      </ul>
+  
+    </div> <!-- .content-wrapper -->
+  
+  </main> <!-- .cd-main-content -->
+
+{{ partial "footer.html" . }}

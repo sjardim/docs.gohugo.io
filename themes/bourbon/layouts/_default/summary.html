@@ -1,0 +1,20 @@
+<style type="text/css">
+article footer {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-bottom: 6rem
+}
+</style>
+<article class="post">
+
+  <header>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary }}</p>
+  </header>
+  
+  <footer>
+    <em>Approximately {{ .FuzzyWordCount }} words.</em> <a href='{{ .Permalink }}'><nobr>Read →</nobr></a>
+  </footer>
+  
+
+</article>
