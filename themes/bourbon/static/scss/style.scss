@@ -866,3 +866,26 @@ Sidebar
 		}
 	}
 }
+
+/* --------------------------------
+
+Footer
+
+-------------------------------- */
+
+.back-to-top, .back-to-top:visited {
+  color: $color-3;
+  opacity: 0.5;
+  background-color: $color-1;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 1em;
+}
+
+.back-to-top:hover {
+  color: $color-3;
+  opacity: 0.9;
+}
