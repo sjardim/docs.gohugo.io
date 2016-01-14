@@ -6,9 +6,6 @@
 
     <div class="content-wrapper">
 
-
-      
-
       <h1 id="title">{{ .Title }}</h1>
 
       <div id="toc" class="toc full index">
@@ -26,7 +23,7 @@
       </div>
 
       <ul id="list">
-          {{ range .Data.Pages.ByTitle }}
+          {{ range .Data.Pages }}
               {{ .Render "summary"}}
           {{ end }}
       </ul>
