@@ -12,11 +12,11 @@
       <h1 id="title">{{ .Title }}</h1>
 
       <div id="toc" class="toc full index">
-        <h4 class="toc-title">In Alphabetical Order</h4>
+        <h4 class="toc-title">In this section</h4>
         
         <nav id="TableOfContents">      
           <ul>
-            {{ range .Data.Pages.ByTitle }}
+            {{ range .Data.Pages }}
             <li>
               <a href="{{ .Permalink }}">{{ .Title }}</a>      
             </li>

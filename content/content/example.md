@@ -65,6 +65,7 @@ project_url: "https://github.com/spf13/nitro"
 ```
 
 `nitro.md` would be rendered as follows:
+<section class="example">
 
 > # Nitro
 >
@@ -84,6 +85,8 @@ project_url: "https://github.com/spf13/nitro"
 >     $ go get github.com/spf13/nitro
 >
 > Next, include nitro in your application.
+
+</section>
 
 The source `nitro.md` file is converted to HTML by the excellent
 [Blackfriday](https://github.com/russross/blackfriday) Markdown processor,

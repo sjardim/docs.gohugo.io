@@ -1,0 +1,71 @@
+/* -------------------------------- 
+
+Table of Contents
+
+-------------------------------- */
+.content-wrapper #toc {
+    display: none;
+    background: lighten(desaturate($color-2, 20%), 55%);
+    margin: -2em auto 4em auto;
+    width: 40%;
+    padding: 1em;    
+    counter-reset: section;
+    ul {
+      margin: 0;
+      list-style: none;
+      font-weight: 600;
+      & > li {
+        margin: 0;
+        list-style: none;
+        &:not(:first-child) {
+          margin-top: 1em
+        }
+        &:before {
+          content: "";
+          padding: 0
+        }
+      }
+      & ul > li > ul {
+        list-style: circle;
+        margin-left: .5em;
+        font-style: italic;
+        font-weight: 400;
+        &>li {
+          &:before {
+            content: "- ";
+            color: $color-2
+          }
+        }        
+        &>li:not(:first-child) {
+          margin-top: 0
+        }
+      }
+    }
+    @include MQ(M) {
+      display: block
+    }
+    &.full {
+      -webkit-column-count: 2; 
+      -moz-column-count: 2; 
+      column-count: 2;
+      -webkit-column-rule: 1px solid lighten(desaturate($color-2, 20%), 45%);
+      -moz-column-rule: 1px solid #fff; 
+      column-rule: 1px solid #fff;
+      width: 70%;
+      &.index {
+        -webkit-column-count: 4; 
+      -moz-column-count: 4; 
+      column-count: 4;
+      width: 100%;      
+      }
+    }
+    .toc-title {
+      color: $color-2;
+      -webkit-column-span: all;
+      -moz-column-span: all;
+      column-span: all;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid lighten(desaturate($color-2, 20%), 45%);
+    }
+}

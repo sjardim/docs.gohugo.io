@@ -10,7 +10,7 @@
 
             <li class="has-children{{if $currentNode.HasMenuCurrent "main" . }} active {{end}} {{ .Identifier }}">
               <a href="{{ if .URL }}{{.URL}}{{else}}#{{end}}">{{ .Name }}</a>
-              <ul>
+              <ul class="submenu">
                   {{ range .Children }}
                   <li{{if $currentNode.IsMenuCurrent "main" . }} class="active {{ .Identifier }}"{{end}}>
                     <a href="{{.URL}}" class="children">{{ .Name }}</a>

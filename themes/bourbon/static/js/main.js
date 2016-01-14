@@ -3,6 +3,12 @@ jQuery(document).ready(function(){
 
   $('h2').each(function() {
       $(this).wrapInner('<a href="#' + $(this).attr('id') + '" />');
+      $(this).on('mouseover', function(){
+        $(this).addClass('hover');
+      });
+      $(this).on('mouseout', function(){
+        $(this).removeClass('hover');
+      });
   });
 
 
@@ -25,14 +31,14 @@ jQuery(document).ready(function(){
 	});
 
 	//on window scrolling - fix sidebar nav
-	var scrolling = false;
-	checkScrollbarPosition();
-	$(window).on('scroll', function(){
-		if( !scrolling ) {
-			(!window.requestAnimationFrame) ? setTimeout(checkScrollbarPosition, 300) : window.requestAnimationFrame(checkScrollbarPosition);
-			scrolling = true;
-		}
-	});
+	// var scrolling = false;
+	// checkScrollbarPosition();
+	// $(window).on('scroll', function(){
+	// 	if( !scrolling ) {
+	// 		(!window.requestAnimationFrame) ? setTimeout(checkScrollbarPosition, 300) : window.requestAnimationFrame(checkScrollbarPosition);
+	// 		scrolling = true;
+	// 	}
+	// });
 
 	//mobile only - open sidebar when user clicks the hamburger menu
 	sidebarTrigger.on('click', function(event){
@@ -130,6 +136,8 @@ jQuery(document).ready(function(){
 		var mq = checkMQ();
 		
 		if( mq !== 'mobile' ) {
+      console.log(sidebar.outerHeight());
+      console.log($(window).height());
 			var sidebarHeight = sidebar.outerHeight(),
 				windowHeight = $(window).height(),
 				mainContentHeight = mainContent.outerHeight(),
@@ -139,4 +147,24 @@ jQuery(document).ready(function(){
 		}
 		scrolling = false;
 	}
+
+	// Back-to-top button
+	$(".back-to-top").hide();
+	$(function() {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 150) {
+				$('.back-to-top').fadeIn();
+			} else {
+				$('.back-to-top').fadeOut();
+			}
+		});
+
+		$('.back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+	
 });

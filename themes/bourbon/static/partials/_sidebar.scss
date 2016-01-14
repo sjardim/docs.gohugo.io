@@ -1,0 +1,457 @@
+/* -------------------------------- 
+
+Sidebar
+
+-------------------------------- */
+
+.cd-side-nav {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: $header-height-S 0 0;
+  background-color: darken($color-1, 8%);
+  visibility: hidden;
+  opacity: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  @include font-smoothing;
+  @include transition(opacity .2s 0s, visibility 0s .2s);
+
+  &.nav-is-visible {
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    @include transition(opacity .2s 0s, visibility 0s 0s);
+    max-height: none;
+    box-shadow: 0 2px 10px rgba(#000, .2);
+  }
+  
+  > ul {
+    padding: 0.6em 0;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  .cd-label, a {
+    display: block;
+    padding: 1em 5%;
+  }
+
+  .cd-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: tint($color-1, 20%);
+    font-size: 1rem;
+    letter-spacing: .1em;
+  }
+
+  a {
+    position: relative;
+    color: $color-3;
+    font-size: 1.4rem;
+  }
+
+  ul.cd-top-nav > li:last-of-type > a {
+    border-bottom: none;
+  }
+
+  > ul > li > a {
+    // padding-left: calc(5% + 24px);
+    border-bottom: 1px solid darken($color-1, 3%);
+
+    &::before {
+      /* icon before item name */
+      position: absolute;
+      content: '';
+      left: 5%;
+      @include center(y);
+      height: $svg-icon-height;
+      width: $svg-icon-width;
+      background: url(../img/hugo-nav-icons.svg) no-repeat 0 0;
+    }
+  }
+  > ul > li.getting-started > a::before { background-position: 0 0; }
+  > ul > li.content > a::before { background-position: -$svg-icon-width*2 0; }
+  > ul > li.taxonomy > a::before { background-position: -$svg-icon-width*4 0; }
+  > ul > li.tools > a::before { background-position: -$svg-icon-width*5 0; }
+  > ul > li.extras > a::before { background-position: -$svg-icon-width*16 0; }
+  > ul > li.commands > a::before { background-position: -$svg-icon-width*7 0; }
+  > ul > li.themes > a::before { background-position: -$svg-icon-width*1 0; }
+  > ul > li.layout > a::before { background-position: -$svg-icon-width*8 0; }
+  > ul > li.tutorials > a::before { background-position: -$svg-icon-width*3 0; }
+  > ul > li.troubleshooting > a::before { background-position: -$svg-icon-width*14 0; }
+  
+  > ul > li > a::before { background-position: -1000px 0; }
+
+  .action-btn a {
+    display: block;
+    margin: 0 5%; 
+    padding: .9em 0;
+    background-color: $color-4;
+    border-radius: .25em;
+    border: none;
+    box-shadow: 0 1px 3px rgba(#000, .3), inset 0 1px 0 rgba(#fff, .2);
+    
+    text-align: center;
+    color: $color-3;
+    font-weight: bold;
+    
+    &::before {
+      display: none;
+    }
+  }
+
+  @include MQ(M) {
+    position: relative;
+    float: left;
+    top: auto;
+    width: $sidebar-width-M;
+    min-height: 100vh;
+    padding-top: $header-height-M;
+    /* reset style */
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    max-height: none;
+
+    &.nav-is-visible {
+      box-shadow: none;
+    }
+
+    &.is-fixed {
+      position: fixed;
+    }
+
+    > ul {
+      /* reset style */
+      padding: 0;
+    }
+
+    .cd-label {
+      /* remove labels on minified version of the sidebar */
+      display: none;
+    }
+
+    a {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    > ul > li > a {
+      padding: calc(2.2em + 24px) 0 2.4em;
+
+      &::before {
+        @include center(x);
+        top: 2.4em;
+      }
+    }
+    .has-children.active > a {
+      /* current page */
+      background-color: darken($color-1, 5%);
+      box-shadow: inset 3px 0 0 $color-2; 
+    }
+
+    .active > a.children {
+        color: $color-6;
+    }
+
+    .action-btn a { 
+      margin: 1em 10% 0;
+    }
+  }
+
+  @include MQ(L) {
+    width: $sidebar-width-L;
+
+    a {
+      font-size: 1.6rem;
+    }
+
+    > ul {
+      padding: 0.6em 0;
+    }
+
+    > ul > li:not(.action-btn):hover > a {
+      background-color: darken($color-1, 15%);
+    }
+
+    > ul > li > a {
+      padding: 1em 1em 1em $svg-icon-width*2.2;
+      text-align: left;
+      border-bottom: none;
+
+      &::before {
+        @include center(y);
+        left: 18px;
+      }
+    }
+
+    .cd-label {
+      display: block;
+      padding: 1em 18px;
+    }
+
+    .action-btn {
+      text-align: left;
+
+      a {
+        margin: 0 18px;
+
+        .no-touch &:hover {
+          background-color: lighten($color-2, 5%);
+        }
+      }
+    }
+  }
+
+  ul {
+    position: relative;
+    width: 100%;
+    display: none;
+    background-color: darken($color-1, 15%);
+  }
+
+  > a::after {
+    /* arrow icon */
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    right: 5%;
+    @include center(y);
+    background: url(../img/cd-arrow.svg);
+  }
+
+  &.selected > ul {
+    display: block;
+  }
+
+  &.selected > a::after {
+    @include transform(translateY(-50%) rotate(180deg));
+  }
+
+  @include MQ(M) {
+    position: relative;
+    
+    ul { 
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 160px;
+      padding: 0;
+      box-shadow: 0 2px 10px rgba(#000, .3);
+    }
+
+    ul a {
+      text-align: left;
+      // border: none;
+      border-bottom: 1px solid darken($color-1, 5%);
+      padding: .8em 1em;
+
+      .no-touch &:hover {
+        color: $color-6;
+      }
+    }
+
+    > a::after { 
+      display: none;
+    }
+
+    .cd-side-nav & {
+      &.selected > a {
+        /* focus state -> show sub pages */
+        background-color: darken($color-1, 5%);
+      }
+    }
+
+    .cd-top-nav & {
+      position: relative;
+      // background-color: darken($color-1, 8%);
+
+      > a {
+        height: 100%;
+        padding: 0 calc(1.8em + 8px) 0 calc(1.8em) !important;
+        line-height: $header-height-M;
+
+        &::after {
+          display: block;
+          right: .9em;
+        }
+      }
+
+      ul {
+        background-color: darken($color-1, 15%);
+        width: 200px;
+        top: 100%;
+        right: 0;
+        left: auto;
+        box-shadow: 0 1px 10px rgba(#000, .2);
+      }
+
+      ul a {
+        padding-left: 18px !important;
+      }
+    }
+  }
+
+  @include MQ(L) {
+    
+    > ul { 
+      width: 100%;
+      z-index: 1;
+    }
+
+    ul a {
+      padding-left: 18px;
+    }
+
+    &.active > ul {
+      /* if the item is active, make the subnavigation visible */
+      position: relative;
+      display: block;
+      /* reset style */
+      left: 0;
+      box-shadow: none;
+    }
+
+    .no-touch .cd-nav &:hover > ul, 
+    .cd-nav &.hover > ul, 
+    .no-touch .cd-side-nav &:hover > ul, 
+    .cd-side-nav &.hover > ul {
+      /* show subnavigation on hover */
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+}
+
+.has-children {
+
+  ul {
+    position: relative;
+    width: 100%;
+    display: none;
+    background-color: darken($color-1, 15%);
+  }
+
+  > a::after {
+    /* arrow icon */
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    right: 5%;
+    @include center(y);
+    background: url(../img/cd-arrow.svg);
+  }
+
+  &.selected > ul {
+    display: block;
+  }
+
+  &.selected > a::after {
+    @include transform(translateY(-50%) rotate(180deg));
+  }
+
+  @include MQ(M) {
+    position: relative;
+    
+    ul { 
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 160px;
+      padding: 0;
+      box-shadow: 0 2px 10px rgba(#000, .3);
+    }
+
+    ul a {
+      text-align: left;
+      // border: none;
+      border-bottom: 1px solid darken($color-1, 5%);
+      padding: .8em 1em;
+
+      .no-touch &:hover {
+        color: $color-6;
+      }
+    }
+
+    > a::after { 
+      display: none;
+    }
+
+    .cd-side-nav & {
+      &.selected > a {
+        /* focus state -> show sub pages */
+        background-color: darken($color-1, 5%);
+      }
+    }
+
+    .cd-top-nav & {
+      position: relative;
+      // background-color: darken($color-1, 8%);
+
+      > a {
+        height: 100%;
+        padding: 0 calc(1.8em + 8px) 0 calc(1.8em) !important;
+        line-height: $header-height-M;
+
+        &::after {
+          display: block;
+          right: .9em;
+        }
+      }
+
+      ul {
+        background-color: darken($color-1, 15%);
+        width: 200px;
+        top: 100%;
+        right: 0;
+        left: auto;
+        box-shadow: 0 1px 10px rgba(#000, .2);
+      }
+
+      ul a {
+        padding-left: 18px !important;
+      }
+    }
+  }
+
+  @include MQ(L) {
+    
+    > ul { 
+      width: 100%;
+      z-index: 1;
+    }
+
+    ul a {
+      padding-left: 18px;
+    }
+
+    &.active > ul {
+      /* if the item is active, make the subnavigation visible */
+      position: relative;
+      display: block;
+      /* reset style */
+      left: 0;
+      box-shadow: none;
+    }
+
+    .no-touch .cd-nav &:hover > ul, 
+    .cd-nav &.hover > ul, 
+    .no-touch .cd-side-nav &:hover > ul, 
+    .cd-side-nav &.hover > ul {
+      /* show subnavigation on hover */
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,257 @@
+/* -------------------------------- 
+
+Header
+
+-------------------------------- */
+
+.cd-main-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  height: $header-height-S;
+  width: 100%;
+
+  background: $color-1;
+  box-shadow: 0 1px 3px rgba(#000, .2);
+  @include clearfix;
+  @include font-smoothing;
+
+  @include MQ(M) {
+    position: fixed;
+    height: $header-height-M;
+  }
+}
+
+.cd-logo {
+  float: left;
+  display: block;
+  margin: 6px 0 0 5%;
+
+  img {
+    display: block;
+    height: $header-height-S*.7;
+  }
+
+  @include MQ(M) {
+    // margin: 8px -20px 0 60px;
+    margin: 0;
+    width: $sidebar-width-L;
+    img {
+      height: $header-height-M*.7;
+      margin: 6px auto 0;
+    }
+  }
+}
+
+.cd-nav-trigger {
+  /* navigation trigger - visible on mobile devices only */
+  float: right;
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 44px;
+  margin-right: 5%;
+  /* hide text */
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+
+  span, span::before, span::after {
+    /* hamburger icon in CSS */
+    position: absolute;
+    display: inline-block;
+    height: 3px;
+    width: 24px;
+    background: $color-3;
+  }
+
+  span {
+    /* line in the center */
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -2px;
+    @include transition(background .2s);
+  }
+
+  span::before, span::after {
+    /* other 2 lines */
+    content: '';
+    right: 0;
+    /* Force Hardware Acceleration in WebKit */
+    @include transform(translateZ(0));
+    @include backface-visibility(hidden);
+    
+    @include transform-origin(0% 50%);
+    @include transition(transform .2s);
+  }
+
+  span::before {
+    /* menu icon top line */
+    top: -6px;
+  }
+
+  span::after {
+    /* menu icon bottom line */
+    top: 6px;
+  }
+
+  &.nav-is-visible {
+    span {
+      /* hide line in the center */
+      background: rgba($color-3, 0);
+    }
+
+    span::before, span::after {
+      /* keep visible other 2 lines */
+      background: rgba($color-3, 1);
+    }
+
+    span::before {
+      @include transform(translateX(4px) translateY(-3px) rotate(45deg));
+    }
+
+    span::after {
+      @include transform(translateX(4px) translateY(2px) rotate(-45deg));
+    }
+  }
+
+  @include MQ(M) {
+    display: none;
+  }
+}
+
+.cd-search {
+  position: relative;
+  margin: 1.2em 5% 0.6em;
+
+  &.is-hidden {
+    opacity: 0;
+  }
+
+  &::before {
+    /* lens icon */
+    content: '';
+    position: absolute;
+    left: 8px;
+    @include center(y);
+    height: 16px;
+    width: 16px;
+    background: url(../img/cd-search.svg) no-repeat 0 0;
+  }
+
+  input {
+    padding-left: 32px;
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: .25em;
+    @include appearance(none);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @include MQ(M) {
+    float: left;
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    // padding: 12px 0;
+    // margin: 0 0 0 2.5em;
+    margin: 0;
+
+    &.is-hidden {
+      /* reset style */
+      opacity: 1;
+    }
+
+    &::before {
+      background-position: 0 -16px;
+      left: 1em;
+    }
+
+    form, input {
+      height: 100%;
+      width: 100%;
+    }
+
+    input {
+      border: none;
+      padding-left: 2.6em;
+      border-radius: 0;
+      background-color: $color-1;
+      border-left: 1px solid tint($color-1, 10%);
+      color: $color-3;
+
+      @include placeholder {
+        color: tint($color-1, 30%);
+      }
+    }
+  }
+}
+
+/* -------------------------------- 
+
+Top Navigation
+
+-------------------------------- */
+
+.cd-nav {
+  /* top nav - not visible on mobile devices */ 
+  display: none;
+
+  @include MQ(M) {
+    display: block;
+    float: right;
+    height: 100%;
+  }
+}
+
+.cd-top-nav {
+  .hover {
+    background-color: darken($color-1, 8%);
+  }
+  > li > a::before  {
+    /* reset style */
+    display: none;
+  }
+
+  > li a {
+    padding: 1em 5% !important;
+  }
+
+  @include MQ(M) {
+    height: 100%;
+
+    a {
+      display: block;
+      font-size: 1.4rem;
+      color: $color-3;
+    }
+
+    > li {
+      display: inline-block;
+      // margin-right: 1em;
+      height: 100%;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    > li a {
+      padding: 1em .6em !important;
+    }
+
+  }
+
+  @include MQ(L) {
+    li:not(.has-children) a:hover {
+      color: $color-2;
+    }
+  }
+}

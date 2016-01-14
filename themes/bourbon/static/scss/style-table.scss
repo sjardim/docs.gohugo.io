@@ -32,7 +32,6 @@ body {
   color: $color-1;
   background-color: $color-3;
   @include clearfix;
-  // padding-top: $header-height-M
 }
 
 p {
@@ -43,9 +42,6 @@ p {
 
 blockquote {
   color: $color-4;
-  border: 1px solid desaturate(lighten($color-4, 50%), 30%);
-  border-left: 0;
-  border-right: 0;
   & > p {
     font-size: 2rem;
   }
@@ -59,22 +55,16 @@ a {
 }
 .footnote-ref {
   font-size: 1.1rem;
-  font-weight: bold;
   vertical-align: super
 }
-pre {  
-  background: red2
-}
+
 pre code {
   margin-top: 1em;
   font-family: 'Consola', 'Courier New', monospace;
   line-height: 2;
   font-weight: 400;
   width: 100%;
-  overflow: auto;
-  background: #23241f;
-  display: block; // for when js is disabled or not loaded yet
-  color: #FFF
+  overflow: auto
 }
 
 code {
@@ -119,9 +109,8 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: .7em 0;
     line-height: 1.5;
     &:before {
-      // content: "\25A3"; //White Square Containing Black Small Square
-      content: "\25C8"; //White Diamond Containing Black Small Diamond
-      font-size: 1.3rem;
+      content: "\25D8";
+      // font-size: 1.4rem;
       color: lighten(desaturate($color-2, 30%), 20%);
       padding-right: .7em
     }
@@ -195,6 +184,9 @@ Table of Contents
         }
       }
     }
+    @include MQ(M) {
+      display: block
+    }
     &.full {
       -webkit-column-count: 2; 
       -moz-column-count: 2; 
@@ -202,19 +194,14 @@ Table of Contents
       -webkit-column-rule: 1px solid lighten(desaturate($color-2, 20%), 45%);
       -moz-column-rule: 1px solid #fff; 
       column-rule: 1px solid #fff;
-      width: 75%;
+      width: 70%;
       &.index {
         -webkit-column-count: 4; 
-        -moz-column-count: 4; 
-        column-count: 4;
-        width: 100%;      
+      -moz-column-count: 4; 
+      column-count: 4;
+      width: 100%;      
       }
     }
-
-    @include MQ(L) {
-      display: block
-    }
-
     .toc-title {
       color: $color-2;
       -webkit-column-span: all;
@@ -258,11 +245,9 @@ Main Page Content
     }
 
     h3 {
-      font-size: 1.8rem;      
+      font-size: 1.6rem;      
       color: $color-4;
-      margin: 1.5em 0 1em;
-      padding-bottom: .3em;
-      border-bottom: 1px dashed desaturate(lighten($color-4, 30%), 20%);
+      margin: 1em 0;
       & > a {
         color: $color-4;
         text-decoration: underline
@@ -270,7 +255,7 @@ Main Page Content
     }
 
     h4 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: $color-5
     }
   }
@@ -313,12 +298,12 @@ Main Page Content
 
 
       h3 {
-        font-size: 2.2rem;
-        margin-top: 1.8em;
+        font-size: 2.6rem;
+        margin-top: 1.8em;        
       }
 
       h4 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
 
@@ -330,7 +315,7 @@ Main Page Content
   @include MQ(L) {
 
     .content-wrapper {
-      margin-left: $sidebar-width-L;
+      // margin-left: $sidebar-width-L;
       display: table-cell;
     }
 
@@ -338,11 +323,6 @@ Main Page Content
       content: 'desktop';
     }
   }
-}
-
-section.example {
-  padding: 0 1.5em;
-  border: 1px solid $color-4
 }
 
 /* -------------------------------- 
@@ -366,7 +346,7 @@ Header
   @include font-smoothing;
 
   @include MQ(M) {
-    // position: fixed;
+    position: fixed;
     height: $header-height-M;
   }
 }
@@ -384,15 +364,15 @@ Header
   @include MQ(M) {
     // margin: 8px -20px 0 60px;
     margin: 0;
-    width: $sidebar-width-L*0.99;
+    width: $sidebar-width-L;
     img {
       height: $header-height-M*.7;
-      margin: 8px auto 0;
+      margin: 6px auto 0;
     }
   }
 }
 
-a.cd-nav-trigger {
+.cd-nav-trigger {
   /* navigation trigger - visible on mobile devices only */
   float: right;
   position: relative;
@@ -505,7 +485,7 @@ a.cd-nav-trigger {
   @include MQ(M) {
     float: left;
     display: inline-block;
-    width: 120px;
+    width: 250px;
     height: 100%;
     // padding: 12px 0;
     // margin: 0 0 0 2.5em;
@@ -642,8 +622,8 @@ Sidebar
   background-color: darken($color-1, 8%);
   visibility: hidden;
   opacity: 0;
-  // height: 100%;
-  // min-height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   @include font-smoothing;
   @include transition(opacity .2s 0s, visibility 0s .2s);
@@ -654,7 +634,7 @@ Sidebar
     overflow: visible;
     -webkit-overflow-scrolling: touch;
     @include transition(opacity .2s 0s, visibility 0s 0s);
-    // max-height: none;
+    max-height: none;
     box-shadow: 0 2px 10px rgba(#000, .2);
   }
   
@@ -685,18 +665,12 @@ Sidebar
     font-size: 1.4rem;
   }
 
-  .has-children.active > a {
-    /* current page */
-    background-color: darken($color-1, 5%);
-    box-shadow: inset 3px 0 0 $color-2; 
-  }
-
   ul.cd-top-nav > li:last-of-type > a {
     border-bottom: none;
   }
 
-  > ul > li > a { //icons
-    padding-left: 13%;
+  > ul > li > a {
+    // padding-left: calc(5% + 24px);
     border-bottom: 1px solid darken($color-1, 3%);
 
     &::before {
@@ -711,15 +685,15 @@ Sidebar
     }
   }
   > ul > li.getting-started > a::before { background-position: 0 0; }
-  > ul > li.themes > a::before { background-position: -$svg-icon-width*1 0; }
   > ul > li.content > a::before { background-position: -$svg-icon-width*2 0; }
-  > ul > li.tutorials > a::before { background-position: -$svg-icon-width*3 0; }
   > ul > li.taxonomy > a::before { background-position: -$svg-icon-width*4 0; }
   > ul > li.tools > a::before { background-position: -$svg-icon-width*5 0; }
-  > ul > li.extras > a::before { background-position: -$svg-icon-width*6 0; }
-  > ul > li.commands > a::before { background-position: -$svg-icon-width*7 0; }  
-  > ul > li.layout > a::before { background-position: -$svg-icon-width*8 0; }  
-  > ul > li.troubleshooting > a::before { background-position: -$svg-icon-width*9 0; }
+  > ul > li.extras > a::before { background-position: -$svg-icon-width*16 0; }
+  > ul > li.commands > a::before { background-position: -$svg-icon-width*7 0; }
+  > ul > li.themes > a::before { background-position: -$svg-icon-width*1 0; }
+  > ul > li.layout > a::before { background-position: -$svg-icon-width*8 0; }
+  > ul > li.tutorials > a::before { background-position: -$svg-icon-width*3 0; }
+  > ul > li.troubleshooting > a::before { background-position: -$svg-icon-width*14 0; }
   
   > ul > li > a::before { background-position: -1000px 0; }
 
@@ -740,7 +714,7 @@ Sidebar
       display: none;
     }
   }
- 
+
   @include MQ(M) {
     position: relative;
     float: left;
@@ -768,16 +742,27 @@ Sidebar
     }
 
     .cd-label {
-      margin: 1em 5% 0
+      /* remove labels on minified version of the sidebar */
+      display: none;
+    }
+
+    a {
+      font-size: 1.4rem;
+      text-align: center;
     }
 
     > ul > li > a {
-      // padding: 0.5em 0;
-      padding-left: 1em;
+      padding: calc(2.2em + 24px) 0 2.4em;
 
       &::before {
-        display: none //hide icon
+        @include center(x);
+        top: 1.5rem;
       }
+    }
+    .has-children.active > a {
+      /* current page */
+      background-color: darken($color-1, 5%);
+      box-shadow: inset 3px 0 0 $color-2; 
     }
 
     .active > a.children {
@@ -785,15 +770,12 @@ Sidebar
     }
 
     .action-btn a { 
-      margin: 0 8% 5%;
-      // padding: .8em 2em;
-      text-transform: uppercase;
-      font-size: 1rem
+      margin: 1em 10% 0;
     }
   }
 
   @include MQ(L) {
-    min-width: $sidebar-width-L;
+    width: $sidebar-width-L;
     display: table-cell;
     vertical-align: top;
     float: none;
@@ -810,13 +792,12 @@ Sidebar
       background-color: darken($color-1, 15%);
     }
 
-    > ul > li > a { 
+    > ul > li > a {
       padding: 1em 1em 1em $svg-icon-width*2.2;
-      // text-align: left;
+      text-align: left;
       border-bottom: none;
 
       &::before {
-        display: block;
         @include center(y);
         left: 18px;
       }
@@ -825,17 +806,17 @@ Sidebar
     .cd-label {
       display: block;
       padding: 1em 18px;
-      margin: 0
     }
 
-    .action-btn a {
-      // margin: 0 18px;
-      font-size: 1.4rem;
-      text-transform: none;
-      margin-bottom: 0;
+    .action-btn {
+      text-align: left;
 
-      .no-touch &:hover {
-        background-color: lighten($color-2, 5%);
+      a {
+        margin: 0 18px;
+
+        .no-touch &:hover {
+          background-color: lighten($color-2, 5%);
+        }
       }
     }
   }

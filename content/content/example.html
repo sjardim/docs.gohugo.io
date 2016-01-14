@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<hr />
+
+<p>aliases:
+- /doc/example/
+date: 2013&#8211;07&#8211;01
+linktitle: Example
+menu:
+ main:
+ parent: content
+next: /themes/overview
+notoc: true
+prev: /content/summaries
+title: Example Content File</p>
+
+<h2 id="weight:70">weight: 70</h2>
+
+<p>Some things are better shown than explained. The following is a very basic example of a content file written in <a href="https://help.github.com/articles/github-flavored-markdown/">Markdown</a>:</p>
+
+<p><strong>mysite/content/project/nitro.md → http://mysite.com/project/nitro.html</strong></p>
+
+<p>With TOML front matter:</p>
+
+<pre><code class="markdown">+++
+date        = &quot;2013-06-21T11:27:27-04:00&quot;
+title       = &quot;Nitro: A quick and simple profiler for Go&quot;
+description = &quot;Nitro is a simple profiler for your Golang applications&quot;
+tags        = [ &quot;Development&quot;, &quot;Go&quot;, &quot;profiling&quot; ]
+topics      = [ &quot;Development&quot;, &quot;Go&quot; ]
+slug        = &quot;nitro&quot;
+project_url = &quot;https://github.com/spf13/nitro&quot;
++++
+
+# Nitro
+
+Quick and easy performance analyzer library for [Go](http://golang.org/).
+
+## Overview
+
+Nitro is a quick and easy performance analyzer library for Go.
+It is useful for comparing A/B against different drafts of functions
+or different functions.
+
+## Implementing Nitro
+
+Using Nitro is simple. First, use `go get` to install the latest version
+of the library.
+
+    $ go get github.com/spf13/nitro
+
+Next, include nitro in your application.
+</code></pre>
+
+<p>You may also use the equivalent YAML front matter:</p>
+
+<pre><code class="markdown">---
+date:        &quot;2013-06-21T11:27:27-04:00&quot;
+title:       &quot;Nitro: A quick and simple profiler for Go&quot;
+description: &quot;Nitro is a simple profiler for your Go lang applications&quot;
+tags:        [ &quot;Development&quot;, &quot;Go&quot;, &quot;profiling&quot; ]
+topics:      [ &quot;Development&quot;, &quot;Go&quot; ]
+slug:        &quot;nitro&quot;
+project_url: &quot;https://github.com/spf13/nitro&quot;
+---
+</code></pre>
+
+<p><code>nitro.md</code> would be rendered as follows:
+<section class="example"></p>
+
+<blockquote>
+<h1 id="nitro">Nitro</h1>
+
+<p>Quick and easy performance analyzer library for <a href="http://golang.org/">Go</a>.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Nitro is a quick and easy performance analyzer library for Go.
+It is useful for comparing A/B against different drafts of functions
+or different functions.</p>
+
+<h2 id="implementingnitro">Implementing Nitro</h2>
+
+<p>Using Nitro is simple. First, use <code>go get</code> to install the latest version
+of the library.</p>
+
+<pre><code>$ go get github.com/spf13/nitro
+</code></pre>
+
+<p>Next, include nitro in your application.</p>
+</blockquote>
+
+<p></section></p>
+
+<p>The source <code>nitro.md</code> file is converted to HTML by the excellent
+<a href="https://github.com/russross/blackfriday">Blackfriday</a> Markdown processor,
+which supports extended features found in the popular
+<a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavored Markdown</a>.</p>
+
+</body>
+</html>

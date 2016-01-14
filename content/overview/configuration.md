@@ -80,7 +80,8 @@ Following is a list of Hugo-defined variables that you can configure and their c
     buildDrafts:                false
     # include content with publishdate in the future
     buildFuture:                false
-    # enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+    # enable this to make all relative URLs relative to content root. 
+    # Note that this does not affect absolute URLs.
     relativeURLs:               false
     canonifyURLs:               false
     # config file (default is path/config.yaml|json|toml)
@@ -135,7 +136,8 @@ Following is a list of Hugo-defined variables that you can configure and their c
     uglyURLs:                   false
     # Do not make the url/path to lowercase
     disablePathToLower:         false
-    # if true, auto-detect Chinese/Janapese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
+    # if true, auto-detect Chinese/Janapese/Korean Languages in the content.
+    # (.Summary and .WordCount can work properly in CJKLanguage)
     hasCJKLanguage              false
     # verbose output
     verbose:                    false
