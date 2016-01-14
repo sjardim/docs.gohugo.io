@@ -37,37 +37,35 @@ with.
 
 There are 3 primary kinds of templates that Hugo works with.
 
-### [Single](/templates/content/)
-Render a single piece of content
+### Single
+Render a [single piece](/templates/content/) of content
 
-### [List](/templates/list/)
-Page that list multiple pieces of content
+### List
+Page that [list multiple pieces](/templates/list/) of content
 
-### [Homepage](/templates/homepage/)
-The homepage of your site
+### Homepage
+The [homepage](/templates/homepage/) of your site
 
 ## Supporting Template Roles (optional)
 
 Hugo also has additional kinds of templates all of which are optional
 
-### [Partial Templates](/templates/partials/)
-Common page parts to be included in the above mentioned templates
+### Partial Templates
+[Common page parts](/templates/partials/) to be included in the above mentioned templates
 
-### [Content Views](/templates/views/)
-Different ways of rendering a (single) content type
+### Content Views
+[Different ways of rendering a](/templates/views/) (single) content type
 
-### [Taxonomy Terms](/templates/terms/)
-A list of the terms used for a specific taxonomy, e.g. a Tag cloud
+### Taxonomy Terms
+A [list of the terms](/templates/terms/) used for a specific taxonomy, e.g. a Tag cloud
 
 ## Other Templates (generally unnecessary)
 
-### [RSS](/templates/rss/)
-Used to render all rss documents
+### RSS
+Used to render all [RSS](/templates/rss/) documents
 
-### [Sitemap](/templates/sitemap/)
-Used to render the XML sitemap
+### Sitemap
+Used to render the [XML sitemap](/templates/sitemap/)
 
-### [404](/templates/404/)
-This template will create a 404.html page used when hosting on GitHub Pages
-
-
+### 404
+This template will create a [404.html page](/templates/404/) used when hosting on GitHub Pages

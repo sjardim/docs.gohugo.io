@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<hr />
+
+<p>aliases:
+- /layout/go-templates/
+- /layouts/go-templates/
+date: 2013&#8211;07&#8211;01
+menu:
+ main:
+ parent: layout
+next: /templates/hugo-parameters
+prev: /templates/overview
+title: Go Template Primer
+weight: 15</p>
+
+<h2 id="toc:true">toc: true</h2>
+
+<p>Hugo uses the excellent <a href="http://golang.org/">Go</a> <a href="http://golang.org/pkg/html/template/">html/template</a> library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks, you will find a lot of
+similarities in Go templates.</p>
+
+<p>This document is a brief primer on using Go templates. The <a href="http://golang.org/pkg/html/template/">Go docs</a>
+go into more depth and cover features that aren&#8217;t mentioned here.</p>
+
+<h2 id="introductiontogotemplates">Introduction to Go Templates</h2>
+
+<p>Go templates provide an extremely simple template language. It adheres to the
+belief that only the most basic of logic belongs in the template or view layer.
+One consequence of this simplicity is that Go templates parse very quickly.</p>
+
+<p>A unique characteristic of Go templates is they are content aware. Variables and
+content will be sanitized depending on the context of where they are used. More
+details can be found in the <a href="http://golang.org/pkg/html/template/">Go docs</a>.</p>
+
+<h2 id="basicsyntax">Basic Syntax</h2>
+
+<p>Go lang templates are HTML files with the addition of variables and
+functions.</p>
+
+<p><strong>Go variables and functions are accessible within {{ }}</strong></p>
+
+<p>Accessing a predefined variable &#8220;foo&#8221;:</p>
+
+<pre><code>{{ foo }}
+</code></pre>
+
+<p><strong>Parameters are separated using spaces</strong></p>
+
+<p>Calling the <code>add</code> function with input of 1, 2:</p>
+
+<pre><code>{{ add 1 2 }}
+</code></pre>
+
+<p><strong>Methods and fields are accessed via dot notation</strong></p>
+
+<p>Accessing the Page Parameter &#8220;bar&#8221;</p>
+
+<pre><code>{{ .Params.bar }}
+</code></pre>
+
+<p><strong>Parentheses can be used to group items together</strong></p>
+
+<pre><code>{{ if or (isset .Params &quot;alt&quot;) (isset .Params &quot;caption&quot;) }} Caption {{ end }}
+</code></pre>
+
+<h2 id="variables">Variables</h2>
+
+<p>Each Go template has a struct (object) made available to it. In Hugo, each
+template is passed either a page or a node struct depending on which type of
+page you are rendering. More details are available on the
+<a href="/layout/variables/">variables</a> page.</p>
+
+<p>A variable is accessed by referencing the variable name.</p>
+
+<pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
+</code></pre>
+
+<p>Variables can also be defined and referenced.</p>
+
+<pre><code>{{ $address := &quot;123 Main St.&quot;}}
+{{ $address }}
+</code></pre>
+
+<h2 id="functions">Functions</h2>
+
+<p>Go template ships with a few functions which provide basic functionality. The Go
+template system also provides a mechanism for applications to extend the
+available functions with their own. <a href="/layout/functions/">Hugo template
+functions</a> provide some additional functionality we believe
+are useful for building websites. Functions are called by using their name
+followed by the required parameters separated by spaces. Template
+functions cannot be added without recompiling Hugo.</p>
+
+<p><strong>Example 1: Adding numbers</strong></p>
+
+<pre><code>{{ add 1 2 }}
+</code></pre>
+
+<p><strong>Example 2: Comparing numbers</strong></p>
+
+<pre><code>{{ lt 1 2 }}
+</code></pre>
+
+<p>(There are more boolean operators, detailed in the
+<a href="http://golang.org/pkg/text/template/#hdr-Functions">template documentation</a>.)</p>
+
+<h2 id="includes">Includes</h2>
+
+<p>When including another template, you will pass to it the data it will be
+able to access. To pass along the current context, please remember to
+include a trailing dot. The templates location will always be starting at
+the /layout/ directory within Hugo.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>{{ template &quot;partials/header.html&quot; . }}
+</code></pre>
+
+<p>And, starting with Hugo v0.12, you may also use the <code>partial</code> call
+for <a href="/templates/partials/">partial templates</a>:</p>
+
+<pre><code>{{ partial &quot;header.html&quot; . }}
+</code></pre>
+
+<h2 id="logic">Logic</h2>
+
+<p>Go templates provide the most basic iteration and conditional logic.</p>
+
+<h3 id="iteration">Iteration</h3>
+
+<p>Just like in Go, the Go templates make heavy use of <code>range</code> to iterate over
+a map, array or slice. The following are different examples of how to use
+range.</p>
+
+<p><strong>Example 1: Using Context</strong></p>
+
+<pre><code>{{ range array }}
+    {{ . }}
+{{ end }}
+</code></pre>
+
+<p><strong>Example 2: Declaring value variable name</strong></p>
+
+<pre><code>{{range $element := array}}
+    {{ $element }}
+{{ end }}
+</code></pre>
+
+<p><strong>Example 2: Declaring key and value variable name</strong></p>
+
+<pre><code>{{range $index, $element := array}}
+    {{ $index }}
+    {{ $element }}
+{{ end }}
+</code></pre>
+
+<h3 id="conditionals">Conditionals</h3>
+
+<p><code>if</code>, <code>else</code>, <code>with</code>, <code>or</code> &amp; <code>and</code> provide the framework for handling conditional
+logic in Go Templates. Like <code>range</code>, each statement is closed with <code>end</code>.</p>
+
+<p>Go Templates treat the following values as false:</p>
+
+<ul>
+<li>false</li>
+<li>0</li>
+<li>any array, slice, map, or string of length zero</li>
+</ul>
+
+<p><strong>Example 1: <code>if</code></strong></p>
+
+<pre><code>{{ if isset .Params &quot;title&quot; }}&lt;h4&gt;{{ index .Params &quot;title&quot; }}&lt;/h4&gt;{{ end }}
+</code></pre>
+
+<p><strong>Example 2: <code>if</code> … <code>else</code></strong></p>
+
+<pre><code>{{ if isset .Params &quot;alt&quot; }}
+    {{ index .Params &quot;alt&quot; }}
+{{else}}
+    {{ index .Params &quot;caption&quot; }}
+{{ end }}
+</code></pre>
+
+<p><strong>Example 3: <code>and</code> &amp; <code>or</code></strong></p>
+
+<pre><code>{{ if and (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
+</code></pre>
+
+<p><strong>Example 4: <code>with</code></strong></p>
+
+<p>An alternative way of writing &#8220;<code>if</code>&#8221; and then referencing the same value
+is to use &#8220;<code>with</code>&#8221; instead. <code>with</code> rebinds the context <code>.</code> within its scope,
+and skips the block if the variable is absent.</p>
+
+<p>The first example above could be simplified as:</p>
+
+<pre><code>{{ with .Params.title }}&lt;h4&gt;{{ . }}&lt;/h4&gt;{{ end }}
+</code></pre>
+
+<p><strong>Example 5: <code>if</code> … <code>else if</code></strong></p>
+
+<pre><code>{{ if isset .Params &quot;alt&quot; }}
+    {{ index .Params &quot;alt&quot; }}
+{{ else if isset .Params &quot;caption&quot; }}
+    {{ index .Params &quot;caption&quot; }}
+{{ end }}
+</code></pre>
+
+<h2 id="pipes">Pipes</h2>
+
+<p>One of the most powerful components of Go templates is the ability to
+stack actions one after another. This is done by using pipes. Borrowed
+from Unix pipes, the concept is simple, each pipeline&#8217;s output becomes the
+input of the following pipe.</p>
+
+<p>Because of the very simple syntax of Go templates, the pipe is essential
+to being able to chain together function calls. One limitation of the
+pipes is that they only can work with a single value and that value
+becomes the last parameter of the next pipeline.</p>
+
+<p>A few simple examples should help convey how to use the pipe.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>{{ if eq 1 1 }} Same {{ end }}
+</code></pre>
+
+<p>is the same as</p>
+
+<pre><code>{{ eq 1 1 | if }} Same {{ end }}
+</code></pre>
+
+<p>It does look odd to place the <code>if</code> at the end, but it does provide a good
+illustration of how to use the pipes.</p>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>{{ index .Params &quot;disqus_url&quot; | html }}
+</code></pre>
+
+<p>Access the page parameter called &#8220;disqus_url&#8221; and escape the HTML.</p>
+
+<p>The <code>index</code> function is a <a href="http://golang.org/">Go</a> built-in, and you can read about it <a href="http://golang.org/pkg/text/template/">here</a>. <code>index</code>:</p>
+
+<blockquote>
+<p>&#8230;returns the result of indexing its first argument by the following arguments. Thus &#8220;index x 1 2 3&#8221; is, in Go syntax, <code>x[1][2][3]</code>. Each indexed item must be a map, slice, or array.</p>
+</blockquote>
+
+<p><strong>Example 3:</strong></p>
+
+<pre><code>{{ if or (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
+Stuff Here
+{{ end }}
+</code></pre>
+
+<p>Could be rewritten as</p>
+
+<pre><code>{{  isset .Params &quot;caption&quot; | or isset .Params &quot;title&quot; | or isset .Params &quot;attr&quot; | if }}
+Stuff Here
+{{ end }}
+</code></pre>
+
+<h3 id="internetexplorerconditionalcommentsusingpipes">Internet Explorer conditional comments using Pipes</h3>
+
+<p>By default, Go Templates remove HTML comments from output. This has the unfortunate side effect of removing Internet Explorer conditional comments. As a workaround, use something like this:</p>
+
+<pre><code>{{ &quot;&lt;!--[if lt IE 9]&gt;&quot; | safeHTML }}
+  &lt;script src=&quot;html5shiv.js&quot;&gt;&lt;/script&gt;
+{{ &quot;&lt;![endif]--&gt;&quot; | safeHTML }}
+</code></pre>
+
+<p>Alternatively, use the backtick (<code>`</code>) to quote the IE conditional comments, avoiding the tedious task of escaping every double quotes (<code>&quot;</code>) inside, as demonstrated in the <a href="http://golang.org/pkg/text/template/#hdr-Examples">examples</a> in the Go text/template documentation, e.g.:</p>
+
+<pre><code>{{ `&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;` | safeHTML }}
+</code></pre>
+
+<h2 id="contexta.k.a.thedot">Context (a.k.a. the dot)</h2>
+
+<p>The most easily overlooked concept to understand about Go templates is that <code>{{ . }}</code>
+always refers to the current context. In the top level of your template, this
+will be the data set made available to it. Inside of a iteration, however, it will have
+the value of the current item. When inside of a loop, the context has changed:
+<code>{{ . }}</code> will no longer refer to the data available to the entire page. If you need
+to
+access this from within the loop, you will likely want to do one of the following:</p>
+
+<ol>
+<li><p>Set it to a variable instead of depending on the context. For example:</p>
+
+<pre><code>{{ $title := .Site.Title }}
+{{ range .Params.tags }}
+  &lt;li&gt;
+    &lt;a href=&quot;{{ $baseurl }}/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+    - {{ $title }}
+  &lt;/li&gt;
+{{ end }}
+</code></pre>
+
+<p>Notice how once we have entered the loop the value of <code>{{ . }}</code> has changed. We
+have defined a variable outside of the loop so we have access to it from within
+the loop.</p></li>
+<li><p>Use <code>$.</code> to access the global context from anywhere.
+ Here is an equivalent example:</p>
+
+<pre><code>{{ range .Params.tags }}
+  &lt;li&gt;
+    &lt;a href=&quot;{{ $baseurl }}/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+    - {{ $.Site.Title }}
+  &lt;/li&gt;
+{{ end }}
+</code></pre>
+
+<p>This is because <code>$</code>, a special variable, is set to the starting value
+of <code>.</code> the dot by default,
+a <a href="http://golang.org/pkg/text/template/#hdr-Variables">documented feature</a>
+of Go text/template. Very handy, eh?</p>
+
+<blockquote>
+<p>However, this little magic would cease to work if someone were to
+mischievously redefine <code>$</code>, e.g. <code>{{ $ := .Site }}</code>.
+<em>(No, don&#8217;t do it!)</em>
+You may, of course, recover from this mischief by using <code>{{ $ := . }}</code>
+in a global context to reset <code>$</code> to its default value.</p>
+</blockquote></li>
+</ol>
+
+<h1 id="templateexample:showonlyupcomingevents">Template example: Show only upcoming events</h1>
+
+<p>Go allows you to do more than what&#8217;s shown here. Using Hugo&#8217;s
+<a href="/templates/functions/#toc_4"><code>where</code></a> function and Go built-ins, we can list
+only the items from <code>content/events/</code> whose date (set in the front matter) is in
+the future:</p>
+
+<pre><code>&lt;h4&gt;Upcoming Events&lt;/h4&gt;
+&lt;ul class=&quot;upcoming-events&quot;&gt;
+{{ range where .Data.Pages.ByDate &quot;Section&quot; &quot;events&quot; }}
+  {{ if ge .Date.Unix .Now.Unix }}
+    &lt;li&gt;&lt;span class=&quot;event-type&quot;&gt;{{ .Type | title }} —&lt;/span&gt;
+      {{ .Title }}
+      on &lt;span class=&quot;event-date&quot;&gt;
+      {{ .Date.Format &quot;2 January at 3:04pm&quot; }}&lt;/span&gt;
+      at {{ .Params.place }}
+    &lt;/li&gt;
+  {{ end }}
+{{ end }}
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<hr />
+
+<p>aliases:
+- /doc/templates/
+- /layout/templates/
+- /layout/overview/
+date: 2013&#8211;07&#8211;01
+linktitle: Overview
+menu:
+ main:
+ parent: layout
+next: /templates/go-templates
+prev: /themes/creation
+title: Hugo Templates
+weight: 10</p>
+
+<h2 id="toc:true">toc: true</h2>
+
+<p>Hugo uses the excellent Go html/template library for its template engine.
+It is an extremely lightweight engine that provides a very small amount of
+logic. In our experience it is just the right amount of logic to be able
+to create a good static website.</p>
+
+<p>While Hugo has a number of different template roles, most complete
+websites can be built using just a small number of template files.
+Please don’t be afraid of the variety of different template roles. They
+enable Hugo to build very complicated sites. Most sites will only
+need to create a <a href="/templates/content/">/layouts/_default/single.html</a> &amp; <a href="/templates/list/">/layouts/_default/list.html</a></p>
+
+<p>If you are new to Go&#8217;s templates, the <a href="/layout/go-templates/">Go Template Primer</a>
+is a great place to start.</p>
+
+<p>If you are familiar with Go’s templates, Hugo provides some <a href="/templates/functions/">additional
+template functions</a> and <a href="/templates/variables/">variables</a> you will want to be familiar
+with.</p>
+
+<h2 id="primarytemplateroles">Primary Template roles</h2>
+
+<p>There are 3 primary kinds of templates that Hugo works with.</p>
+
+<h3 id="single">Single</h3>
+
+<p>Render a <a href="/templates/content/">single piece</a> of content</p>
+
+<h3 id="list">List</h3>
+
+<p>Page that <a href="/templates/list/">list multiple pieces</a> of content</p>
+
+<h3 id="homepage">Homepage</h3>
+
+<p>The <a href="/templates/homepage/">homepage</a> of your site</p>
+
+<h2 id="supportingtemplaterolesoptional">Supporting Template Roles (optional)</h2>
+
+<p>Hugo also has additional kinds of templates all of which are optional</p>
+
+<h3 id="partialtemplates">Partial Templates</h3>
+
+<p><a href="/templates/partials/">Common page parts</a> to be included in the above mentioned templates</p>
+
+<h3 id="contentviews">Content Views</h3>
+
+<p><a href="/templates/views/">Different ways of rendering a</a> (single) content type</p>
+
+<h3 id="taxonomyterms">Taxonomy Terms</h3>
+
+<p>A <a href="/templates/terms/">list of the terms</a> used for a specific taxonomy, e.g. a Tag cloud</p>
+
+<h2 id="othertemplatesgenerallyunnecessary">Other Templates (generally unnecessary)</h2>
+
+<h3 id="rss">RSS</h3>
+
+<p>Used to render all <a href="/templates/rss/">RSS</a> documents</p>
+
+<h3 id="sitemap">Sitemap</h3>
+
+<p>Used to render the <a href="/templates/sitemap/">XML sitemap</a></p>
+
+<h3 id="404">404</h3>
+
+<p>This template will create a <a href="/templates/404/">404.html page</a> used when hosting on GitHub Pages</p>
+
+</body>
+</html>

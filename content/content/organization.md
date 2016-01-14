@@ -13,7 +13,7 @@ weight: 10
 toc: true
 ---
 
-Hugo uses files (see [supported formats](/content/supported-formats/)) with headers commonly called the *front matter*. Hugo
+> Hugo uses files (see [supported formats](/content/supported-formats/)) with headers commonly called the *front matter*. Hugo
 respects the organization that you provide for your content to minimize any
 extra configuration, though this can be overridden by additional configuration
 in the front matter.

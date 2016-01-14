@@ -1,0 +1,28 @@
+<style type="text/css">
+article footer {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-bottom: 6rem
+}
+.summary a {
+  color: inherit;
+}
+.summary a:hover {
+  text-decoration: underline;
+}
+</style>
+<article class="post">
+
+  <header>
+    <h3>{{ .Title }}</h3>
+  </header>
+
+  <p class="summary"><a href="{{ .RelPermalink }}">{{ .Summary }}</a></p>
+  <p><a href='{{ .Permalink }}'><nobr>Read →</nobr></a></p>
+  
+  <footer>
+    <em>Approximately {{ .FuzzyWordCount }} words</em>
+  </footer>
+  
+
+</article>
