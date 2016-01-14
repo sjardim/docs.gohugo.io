@@ -234,8 +234,8 @@ Main Page Content
 -------------------------------- */
 
 .cd-main-content {
-  @include MQ(L) {
-    display: table;
+  @include MQ(M) {
+    display: flex;
   }
 
   .content-wrapper {
@@ -284,7 +284,9 @@ Main Page Content
   @include MQ(M) {
 
     .content-wrapper {
-      margin-left: $sidebar-width-M;
+      float: left;
+      display: block;
+      width: $content-width-M;
       padding-top: $header-height-M;
 
       h1 {
@@ -329,9 +331,8 @@ Main Page Content
 
   @include MQ(L) {
 
-    .content-wrapper {
-      margin-left: $sidebar-width-L;
-      display: table-cell;
+    .content-wrapper {      
+      width: $content-width-L;
     }
 
     &::before {
@@ -744,22 +745,19 @@ Sidebar
   @include MQ(M) {
     position: relative;
     float: left;
+    display: block;
     top: auto;    
     width: $sidebar-width-M;
-    min-height: 100vh;
+    // min-height: 100vh;
     padding-top: $header-height-M;
     /* reset style */
     visibility: visible;
     opacity: 1;
     overflow: visible;
-    max-height: none;
+    // max-height: none;
 
     &.nav-is-visible {
       box-shadow: none;
-    }
-
-    &.is-fixed {
-      position: fixed;
     }
 
     > ul {
@@ -792,11 +790,8 @@ Sidebar
     }
   }
 
-  @include MQ(L) {
-    min-width: $sidebar-width-L;
-    display: table-cell;
-    vertical-align: top;
-    float: none;
+  @include MQ(L) {   
+    width: $sidebar-width-L;    
 
     a {
       font-size: 1.6rem;
